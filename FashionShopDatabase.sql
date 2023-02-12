@@ -12,17 +12,17 @@ if exists(select name from sysobjects where name = 'Users')
 create table Users
 (
 	user_id BIGINT not null primary key,
-	firstName nchar(20) not null,
-	lastName nchar(20) not null,
-	phoneNumber nchar(10) not null,
-	email nchar(150) not null,
-	username varchar not null,
-	password varchar not null,
+	firstName nvarchar(20) not null,
+	lastName nvarchar(20) not null,
+	phoneNumber nvarchar(10) not null,
+	email nvarchar(150) not null,
+	username varchar(20) not null,
+	password varchar(30) not null,
 	admin tinyint not null,
 	adress nvarchar(150) not null,
-	province nchar(30) not null,
-	city nchar(30) not null,
-	country nchar(30) not null
+	province nvarchar(30) not null,
+	city nvarchar(30) not null,
+	country nvarchar(30) not null
 )
 
 if exists(select name from sysobjects where name = 'Products')
@@ -51,7 +51,7 @@ if exists(select name from sysobjects where name = 'Image')
 create table Image
 (
 	image_id bigint not null primary key,
-	imgae_url nvarchar
+	imgae_url nvarchar(100)
 )
 
 if exists(select name from sysobjects where name = 'Size')
@@ -107,16 +107,15 @@ create table Orders
 	original_price float not null,
 	reduced_price float,
 	total_price float not null,
-	payment_id bigint not null,
 	voucher_id bigint,
-	order_status nvarchar(40) not null check(order_status IN('Đang xử lý','Đang giao','Đã giao'))
+	order_status nvarchar(40) not null check(order_status IN('Đã chấp nhận', 'Đang chuẩn bị hàng', 'Đơn hàng đã chuẩn bị xong','Đang xử lý','Đang giao','Đã giao'))
 )
 
 if exists(select name from sysobjects where name = 'Order_Item')
 	drop table Order_Item
 create table Order_Item
 (
-	id bigint primary key,
+	id bigint not null primary key,
 	order_id bigint,
 	product_id bigint,
 	quantity smallint not null,
@@ -145,7 +144,7 @@ create table Product_Reviewing
 	user_id bigint not null,
 	product_id bigint not null,
 	rating smallint not null,
-	content nvarchar,
+	content nvarchar(200),
 	publishedAt datetime
 )
 
@@ -172,10 +171,10 @@ create table Voucher
 (
 	voucher_id bigint primary key,
 	user_id bigint,
-	code varchar(10) not null,
-	discount_percentage int not null,
+	code varchar(20) not null,
+	discount_percentage float not null,
 	voucher_status nvarchar(40) not null check(voucher_status IN('Chưa sử dụng','Đã sử dụng')),
-	startdate datetime not null,
+	start_date datetime not null,
 	end_date datetime not null
 )
 
@@ -191,6 +190,7 @@ if exists(select name from sysobjects where name = 'Payment_Detail')
 	drop table Payment_Detail
 create table Payment_Detail
 (
+	id bigint not null primary key,
 	order_id bigint,
 	amount float,
 	payment_method bigint,
@@ -259,20 +259,100 @@ constraint FK_OI_O FOREIGN KEY (order_id) REFERENCES Orders(order_id)
 use FashionShop
 
 -- Color --
-insert into Color values ('1', 'black', 'rgb(0, 0, 0)');
-insert into Color values ('2', 'white', 'rgb(255, 255, 255)');
+insert into Color values (1, 'black', 'rgb(0, 0, 0)')
+insert into Color values (2, 'white', 'rgb(255, 255, 255)')
 
 -- Size --
-insert into Size values ('1', 'S');
-insert into Size values ('2', 'M');
-insert into Size values ('3', 'L');
-insert into Size values ('4', 'XL');
+insert into Size values (1, 'S')
+insert into Size values (2, 'M')
+insert into Size values (3, 'L')
+insert into Size values (4, 'XL')
 
 -- User --
-insert into Users values ('1', 'Thuong', 'Mon', '0123456789', 'pitithuong@gmail.com', 'thuongmoon', 'thuongmoon', '1', 'DHCT', 'Ninh Kieu', 'Can Tho', 'Viet Nam');
+insert into Users values ('1', 'Thuong', 'Mon', '0123456789', 'pitithuong@gmail.com', 'thuongmoon', 'thuongmoon', '1', 'DHCT', 'Ninh Kieu', 'Can Tho', 'Viet Nam')
 
 -- Products --
-insert into Products values ('1', '1', )
+insert into Products values (1, 1, 'Áo Hoodie Local Brand AVA HD Logo', 
+'Chất liệu: Vải Nỉ Cotton 100%, màu sắc: Trắng/Đen, form: Local Brand - Unisex, chất lượng in: In lụa dùng mực Nhật Bản chất lượng cao, bảo quản: Có thể giặt máy & giặt ngâm',
+'297000', 'AVA', 'Có sẵn')
+
+-- Product_Quantity --
+-- (product_id, size_id, color_id, quantity)
+insert into Product_Quantity values (1, 1, 1, 45)
+insert into Product_Quantity values (1, 2, 1, 35)
+insert into Product_Quantity values (1, 3, 1, 62)
+insert into Product_Quantity values (1, 4, 1, 24)
+insert into Product_Quantity values (1, 1, 2, 46)
+insert into Product_Quantity values (1, 2, 2, 76)
+insert into Product_Quantity values (1, 3, 2, 124)
+insert into Product_Quantity values (1, 4, 2, 41)
+
+-- Image --
+insert into Image values (1, '.../image/pd1.1.png')
+insert into Image values (2, '.../image/pd1.2.png')
+insert into Image values (3, '.../image/pd1.3.png')
+
+
+-- Product_Image --
+insert into Product_Image values (1, 1)
+insert into Product_Image values (1, 2)
+insert into Product_Image values (1, 3)
+
+-- Tag --
+insert into Tag values (1, 'Áo Hàn Quốc')
+insert into Tag values (2, 'Áo khoác')
+insert into Tag values (3, 'Hoodie')
+insert into Tag values (4, 'Áo Unisex')
+
+-- Product_Tag --
+insert into Product_Tag values (1, 1)
+insert into Product_Tag values (1, 2)
+insert into Product_Tag values (1, 3)
+insert into Product_Tag values (1, 4)
+
+-- Category --
+insert into Category values (1, 0, 'Áo')
+insert into Category values (2, 1, 'Áo khoác')
+insert into Category values (3, 2, 'Hoodie')
+
+-- Product_Category --
+insert into Product_Category values(1, 1)
+insert into Product_Category values(1, 2)
+insert into Product_Category values(1, 3)
+
+-- Product_Reviewing --
+insert into Product_Reviewing values(1, 1, 1, 5, 'Hàng đẹp chất lượng đúng mô tả, sẽ ủng hộ lần sau', '2023-02-12 14:56:59')
+
+-- Voucher --
+-- (voucher_id, user_id, code, discount_percentage, voucher_status, startdate, end_date)
+insert into Voucher values (1, 1, '0GIAMGIA', 0, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
+
+-- Orders --
+-- (order_id, customer_id, order_date, original_price, reduced_price, total_price, voucher_id, order_status)
+insert into Orders values (1, 1, '2023-02-11 14:56:59', 297000, 0, 297000, 1, 'Đã giao')
+
+-- Order_Item --
+-- (id, order_id, product_id, quantity, size, color)
+insert into Order_Item values (1, 1, 1, 1, 4, 1)
+
+-- Payment_Methods --
+insert into Payment_Methods values (1, 'MoMo')
+insert into Payment_Methods values (2, 'ZaloPay')
+insert into Payment_Methods values (3, 'COD')
+
+-- Payment_Detail --
+-- (id, order_id, amount, payment_method, payment_status)
+-- payment_status
+-- 1 Chua thanh toan
+-- 2 Da thanh toan
+insert into Payment_Detail values (1, 1, 297000, 2, 2)
+
+
+
+
+
+
+
 
 
 
