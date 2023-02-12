@@ -32,10 +32,8 @@ create table Products
 	user_id bigint,
 	name nvarchar(50) not null,
 	descript text,
-	imageURL nvarchar(100),
 	price float not null,
-	category_id int,
-	brand_id int,
+	brand nvarchar(50),
 	product_availability nvarchar(40) not null check (product_availability IN('Hết hàng','Có sẵn','Đặt trước'))
 )
 
