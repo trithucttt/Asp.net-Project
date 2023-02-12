@@ -16,6 +16,7 @@ create table Users
 	lastName nchar(20) not null,
 	phoneNumber nchar(10) not null,
 	email nchar(150) not null,
+	username varchar not null,
 	password varchar not null,
 	admin tinyint not null,
 	adress nvarchar(150) not null,
@@ -253,3 +254,25 @@ constraint FK_C_U FOREIGN KEY (user_id) REFERENCES Users(user_id)
 ALTER TABLE Order_Item
 ADD
 constraint FK_OI_O FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+
+
+use FashionShop
+
+-- Color --
+insert into Color values ('1', 'black', 'rgb(0, 0, 0)');
+insert into Color values ('2', 'white', 'rgb(255, 255, 255)');
+
+-- Size --
+insert into Size values ('1', 'S');
+insert into Size values ('2', 'M');
+insert into Size values ('3', 'L');
+insert into Size values ('4', 'XL');
+
+-- User --
+insert into Users values ('1', 'Thuong', 'Mon', '0123456789', 'pitithuong@gmail.com', 'thuongmoon', 'thuongmoon', '1', 'DHCT', 'Ninh Kieu', 'Can Tho', 'Viet Nam');
+
+-- Products --
+insert into Products values ('1', '1', )
+
+
+
