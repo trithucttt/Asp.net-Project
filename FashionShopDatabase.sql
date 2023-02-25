@@ -592,7 +592,6 @@ insert into Image values (992,'../../Content/images/products/banner_99.jpg')
 insert into Image values (993,'../../Content/images/products/banner_99.jpg')
 insert into Image values (1001,'../../Content/images/products/banner_100.jpg')
 insert into Image values (1002,'../../Content/images/products/banner_100.jpg')
-insert into Image values (1003,'../../Content/images/products/banner_100.jpg')
 
 hello 500 ae 
 
