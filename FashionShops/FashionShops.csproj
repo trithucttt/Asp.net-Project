@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Auth\LoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -134,6 +135,7 @@
     <Content Include="Content\images\banner_1.jpg" />
     <Content Include="Content\images\banner_2.jpg" />
     <Content Include="Content\images\banner_3.jpg" />
+    <Content Include="Content\images\bg-registration-form-4.jpg" />
     <Content Include="Content\images\blog_1.jpg" />
     <Content Include="Content\images\blog_2.jpg" />
     <Content Include="Content\images\blog_3.jpg" />
@@ -152,6 +154,7 @@
     <Content Include="Content\images\product_7.png" />
     <Content Include="Content\images\product_8.png" />
     <Content Include="Content\images\product_9.png" />
+    <Content Include="Content\images\registration-form-4.jpeg" />
     <Content Include="Content\images\single_1.jpg" />
     <Content Include="Content\images\single_1_thumb.jpg" />
     <Content Include="Content\images\single_2.jpg" />
@@ -163,6 +166,7 @@
     <Content Include="Content\js\contact_custom.js" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\jquery-3.2.1.min.js" />
+    <Content Include="Content\js\login.js" />
     <Content Include="Content\js\single_custom.js" />
     <Content Include="Content\plugins\easing\easing.js" />
     <Content Include="Content\plugins\font-awesome-4.7.0\css\font-awesome.css" />
@@ -191,6 +195,7 @@
     <Content Include="Content\styles\responsive.css" />
     <Content Include="Content\styles\single_responsive.css" />
     <Content Include="Content\styles\single_styles.css" />
+    <Content Include="Content\styles\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -256,6 +261,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\showFormLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
