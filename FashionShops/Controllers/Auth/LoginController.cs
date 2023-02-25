@@ -29,7 +29,7 @@ namespace FashionShops.Controllers.Auth
                 return View("~/Views/Home/Index.cshtml");
             else
             {
-                ViewBag.error = "The account or password is incorrect. Please check again";
+                ViewBag.error = "The account or password is incorrect!\nPlease try again";
                 return View("~/Views/Login/showFormLogin.cshtml");
             }
         }
