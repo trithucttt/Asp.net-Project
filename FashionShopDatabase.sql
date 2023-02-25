@@ -594,7 +594,7 @@ insert into Image values (1001,'../../Content/images/products/banner_100.jpg')
 insert into Image values (1002,'../../Content/images/products/banner_100.jpg')
 insert into Image values (1003,'../../Content/images/products/banner_100.jpg')
 
-hello 500 ae
+hello 500 ae 
 
 -- Product_Image --
 insert into Product_Image values (1, 1)
