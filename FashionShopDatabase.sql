@@ -32,7 +32,7 @@ create table Products
 	product_id bigint primary key,
 	user_id bigint,
 	name nvarchar(250) not null,
-	describe text,
+	describe nvarchar(500),
 	price float not null,
 	brand nvarchar(50),
 	product_availability nvarchar(40) not null check (product_availability IN('Hết hàng','Có sẵn','Đặt trước'))
@@ -280,37 +280,37 @@ insert into Users values ('3','Vo','Tran ','12345678','votran@gmail.com','user01
 
 -- Products --
 -- (id, user_id, name, describe, price, brand, product_availability)
-insert into Products values (1, 1, 'Chân váy tennis xếp ly', 
-'CHÂN VÁY TENNIS KẺ CARO KIỂU CHÂN VÁY XOÈ XẾP LY CÓ LÓT TRONG CẠP LƯNG CAO MẶC ĐI CHƠI HỌC LÀM TẬP THỂ THAO ĐẸP
+insert into Products values (1, 1, N'Chân váy tennis xếp ly', 
+N'CHÂN VÁY TENNIS KẺ CARO KIỂU CHÂN VÁY XOÈ XẾP LY CÓ LÓT TRONG CẠP LƯNG CAO MẶC ĐI CHƠI HỌC LÀM TẬP THỂ THAO ĐẸP
 Mẫu chân váy xếp ly không bao giờ lỗi mốt đây ạ. Diện em chất váy tennis caro này thoải mái vận động các nàng nhé, em nó có lót trong nên không sợ lộ hàng đâu ạ. Với những đường xếp ly đều đặn, chất thun co giãn mang tới cảm giác thoải mái mà vẫn cực kỳ trẻ trung năng động.',
 '150000', 'MIDI', 'Có sẵn')
-insert into Products values (2, 1, 'Xiaozhainv Váy denim Ngắn Lưng Cao Thời Trang Mùa Hè Dành Cho Nữ',
-'Gói hàng bao gồm: 1 * Chân váy. Vì hiệu ứng hiển thị và ánh sáng khác nhau, màu sắc thực tế của sản phẩm có thể hơi khác so với màu sắc trong hình. Nếu sản phẩm của chúng tôi không có kích thước hay màu sắc yêu thích của bạn, hoặc bạn muốn tìm hiểu thêm thông tin, vui lòng liên hệ với chúng tôi.
+insert into Products values (2, 1, N'Xiaozhainv Váy denim Ngắn Lưng Cao Thời Trang Mùa Hè Dành Cho Nữ',
+N'Gói hàng bao gồm: 1 * Chân váy. Vì hiệu ứng hiển thị và ánh sáng khác nhau, màu sắc thực tế của sản phẩm có thể hơi khác so với màu sắc trong hình. Nếu sản phẩm của chúng tôi không có kích thước hay màu sắc yêu thích của bạn, hoặc bạn muốn tìm hiểu thêm thông tin, vui lòng liên hệ với chúng tôi.
 Tất cả các sản phẩm đều được gửi về từ nước ngoài, chất lượng siêu tốt với mức giá rẻ, các bạn thấy thích thì đừng quên chia sẻ cho bạn bè mình nha',
 '310000', 'RETRO', 'Có sẵn')
-insert into Products values(3, 1, 'Chân váy ngắn xếp ly hai lớp phong cách CHERRY chân váy tennis xòe kiểu xếp li âu mỹ V048',
-'Chân váy xếp ly chữ a phong cách ulzang chất liệu vitex cao cấp mang lại cảm giác thoải mái khi mặc. Chân váy tennis Cherry tuy là chân váy ngắn nhưng thiết kế chiều dài 40cm nên ko quá ngắn xị em có thể tự tin mặc ko lo lộ hàng nhé. Chân váy xếp ly ngắn chữ a thiết kế theo phong cách chân váy xòe nên cực kì dễ mix đồ, mùa hè mix với sơ mi, áo thun, mùa đông mix với ghi lê bao xinh',
+insert into Products values(3, 1, N'Chân váy ngắn xếp ly hai lớp phong cách CHERRY chân váy tennis xòe kiểu xếp li âu mỹ V048',
+N'Chân váy xếp ly chữ a phong cách ulzang chất liệu vitex cao cấp mang lại cảm giác thoải mái khi mặc. Chân váy tennis Cherry tuy là chân váy ngắn nhưng thiết kế chiều dài 40cm nên ko quá ngắn xị em có thể tự tin mặc ko lo lộ hàng nhé. Chân váy xếp ly ngắn chữ a thiết kế theo phong cách chân váy xòe nên cực kì dễ mix đồ, mùa hè mix với sơ mi, áo thun, mùa đông mix với ghi lê bao xinh',
 '145000', 'CHERRY', 'Có sẵn')
-insert into Products values(4, 1, 'Chân Váy KaKi Chữ A Túi Hộp Phong Cách Hàn Quốc Có Quần Trong Lên From Xinh',
-'THÔNG TIN SẢN PHẨM:Chân Váy KaKi Chữ A Túi Hộp được thiết kế thân trước cúc cài kéo khóa, có túi hộp 2 bên tạo điểm nhấn độcc và lạ mắt. Chất vải kaki thô mềm mại, co giãn mặc vô cùng thoải mái. Chân Váy KaKi Chữ A Túi Hộp Mix cùng với áo sơ mi, phông, 2 dây, crotop.... đều xinh ạ. Các quý cô dạo phố, shopping, cafe, đi làm công sở đều xinh hết nấc nha. Thật sự chị em nào bỏ qua chiếc Chân Váy KaKi Chữ A Túi Hộp này là tiếc lắm luôn ấy.',
+insert into Products values(4, 1, N'Chân Váy KaKi Chữ A Túi Hộp Phong Cách Hàn Quốc Có Quần Trong Lên From Xinh',
+N'THÔNG TIN SẢN PHẨM:Chân Váy KaKi Chữ A Túi Hộp được thiết kế thân trước cúc cài kéo khóa, có túi hộp 2 bên tạo điểm nhấn độcc và lạ mắt. Chất vải kaki thô mềm mại, co giãn mặc vô cùng thoải mái. Chân Váy KaKi Chữ A Túi Hộp Mix cùng với áo sơ mi, phông, 2 dây, crotop.... đều xinh ạ. Các quý cô dạo phố, shopping, cafe, đi làm công sở đều xinh hết nấc nha. Thật sự chị em nào bỏ qua chiếc Chân Váy KaKi Chữ A Túi Hộp này là tiếc lắm luôn ấy.',
 '170000', 'RYU', 'Có sẵn')
-insert into Products values(5, 1, 'Chân váy xếp ly Goness cạp cao dáng chữ a phong cách tennis xòe kiểu li ngắn bản to thời trang Hàn Quốc',
-'THÔNG TIN SẢN PHẨM CHÂN VÁY NGẮN XẾP LY GONESS: Chân váy xếp ly hay còn gọi là váy tennis là mặt hàng thời trang phổ biến nhất hiện nay. Lợi ích của dòng Chân váy xếp ly này là dễ phối đồ, dễ mặc, năng động, trẻ trung .Chất vintex dày, mịn, thấm mút mồ hôi tốt, không xù lông, mềm mại cho làn da, cầm mát tay. Chân váy có thể mặc đi chơi, đi làm,..',
+insert into Products values(5, 1, N'Chân váy xếp ly Goness cạp cao dáng chữ a phong cách tennis xòe kiểu li ngắn bản to thời trang Hàn Quốc',
+N'THÔNG TIN SẢN PHẨM CHÂN VÁY NGẮN XẾP LY GONESS: Chân váy xếp ly hay còn gọi là váy tennis là mặt hàng thời trang phổ biến nhất hiện nay. Lợi ích của dòng Chân váy xếp ly này là dễ phối đồ, dễ mặc, năng động, trẻ trung .Chất vintex dày, mịn, thấm mút mồ hôi tốt, không xù lông, mềm mại cho làn da, cầm mát tay. Chân váy có thể mặc đi chơi, đi làm,..',
 '260000', 'Goness ', 'Có sẵn')
-insert into Products values(6, 1, 'Chân váy thô zip dáng ngắn kèm thắt lưng bản to 757Quangiavaykemdai',
-'Chân váy kaki kèm đai hàng quảng châu. Đủ màu siêu hót đen nâu be trắng. Số đo là số đo NGANG, mọi người đừng nhân đôi mà hãy lấy số đo này ướm với quần áo đang mặc của mình nhé CAM KẾT VỚI KHÁCH HÀNG:. Sản phẩm giống với mô tả và hình ảnh đăng trên cửa hàng. Mang tới dịch vụ khách hàng tận tâm và nhiệt tình nhất, giúp quý khách có được trải nghiệm tốt nhất khi mua hàng. Giải quyết thắc mắc và vấn đề về sản phẩm (nếu có) cho khách hàng nhanh chóng và thỏa đáng',
+insert into Products values(6, 1, N'Chân váy thô zip dáng ngắn kèm thắt lưng bản to 757Quangiavaykemdai',
+N'Chân váy kaki kèm đai hàng quảng châu. Đủ màu siêu hót đen nâu be trắng. Số đo là số đo NGANG, mọi người đừng nhân đôi mà hãy lấy số đo này ướm với quần áo đang mặc của mình nhé CAM KẾT VỚI KHÁCH HÀNG:. Sản phẩm giống với mô tả và hình ảnh đăng trên cửa hàng. Mang tới dịch vụ khách hàng tận tâm và nhiệt tình nhất, giúp quý khách có được trải nghiệm tốt nhất khi mua hàng. Giải quyết thắc mắc và vấn đề về sản phẩm (nếu có) cho khách hàng nhanh chóng và thỏa đáng',
 '149000', 'QUI ', 'Có sẵn')
-insert into Products values(7, 1, 'Chân Váy Tennis Xếp Ly The Good/ Tennis Skirt',
-'Sản phẩm được dệt từ vải Polyester, Vicose và sợi Spandex. Dày dặn chất vải không xù, không dai. Ít nhăn, phẳng phiu, dễ là. Thoáng mát, dễ chịu cho ngày hè. Đường may vô cung tỉ mỉ.',
+insert into Products values(7, 1, N'Chân Váy Tennis Xếp Ly The Good/ Tennis Skirt',
+N'Sản phẩm được dệt từ vải Polyester, Vicose và sợi Spandex. Dày dặn chất vải không xù, không dai. Ít nhăn, phẳng phiu, dễ là. Thoáng mát, dễ chịu cho ngày hè. Đường may vô cung tỉ mỉ.',
 '327000', 'The Good ', 'Có sẵn')
-insert into Products values(8, 1, 'Chân váy chữ A SUNNNY dáng ngắn cạp cao trơn đen _A1',
-'Thành phần: chất liệu kaki/jean dày dặn co giãn nhẹ cực thoải mái. Nên giặt máy ở chế độ máy nhẹ nhàng hoặc giặt tay. GIÁ TẬN GỐC, MIỄN TRUNG GIAN, NÓI KHÔNG VỚI HÀNG KÉM CHẤT LƯỢNG. Chất lượng bền đẹp, luôn đặt uy tín lên hàng đầu.',
+insert into Products values(8, 1, N'Chân váy chữ A SUNNNY dáng ngắn cạp cao trơn đen _A1',
+N'Thành phần: chất liệu kaki/jean dày dặn co giãn nhẹ cực thoải mái. Nên giặt máy ở chế độ máy nhẹ nhàng hoặc giặt tay. GIÁ TẬN GỐC, MIỄN TRUNG GIAN, NÓI KHÔNG VỚI HÀNG KÉM CHẤT LƯỢNG. Chất lượng bền đẹp, luôn đặt uy tín lên hàng đầu.',
 '149000', 'SUNNNY ', 'Có sẵn')
-insert into Products values(9, 1, 'Chân Váy Chữ A Dáng Xòe Vải PoLy Cạp Chun',
-'Điểm Nhấn: Chân Váy Chữ A Dáng Xòe Vải PoLy Siêu Xinh Có Lót Quần Bên Trong Cạp Chun Bản To 6cm mặc rất dễ chịu và thỏa mái. Chân Váy Chữ A Dáng Xòe Vải PoLy Siêu Xinh Có Lót Quần Bên Trong phù hợp mặc đi chơi, đi tiệc, du lịch.......',
+insert into Products values(9, 1, N'Chân Váy Chữ A Dáng Xòe Vải PoLy Cạp Chun',
+N'Điểm Nhấn: Chân Váy Chữ A Dáng Xòe Vải PoLy Siêu Xinh Có Lót Quần Bên Trong Cạp Chun Bản To 6cm mặc rất dễ chịu và thỏa mái. Chân Váy Chữ A Dáng Xòe Vải PoLy Siêu Xinh Có Lót Quần Bên Trong phù hợp mặc đi chơi, đi tiệc, du lịch.......',
 '219000', 'PoLy ', 'Có sẵn')
-insert into Products values(10, 1, 'Chân váy tennis nữ L66 xếp ly to công sở cao cấp mặc tôn dáng V4',
-'Chân váy là một trong những items kinh điển trong tủ đồ của tất cả chị em phụ nữ. Thiếu đi chân váy là thiếu đi sự điệu đà nữ tính, thiếu đi một nét đặc trưng của con gái. Chân váy có nhiều loại, mỗi chiếc chân váy mang trong mình một nét đẹp riêng biệt không trộn lẫn.',
+insert into Products values(10, 1, N'Chân váy tennis nữ L66 xếp ly to công sở cao cấp mặc tôn dáng V4',
+N'Chân váy là một trong những items kinh điển trong tủ đồ của tất cả chị em phụ nữ. Thiếu đi chân váy là thiếu đi sự điệu đà nữ tính, thiếu đi một nét đặc trưng của con gái. Chân váy có nhiều loại, mỗi chiếc chân váy mang trong mình một nét đẹp riêng biệt không trộn lẫn.',
 '412000', 'LYL ', 'Có sẵn')
 
 -- Product_Quantity --
