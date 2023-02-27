@@ -154,7 +154,7 @@ create table Category
 (
 	category_id bigint primary key,
 	parent_id bigint,
-	name nvarchar(20) not null
+	name nvarchar(100) not null
 )
 
 if exists(select name from sysobjects where name = 'Product_Category')
