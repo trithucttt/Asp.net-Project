@@ -481,14 +481,14 @@ insert into Product_Image values (10, 39)
 insert into Product_Image values (10, 40)
 
 -- Tag --
-insert into Tag values (1, 'Áo Hàn Quốc')
-insert into Tag values (2, 'Áo khoác')
+insert into Tag values (1, N'Áo Hàn Quốc')
+insert into Tag values (2, N'Áo khoác')
 insert into Tag values (3, 'Hoodie')
-insert into Tag values (4, 'Áo Unisex')
-insert into Tag values (5, 'Váy ngắn')
-insert into Tag values (6, 'Váy chữ A')
-insert into Tag values (7, 'Váy Hàn Quốc')
-insert into Tag values (8, 'Váy Tennis')
+insert into Tag values (4, N'Áo Unisex')
+insert into Tag values (5, N'Váy ngắn')
+insert into Tag values (6, N'Váy chữ A')
+insert into Tag values (7, N'Váy Hàn Quốc')
+insert into Tag values (8, N'Váy Tennis')
 
 
 
@@ -518,11 +518,11 @@ insert into Product_Tag values (10, 8)
 -- Category --
 -- (id, id_parent, name)
 -- id_parent = 0 neu loai tong the nhat
-insert into Category values (1, 0, 'Áo')
-insert into Category values (2, 1, 'Áo khoác')
+insert into Category values (1, 0, N'Áo')
+insert into Category values (2, 1, N'Áo khoác')
 insert into Category values (3, 2, 'Hoodie')
-insert into Category values (4, 0, 'Váy')
-insert into Category values (5, 4, 'Váy ngắn')
+insert into Category values (4, 0, N'Váy')
+insert into Category values (5, 4, N'Váy ngắn')
 
 
 -- Product_Category --
@@ -549,7 +549,7 @@ insert into Product_Category values(10, 4)
 insert into Product_Category values(10, 5)
 
 -- Product_Reviewing --
-insert into Product_Reviewing values(1, 1, 1, 5, 'Hàng đẹp chất lượng đúng mô tả, sẽ ủng hộ lần sau', '2023-02-12 14:56:59')
+insert into Product_Reviewing values(1, 1, 1, 5, N'Hàng đẹp chất lượng đúng mô tả, sẽ ủng hộ lần sau', '2023-02-12 14:56:59')
 
 -- Voucher --
 -- (voucher_id, user_id, code, discount_percentage, voucher_status, startdate, end_date)
