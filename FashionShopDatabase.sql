@@ -289,8 +289,8 @@ insert into Size values(15, '45')
 
 -- User --
 insert into Users values ('1', 'Thuong', 'Mon', '0123456789', 'pitithuong@gmail.com', 'thuongmoon', 'thuongmoon', '1', 'DHCT', 'Ninh Kieu', 'Can Tho', 'Viet Nam')
-insert into Users values ('2','thuc','nguyen tri','12345678','thuc0416@gmail.com','trithuc','trithuc','1','Cai Khe','Ninh Kieu','Can Tho','Viet Nam')
-insert into Users values ('3','Vo','Tran ','12345678','votran@gmail.com','user01','user01','0','Mau Than','Ninh Kieu','Can Tho','Viet Nam')
+insert into Users values ('2','Thuc','Nguyen Tri','12345678','thuc0416@gmail.com','trithuc','trithuc','1','Cai Khe','Ninh Kieu','Can Tho','Viet Nam')
+insert into Users values ('3','Le','Hoang Long ','12345678','Long@gmail.com','LongLe','LongLe','1','Mau Than','Ninh Kieu','Can Tho','Viet Nam')
 
 -- Products --
 -- (id, user_id, name, describe, price, brand, product_availability)
