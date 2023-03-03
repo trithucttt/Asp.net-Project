@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FashionShops",
+    "\\FashionShops\\Views",
+    "\\FashionShops\\Views\\Login"
   ],
+  "SelectedNode": "\\FashionShops\\Views\\Login\\showFormLogin.cshtml",
   "PreviewInSolutionExplorer": false
 }
