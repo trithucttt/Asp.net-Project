@@ -3,8 +3,10 @@
     "",
     "\\FashionShops",
     "\\FashionShops\\Views",
-    "\\FashionShops\\Views\\Login"
+    "\\FashionShops\\Views\\Home",
+    "\\FashionShops\\Views\\Login",
+    "\\FashionShops\\Views\\Shared"
   ],
-  "SelectedNode": "\\FashionShops\\Views\\Login\\showFormLogin.cshtml",
+  "SelectedNode": "\\FashionShops\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

@@ -291,6 +291,7 @@ insert into Size values(15, '45')
 insert into Users values ('1', 'Thuong', 'Mon', '0123456789', 'pitithuong@gmail.com', 'thuongmoon', 'thuongmoon', '1', 'DHCT', 'Ninh Kieu', 'Can Tho', 'Viet Nam')
 insert into Users values ('2','Thuc','Nguyen Tri','12345678','thuc0416@gmail.com','trithuc','trithuc','1','Cai Khe','Ninh Kieu','Can Tho','Viet Nam')
 insert into Users values ('3','Le','Hoang Long ','12345678','Long@gmail.com','LongLe','LongLe','1','Mau Than','Ninh Kieu','Can Tho','Viet Nam')
+insert into Users values ('4','Nguyen','Dang Khoa','0914932098','ndangkhoa567@gmail.com','khoavirgo','khoavirgo','1','Tran Hoang Na','Ninh Kieu','Can Tho','Viet Nam')
 
 -- Products --
 -- (id, user_id, name, describe, price, brand, product_availability)
@@ -363,7 +364,8 @@ insert into Products values(207,3,N'Áo Khoác Dù Nữ Phát Quang','Áo Khoác
 insert into Products values(208,3,N'Áo Polo Nữ Pique Regular Fit','Áo Polo Nữ Pique Regular Fit Phối Trụ Bo Kiểu WPO 2023. Áo polo có bo và trụ dệt cách điệu vừa thời trang, vừa độc đáo. Form regular gọn gàng, không quá ôm người.','359000','Yody','Có sẵn');
 insert into Products values(209,3,N'Áo Kiểu Nữ Sơ Mi Xẻ Tà Thân Sau','Áo Kiểu Nữ Sơ Mi Xẻ Tà Thân Sau WBL 2017. Áo sơ mi kiểu nữ với điểm nhấn ở sườn áo và thân sau xẻ tà, tạo phong cách vừa phóng khoáng, vừa nữ tính và thời trang.','449000','Yody','Có sẵn');
 insert into Products values(210,3,N'Áo Sweater Nam Vải Gân Chéo','Áo Sweater Nam Vải Gân Chéo Thêu Typo Túi MSW 1017Sweatshirt vải gân chéo với chi tiết túi ở ngực (áo nam) và thêu logo X (áo nữ). Các đường rã áo được đánh bông cùng màu . Thông điệp thêu trên túi ”NEW WAY NEW LIFE”. Form rộng trẻ trung, nặng động.','385000','Nike','Có sẵn');
--- Product_Quantity --
+
+-- Product_Quantity --z
 -- (product_id, size_id, color_id, quantity)
 insert into Product_Quantity values (1, 1, 1, 141)
 insert into Product_Quantity values (1, 1, 2, 185)
