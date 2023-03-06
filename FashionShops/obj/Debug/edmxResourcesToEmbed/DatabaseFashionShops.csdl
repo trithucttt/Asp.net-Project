@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FashionShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="cart_id" />
+    </Key>
+    <Property Name="cart_id" Type="Int64" Nullable="false" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="quantity" Type="Int16" Nullable="false" />
+    <Property Name="size" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="total_price" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_C_P" FromRole="Cart" ToRole="Products" />
+    <NavigationProperty Name="User" Relationship="Self.FK_C_U" FromRole="Cart" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="category_id" Type="Int64" Nullable="false" />
+    <Property Name="parent_id" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Category1" Relationship="Self.FK_C_C" FromRole="Category" ToRole="Category1" />
+    <NavigationProperty Name="Category2" Relationship="Self.FK_C_C" FromRole="Category1" ToRole="Category" />
+    <NavigationProperty Name="Product_Category" Relationship="Self.FK_PC_C" FromRole="Category" ToRole="Product_Category" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="color_id" />
+    </Key>
+    <Property Name="color_id" Type="Int64" Nullable="false" />
+    <Property Name="color1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="rgb" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product_Quantity" Relationship="Self.FK_PQ_C" FromRole="Color" ToRole="Product_Quantity" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="image_id" />
+    </Key>
+    <Property Name="image_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imgae_url" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product_Image" Relationship="Self.FK_PI_I" FromRole="Image" ToRole="Product_Image" />
+  </EntityType>
+  <EntityType Name="Order_Item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="order_id" Type="Int64" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="quantity" Type="Int16" Nullable="false" />
+    <Property Name="size" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OI_O" FromRole="Order_Item" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int64" Nullable="false" />
+    <Property Name="customer_id" Type="Int64" Nullable="false" />
+    <Property Name="order_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="original_price" Type="Double" Nullable="false" />
+    <Property Name="reduced_price" Type="Double" />
+    <Property Name="total_price" Type="Double" Nullable="false" />
+    <Property Name="voucher_id" Type="Int64" />
+    <Property Name="order_status" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Order_Item" Relationship="Self.FK_OI_O" FromRole="Orders" ToRole="Order_Item" />
+    <NavigationProperty Name="User" Relationship="Self.FK_O_U" FromRole="Orders" ToRole="Users" />
+    <NavigationProperty Name="Voucher" Relationship="Self.FK_O_V" FromRole="Orders" ToRole="Voucher" />
+    <NavigationProperty Name="Payment_Detail" Relationship="Self.FK_PD_O" FromRole="Orders" ToRole="Payment_Detail" />
+  </EntityType>
+  <EntityType Name="Payment_Detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="order_id" Type="Int64" Nullable="false" />
+    <Property Name="amount" Type="Double" Nullable="false" />
+    <Property Name="payment_method" Type="Int64" />
+    <Property Name="payment_status" Type="Int32" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_PD_O" FromRole="Payment_Detail" ToRole="Orders" />
+    <NavigationProperty Name="Payment_Methods" Relationship="Self.FK_PD_PM" FromRole="Payment_Detail" ToRole="Payment_Methods" />
+  </EntityType>
+  <EntityType Name="Payment_Methods">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="name_methods" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Payment_Detail" Relationship="Self.FK_PD_PM" FromRole="Payment_Methods" ToRole="Payment_Detail" />
+  </EntityType>
+  <EntityType Name="Product_Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="category_id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_PC_C" FromRole="Product_Category" ToRole="Category" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_PC_P" FromRole="Product_Category" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product_Image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int64" />
+    <Property Name="image_id" Type="Int64" />
+    <NavigationProperty Name="Image" Relationship="Self.FK_PI_I" FromRole="Product_Image" ToRole="Image" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_PI_P" FromRole="Product_Image" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product_Quantity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int64" />
+    <Property Name="size_id" Type="Int64" />
+    <Property Name="color_id" Type="Int64" />
+    <Property Name="quantity" Type="Int32" />
+    <NavigationProperty Name="Color" Relationship="Self.FK_PQ_C" FromRole="Product_Quantity" ToRole="Color" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_PQ_P" FromRole="Product_Quantity" ToRole="Products" />
+    <NavigationProperty Name="Size" Relationship="Self.FK_PQ_S" FromRole="Product_Quantity" ToRole="Size" />
+  </EntityType>
+  <EntityType Name="Product_Reviewing">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="rating" Type="Int16" Nullable="false" />
+    <Property Name="content" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="publishedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_PR_P" FromRole="Product_Reviewing" ToRole="Products" />
+    <NavigationProperty Name="User" Relationship="Self.FK_PR_U" FromRole="Product_Reviewing" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Product_Tag">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int64" />
+    <Property Name="tag_id" Type="Int64" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_PT_P" FromRole="Product_Tag" ToRole="Products" />
+    <NavigationProperty Name="Tag" Relationship="Self.FK_PT_T" FromRole="Product_Tag" ToRole="Tag" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int64" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="describe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <Property Name="brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="product_availability" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK_C_P" FromRole="Products" ToRole="Cart" />
+    <NavigationProperty Name="Product_Category" Relationship="Self.FK_PC_P" FromRole="Products" ToRole="Product_Category" />
+    <NavigationProperty Name="Product_Image" Relationship="Self.FK_PI_P" FromRole="Products" ToRole="Product_Image" />
+    <NavigationProperty Name="Product_Quantity" Relationship="Self.FK_PQ_P" FromRole="Products" ToRole="Product_Quantity" />
+    <NavigationProperty Name="Product_Reviewing" Relationship="Self.FK_PR_P" FromRole="Products" ToRole="Product_Reviewing" />
+    <NavigationProperty Name="Product_Tag" Relationship="Self.FK_PT_P" FromRole="Products" ToRole="Product_Tag" />
+    <NavigationProperty Name="User" Relationship="Self.FK_P_U" FromRole="Products" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="size_id" />
+    </Key>
+    <Property Name="size_id" Type="Int64" Nullable="false" />
+    <Property Name="size1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product_Quantity" Relationship="Self.FK_PQ_S" FromRole="Size" ToRole="Product_Quantity" />
+  </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="tag_id" />
+    </Key>
+    <Property Name="tag_id" Type="Int64" Nullable="false" />
+    <Property Name="tag_name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Product_Tag" Relationship="Self.FK_PT_T" FromRole="Tag" ToRole="Product_Tag" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="admin" Type="Byte" Nullable="false" />
+    <Property Name="adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="province" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK_C_U" FromRole="Users" ToRole="Cart" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_O_U" FromRole="Users" ToRole="Orders" />
+    <NavigationProperty Name="Product_Reviewing" Relationship="Self.FK_PR_U" FromRole="Users" ToRole="Product_Reviewing" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_P_U" FromRole="Users" ToRole="Products" />
+    <NavigationProperty Name="Vouchers" Relationship="Self.FK_V_U" FromRole="Users" ToRole="Voucher" />
+  </EntityType>
+  <EntityType Name="Voucher">
+    <Key>
+      <PropertyRef Name="voucher_id" />
+    </Key>
+    <Property Name="voucher_id" Type="Int64" Nullable="false" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="discount_percentage" Type="Double" Nullable="false" />
+    <Property Name="voucher_status" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="end_date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_O_V" FromRole="Voucher" ToRole="Orders" />
+    <NavigationProperty Name="User" Relationship="Self.FK_V_U" FromRole="Voucher" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK_C_P">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_C_U">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_C_C">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Category1" Type="Self.Category" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="category_id" />
+      </Principal>
+      <Dependent Role="Category1">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PC_C">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Product_Category" Type="Self.Product_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="category_id" />
+      </Principal>
+      <Dependent Role="Product_Category">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PQ_C">
+    <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+    <End Role="Product_Quantity" Type="Self.Product_Quantity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="color_id" />
+      </Principal>
+      <Dependent Role="Product_Quantity">
+        <PropertyRef Name="color_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PI_I">
+    <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+    <End Role="Product_Image" Type="Self.Product_Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="image_id" />
+      </Principal>
+      <Dependent Role="Product_Image">
+        <PropertyRef Name="image_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OI_O">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="Order_Item">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_O_U">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_O_V">
+    <End Role="Voucher" Type="Self.Voucher" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voucher">
+        <PropertyRef Name="voucher_id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="voucher_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PD_O">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="Payment_Detail" Type="Self.Payment_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="Payment_Detail">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PD_PM">
+    <End Role="Payment_Methods" Type="Self.Payment_Methods" Multiplicity="0..1" />
+    <End Role="Payment_Detail" Type="Self.Payment_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment_Methods">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Payment_Detail">
+        <PropertyRef Name="payment_method" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PC_P">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Product_Category" Type="Self.Product_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Product_Category">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PI_P">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Product_Image" Type="Self.Product_Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Product_Image">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PQ_P">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Product_Quantity" Type="Self.Product_Quantity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Product_Quantity">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PQ_S">
+    <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
+    <End Role="Product_Quantity" Type="Self.Product_Quantity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="size_id" />
+      </Principal>
+      <Dependent Role="Product_Quantity">
+        <PropertyRef Name="size_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PR_P">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Product_Reviewing" Type="Self.Product_Reviewing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Product_Reviewing">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PR_U">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Product_Reviewing" Type="Self.Product_Reviewing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Product_Reviewing">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PT_P">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Product_Tag" Type="Self.Product_Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Product_Tag">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PT_T">
+    <End Role="Tag" Type="Self.Tag" Multiplicity="0..1" />
+    <End Role="Product_Tag" Type="Self.Product_Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tag">
+        <PropertyRef Name="tag_id" />
+      </Principal>
+      <Dependent Role="Product_Tag">
+        <PropertyRef Name="tag_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_U">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_V_U">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Voucher" Type="Self.Voucher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Voucher">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FashionShopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Carts" EntityType="Self.Cart" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Colors" EntityType="Self.Color" />
+    <EntitySet Name="Images" EntityType="Self.Image" />
+    <EntitySet Name="Order_Item" EntityType="Self.Order_Item" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Payment_Detail" EntityType="Self.Payment_Detail" />
+    <EntitySet Name="Payment_Methods" EntityType="Self.Payment_Methods" />
+    <EntitySet Name="Product_Category" EntityType="Self.Product_Category" />
+    <EntitySet Name="Product_Image" EntityType="Self.Product_Image" />
+    <EntitySet Name="Product_Quantity" EntityType="Self.Product_Quantity" />
+    <EntitySet Name="Product_Reviewing" EntityType="Self.Product_Reviewing" />
+    <EntitySet Name="Product_Tag" EntityType="Self.Product_Tag" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Sizes" EntityType="Self.Size" />
+    <EntitySet Name="Tags" EntityType="Self.Tag" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Vouchers" EntityType="Self.Voucher" />
+    <AssociationSet Name="FK_C_P" Association="Self.FK_C_P">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_C_U" Association="Self.FK_C_U">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_C_C" Association="Self.FK_C_C">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Category1" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PC_C" Association="Self.FK_PC_C">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product_Category" EntitySet="Product_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PQ_C" Association="Self.FK_PQ_C">
+      <End Role="Color" EntitySet="Colors" />
+      <End Role="Product_Quantity" EntitySet="Product_Quantity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PI_I" Association="Self.FK_PI_I">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Product_Image" EntitySet="Product_Image" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OI_O" Association="Self.FK_OI_O">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Order_Item" EntitySet="Order_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_O_U" Association="Self.FK_O_U">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_O_V" Association="Self.FK_O_V">
+      <End Role="Voucher" EntitySet="Vouchers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PD_O" Association="Self.FK_PD_O">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Payment_Detail" EntitySet="Payment_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PD_PM" Association="Self.FK_PD_PM">
+      <End Role="Payment_Methods" EntitySet="Payment_Methods" />
+      <End Role="Payment_Detail" EntitySet="Payment_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PC_P" Association="Self.FK_PC_P">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Product_Category" EntitySet="Product_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PI_P" Association="Self.FK_PI_P">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Product_Image" EntitySet="Product_Image" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PQ_P" Association="Self.FK_PQ_P">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Product_Quantity" EntitySet="Product_Quantity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PQ_S" Association="Self.FK_PQ_S">
+      <End Role="Size" EntitySet="Sizes" />
+      <End Role="Product_Quantity" EntitySet="Product_Quantity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PR_P" Association="Self.FK_PR_P">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Product_Reviewing" EntitySet="Product_Reviewing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PR_U" Association="Self.FK_PR_U">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Product_Reviewing" EntitySet="Product_Reviewing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PT_P" Association="Self.FK_PT_P">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Product_Tag" EntitySet="Product_Tag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PT_T" Association="Self.FK_PT_T">
+      <End Role="Tag" EntitySet="Tags" />
+      <End Role="Product_Tag" EntitySet="Product_Tag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_U" Association="Self.FK_P_U">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_V_U" Association="Self.FK_V_U">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Voucher" EntitySet="Vouchers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

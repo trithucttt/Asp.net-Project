@@ -10,6 +10,13 @@ namespace FashionShops.Controllers
     {
         public ActionResult Index()
         {
+            if (TempData["LoginStatus"] != null)
+            {
+                ViewBag.LoginSuccessMsg = TempData["LoginStatus"];
+            } else
+            {
+                ViewBag.LoginSuccessMsg = "";
+            }
             return View();
         }
     }

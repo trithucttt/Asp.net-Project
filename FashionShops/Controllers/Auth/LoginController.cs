@@ -3,35 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FashionShops.Code;
+using System.Web.Security;
+
 
 namespace FashionShops.Controllers.Auth
 {
     public class LoginController : Controller
     {
+        FashionShopEntities db = new FashionShopEntities();
         // GET: Login
 
         public ActionResult showFormLogin()
         {
-            return View("~/Views/Login/showFormLogin.cshtml");
+            return View();
+        }
+        
+        public bool validationLogin(string username, string password)
+        {
+            var users = from s in db.Users
+                        where s.username.Equals(username)
+                        where s.password.Equals(password)
+                        select s;
+            if (users.Count() != 0)
+            {
+                return true;
+            }
+            return false;
         }
 
-        public ActionResult Check(string username, string password)
+        public ActionResult Check(User client)
         {
-            if (username.Length == 0)
+            if (Membership.ValidateUser(client.username, client.password))
             {
-                username = "";
-            }
-            if (password.Length == 0)
+                FormsAuthentication.SetAuthCookie(client.username, client.rememberme);
+                TempData["LoginStatus"] = "Login successfully! Enjoy shopping!";
+                return RedirectToAction("Index", "Home");
+                //return Content("success");
+            } else
             {
-                password = "";
+                ModelState.AddModelError("", "The account or password is incorrect! Please try again");
             }
-            if (username.Equals("admin") && password.Equals("12345"))
-                return View("~/Views/Home/Index.cshtml");
-            else
-            {
-                ViewBag.error = "The account or password is incorrect!\nPlease try again";
-                return View("~/Views/Login/showFormLogin.cshtml");
-            }
+            return View("~/Views/Login/showFormLogin.cshtml");
+            //return Content("fail");
         }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("showFormLogin", "Login");
+        }
+
     }
 }

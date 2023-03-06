@@ -9,26 +9,32 @@
         <div class="image-holder">
             <img class="img-login" src="~/Content/images/registration-form-4.jpeg" alt="">
         </div>
-        <form action="/Login/Check" method="post">
+        <form action="/Login/Check" method="post" id="form_login">
             <h3>Sign In</h3>
             <div class="form-holder active-login">
-                <input type="text" name="username" placeholder="username" class="form-control-login">
+                <input type="text" name="username" placeholder="username" class="form-control-login" id="username">
+                <div class="font-italic" id="error_username" style="color: red"></div>
             </div>
             <div class="form-holder">
-                <input type="password" name="password" placeholder="Password" class="form-control-login" style="font-size: 15px;">
+                <input type="password" name="password" placeholder="Password" class="form-control-login" id="password" style="font-size: 15px;">
+                <div class="font-italic" id="error_password" style="color: red"></div>
             </div>
-            <div class="font-italic" style="color: red">@ViewBag.error</div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" checked> Remember password
+                    <input type="checkbox" checked name="rememberme"> Remember password
                     <span class="checkmark"></span>
                 </label>
             </div>
+            @Html.ValidationSummary(true, null, new { @class = "font-italic", @style = "color: red" })
             <div class="form-login">
-                <button class="button-login">Sign in</button>
+                <button type="submit" data-href="/Login/Check" class="button-login" id="btn-login">Sign in</button>
                 <p>Don't Have account? <a href="/Register/showFormRegister" class="link-login">Register</a></p>
             </div>
         </form>
     </div>
 </div>
+
+@section login {
+    <script src="~/Content/js/login.js"></script>
+}
 

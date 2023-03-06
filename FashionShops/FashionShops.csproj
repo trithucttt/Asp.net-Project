@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,12 +128,83 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Cart.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Code\CustomMembershipProvider.cs" />
+    <Compile Include="Color.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\Auth\LoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DatabaseFashionShops.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseFashionShops.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseFashionShops.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseFashionShops.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseFashionShops.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomMemberShipUser.cs" />
+    <Compile Include="Order.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Item.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_Detail.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_Methods.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Category.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Image.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Quantity.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Reviewing.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Tag.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Size.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Voucher.cs">
+      <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -166,7 +245,9 @@
     <Content Include="Content\js\contact_custom.js" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\jquery-3.2.1.min.js" />
+    <Content Include="Content\js\jquery.validate.min.js" />
     <Content Include="Content\js\login.js" />
+    <Content Include="Content\js\notification.js" />
     <Content Include="Content\js\single_custom.js" />
     <Content Include="Content\plugins\easing\easing.js" />
     <Content Include="Content\plugins\font-awesome-4.7.0\css\font-awesome.css" />
@@ -184,6 +265,9 @@
     <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
     <Content Include="Content\plugins\themify-icons\fonts\themify.svg" />
     <Content Include="Content\plugins\themify-icons\themify-icons.css" />
+    <Content Include="Content\plugins\toastr\toastr.css" />
+    <Content Include="Content\plugins\toastr\toastr.min.css" />
+    <Content Include="Content\plugins\toastr\toastr.min.js" />
     <Content Include="Content\styles\bootstrap4\bootstrap.min.css" />
     <Content Include="Content\styles\bootstrap4\bootstrap.min.js" />
     <Content Include="Content\styles\bootstrap4\popper.js" />
@@ -196,6 +280,16 @@
     <Content Include="Content\styles\single_responsive.css" />
     <Content Include="Content\styles\single_styles.css" />
     <Content Include="Content\styles\login.css" />
+    <Content Include="DatabaseFashionShops.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DatabaseFashionShops.Context.cs</LastGenOutput>
+      <DependentUpon>DatabaseFashionShops.edmx</DependentUpon>
+    </Content>
+    <Content Include="DatabaseFashionShops.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DatabaseFashionShops.edmx</DependentUpon>
+      <LastGenOutput>DatabaseFashionShops.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -238,6 +332,14 @@
     <Content Include="Content\plugins\themify-icons\fonts\themify.eot" />
     <Content Include="Content\plugins\themify-icons\fonts\themify.ttf" />
     <Content Include="Content\plugins\themify-icons\fonts\themify.woff" />
+    <EntityDeploy Include="DatabaseFashionShops.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DatabaseFashionShops.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DatabaseFashionShops.edmx.diagram">
+      <DependentUpon>DatabaseFashionShops.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\plugins\toastr\toastr.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -265,7 +367,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -279,6 +380,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
