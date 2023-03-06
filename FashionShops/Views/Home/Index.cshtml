@@ -1,4 +1,5 @@
-﻿	<!-- Slider -->
+﻿<div id="LoginMsg" hidden>@ViewBag.LoginSuccessMsg</div>
+<!-- Slider -->
 
 <div class="main_slider" style="background-image: url(../../Content/images/slider_1.jpg)">
     <div class="container fill_height">
@@ -600,3 +601,13 @@
         </div>
     </div>
 </div>
+
+@section notificationLogin {
+    <script src="~/Content/js/notification.js"></script>
+    <script>
+        var haveMsg = $("#LoginMsg").text();
+        if (haveMsg !== "") {
+            toastr.success(haveMsg);
+        }
+    </script>
+}

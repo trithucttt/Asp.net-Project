@@ -1,19 +1,27 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Colo Shop</title>
+    <title>Fashion Shops</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Colo Shop Template">
+    <meta name="description" content="FashionShops">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/login.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/bootstrap4/bootstrap.min.css">
     <link href="~/Content/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/plugins/toastr/toastr.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/styles/login.css">
+    <style>
+        label.error {
+            font-style: italic;
+            color: red;
+            font-size: 11px;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,7 +44,16 @@
                                 <ul class="top_nav_menu">
 
                                     <!-- Currency / Language / My Account -->
+                                    <li class="currency">
 
+                                        @{
+                                            var currentUser = Membership.GetUser();
+                                        }
+                                        @if (@currentUser != null)
+                                        {
+                                            <a href="#">Hello @currentUser.UserName</a>
+                                        }
+                                    </li>
                                     <li class="currency">
                                         <a href="#">
                                             usd
@@ -67,8 +84,16 @@
                                             <i class="fa fa-angle-down"></i>
                                         </a>
                                         <ul class="account_selection">
-                                            <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                                            <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                            @if (@currentUser == null)
+                                            {
+                                                <li><a href="/Login/showFormLogin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                                <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
+                                            }
                                         </ul>
                                     </li>
                                 </ul>
@@ -85,11 +110,11 @@
                     <div class="row">
                         <div class="col-lg-12 text-right">
                             <div class="logo_container">
-                                <a href="#">colo<span>shop</span></a>
+                                <a href="/Home/Index">Fashion<span>shops</span></a>
                             </div>
                             <nav class="navbar">
                                 <ul class="navbar_menu">
-                                    <li><a href="#">home</a></li>
+                                    <li><a href="/Home/Index">home</a></li>
                                     <li><a href="#">shop</a></li>
                                     <li><a href="#">promotion</a></li>
                                     <li><a href="#">pages</a></li>
@@ -123,6 +148,12 @@
             <div class="hamburger_menu_content text-right">
                 <ul class="menu_top_nav">
                     <li class="menu_item has-children">
+                        @if (@currentUser != null)
+                        {
+                            <a href="#">Hello @currentUser.UserName</a>
+                        }
+                    </li>
+                    <li class="menu_item has-children">
                         <a href="#">
                             usd
                             <i class="fa fa-angle-down"></i>
@@ -152,8 +183,16 @@
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="menu_selection">
-                            <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                            <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                            @if (@currentUser == null)
+                            {
+                                <li><a href="/Login/showFormLogin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
+                            }
                         </ul>
                     </li>
                     <li class="menu_item"><a href="#">home</a></li>
@@ -205,13 +244,17 @@
     </div>
 
     <script src="~/Content/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Content/styles/bootstrap4/popper.js"></script>
     <script src="~/Content/styles/bootstrap4/bootstrap.min.js"></script>
     <script src="~/Content/plugins/Isotope/isotope.pkgd.min.js"></script>
     <script src="~/Content/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
     <script src="~/Content/plugins/easing/easing.js"></script>
+    <script src="~/Content/plugins/toastr/toastr.min.js"></script>
     <script src="~/Content/js/custom.js"></script>
-    <script src="~/Content/js/login.js"></script>
+    @RenderSection("notificationLogin", false);
+    @RenderSection("Login", false);
+
 </body>
 
 </html>

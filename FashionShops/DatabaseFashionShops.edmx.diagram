@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="53e486a6a43947beb490c9262ebfa344" Name="Diagram1">
+        <EntityTypeShape EntityType="FashionShopModel.Cart" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Category" Width="1.5" PointX="6" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Color" Width="1.5" PointX="3" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Image" Width="1.5" PointX="6" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Order_Item" Width="1.5" PointX="7.5" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Order" Width="1.5" PointX="5.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Payment_Detail" Width="1.5" PointX="10.5" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Payment_Methods" Width="1.5" PointX="8.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product_Category" Width="1.5" PointX="8.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product_Image" Width="1.5" PointX="8.25" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product_Quantity" Width="1.5" PointX="5.25" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product_Reviewing" Width="1.5" PointX="8.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product_Tag" Width="1.5" PointX="11.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product" Width="1.5" PointX="3" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Size" Width="1.5" PointX="3" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Tag" Width="1.5" PointX="9" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.User" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Voucher" Width="1.5" PointX="3" PointY="27.625" IsExpanded="true" />
+        <AssociationConnector Association="FashionShopModel.FK_C_P" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_C_U" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_C_C" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PC_C" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PQ_C" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PI_I" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_OI_O" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_O_U" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_O_V" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PD_O" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PD_PM" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PC_P" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PI_P" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PQ_P" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PQ_S" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PR_P" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PR_U" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PT_P" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_PT_T" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_P_U" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_V_U" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
