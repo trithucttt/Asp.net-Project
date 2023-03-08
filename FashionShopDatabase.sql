@@ -35,8 +35,11 @@ create table Products
 	describe nvarchar(max),
 	price float not null,
 	brand nvarchar(50),
-	product_availability nvarchar(40) not null check (product_availability IN('Hết hàng','Có sẵn','Đặt trước'))
+	product_availability nvarchar(40) not null check (product_availability IN(N'Hết hàng',N'Có sẵn',N'Đặt trước'))
 )
+
+alter table Products
+alter column product_availability nvarchar(40) not null
 
 if exists(select name from sysobjects where name = 'Product_Image')
 	drop table Product_Image
@@ -270,17 +273,17 @@ insert into Color values (2, 'white', 'rgb(255, 255, 255)')
 insert into Color values (3, 'pink', 'rgb(247, 200, 224)')
 insert into Color values (4, 'purple', 'rgb(134, 93, 255)')
 insert into Color values (5, 'brown', 'rgb(211, 117, 107)')
-
 insert into Color values (6, 'blue', 'rgb(72 ,118 ,255 )')
 insert into Color values (7, 'red', 'rgb(238, 44, 44)')
 
--- Size --
+-- Size áo, quần --
 insert into Size values (1, 'S')
 insert into Size values (2, 'M')
 insert into Size values (3, 'L')
 insert into Size values (4, 'XL')
 insert into Size values (55, 'XXL')
---Size Shoe from id 5 to 13 --
+
+--Size giày from id 5 to 13 --
 insert into Size values (5, '35')
 insert into Size values (6, '36')
 insert into Size values (7, '37')
@@ -294,10 +297,17 @@ insert into Size values(14, '44')
 insert into Size values(15, '45')
 
 -- User --
+<<<<<<< HEAD
+insert into Users values ('1', 'Thuong', 'Mon', '0123456789', 'pitithuong@gmail.com', 'thuongmoon', 'thuongmoon', '1', 'DHCT', 'Ninh Kieu', 'Can Tho', 'Viet Nam')
+insert into Users values ('2','Thuc','Nguyen Tri','12345678','thuc0416@gmail.com','trithuc','trithuc','1','Cai Khe','Ninh Kieu','Can Tho','Viet Nam')
+insert into Users values ('3','Le','Hoang Long ','12345678','Long@gmail.com','LongLe','LongLe','1','Mau Than','Ninh Kieu','Can Tho','Viet Nam')
+insert into Users values ('4','Nguyen','Dang Khoa','0914932098','ndangkhoa567@gmail.com','khoavirgo','khoavirgo','1','Tran Hoang Na','Ninh Kieu','Can Tho','Viet Nam')
+=======
 -- id_user tu tang nen ko can them
 insert into Users values ('Thuong', 'Mon', '0123456789', 'pitithuong@gmail.com', 'thuongmoon', 'thuongmoon', '1', 'DHCT', 'Ninh Kieu', 'Can Tho', 'Viet Nam')
 insert into Users values ('Thuc','Nguyen Tri','12345678','thuc0416@gmail.com','trithuc','trithuc','1','Cai Khe','Ninh Kieu','Can Tho','Viet Nam')
 insert into Users values ('Le','Hoang Long ','12345678','Long@gmail.com','LongLe','LongLe','1','Mau Than','Ninh Kieu','Can Tho','Viet Nam')
+>>>>>>> 5fd099a1e17bca1c6cc0db832cab6460bcd626b2
 
 -- Products --
 -- (id, user_id (auto_increment), name, describe, price, brand, product_availability)
@@ -371,9 +381,20 @@ insert into Products values(3,N'Áo Khoác Dù Nữ Phát Quang','Áo Khoác Dù
 insert into Products values(3,N'Áo Polo Nữ Pique Regular Fit','Áo Polo Nữ Pique Regular Fit Phối Trụ Bo Kiểu WPO 2023. Áo polo có bo và trụ dệt cách điệu vừa thời trang, vừa độc đáo. Form regular gọn gàng, không quá ôm người.','359000','Yody','Có sẵn');
 insert into Products values(3,N'Áo Kiểu Nữ Sơ Mi Xẻ Tà Thân Sau','Áo Kiểu Nữ Sơ Mi Xẻ Tà Thân Sau WBL 2017. Áo sơ mi kiểu nữ với điểm nhấn ở sườn áo và thân sau xẻ tà, tạo phong cách vừa phóng khoáng, vừa nữ tính và thời trang.','449000','Yody','Có sẵn');
 insert into Products values(3,N'Áo Sweater Nam Vải Gân Chéo','Áo Sweater Nam Vải Gân Chéo Thêu Typo Túi MSW 1017Sweatshirt vải gân chéo với chi tiết túi ở ngực (áo nam) và thêu logo X (áo nữ). Các đường rã áo được đánh bông cùng màu . Thông điệp thêu trên túi ”NEW WAY NEW LIFE”. Form rộng trẻ trung, nặng động.','385000','Nike','Có sẵn');
--- 31
 
--- Product_Quantity --
+--Product 401-410--
+insert into Products values(401,4,N'Áo chống nắng nữ đa năng',N'Ra đời nhằm bảo vệ da hiệu quả Sản xuất theo cơ chế phản xạ ánh sáng. Từ đó giúp che phủ làn da cũng như phản xạ lại nguồn ánh sáng có bức xạ cao đến từ ánh nắng mặt trời. Bởi vậy mà ngăn chặn các loại tia UV xuyên vào trong da.','449000','Yody','Có sẵn');
+insert into Products values(402,4,N'Áo Len Gân Nữ Tay Dài Cổ Tim',N'Áo len nữ dệt gân dáng ôm với phần cổ tim nữ tính, kiểu dệt gân tạo cảm giác thoải mái, co giãn tốt, chiếc áo với chất liệu len siêu mềm mướt, giữ ấm và thấm hút tốt.','399000','Yody','Có sẵn');
+insert into Products values(403,4,N'Đầm Đông Nữ Kẻ Tay Phối',N'Thiết kế đầm kẻ tay phối thanh lịch và đầy nữ tính, kiểu dáng ấn tượng giúp tôn lên đường cong cơ thể cho người mặc, chất liệu dày dặn vừa phải, thích hợp mặc ngay cả trong mùa thu đông','669000','Yody','Có sẵn');
+insert into Products values(404,4,N'Bộ Đồ Thể Thao Trẻ Em Youth Life',N'Chất liệu  91% Polyester + 9% Spandex, vải được dệt từ sợi Polyester dài & mảnh, kết hợp cùng kiểu dệt Double Face cho nền vải chắc chắn nhưng vẫn có độ xốp, nhẹ nhàng, độ bền cao, ít nhăn','599000','Yody','Có sẵn');
+insert into Products values(405,4,N'TÚI VUÔNG MINI NHIỀU NGĂN',N'Túi city vải cỡ mini, đính đá lấp lánh. Có hai quai xách tay buộc thắt nút ở hai đầu. Bên trong lót vải. Có một dây đeo dạng xích bằng kim loại, dùng để đeo chéo. Đóng mở bằng khuy nam châm.','1999000','Zara','Có sẵn');
+insert into Products values(406,4,N'Túi xách hình hộp chữ nhật Classic Push Lock',N'Chiếc túi xách với phom dáng hình hộp cổ điển cùng màu đen linh hoạt chắc chắn sẽ phù hợp với mọi loại trang trong tủ đồ của bạn. Khóa cài kim loại tông màu vàng sang trọng giúp tạo điểm nhấn cho tổng thể. Tay cầm cố định và dây đeo da có thể tháo rời, bạn có thể xách tay hoặc đeo chéo tùy theo sở thích. Phối túi cùng áo sơ mi và váy bút chì cho diện mạo thanh lịch và sang trọng.','1590000','Charles & Keith','Có sẵn');
+insert into Products values(407,4,N'Ví mini dạng gập Georgette Checkered','Nhờ thiết kế carô bắt mắt của chiếc ví Georgette mà bạn sẽ dễ dàng tìm thấy trong túi xách của mình mặc dù nó có kích thước nhỏ. Khóa cài dạng nút bấm giúp bạn dễ dàng lấy đồ đạc mà vẫn có thể giữ chúng an toàn và bảo mật. Với kích thước nhỏ gọn bạn có thể cầm tay hoặc để ví trong túi quần hoặc túi xách tùy theo sở thích của mình.','890000','Charles & Keith','Có sẵn');
+insert into Products values(408,4,N'Kính mát gọng phi công Gem-Embellished Wireframe Aviator','Khi phân vân không biết nên mang gì, thì đừng chần chừ mà hãy chọn ngay chiếc kính phi công sành điệu này của chúng tôi. Nâng tầm thiết kế cổ điển với gọng kính được tô điểm bằng đá nổi bật, tròng kính màu đen cùng các chi tiết trang trí bằng đá dọc theo các cạnh để tạo nên sự lấp lánh tinh tế. Mang chúng đến những buổi cà phê, bãi biển hoặc bất cứ nơi đâu bạn thích.','1750000','Charles & Keith','Có sẵn');
+insert into Products values(409,4,N'Ví đựng thẻ Micaela Quilted','Nếu bạn luôn thích dòng sản phẩm Micaela của chúng tôi, thì chiếc ví đựng thẻ sẽ phù hợp cho những ai yêu thích vẻ ngoài tinh tế và thanh lịch. Nổi bật với thiết kế chần bông cổ điển và kiểu dáng nhỏ gọn mà tất cả các cô gái đều yêu thích. Ngoài ra, món phụ kiện nhỏ xinh này còn được hoàn thiện bằng tông màu đen để tạo nên vẻ ngoài trường tồn với thời gian.','1150000','Charles & Keith','Có sẵn');
+insert into Products values(410,4,N'Áo Khoác Classic Tối Giản Ver6','Áo Khoác Classic Đơn Giản Y Nguyên Bản Ver6, chất liệu: Vải Dù, thành phần: 100% poly, chống tia UV, cản gió, nhanh khô, bền màu tốt, trượt nước','385000','Yame','Có sẵn');
+
+-- Product_Quantity --z
 -- (product_id, size_id, color_id, quantity)
 insert into Product_Quantity values (1, 1, 1, 141)
 insert into Product_Quantity values (1, 1, 2, 185)
