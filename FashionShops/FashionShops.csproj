@@ -142,6 +142,7 @@
     <Compile Include="Controllers\Cart\CartController.cs" />
     <Compile Include="Controllers\Contact\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Products\ProductController.cs" />
     <Compile Include="DatabaseFashionShops.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +166,7 @@
     </Compile>
     <Compile Include="Models\CartView.cs" />
     <Compile Include="Models\CustomMemberShipUser.cs" />
+    <Compile Include="Models\ProductView.cs" />
     <Compile Include="Models\ToastrMessage.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
@@ -370,6 +372,7 @@
     <Content Include="Views\Login\showFormLogin.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

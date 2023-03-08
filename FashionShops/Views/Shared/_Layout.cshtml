@@ -6,14 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="FashionShops">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="~/Content/styles/login.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/bootstrap4/bootstrap.min.css">
     <link href="~/Content/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/toastr/toastr.min.css">
-
     <style>
         label.error {
             font-style: italic;
@@ -109,11 +107,11 @@
                             <nav class="navbar">
                                 <ul class="navbar_menu">
                                     <li><a href="/Home/Index">home</a></li>
-                                    <li><a href="#">shop</a></li>
+                                    <li><a href="/Product/Index">shop</a></li>
                                     <li><a href="#">promotion</a></li>
                                     <li><a href="#">pages</a></li>
                                     <li><a href="#">blog</a></li>
-                                    <li><a href="contact.html">contact</a></li>
+                                    <li><a href="/Contact/Index">contact</a></li>
                                 </ul>
                                 <ul class="navbar_user">
                                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -186,12 +184,12 @@
                                                 <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>}
                         </ul>
                     </li>
-                    <li class="menu_item"><a href="#">home</a></li>
-                    <li class="menu_item"><a href="#">shop</a></li>
+                    <li class="menu_item"><a href="/Home/Index">home</a></li>
+                    <li class="menu_item"><a href="/Proudct/Index">shop</a></li>
                     <li class="menu_item"><a href="#">promotion</a></li>
                     <li class="menu_item"><a href="#">pages</a></li>
                     <li class="menu_item"><a href="#">blog</a></li>
-                    <li class="menu_item"><a href="#">contact</a></li>
+                    <li class="menu_item"><a href="/Contact/Index">contact</a></li>
                 </ul>
             </div>
         </div>
@@ -206,7 +204,7 @@
                             <ul class="footer_nav">
                                 <li><a href="#">Blog</a></li>
                                 <li><a href="#">FAQs</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="/Contact/Index">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -247,7 +245,7 @@
     @RenderSection("Login", false);
     @RenderSection("contact", false)
     @RenderSection("cart", false)
-
+    @RenderSection("productview", false);
 </body>
 
 </html>
