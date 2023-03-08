@@ -8,10 +8,12 @@
     <Property Name="user_id" Type="Int64" Nullable="false" />
     <Property Name="product_id" Type="Int64" Nullable="false" />
     <Property Name="quantity" Type="Int16" Nullable="false" />
-    <Property Name="size" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="color" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="size" Type="Int64" Nullable="false" />
+    <Property Name="color" Type="Int64" Nullable="false" />
     <Property Name="total_price" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Color1" Relationship="Self.FK_C_CC" FromRole="Cart" ToRole="Color" />
     <NavigationProperty Name="Product" Relationship="Self.FK_C_P" FromRole="Cart" ToRole="Products" />
+    <NavigationProperty Name="Size1" Relationship="Self.FK_C_S" FromRole="Cart" ToRole="Size" />
     <NavigationProperty Name="User" Relationship="Self.FK_C_U" FromRole="Cart" ToRole="Users" />
   </EntityType>
   <EntityType Name="Category">
@@ -32,6 +34,7 @@
     <Property Name="color_id" Type="Int64" Nullable="false" />
     <Property Name="color1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="rgb" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK_C_CC" FromRole="Color" ToRole="Cart" />
     <NavigationProperty Name="Product_Quantity" Relationship="Self.FK_PQ_C" FromRole="Color" ToRole="Product_Quantity" />
   </EntityType>
   <EntityType Name="Image">
@@ -172,6 +175,7 @@
     </Key>
     <Property Name="size_id" Type="Int64" Nullable="false" />
     <Property Name="size1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK_C_S" FromRole="Size" ToRole="Cart" />
     <NavigationProperty Name="Product_Quantity" Relationship="Self.FK_PQ_S" FromRole="Size" ToRole="Product_Quantity" />
   </EntityType>
   <EntityType Name="Tag">
@@ -218,6 +222,18 @@
     <NavigationProperty Name="Orders" Relationship="Self.FK_O_V" FromRole="Voucher" ToRole="Orders" />
     <NavigationProperty Name="User" Relationship="Self.FK_V_U" FromRole="Voucher" ToRole="Users" />
   </EntityType>
+  <Association Name="FK_C_CC">
+    <End Role="Color" Type="Self.Color" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="color_id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="color" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_C_P">
     <End Role="Products" Type="Self.Product" Multiplicity="1" />
     <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
@@ -227,6 +243,18 @@
       </Principal>
       <Dependent Role="Cart">
         <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_C_S">
+    <End Role="Size" Type="Self.Size" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="size_id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="size" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -489,8 +517,16 @@
     <EntitySet Name="Tags" EntityType="Self.Tag" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <EntitySet Name="Vouchers" EntityType="Self.Voucher" />
+    <AssociationSet Name="FK_C_CC" Association="Self.FK_C_CC">
+      <End Role="Color" EntitySet="Colors" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
     <AssociationSet Name="FK_C_P" Association="Self.FK_C_P">
       <End Role="Products" EntitySet="Products" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_C_S" Association="Self.FK_C_S">
+      <End Role="Size" EntitySet="Sizes" />
       <End Role="Cart" EntitySet="Carts" />
     </AssociationSet>
     <AssociationSet Name="FK_C_U" Association="Self.FK_C_U">

@@ -18,11 +18,13 @@ namespace FashionShops
         public long user_id { get; set; }
         public long product_id { get; set; }
         public short quantity { get; set; }
-        public string size { get; set; }
-        public string color { get; set; }
+        public long size { get; set; }
+        public long color { get; set; }
         public double total_price { get; set; }
     
+        public virtual Color Color1 { get; set; }
         public virtual Product Product { get; set; }
+        public virtual Size Size1 { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -8,8 +8,8 @@
     <Property Name="user_id" Type="bigint" Nullable="false" />
     <Property Name="product_id" Type="bigint" Nullable="false" />
     <Property Name="quantity" Type="smallint" Nullable="false" />
-    <Property Name="size" Type="varchar" MaxLength="5" Nullable="false" />
-    <Property Name="color" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="size" Type="bigint" Nullable="false" />
+    <Property Name="color" Type="bigint" Nullable="false" />
     <Property Name="total_price" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="Category">
@@ -188,6 +188,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_C_CC">
+    <End Role="Color" Type="Self.Color" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="color_id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="color" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_C_P">
     <End Role="Products" Type="Self.Products" Multiplicity="1" />
     <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
@@ -197,6 +209,18 @@
       </Principal>
       <Dependent Role="Cart">
         <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_C_S">
+    <End Role="Size" Type="Self.Size" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="size_id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="size" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -451,8 +475,16 @@
       <End Role="Category" EntitySet="Category" />
       <End Role="Category1" EntitySet="Category" />
     </AssociationSet>
+    <AssociationSet Name="FK_C_CC" Association="Self.FK_C_CC">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
     <AssociationSet Name="FK_C_P" Association="Self.FK_C_P">
       <End Role="Products" EntitySet="Products" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_C_S" Association="Self.FK_C_S">
+      <End Role="Size" EntitySet="Size" />
       <End Role="Cart" EntitySet="Cart" />
     </AssociationSet>
     <AssociationSet Name="FK_C_U" Association="Self.FK_C_U">

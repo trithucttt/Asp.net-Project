@@ -4,26 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="53e486a6a43947beb490c9262ebfa344" Name="Diagram1">
-        <EntityTypeShape EntityType="FashionShopModel.Cart" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Category" Width="1.5" PointX="6" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Color" Width="1.5" PointX="3" PointY="31.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Image" Width="1.5" PointX="6" PointY="33.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Order_Item" Width="1.5" PointX="7.5" PointY="29.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Order" Width="1.5" PointX="5.25" PointY="23.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Payment_Detail" Width="1.5" PointX="10.5" PointY="20.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Payment_Methods" Width="1.5" PointX="8.25" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Product_Category" Width="1.5" PointX="8.25" PointY="24" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Product_Image" Width="1.5" PointX="8.25" PointY="27" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Product_Quantity" Width="1.5" PointX="5.25" PointY="27.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Product_Reviewing" Width="1.5" PointX="8.25" PointY="19" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Product_Tag" Width="1.5" PointX="11.25" PointY="24" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Product" Width="1.5" PointX="3" PointY="23.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Size" Width="1.5" PointX="3" PointY="34.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Tag" Width="1.5" PointX="9" PointY="16.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.User" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FashionShopModel.Voucher" Width="1.5" PointX="3" PointY="27.625" IsExpanded="true" />
+      <Diagram DiagramId="93eda2e92400468bad940907697a5144" Name="Diagram1">
+        <EntityTypeShape EntityType="FashionShopModel.Cart" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Category" Width="1.5" PointX="6" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Color" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Image" Width="1.5" PointX="6" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Order_Item" Width="1.5" PointX="7.5" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Order" Width="1.5" PointX="5.25" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Payment_Detail" Width="1.5" PointX="10.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Payment_Methods" Width="1.5" PointX="8.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product_Category" Width="1.5" PointX="8.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product_Image" Width="1.5" PointX="8.25" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product_Quantity" Width="1.5" PointX="5.25" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product_Reviewing" Width="1.5" PointX="8.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product_Tag" Width="1.5" PointX="11.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Product" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Size" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Tag" Width="1.5" PointX="9" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.User" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FashionShopModel.Voucher" Width="1.5" PointX="3" PointY="28.125" IsExpanded="true" />
+        <AssociationConnector Association="FashionShopModel.FK_C_CC" ManuallyRouted="false" />
         <AssociationConnector Association="FashionShopModel.FK_C_P" ManuallyRouted="false" />
+        <AssociationConnector Association="FashionShopModel.FK_C_S" ManuallyRouted="false" />
         <AssociationConnector Association="FashionShopModel.FK_C_U" ManuallyRouted="false" />
         <AssociationConnector Association="FashionShopModel.FK_C_C" ManuallyRouted="false" />
         <AssociationConnector Association="FashionShopModel.FK_PC_C" ManuallyRouted="false" />

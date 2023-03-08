@@ -1685,3 +1685,20 @@ section
 	color: #fe4c50;
 }
 
+.quantity_selector {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 132px;
+	height: 100%;
+	border: solid 1px #e5e5e5;
+	margin-left: 29px;
+}
+
+
+

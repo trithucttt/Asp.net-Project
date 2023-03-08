@@ -130,12 +130,12 @@ if exists(select name from sysobjects where name = 'Cart')
 	drop table Cart
 create table Cart
 (
-	cart_id bigint not null primary key,
+	cart_id bigint not null IDENTITY(1,1) primary key,
 	user_id bigint not null,
 	product_id bigint not null,
 	quantity smallint not null,
-	size varchar(5) not null,
-	color varchar(10) not null,
+	size bigint not null,
+	color bigint not null,
 	total_price float not null
 )
 
@@ -253,7 +253,9 @@ constraint FK_PR_U FOREIGN KEY (user_id) REFERENCES Users(user_id)
 ALTER TABLE Cart
 ADD
 constraint FK_C_P FOREIGN KEY (product_id) REFERENCES Products(product_id),
-constraint FK_C_U FOREIGN KEY (user_id) REFERENCES Users(user_id)
+constraint FK_C_U FOREIGN KEY (user_id) REFERENCES Users(user_id),
+constraint FK_C_CC FOREIGN KEY (color) REFERENCES Color(color_id),
+constraint FK_C_S FOREIGN KEY (size) REFERENCES Size(size_id)
 
 ALTER TABLE Order_Item
 ADD
@@ -1310,6 +1312,7 @@ insert into Product_Category values (28, 2)
 insert into Product_Category values (29, 10)
 insert into Product_Category values (30, 9)
 insert into Product_Category values (31, 2)
+
 -- Product_Reviewing --
 insert into Product_Reviewing values(1, 1, 1, 5, N'Hàng đẹp chất lượng đúng mô tả, sẽ ủng hộ lần sau', '2023-02-12 14:56:59')
 
@@ -1336,3 +1339,9 @@ insert into Payment_Methods values (3, 'COD')
 -- 1 Chua thanh toan
 -- 2 Da thanh toan
 insert into Payment_Detail values (1, 1, 297000, 2, 2)
+
+-- Cart
+-- (cart_id auto increment, user_id, product_id, quantity, size, color, total_price = quantity * price)
+insert into Cart values(1, 1, 1, 1, 1, 120000)
+insert into Cart values(1, 1, 1, 1, 2, 220000)
+insert into Cart values(1, 2, 2, 1, 3, 220000)

@@ -139,6 +139,8 @@
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\Auth\LoginController.cs" />
+    <Compile Include="Controllers\Cart\CartController.cs" />
+    <Compile Include="Controllers\Contact\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DatabaseFashionShops.Context.cs">
       <AutoGen>True</AutoGen>
@@ -161,7 +163,9 @@
     <Compile Include="Image.cs">
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartView.cs" />
     <Compile Include="Models\CustomMemberShipUser.cs" />
+    <Compile Include="Models\ToastrMessage.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
     </Compile>
@@ -282,8 +286,8 @@
     <Content Include="Content\styles\login.css" />
     <Content Include="DatabaseFashionShops.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DatabaseFashionShops.Context.cs</LastGenOutput>
       <DependentUpon>DatabaseFashionShops.edmx</DependentUpon>
+      <LastGenOutput>DatabaseFashionShops.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DatabaseFashionShops.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -332,6 +336,7 @@
     <Content Include="Content\plugins\themify-icons\fonts\themify.eot" />
     <Content Include="Content\plugins\themify-icons\fonts\themify.ttf" />
     <Content Include="Content\plugins\themify-icons\fonts\themify.woff" />
+    <Content Include="Content\plugins\toastr\toastr.js.map" />
     <EntityDeploy Include="DatabaseFashionShops.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DatabaseFashionShops.Designer.cs</LastGenOutput>
@@ -339,7 +344,6 @@
     <Content Include="DatabaseFashionShops.edmx.diagram">
       <DependentUpon>DatabaseFashionShops.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\plugins\toastr\toastr.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -364,6 +368,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\showFormLogin.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

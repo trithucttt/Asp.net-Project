@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using FashionShops.Code;
 using System.Web.Security;
 
-
 namespace FashionShops.Controllers.Auth
 {
     public class LoginController : Controller

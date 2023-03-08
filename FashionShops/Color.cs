@@ -17,6 +17,7 @@ namespace FashionShops
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Color()
         {
+            this.Carts = new HashSet<Cart>();
             this.Product_Quantity = new HashSet<Product_Quantity>();
         }
     
@@ -24,6 +25,8 @@ namespace FashionShops
         public string color1 { get; set; }
         public string rgb { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Carts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Quantity> Product_Quantity { get; set; }
     }
