@@ -7,6 +7,7 @@ namespace FashionShops.Models
 {
     public class CartView
     {
+        public int productID { get; set; }
         public string productName { get; set; }
         public double productPrice { get; set; }
         public int proudctQuantity { get; set; }

@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FashionShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FashionShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="cart_id" />
           </Key>
-          <Property Name="cart_id" Type="bigint" Nullable="false" />
+          <Property Name="cart_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="user_id" Type="bigint" Nullable="false" />
           <Property Name="product_id" Type="bigint" Nullable="false" />
           <Property Name="quantity" Type="smallint" Nullable="false" />
@@ -157,17 +157,17 @@
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="firstName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="lastName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="phoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="email" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="20" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="20" />
+          <Property Name="phoneNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="email" Type="nvarchar" MaxLength="150" />
           <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="admin" Type="tinyint" Nullable="false" />
-          <Property Name="adress" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="province" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="city" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="country" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="adress" Type="nvarchar" MaxLength="150" />
+          <Property Name="province" Type="nvarchar" MaxLength="30" />
+          <Property Name="city" Type="nvarchar" MaxLength="30" />
+          <Property Name="country" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Voucher">
           <Key>
@@ -569,8 +569,7 @@
             <End Role="Voucher" EntitySet="Voucher" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FashionShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -765,17 +764,17 @@
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="lastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="lastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="admin" Type="Byte" Nullable="false" />
-          <Property Name="adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="province" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="province" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Carts" Relationship="Self.FK_C_U" FromRole="Users" ToRole="Cart" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_O_U" FromRole="Users" ToRole="Orders" />
           <NavigationProperty Name="Product_Reviewing" Relationship="Self.FK_PR_U" FromRole="Users" ToRole="Product_Reviewing" />

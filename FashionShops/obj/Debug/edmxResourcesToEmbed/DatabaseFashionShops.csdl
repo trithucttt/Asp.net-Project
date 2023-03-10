@@ -191,17 +191,17 @@
       <PropertyRef Name="user_id" />
     </Key>
     <Property Name="user_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="lastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="admin" Type="Byte" Nullable="false" />
-    <Property Name="adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="province" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="province" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Carts" Relationship="Self.FK_C_U" FromRole="Users" ToRole="Cart" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_O_U" FromRole="Users" ToRole="Orders" />
     <NavigationProperty Name="Product_Reviewing" Relationship="Self.FK_PR_U" FromRole="Users" ToRole="Product_Reviewing" />

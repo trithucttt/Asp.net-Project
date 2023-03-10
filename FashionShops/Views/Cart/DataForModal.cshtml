@@ -1,0 +1,75 @@
+﻿@{
+    @model FashionShops.Models.CartForModal.AllNeedsForModal
+}
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="col-4">
+                <img style="width: 150px; height: 230px;" src="@Model.infProduct[0].urlImage" alt="">
+            </div>
+            <div class="col-7">
+                <h5 class="modal-title" id="exampleModalLongTitle">@Model.infProduct[0].productName</h5>
+                <p class="modal-title">
+                    <span class="old_price" style="text-decoration: line-through"><span>&#8363</span>3333</span>
+                    <span class="new_price"><span>&#8363</span>@Model.infProduct[0].productPrice</span>
+                </p>
+                <p class="modal-tittle">Kho: 444</p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="modal-body">
+            <form action="">
+                <div class="form-group mb-3">
+                    <label class="form-label">Color</label>
+                    <div>
+                        @{ var colorActive = 1;}
+                        @foreach (var color in Model.colorsProduct)
+                        {
+                            if (colorActive == 1)
+                            {
+                                <div class="btn btn-outline-dark color-checkbox active">@color.colorName</div>
+                                <input type="radio" name="color" id="" class="color-checkbox-value" hidden value="@color.colorID"
+                                       checked>
+                                colorActive++;
+                                continue;
+                            }
+                            <div class="btn btn-outline-dark color-checkbox">@color.colorName</div>
+                            <input type="radio" name="color" id="" class="color-checkbox-value" hidden value="@color.colorID">
+
+                        }
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label">Size</label>
+                    <div>
+                        @{ var sizeActive = 1;}
+                        @foreach (var size in Model.sizesProduct)
+                        {
+                            if (sizeActive == 1)
+                            {
+                                <div href="" class="btn btn-outline-dark size-checkbox active">@size.sizeName</div>
+                                <input type="radio" name="size" id="" class="size-checkbox-value" hidden value="@size.sizeID"
+                                       checked>
+                                sizeActive++;
+                                continue;
+                            }
+                            <div href="" class="btn btn-outline-dark size-checkbox">@size.sizeName</div>
+                            <input type="radio" name="size" id="" class="size-checkbox-value" hidden value="@size.sizeID">
+                        }
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label">Quantity</label>
+                    <input class="form-control" type="number" name="quantity" id="" value="1">
+                </div>
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-success" data-dismiss="modal">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+

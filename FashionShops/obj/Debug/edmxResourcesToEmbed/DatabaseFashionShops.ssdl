@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="cart_id" />
     </Key>
-    <Property Name="cart_id" Type="bigint" Nullable="false" />
+    <Property Name="cart_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="user_id" Type="bigint" Nullable="false" />
     <Property Name="product_id" Type="bigint" Nullable="false" />
     <Property Name="quantity" Type="smallint" Nullable="false" />
@@ -152,17 +152,17 @@
       <PropertyRef Name="user_id" />
     </Key>
     <Property Name="user_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="firstName" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="lastName" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="phoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="email" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="20" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="20" />
+    <Property Name="phoneNumber" Type="nvarchar" MaxLength="10" />
+    <Property Name="email" Type="nvarchar" MaxLength="150" />
     <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="admin" Type="tinyint" Nullable="false" />
-    <Property Name="adress" Type="nvarchar" MaxLength="150" Nullable="false" />
-    <Property Name="province" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="city" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="country" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="adress" Type="nvarchar" MaxLength="150" />
+    <Property Name="province" Type="nvarchar" MaxLength="30" />
+    <Property Name="city" Type="nvarchar" MaxLength="30" />
+    <Property Name="country" Type="nvarchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="Voucher">
     <Key>

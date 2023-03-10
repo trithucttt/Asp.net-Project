@@ -31,6 +31,7 @@ namespace FashionShops.Controllers.Auth
             return false;
         }
 
+        [HttpPost]
         public ActionResult Check(User client)
         {
             if (Membership.ValidateUser(client.username, client.password))

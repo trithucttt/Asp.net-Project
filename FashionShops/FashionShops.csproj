@@ -164,6 +164,10 @@
     <Compile Include="Image.cs">
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartForModal\AllNeedsForModal.cs" />
+    <Compile Include="Models\CartForModal\ColorsProForModal.cs" />
+    <Compile Include="Models\CartForModal\InfProForModal.cs" />
+    <Compile Include="Models\CartForModal\SizesProForModal.cs" />
     <Compile Include="Models\CartView.cs" />
     <Compile Include="Models\CustomMemberShipUser.cs" />
     <Compile Include="Models\ProductView.cs" />
@@ -373,6 +377,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Cart\DataForModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
