@@ -1,0 +1,46 @@
+﻿.active-custom {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.quantity-container {
+    width: 100px;
+    display: flex;
+    background-color: #FBEAEB;
+    border-radius: 40px;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    background-color: #FBEAEB;
+    color: #2F3C7E;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn-input {
+    color: #2F3C7E;
+    background-color: #FBEAEB;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.decrease {
+    border: none;
+    padding: 10px 5px 10px 25px;
+    border-radius: 45px 0 0 45px;
+}
+
+.increase {
+    padding: 10px 25px 10px 5px;
+    border-radius: 0 45px 45px 0;
+}

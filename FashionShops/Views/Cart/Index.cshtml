@@ -6,7 +6,7 @@
 }
 
 <div class="container " style="margin-top: 180px" id="cart-list">
-    <div class="container">
+    <div class="container" id="cart-container">
         @foreach (var item in Model)
         {
             <div class="card mb-3 card_product_in_cart">
@@ -15,14 +15,14 @@
                         <input type="checkbox" name="checked_product" id="flexCheckDefault" class="">
                     </div>
                     <div class="col-4">
-                        <img src="@item.productImage" id="main-img" class="card-img" alt="..." style="height: 100%; width: 100%;">
+                        <img src="@item.productImage" id="main-img" class="card-img" alt="..." style="height: 310px; width: 100%;">
                     </div>
                     <div class="col-6">
                         <div class="card-body">
                             <h5 class="card-title">@item.productName</h5>
                             <input type="text" name="id" hidden value="2">
                             <label for="size" class="form-label" style="font-weight: 700;">Classify:</label>
-                            <a href="#" data-id="@item.productID" type="button" class="btn-outline-dark form-control d-flex justify-content-between update_info_product">
+                            <a href="#" data-cartid="@item.cartID" data-id="@item.productID" data-size="@item.sizeID" data-color="@item.colorID" type="button" class="btn-outline-dark form-control d-flex justify-content-between update_info_product">
                                 <span class="classify" id="classify">Classify: @item.productColor, @item.productSize</span>
                                 <span><i class="fa fa-chevron-down"></i></span>
                             </a>
@@ -34,8 +34,11 @@
                                 <span class="old_price" style="text-decoration: line-through">&#8363;@tempPrice</span>
                                 <span class="new_price">&#8363;@item.productPrice</span>
                             </p>
-                            <input class="quantity" type="number" name="update_quantity"
-                                   value="@item.proudctQuantity" min="1" max="100">
+                            <div class="quantity-container">
+                                <button class="btn-input decrease" data-cartid="@item.cartID" data-act="decrease">-</button>
+                                <input type="number" name="quantityCurent" id="@item.cartID" value="@item.proudctQuantity" min="1" max="999" readonly />
+                                <button class="btn-input increase" data-cartid="@item.cartID" data-act="increase">+</button>
+                            </div>
                             <p class="card-text"><small class="text-muted">54 products left</small></p>
                         </div>
                     </div>
@@ -76,24 +79,7 @@
 @section cart{
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
-    <script>
-        $(document).ready(function () {
-            $(document).on('click', '.update_info_product', function (event) {
-                event.preventDefault();
-                let id = $(event.currentTarget).data('id');
-                $.ajax({
-                    url: "/Cart/DataForModal/?id=" + id,
-                    type: "GET",
-                    success: function (data) {
-                        $("#modalProduct").html(data);
-                        $("#modalProduct").modal('show');
-                    },
-                    error: function () {
-                        alert("Error retrieving product details.");
-                    }
-                });
-            })
-        });
-    </script>
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/cart_style.css" />
+    <script src="~/Content/js/cart.js"></script>
 }
 

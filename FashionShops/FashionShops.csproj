@@ -251,6 +251,7 @@
     <Content Include="Content\images\single_3.jpg" />
     <Content Include="Content\images\single_3_thumb.jpg" />
     <Content Include="Content\images\slider_1.jpg" />
+    <Content Include="Content\js\cart.js" />
     <Content Include="Content\js\categories_custom.js" />
     <Content Include="Content\js\contact_custom.js" />
     <Content Include="Content\js\custom.js" />
@@ -281,6 +282,7 @@
     <Content Include="Content\styles\bootstrap4\bootstrap.min.css" />
     <Content Include="Content\styles\bootstrap4\bootstrap.min.js" />
     <Content Include="Content\styles\bootstrap4\popper.js" />
+    <Content Include="Content\styles\cart_style.css" />
     <Content Include="Content\styles\categories_responsive.css" />
     <Content Include="Content\styles\categories_styles.css" />
     <Content Include="Content\styles\contact_responsive.css" />

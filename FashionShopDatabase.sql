@@ -1334,6 +1334,12 @@ insert into Payment_Methods values (3, 'COD')
 insert into Payment_Detail values (1, 1, 297000, 2, 2)
 
 --cart
+--(user_id, productid, qantity, size, color, totalprice)
 insert into Cart values (1, 1, 1, 1, 1, 210000)
 insert into Cart values (1, 1, 1, 1, 2, 210000)
 insert into Cart values (1, 2, 2, 1, 3, 210000)
+insert into Cart values (1, 3, 2, 2, 2, 210000)
+insert into Cart values (1, 4, 2, 2, 5, 210000)
+insert into Cart values (1, 5, 2, 2, 4, 210000)
+insert into Cart values (1, 5, 2, 2, 3, 210000)
+insert into Cart values (1, 6, 2, 2, 3, 210000)
