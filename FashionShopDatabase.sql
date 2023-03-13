@@ -109,6 +109,7 @@ create table Orders
 	order_date datetime not null,
 	original_price float not null,
 	reduced_price float,
+	transport_fee float,
 	total_price float not null,
 	voucher_id bigint,
 	order_status nvarchar(40) not null check(order_status IN('Đã chấp nhận', 'Đang chuẩn bị hàng', 'Đơn hàng đã chuẩn bị xong','Đang xử lý','Đang giao','Đã giao'))
@@ -118,12 +119,13 @@ if exists(select name from sysobjects where name = 'Order_Item')
 	drop table Order_Item
 create table Order_Item
 (
-	id bigint not null primary key,
+	id bigint not null IDENTITY(1,1) primary key,
 	order_id bigint not null,
 	product_id bigint not null,
 	quantity smallint not null,
-	size varchar(5) not null,
-	color varchar(10) not null,
+	size bigint not null,
+	color bigint not null,
+	total_price float not null
 )
 
 if exists(select name from sysobjects where name = 'Cart')
@@ -261,6 +263,8 @@ constraint FK_C_CC FOREIGN KEY (color) REFERENCES Color(color_id)
 ALTER TABLE Order_Item
 ADD
 constraint FK_OI_O FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+constraint FK_OI_S FOREIGN KEY (size) REFERENCES Size(size_id),
+constraint FK_OI_C FOREIGN KEY (color) REFERENCES Color(color_id)
 
 
 use FashionShop
@@ -1314,12 +1318,14 @@ insert into Product_Reviewing values(1, 1, 1, 5, N'Hàng đẹp chất lượng 
 insert into Voucher values (1, 1, '0GIAMGIA', 0, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
 
 -- Orders --
--- (order_id, customer_id, order_date, original_price, reduced_price, total_price, voucher_id, order_status)
-insert into Orders values (1, 1, '2023-02-11 14:56:59', 297000, 0, 297000, 1, 'Đã giao')
+-- (order_id, customer_id, order_date, original_price, reduced_price, transport_fee, total_price, voucher_id, order_status)
+insert into Orders values (1110223145659, 1, '2023-02-11 14:56:59', 300000, 0, 0, 300000, 1, 'Đã giao')
 
 -- Order_Item --
--- (id, order_id, product_id, quantity, size, color)
-insert into Order_Item values (1, 1, 1, 1, 4, 1)
+-- (id, order_id, product_id, quantity, size, color, totalcost)
+insert into Order_Item values (1110223145659, 1, 1, 1, 1, 150000)
+insert into Order_Item values (1110223145659, 1, 1, 1, 2, 150000)
+
 
 -- Payment_Methods --
 insert into Payment_Methods values (1, 'MoMo')
@@ -1331,13 +1337,13 @@ insert into Payment_Methods values (3, 'COD')
 -- payment_status
 -- 1 Chua thanh toan
 -- 2 Da thanh toan
-insert into Payment_Detail values (1, 1, 297000, 2, 2)
+insert into Payment_Detail values (1, 1110223145659, 300000, 2, 2)
 
 --cart
 --(user_id, productid, qantity, size, color, totalprice)
-insert into Cart values (1, 1, 1, 1, 1, 210000)
-insert into Cart values (1, 1, 1, 1, 2, 210000)
-insert into Cart values (1, 2, 2, 1, 3, 210000)
+insert into Cart values (1, 1, 1, 1, 1, 150000)
+insert into Cart values (1, 1, 1, 1, 2, 150000)
+insert into Cart values (1, 2, 2, 1, 3, 310000)
 insert into Cart values (1, 3, 2, 2, 2, 210000)
 insert into Cart values (1, 4, 2, 2, 5, 210000)
 insert into Cart values (1, 5, 2, 2, 4, 210000)

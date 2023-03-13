@@ -39,12 +39,13 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="order_id" Type="bigint" Nullable="false" />
     <Property Name="product_id" Type="bigint" Nullable="false" />
     <Property Name="quantity" Type="smallint" Nullable="false" />
-    <Property Name="size" Type="varchar" MaxLength="5" Nullable="false" />
-    <Property Name="color" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="size" Type="bigint" Nullable="false" />
+    <Property Name="color" Type="bigint" Nullable="false" />
+    <Property Name="total_price" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="Orders">
     <Key>
@@ -55,6 +56,7 @@
     <Property Name="order_date" Type="datetime" Nullable="false" />
     <Property Name="original_price" Type="float" Nullable="false" />
     <Property Name="reduced_price" Type="float" />
+    <Property Name="transport_fee" Type="float" />
     <Property Name="total_price" Type="float" Nullable="false" />
     <Property Name="voucher_id" Type="bigint" />
     <Property Name="order_status" Type="nvarchar" MaxLength="40" Nullable="false" />
@@ -260,6 +262,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_OI_C">
+    <End Role="Color" Type="Self.Color" Multiplicity="1" />
+    <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="color_id" />
+      </Principal>
+      <Dependent Role="Order_Item">
+        <PropertyRef Name="color" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_OI_O">
     <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
     <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="*" />
@@ -269,6 +283,18 @@
       </Principal>
       <Dependent Role="Order_Item">
         <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OI_S">
+    <End Role="Size" Type="Self.Size" Multiplicity="1" />
+    <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="size_id" />
+      </Principal>
+      <Dependent Role="Order_Item">
+        <PropertyRef Name="size" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -499,8 +525,16 @@
       <End Role="Voucher" EntitySet="Voucher" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
+    <AssociationSet Name="FK_OI_C" Association="Self.FK_OI_C">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="Order_Item" EntitySet="Order_Item" />
+    </AssociationSet>
     <AssociationSet Name="FK_OI_O" Association="Self.FK_OI_O">
       <End Role="Orders" EntitySet="Orders" />
+      <End Role="Order_Item" EntitySet="Order_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OI_S" Association="Self.FK_OI_S">
+      <End Role="Size" EntitySet="Size" />
       <End Role="Order_Item" EntitySet="Order_Item" />
     </AssociationSet>
     <AssociationSet Name="FK_P_U" Association="Self.FK_P_U">

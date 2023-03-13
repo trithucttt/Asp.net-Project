@@ -18,9 +18,12 @@ namespace FashionShops
         public long order_id { get; set; }
         public long product_id { get; set; }
         public short quantity { get; set; }
-        public string size { get; set; }
-        public string color { get; set; }
+        public long size { get; set; }
+        public long color { get; set; }
+        public double total_price { get; set; }
     
         public virtual Order Order { get; set; }
+        public virtual Color Color1 { get; set; }
+        public virtual Size Size1 { get; set; }
     }
 }

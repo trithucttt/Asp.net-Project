@@ -19,6 +19,7 @@ namespace FashionShops
         {
             this.Carts = new HashSet<Cart>();
             this.Product_Quantity = new HashSet<Product_Quantity>();
+            this.Order_Item = new HashSet<Order_Item>();
         }
     
         public long color_id { get; set; }
@@ -29,5 +30,7 @@ namespace FashionShops
         public virtual ICollection<Cart> Carts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Quantity> Product_Quantity { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_Item> Order_Item { get; set; }
     }
 }

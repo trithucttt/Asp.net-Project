@@ -29,6 +29,7 @@ namespace FashionShops
         public double total_price { get; set; }
         public Nullable<long> voucher_id { get; set; }
         public string order_status { get; set; }
+        public Nullable<double> transport_fee { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_Item> Order_Item { get; set; }

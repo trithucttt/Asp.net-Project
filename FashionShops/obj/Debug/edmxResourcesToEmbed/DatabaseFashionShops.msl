@@ -43,6 +43,7 @@
     <EntitySetMapping Name="Order_Item">
       <EntityTypeMapping TypeName="FashionShopModel.Order_Item">
         <MappingFragment StoreEntitySet="Order_Item">
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="order_id" ColumnName="order_id" />
           <ScalarProperty Name="product_id" ColumnName="product_id" />
@@ -55,6 +56,7 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="FashionShopModel.Order">
         <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="transport_fee" ColumnName="transport_fee" />
           <ScalarProperty Name="order_id" ColumnName="order_id" />
           <ScalarProperty Name="customer_id" ColumnName="customer_id" />
           <ScalarProperty Name="order_date" ColumnName="order_date" />

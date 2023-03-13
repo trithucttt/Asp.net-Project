@@ -98,11 +98,14 @@ $(document).ready(function () {
         let max = $("#" + idInput).attr("max");
         let step = 1;
         let val = $("#" + idInput).attr("value");
+        console.log(val);
         let calcStep = (id == "increase") ? (step * 1) : (step * -1)
         let newValue = parseInt(val) + calcStep;
         if (newValue >= min && newValue <= max) {
             $("#" + idInput).attr("value", newValue);
         }
+        console.log(newValue);
+        console.log(idInput);
         if (idInput !== 272) {
             $.ajax({
                 url: "/Cart/JustUpdateQuantity",
@@ -164,3 +167,94 @@ $(document).ready(function () {
         $('#modalProduct').modal('hide');
     })
 });
+
+function fitName(maxLength) {
+    let productList = document.querySelectorAll('.product-name');
+
+    // Loop through each product name in the list
+    for (let i = 0; i < productList.length; i++) {
+        const productName = productList[i].textContent;
+
+        // Shorten the product name if it is too long
+        if (productName.length > maxLength) {
+            let shortenedName = productName.substring(0, maxLength) + '...';
+            productList[i].textContent = shortenedName;
+        }
+    }
+}
+
+$(window).resize(function () {
+    let windowWidth = $(window).width();
+    if (windowWidth < 340) {
+        fitName(28);
+    } else if (windowWidth < 755) {
+        fitName(40);
+    } else if (windowWidth < 995) {
+        fitName(60);
+    } else {
+        $('.product-name').each(function () {
+            let originnalName = $(this).data('orname');
+            $(this).text(originnalName);
+        });
+    }
+});
+
+$(document).ready(function () {
+    // Khi nhấn vào nút delete bất kỳ trên danh sách
+    $(document).on('click', '.remove-product', function (event) {
+        // stop chuyen link khi nhấn vào thẻ <a>
+        event.preventDefault();
+        // hiển thị Sweetaler2 và xoá bằng ajax
+        // hoặc uncomment showModalConfirm() để xoá theo kiểu bình thường
+        showConfirm(event.currentTarget);
+    })
+});
+
+function showConfirm(e) {
+    let proName = $(e).data('name');
+    if (proName.length > 15) {
+        let shortenedName = proName.substring(0, 15) + '...';
+        proName = shortenedName;
+    }
+    Swal.fire({
+        title: 'Are you sure?',
+        html: "<p>Delete <b>" + proName + "</b></p> <p>You won't be able to revert this!</p>",
+        icon: 'warning',
+        imageUrl: $(e).data('img'),
+        imageWidth: 110,
+        imageHeight: 170,
+        showCancelButton: true,
+        cancelButtonColor: '#3085d6',
+        confirmButtonColor: '#d33',
+        confirmButtonText: 'Confirm'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            ajaxDelete(e);
+        }
+    });
+}
+
+function ajaxDelete(e) {
+    var url = $(e).data('urldelete');
+    var cartid = $(e).data('idincart');
+    $.ajax({
+        method: "POST",
+        url: url,
+        data: {
+            cartid: cartid
+        }
+    }).done(function (data) {
+        $('#cart-container').load('/Cart/Index #cart-container');
+        Swal.fire(
+            'Deleted!',
+            data,
+            'success'
+        );
+    }).fail(function () { // nếu thất bại
+        Swal.fire(
+            'Error',
+            'Something went wrong!',
+            'error'
+        )
+    });
+}

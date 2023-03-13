@@ -36,6 +36,7 @@
     <Property Name="rgb" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Carts" Relationship="Self.FK_C_CC" FromRole="Color" ToRole="Cart" />
     <NavigationProperty Name="Product_Quantity" Relationship="Self.FK_PQ_C" FromRole="Color" ToRole="Product_Quantity" />
+    <NavigationProperty Name="Order_Item" Relationship="FashionShopModel.FK_OI_C" FromRole="Color" ToRole="Order_Item" />
   </EntityType>
   <EntityType Name="Image">
     <Key>
@@ -53,9 +54,12 @@
     <Property Name="order_id" Type="Int64" Nullable="false" />
     <Property Name="product_id" Type="Int64" Nullable="false" />
     <Property Name="quantity" Type="Int16" Nullable="false" />
-    <Property Name="size" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="color" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="size" Type="Int64" Nullable="false" />
+    <Property Name="color" Type="Int64" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="Self.FK_OI_O" FromRole="Order_Item" ToRole="Orders" />
+    <Property Name="total_price" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Color1" Relationship="FashionShopModel.FK_OI_C" FromRole="Order_Item" ToRole="Color" />
+    <NavigationProperty Name="Size1" Relationship="FashionShopModel.FK_OI_S" FromRole="Order_Item" ToRole="Size" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -73,6 +77,7 @@
     <NavigationProperty Name="User" Relationship="Self.FK_O_U" FromRole="Orders" ToRole="Users" />
     <NavigationProperty Name="Voucher" Relationship="Self.FK_O_V" FromRole="Orders" ToRole="Voucher" />
     <NavigationProperty Name="Payment_Detail" Relationship="Self.FK_PD_O" FromRole="Orders" ToRole="Payment_Detail" />
+    <Property Name="transport_fee" Type="Double" />
   </EntityType>
   <EntityType Name="Payment_Detail">
     <Key>
@@ -177,6 +182,7 @@
     <Property Name="size1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Carts" Relationship="Self.FK_C_S" FromRole="Size" ToRole="Cart" />
     <NavigationProperty Name="Product_Quantity" Relationship="Self.FK_PQ_S" FromRole="Size" ToRole="Product_Quantity" />
+    <NavigationProperty Name="Order_Item" Relationship="FashionShopModel.FK_OI_S" FromRole="Size" ToRole="Order_Item" />
   </EntityType>
   <EntityType Name="Tag">
     <Key>
@@ -609,5 +615,37 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Voucher" EntitySet="Vouchers" />
     </AssociationSet>
+    <AssociationSet Name="FK_OI_C" Association="FashionShopModel.FK_OI_C">
+      <End Role="Color" EntitySet="Colors" />
+      <End Role="Order_Item" EntitySet="Order_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OI_S" Association="FashionShopModel.FK_OI_S">
+      <End Role="Size" EntitySet="Sizes" />
+      <End Role="Order_Item" EntitySet="Order_Item" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_OI_C">
+    <End Type="FashionShopModel.Color" Role="Color" Multiplicity="1" />
+    <End Type="FashionShopModel.Order_Item" Role="Order_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="color_id" />
+      </Principal>
+      <Dependent Role="Order_Item">
+        <PropertyRef Name="color" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OI_S">
+    <End Type="FashionShopModel.Size" Role="Size" Multiplicity="1" />
+    <End Type="FashionShopModel.Order_Item" Role="Order_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="size_id" />
+      </Principal>
+      <Dependent Role="Order_Item">
+        <PropertyRef Name="size" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

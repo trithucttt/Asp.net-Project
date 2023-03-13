@@ -27,11 +27,12 @@ namespace FashionShops.Controllers.Cart
                             productName = product.name,
                             productPrice = product.price,
                             proudctQuantity = cart.quantity,
-                            colorID = (int) color.color_id,
-                            productColor = color.color1, 
+                            colorID = (int)color.color_id,
+                            productColor = color.color1,
                             sizeID = (int)size.size_id,
                             productSize = size.size1,
-                            productImage = Img.imgae_url
+                            productImage = Img.imgae_url,
+                            prouductPriceInCart = (float)cart.total_price
                         };
             var results = carts.ToList();
             return View(results);
@@ -150,12 +151,15 @@ namespace FashionShops.Controllers.Cart
             // tam thoi khong return code sau
         }
 
+
         public ActionResult JustUpdateQuantity(int cartid, int quantity)
         {
             var product = db.Carts.FirstOrDefault(x => x.cart_id == cartid);
+            //double tempCost = (product.total_price / product.quantity) * quantity;
             if (product != null)
             {
                 product.quantity = (short)quantity;
+                //product.total_price = tempCost;
                 if (db.SaveChanges() != 0)
                 {
                     return Content("Product update successful!");
@@ -166,6 +170,25 @@ namespace FashionShops.Controllers.Cart
                 }
             }
             return Content("Product update successful!");
+        }
+
+        [HttpPost]
+        public ActionResult RemoveProduct(int cartid)
+        {
+            var product = db.Carts.FirstOrDefault(x => x.cart_id == cartid);
+            if (product != null)
+            {
+                db.Carts.Remove(product);
+                if (db.SaveChanges() != 0)
+                {
+                    return Content("The product has been successfully deleted!");
+                }
+                else
+                {
+                    return Content("No changes or something went wrong! Please review!");
+                }
+            }
+            return Content("The product has been successfully deleted!");
         }
     }
 }

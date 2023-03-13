@@ -10,16 +10,19 @@
         @foreach (var item in Model)
         {
             <div class="card mb-3 card_product_in_cart">
-                <div class="row no-gutters">
+                <div class="row no-gutters box-produdct">
                     <div class="col-1 d-flex justify-content-between align-items-center">
-                        <input type="checkbox" name="checked_product" id="flexCheckDefault" class="">
+                        <div class="checkbox">
+                            <input id="chk-pro-@item.cartID" data-price="@item.prouductPriceInCart" class="product-checkout" type="checkbox" name="chk-pro-@item.cartID" value="check">
+                            <label for="chk-pro-@item.cartID" class="label-for-checkout"></label>
+                        </div>
                     </div>
                     <div class="col-4">
                         <img src="@item.productImage" id="main-img" class="card-img" alt="..." style="height: 310px; width: 100%;">
                     </div>
                     <div class="col-6">
                         <div class="card-body">
-                            <h5 class="card-title">@item.productName</h5>
+                            <h5 class="card-title product-name" data-orname="@item.productName">@item.productName</h5>
                             <input type="text" name="id" hidden value="2">
                             <label for="size" class="form-label" style="font-weight: 700;">Classify:</label>
                             <a href="#" data-cartid="@item.cartID" data-id="@item.productID" data-size="@item.sizeID" data-color="@item.colorID" type="button" class="btn-outline-dark form-control d-flex justify-content-between update_info_product">
@@ -43,10 +46,8 @@
                         </div>
                     </div>
                     <div class="col-1 d-flex justify-content-between align-items-center">
-                        <a class="btn btn-outline-danger btn-sm"
-                           href="<?= request()->baseUrl(); ?>/cart/delete?id=<?= $product->id; ?>"
-                           data-id="<?= $product->id; ?>" title="Delete <?= $product->product->name; ?>"
-                           data-name="<?= $product->product->name; ?>" data-return-url="<?= request()->fullUrl(); ?>">
+                        <a class="btn btn-outline-danger remove-product" data-urldelete="/Cart/RemoveProduct" data-productid="@item.productID"
+                           data-idincart="@item.cartID" data-img="@item.productImage" data-name="@item.productName">
                             <i class="fa fa-trash "></i>
                         </a>
                     </div>
@@ -57,9 +58,9 @@
 
     <nav class="navbar fixed-bottom navbar-expand-sm navbar-light bg-light">
         <div class="container">
-            <div>
-                <input type="checkbox" name="all_product" id="all_product" class="form-check-input">
-                <label for="all_product">All product</label>
+            <div class="checkbox">
+                <input id="check-all" class="product-checkout" data-price="0" type="checkbox" name="check-all" value="check">
+                <label for="check-all" class="label-for-checkout" style="margin-left: 10px">All Product</label>
             </div>
             <div class="total">
                 Total cost: <span id="totalCost">0</span>&#8363;
@@ -80,6 +81,53 @@
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/cart_style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/plugins/sweetalert2/sweetalert2.min.css" />
     <script src="~/Content/js/cart.js"></script>
+    <script src="~/Content/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script>
+        function setValueCost() {
+            let sum = 0;
+            let selectedProduct = $('.product-checkout:checked');
+            selectedProduct.each(function (item) {
+                //console.log(typeof($(this).data('price')));
+                sum += $(this).data('price');
+            });
+            $('#totalCost').text(sum);
+        }
+
+        function ifAllCheck() {
+            let allBtn = $('.product-checkout');
+            for (let i = 0; i < allBtn.length - 1; i++) {
+                if (allBtn[i].checked == false) {
+                    return false
+                }
+            }
+            return true;
+        }
+        $('.product-checkout').click(function () {
+            let theLastCheckOutIndex = $('.product-checkout').length - 1;
+            let allBtn = $('.product-checkout');
+            if (allBtn[theLastCheckOutIndex].checked) {
+                for (let i = 0; i < allBtn.length - 1; i++) {
+                    if (allBtn[i].checked == false) {
+                        allBtn[i].checked = true;
+                    }
+                }
+                setValueCost();
+                $('.product-checkout').not("#check-all").click(function () {
+                    setValueCost();
+                });
+            } else {
+                if (ifAllCheck()) {
+                    for (let i = 0; i < allBtn.length - 1; i++) {
+                        allBtn[i].checked = false;
+                    }
+                }
+            }
+            setValueCost();
+        });
+
+    </script>
+
 }
 

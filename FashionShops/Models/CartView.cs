@@ -17,5 +17,6 @@ namespace FashionShops.Models
         public int sizeID { get; set; }
         public string productSize { get; set; }
         public string productImage { get; set; }
+        public float prouductPriceInCart { get; set; }
     }
 }

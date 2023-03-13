@@ -274,6 +274,8 @@
     <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.carousel.js" />
     <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
     <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
+    <Content Include="Content\plugins\sweetalert2\sweetalert2.min.css" />
+    <Content Include="Content\plugins\sweetalert2\sweetalert2.min.js" />
     <Content Include="Content\plugins\themify-icons\fonts\themify.svg" />
     <Content Include="Content\plugins\themify-icons\themify-icons.css" />
     <Content Include="Content\plugins\toastr\toastr.css" />
