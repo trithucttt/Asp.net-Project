@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FashionShops.Models;
+using FashionShops.Models.ProductDetail;
+
 namespace FashionShops.Controllers.Products
 {
     public class ProductController : Controller
@@ -19,6 +21,7 @@ namespace FashionShops.Controllers.Products
                         where Img.image_id == (product.product_id - 1) * 3 + product.product_id
                         select new ProductView
                         {
+                            productID = (int)product.product_id,
                             productName = product.name,
                             productPrice = product.price,
                             imageUrl = Img.imgae_url
@@ -26,5 +29,44 @@ namespace FashionShops.Controllers.Products
             var model = query.ToList();
             return View(model);
         }
+
+        public ActionResult Detail(int id)
+        {
+            var querry1 = from product in data.Products
+                          join proImage in data.Product_Image on product.product_id equals proImage.product_id
+                          join Img in data.Images on proImage.image_id equals Img.image_id
+                          where Img.image_id == (product.product_id - 1) * 3 + product.product_id
+                          where product.product_id == id
+                          select new ProductView
+                          {
+                              productID = (int)product.product_id,
+                              productName = product.name,
+                              productPrice = product.price,
+                              imageUrl = Img.imgae_url,
+                              content = product.describe
+                          };
+            var infProduct = querry1.ToList();
+            var querry2 = from product in data.Products
+                          join pI in data.Product_Image on product.product_id equals pI.product_id
+                          join I in data.Images on pI.image_id equals I.image_id
+                          where product.product_id == id
+                          select new ImagesForProduct
+                          {
+                              productImgID = (int)I.image_id,
+                              productUrlImg = I.imgae_url
+                          };
+            var imagesForPro = querry2.ToList();
+            var detailPro = new ProductDetail
+            {
+                infProduct = infProduct[0],
+                imagesForProduct = imagesForPro
+            };
+
+
+            return View(detailPro);
+        }
+
+
+
     }
 }

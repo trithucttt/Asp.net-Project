@@ -5,8 +5,9 @@
     "\\FashionShops\\Views",
     "\\FashionShops\\Views\\Home",
     "\\FashionShops\\Views\\Login",
+    "\\FashionShops\\Views\\Product",
     "\\FashionShops\\Views\\Shared"
   ],
-  "SelectedNode": "\\FashionShops\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\FashionShops\\Views\\Product\\Detail.cshtml",
   "PreviewInSolutionExplorer": false
 }
