@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "showFormLogin";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <div class="wrapper">
@@ -33,11 +34,18 @@
         </form>
     </div>
 </div>
+<div id="notLoginInCart">@ViewBag.NotLogin</div>
 
 @section login {
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/login.css">
     <script src="~/Content/js/login.js"></script>
+    <script>
+        let message = $('#notLoginInCart').text();
+        if (message !== "") {
+            toastr.error(message);
+        }
+    </script>
 }
 

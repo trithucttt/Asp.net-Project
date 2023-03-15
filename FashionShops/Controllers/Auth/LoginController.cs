@@ -15,6 +15,8 @@ namespace FashionShops.Controllers.Auth
 
         public ActionResult showFormLogin()
         {
+            if (TempData["notLogin"] != null)
+                ViewBag.NotLogin = TempData["notLogin"];
             return View();
         }
         

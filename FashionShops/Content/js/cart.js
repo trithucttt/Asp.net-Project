@@ -116,6 +116,7 @@ $(document).ready(function () {
                 },
                 success: function (data) {
                     $('#cart-container').load('/Cart/Index #cart-container');
+                    CheckoutItems();
                     toastr.success(data)
                 },
                 error: function () {
@@ -158,6 +159,7 @@ $(document).ready(function () {
             },
             success: function (data) {
                 $('#cart-container').load('/Cart/Index #cart-container');
+                CheckoutItems();
                 toastr.success(data)
             },
             error: function () {
@@ -245,6 +247,7 @@ function ajaxDelete(e) {
         }
     }).done(function (data) {
         $('#cart-container').load('/Cart/Index #cart-container');
+        CheckoutItems();
         Swal.fire(
             'Deleted!',
             data,
@@ -258,3 +261,54 @@ function ajaxDelete(e) {
         )
     });
 }
+
+function setValueCost() {
+    let sum = 0;
+    let selectedProduct = $('.product-checkout:checked');
+    selectedProduct.each(function (item) {
+        //console.log(typeof($(this).data('price')));
+        sum += $(this).data('price');
+    });
+    $('#totalCost').text(sum);
+}
+
+function ifAllCheck() {
+    let allBtn = $('.product-checkout');
+    for (let i = 0; i < allBtn.length - 1; i++) {
+        if (allBtn[i].checked == false) {
+            return false
+        }
+    }
+    return true;
+}
+$('.product-checkout').not('#check-all').click(function () {
+    let theLastCheckOutIndex = $('.product-checkout').length - 1;
+    let allBtn = $('.product-checkout');
+    if (allBtn[theLastCheckOutIndex].checked) {
+        allBtn[theLastCheckOutIndex].checked = false;
+    }
+    setValueCost();
+});
+
+$('#check-all').click(function () {
+    let theLastCheckOutIndex = $('.product-checkout').length - 1;
+    let allBtn = $('.product-checkout');
+    if (allBtn[theLastCheckOutIndex].checked) {
+        for (let i = 0; i < allBtn.length - 1; i++) {
+            if (allBtn[i].checked == false) {
+                allBtn[i].checked = true;
+            }
+        }
+        setValueCost();
+        $('.product-checkout').not("#check-all").click(function () {
+            setValueCost();
+        });
+    } else {
+        if (ifAllCheck()) {
+            for (let i = 0; i < allBtn.length - 1; i++) {
+                allBtn[i].checked = false;
+            }
+            setValueCost();
+        }
+    }
+})

@@ -232,6 +232,8 @@
     <Content Include="Content\images\desc_1.jpg" />
     <Content Include="Content\images\desc_2.jpg" />
     <Content Include="Content\images\desc_3.jpg" />
+    <Content Include="Content\images\Liquid_Loading.gif" />
+    <Content Include="Content\images\Loding.gif" />
     <Content Include="Content\images\map_marker.png" />
     <Content Include="Content\images\product_1.png" />
     <Content Include="Content\images\product_10.png" />
@@ -289,6 +291,7 @@
     <Content Include="Content\styles\categories_styles.css" />
     <Content Include="Content\styles\contact_responsive.css" />
     <Content Include="Content\styles\contact_styles.css" />
+    <Content Include="Content\styles\main.css" />
     <Content Include="Content\styles\main_styles.css" />
     <Content Include="Content\styles\responsive.css" />
     <Content Include="Content\styles\single_responsive.css" />

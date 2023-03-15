@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/toastr/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/main.css">
     <style>
         label.error {
             font-style: italic;
@@ -20,8 +21,8 @@
         }
     </style>
 </head>
-
 <body>
+    <div id="preloader"></div>
     <div class="super_container">
 
         <!-- Header -->
@@ -39,14 +40,13 @@
                         <div class="col-md-6 text-right">
                             <div class="top_nav_right">
                                 <ul class="top_nav_menu">
-
                                     <!-- Currency / Language / My Account -->
                                     <li class="currency">
-
                                         @{ var currentUser = Membership.GetUser(); }
                                         @if (@currentUser != null)
                                         {
-                            <a href="#">Hello @currentUser.UserName</a>}
+                                            <a href="#">Hello @currentUser.UserName</a>
+                                        }
                                     </li>
                                     <li class="currency">
                                         <a href="#">
@@ -80,12 +80,15 @@
                                         <ul class="account_selection">
                                             @if (@currentUser == null)
                                             {
-                                <li><a href="/Login/showFormLogin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li> }
-                                                            else
-                                                            {
+                                                <li><a href="/Login/showFormLogin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
                                                 <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                                                                <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>}
+
+                                            }
+                                            else
+                                            {
+                                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                                <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
+                                            }
                                         </ul>
                                     </li>
                                 </ul>
@@ -142,7 +145,7 @@
                     <li class="menu_item has-children">
                         @if (@currentUser != null)
                         {
-            <a href="#">Hello @currentUser.UserName</a>}
+                            <a href="#">Hello @currentUser.UserName</a>}
                     </li>
                     <li class="menu_item has-children">
                         <a href="#">
@@ -176,12 +179,14 @@
                         <ul class="menu_selection">
                             @if (@currentUser == null)
                             {
-                <li><a href="/Login/showFormLogin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li> }
-                                            else
-                                            {
+                                <li><a href="/Login/showFormLogin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
                                 <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                                                <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>}
+ }
+                            else
+                            {
+                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
+}
                         </ul>
                     </li>
                     <li class="menu_item"><a href="/Home/Index">home</a></li>
@@ -228,10 +233,9 @@
                     </div>
                 </div>
             </div>
+
         </footer>
-
     </div>
-
     <script src="~/Content/js/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Content/styles/bootstrap4/popper.js"></script>
@@ -241,11 +245,32 @@
     <script src="~/Content/plugins/easing/easing.js"></script>
     <script src="~/Content/plugins/toastr/toastr.min.js"></script>
     <script src="~/Content/js/custom.js"></script>
-    @RenderSection("notificationLogin", false);
-    @RenderSection("Login", false);
+    @RenderSection("notificationLogin", false)
+    @RenderSection("Login", false)
     @RenderSection("contact", false)
     @RenderSection("cart", false)
-    @RenderSection("productview", false);
+    <script>
+        function CheckoutItems() {
+            $.ajax({
+                url: "/Home/NumberOfProdcutInCart",
+                type: "GET",
+                success: function (data) {
+                    var urlForReLoad = window.location.href;
+                    console.log(urlForReLoad);
+                    console.log(data);
+                    $("#checkout_items").html(data);
+                    //$('#checkout_items').load(urlForReLoad + ' #target');
+                },
+                error: function () {
+                    toastr.error("Cannot update product!");
+                }
+            });
+        }
+        CheckoutItems();
+        $(window).on('load', function () {
+            $('#preloader').css('display', 'none');
+        });
+    </script>
 </body>
 
 </html>
