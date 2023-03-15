@@ -164,7 +164,7 @@
           <Property Name="phoneNumber" Type="nvarchar" MaxLength="10" />
           <Property Name="email" Type="nvarchar" MaxLength="150" />
           <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="admin" Type="tinyint" Nullable="false" />
           <Property Name="adress" Type="nvarchar" MaxLength="150" />
           <Property Name="province" Type="nvarchar" MaxLength="30" />
@@ -809,7 +809,7 @@
           <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="admin" Type="Byte" Nullable="false" />
           <Property Name="adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="province" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />

@@ -17,9 +17,9 @@ create table Users
 	phoneNumber nvarchar(10),
 	email nvarchar(150),
 	username varchar(20) not null,
-	password varchar(30) not null,
+	password varchar(300) not null,
 	admin tinyint not null,
-	adress nvarchar(150),
+	address nvarchar(150),
 	province nvarchar(30),
 	city nvarchar(30),
 	country nvarchar(30)
@@ -262,7 +262,7 @@ constraint FK_C_CC FOREIGN KEY (color) REFERENCES Color(color_id)
 
 ALTER TABLE Order_Item
 ADD
-constraint FK_OI_O FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+constraint FK_OI_O FOREIGN KEY (order_id) REFERENCES Orders(order_id),
 constraint FK_OI_S FOREIGN KEY (size) REFERENCES Size(size_id),
 constraint FK_OI_C FOREIGN KEY (color) REFERENCES Color(color_id)
 

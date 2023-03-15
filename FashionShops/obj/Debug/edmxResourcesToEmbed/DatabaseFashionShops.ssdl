@@ -159,7 +159,7 @@
     <Property Name="phoneNumber" Type="nvarchar" MaxLength="10" />
     <Property Name="email" Type="nvarchar" MaxLength="150" />
     <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="300" Nullable="false" />
     <Property Name="admin" Type="tinyint" Nullable="false" />
     <Property Name="adress" Type="nvarchar" MaxLength="150" />
     <Property Name="province" Type="nvarchar" MaxLength="30" />
