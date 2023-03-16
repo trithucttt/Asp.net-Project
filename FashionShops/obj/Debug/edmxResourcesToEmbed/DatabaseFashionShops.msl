@@ -169,6 +169,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="FashionShopModel.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="firstName" ColumnName="firstName" />
           <ScalarProperty Name="lastName" ColumnName="lastName" />
@@ -177,7 +178,6 @@
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="admin" ColumnName="admin" />
-          <ScalarProperty Name="adress" ColumnName="adress" />
           <ScalarProperty Name="province" ColumnName="province" />
           <ScalarProperty Name="city" ColumnName="city" />
           <ScalarProperty Name="country" ColumnName="country" />

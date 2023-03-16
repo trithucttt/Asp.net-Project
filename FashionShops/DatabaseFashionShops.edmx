@@ -166,7 +166,7 @@
           <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="admin" Type="tinyint" Nullable="false" />
-          <Property Name="adress" Type="nvarchar" MaxLength="150" />
+          <Property Name="address" Type="nvarchar" MaxLength="150" />
           <Property Name="province" Type="nvarchar" MaxLength="30" />
           <Property Name="city" Type="nvarchar" MaxLength="30" />
           <Property Name="country" Type="nvarchar" MaxLength="30" />
@@ -811,7 +811,6 @@
           <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="admin" Type="Byte" Nullable="false" />
-          <Property Name="adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="province" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -820,6 +819,7 @@
           <NavigationProperty Name="Product_Reviewing" Relationship="Self.FK_PR_U" FromRole="Users" ToRole="Product_Reviewing" />
           <NavigationProperty Name="Products" Relationship="Self.FK_P_U" FromRole="Users" ToRole="Products" />
           <NavigationProperty Name="Vouchers" Relationship="Self.FK_V_U" FromRole="Users" ToRole="Voucher" />
+          <Property Name="address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Voucher">
           <Key>
@@ -1429,6 +1429,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="FashionShopModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
                 <ScalarProperty Name="lastName" ColumnName="lastName" />
@@ -1437,7 +1438,6 @@
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="admin" ColumnName="admin" />
-                <ScalarProperty Name="adress" ColumnName="adress" />
                 <ScalarProperty Name="province" ColumnName="province" />
                 <ScalarProperty Name="city" ColumnName="city" />
                 <ScalarProperty Name="country" ColumnName="country" />

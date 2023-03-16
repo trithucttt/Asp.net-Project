@@ -11,7 +11,7 @@ namespace FashionShops
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,7 +23,7 @@ namespace FashionShops
             this.Products = new HashSet<Product>();
             this.Vouchers = new HashSet<Voucher>();
         }
-
+    
         public long user_id { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -32,10 +32,10 @@ namespace FashionShops
         public string username { get; set; }
         public string password { get; set; }
         public byte admin { get; set; }
-        public string adress { get; set; }
         public string province { get; set; }
         public string city { get; set; }
         public string country { get; set; }
+        public string address { get; set; }
         public bool rememberme { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

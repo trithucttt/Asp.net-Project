@@ -161,7 +161,7 @@
     <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="300" Nullable="false" />
     <Property Name="admin" Type="tinyint" Nullable="false" />
-    <Property Name="adress" Type="nvarchar" MaxLength="150" />
+    <Property Name="address" Type="nvarchar" MaxLength="150" />
     <Property Name="province" Type="nvarchar" MaxLength="30" />
     <Property Name="city" Type="nvarchar" MaxLength="30" />
     <Property Name="country" Type="nvarchar" MaxLength="30" />
