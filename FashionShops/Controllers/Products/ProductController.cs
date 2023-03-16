@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FashionShops.Models;
+using FashionShops.Models.CartForModal;
 using FashionShops.Models.ProductDetail;
 
 namespace FashionShops.Controllers.Products
@@ -56,8 +57,34 @@ namespace FashionShops.Controllers.Products
                               productUrlImg = I.imgae_url
                           };
             var imagesForPro = querry2.ToList();
+
+            var querry4 = (from product in data.Products
+                           join pQ in data.Product_Quantity on product.product_id equals pQ.product_id
+                           join cl in data.Colors on pQ.color_id equals cl.color_id
+                           where product.product_id == id
+                           select new ColorsProForModal
+                           {
+                               colorID = (int)pQ.color_id,
+                               colorName = cl.color1,
+                               rgb = cl.rgb
+                           });
+            var colors = querry4.Distinct().ToList();
+
+            var querry3 = (from product in data.Products
+                           join pQ in data.Product_Quantity on product.product_id equals pQ.product_id
+                           join sz in data.Sizes on pQ.size_id equals sz.size_id
+                           where product.product_id == id
+                           select new SizesProForModal
+                           {
+                               sizeID = (int)pQ.size_id,
+                               sizeName = sz.size1
+                           });
+            var sizes = querry3.Distinct().OrderBy(s => s.sizeID).ToList();
+
             var detailPro = new ProductDetail
             {
+                colorsForDetailPage = colors,
+                sizesForDetailPage = sizes,
                 infProduct = infProduct[0],
                 imagesForProduct = imagesForPro
             };

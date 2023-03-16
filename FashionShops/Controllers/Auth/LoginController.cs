@@ -17,20 +17,18 @@ namespace FashionShops.Controllers.Auth
         {
             if (TempData["notLogin"] != null)
                 ViewBag.NotLogin = TempData["notLogin"];
+            if (TempData["Register"] != null)
+                ViewBag.Register = TempData["Register"];
             return View();
         }
-        
+
         public bool validationLogin(string username, string password)
         {
             var users = from s in db.Users
                         where s.username.Equals(username)
-                        where s.password.Equals(password)
                         select s;
-            if (users.Count() != 0)
-            {
-                return true;
-            }
-            return false;
+            var temp = users.FirstOrDefault();
+            return Encrypt.VerifyMD5Hash(password, temp.password);
         }
 
         [HttpPost]
@@ -42,7 +40,8 @@ namespace FashionShops.Controllers.Auth
                 TempData["LoginStatus"] = "Login successfully! Enjoy shopping!";
                 return RedirectToAction("Index", "Home");
                 //return Content("success");
-            } else
+            }
+            else
             {
                 ModelState.AddModelError("", "The account or password is incorrect! Please try again");
             }

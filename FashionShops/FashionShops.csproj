@@ -135,10 +135,13 @@
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
     </Compile>
     <Compile Include="Code\CustomMembershipProvider.cs" />
+    <Compile Include="Code\Encrypt.cs" />
     <Compile Include="Color.cs">
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Auth\ChangePasswordController.cs" />
     <Compile Include="Controllers\Auth\LoginController.cs" />
+    <Compile Include="Controllers\Auth\RegisterController.cs" />
     <Compile Include="Controllers\Cart\CartController.cs" />
     <Compile Include="Controllers\Contact\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -230,6 +233,7 @@
     <Content Include="Content\images\blog_1.jpg" />
     <Content Include="Content\images\blog_2.jpg" />
     <Content Include="Content\images\blog_3.jpg" />
+    <Content Include="Content\images\changepassword_bg.jpg" />
     <Content Include="Content\images\deal_ofthe_week.png" />
     <Content Include="Content\images\desc_1.jpg" />
     <Content Include="Content\images\desc_2.jpg" />
@@ -247,6 +251,8 @@
     <Content Include="Content\images\product_7.png" />
     <Content Include="Content\images\product_8.png" />
     <Content Include="Content\images\product_9.png" />
+    <Content Include="Content\images\register-background.png" />
+    <Content Include="Content\images\Register-Image.jpg" />
     <Content Include="Content\images\registration-form-4.jpeg" />
     <Content Include="Content\images\single_1.jpg" />
     <Content Include="Content\images\single_1_thumb.jpg" />
@@ -257,12 +263,14 @@
     <Content Include="Content\images\slider_1.jpg" />
     <Content Include="Content\js\cart.js" />
     <Content Include="Content\js\categories_custom.js" />
+    <Content Include="Content\js\Change.js" />
     <Content Include="Content\js\contact_custom.js" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\jquery-3.2.1.min.js" />
     <Content Include="Content\js\jquery.validate.min.js" />
     <Content Include="Content\js\login.js" />
     <Content Include="Content\js\notification.js" />
+    <Content Include="Content\js\register.js" />
     <Content Include="Content\js\single_custom.js" />
     <Content Include="Content\plugins\easing\easing.js" />
     <Content Include="Content\plugins\font-awesome-4.7.0\css\font-awesome.css" />
@@ -388,6 +396,8 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Cart\DataForModal.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\ChangePassword\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

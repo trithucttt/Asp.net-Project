@@ -9,5 +9,6 @@ namespace FashionShops.Models.CartForModal
     {
         public int colorID { get; set; }
         public string colorName { get; set; }
+        public string rgb { get; set; }
     }
 }

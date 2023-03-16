@@ -1,55 +1,51 @@
-﻿
-@{
-    ViewBag.Title = "showFormLogin";
+﻿@{
+    ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
-
 <div class="wrapper">
     <div class="inner">
         <div class="image-holder">
-            <img class="img-login" src="~/Content/images/registration-form-4.jpeg" alt="">
+            <img class="img-login" src="~/Content/images/Register-Image.jpg" alt="" style="height: 100%">
         </div>
-        <form action="/Login/Check" method="post" id="form_login">
-            <h3>Sign In</h3>
+        <form action="/Register/Register" method="post" id="form_register">
+            <h3>Register</h3>
             <div class="form-holder active-login">
                 <input type="text" name="username" placeholder="username" class="form-control-login" id="username">
                 <div class="font-italic" id="error_username" style="color: red"></div>
             </div>
             <div class="form-holder">
+                <input type="text" name="email" placeholder="email" class="form-control-login" id="email">
+                <div class="font-italic" id="error_email" style="color: red"></div>
+            </div>
+            <div class="form-holder">
                 <input type="password" name="password" placeholder="Password" class="form-control-login" id="password" style="font-size: 15px;">
                 <div class="font-italic" id="error_password" style="color: red"></div>
             </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" checked name="rememberme"> Remember password
-                    <span class="checkmark"></span>
-                </label>
+            <div class="form-holder">
+                <input type="password" name="confirm_password" placeholder="Confirm password" class="form-control-login" id="confirm_password" style="font-size: 15px;">
+                <div class="font-italic" id="error_confirm_password" style="color: red"></div>
             </div>
             @Html.ValidationSummary(true, null, new { @class = "font-italic", @style = "color: red" })
             <div class="form-login">
-                <button type="submit" data-href="/Login/Check" class="button-login" id="btn-login">Sign in</button>
-                <p>Don't Have account? <a href="/Register/Register" class="link-login">Register</a></p>
+                <button type="submit" data-href="/Register/Register" class="button-login" id="btn-login">Register</button>
+                <p>You already have account?<a href="/Login/showFormLogin" class="link-login">Sign in</a></p>
             </div>
         </form>
     </div>
 </div>
 <div id="notLoginInCart" hidden>@ViewBag.NotLogin</div>
-<div id="RegisterSuccess" hidden>@ViewBag.Register</div>
+<div id="RegisterFail" hidden>@ViewBag.Account</div>
 
-@section login {
+
+@section Register{
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/login.css">
     <script src="~/Content/js/register.js"></script>
     <script>
-        let message = $('#notLoginInCart').text();
-        if (message !== "") {
-            toastr.error(message);
-        }
-        let messageR = $('#RegisterSuccess').text();
-        if (messageR !== "") {
-            toastr.success(messageR);
+        let messageA = $('#RegisterFail').text();
+        if (messageA !== "") {
+            toastr.error(messageA);
         }
     </script>
 }

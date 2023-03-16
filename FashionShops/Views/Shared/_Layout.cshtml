@@ -81,12 +81,13 @@
                                             @if (@currentUser == null)
                                             {
                                                 <li><a href="/Login/showFormLogin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                                <li><a href="/Register/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
 
                                             }
                                             else
                                             {
-                                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                                <li><a href="/Register/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                                <li><a href="/ChangePassword/Index"><i class="fa fa-cog" aria-hidden="true"></i>Edit</a></li>
                                                 <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
                                             }
                                         </ul>
@@ -180,13 +181,13 @@
                             @if (@currentUser == null)
                             {
                                 <li><a href="/Login/showFormLogin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
- }
+                                <li><a href="/Register/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                            }
                             else
                             {
-                                <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                <li><a href="/Register/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
                                 <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
-}
+                            }
                         </ul>
                     </li>
                     <li class="menu_item"><a href="/Home/Index">home</a></li>
@@ -249,8 +250,8 @@
     @RenderSection("Login", false)
     @RenderSection("contact", false)
     @RenderSection("cart", false)
-    @RenderSection("productview",false)
-    @RenderSection("detail",false)
+    @RenderSection("Register", false)
+    @RenderSection("ChangePassword", false)
     <script>
         function CheckoutItems() {
             $.ajax({
@@ -274,5 +275,4 @@
         });
     </script>
 </body>
-
 </html>

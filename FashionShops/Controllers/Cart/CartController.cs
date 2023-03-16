@@ -159,20 +159,18 @@ namespace FashionShops.Controllers.Cart
                     }
                 }
             }
-
             return Content("Product update successful!");
-            // tam thoi khong return code sau
         }
 
 
         public ActionResult JustUpdateQuantity(int cartid, int quantity)
         {
             var product = db.Carts.FirstOrDefault(x => x.cart_id == cartid);
-            //double tempCost = (product.total_price / product.quantity) * quantity;
+            double tempCost = (product.total_price / product.quantity) * quantity;
             if (product != null)
             {
                 product.quantity = (short)quantity;
-                //product.total_price = tempCost;
+                product.total_price = tempCost;
                 if (db.SaveChanges() != 0)
                 {
                     return Content("Product update successful!");

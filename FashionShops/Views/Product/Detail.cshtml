@@ -6,26 +6,20 @@
 }
 
 <div class="super_container">
-
-
-
     <div class="container single_product_container">
-
         <!-- Image-->
         <div class="row">
             <div class="col-lg-7">
                 <div class="single_product_pics">
                     <div class="row">
                         <div class="col-lg-3 thumbnails_col order-lg-1 order-2">
-                            <div class="single_product_thumbnails" style=" width = 110px ; height = 110px " >
+                            <div class="single_product_thumbnails" style=" width:110px; height:110px">
                                 <ul>
                                     <li><img src="@Model.imagesForProduct[1].productUrlImg" style=" width: 100% ; height: 140px " alt="" data-image="@Model.imagesForProduct[1].productUrlImg"></li>
                                     <li><img src="@Model.imagesForProduct[2].productUrlImg" style=" width: 100%; height: 140px " alt="" data-image="@Model.imagesForProduct[2].productUrlImg"></li>
                                     <li><img src="@Model.imagesForProduct[3].productUrlImg" style=" width: 100%; height: 140px " alt="" data-image="@Model.imagesForProduct[3].productUrlImg"></li>
                                 </ul>
                             </div>
-
-
                         </div>
                         <div class="col-lg-9 image_col order-lg-2 order-1">
                             <div class="single_product_image">
@@ -41,8 +35,7 @@
             <div class="col-lg-5">
                 <div class="product_details">
                     <div class="product_details_title">
-                        <h2>
-                        </h2>
+                        <h2>@Model.infProduct.productName</h2>
                         <p>
                             @Model.infProduct.content
                         </p>
@@ -69,9 +62,19 @@
                     <div class="product_color">
                         <span>Select Color:</span>
                         <ul>
-                            <li style="background: #e54e5d"></li>
-                            <li style="background: #252525"></li>
-                            <li style="background: #60b3f3"></li>
+                            @foreach (var color in Model.colorsForDetailPage)
+                            {
+                                <li style="background: @color.rgb; border: 1px solid;"></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="product_color">
+                        <span>Select Size:</span>
+                        <ul>
+                            @foreach (var size in Model.sizesForDetailPage)
+                            {
+                                <li style="">@size.sizeName</li>
+                            }
                         </ul>
                     </div>
 
