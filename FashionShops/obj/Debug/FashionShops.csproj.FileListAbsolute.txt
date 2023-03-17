@@ -405,3 +405,7 @@ D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops
 D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
 D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.dll
 D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.pdb
+C:\fashion_shops_asp.net\FashionShops\bin\EntityFramework.dll
+C:\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.dll
+C:\fashion_shops_asp.net\FashionShops\bin\EntityFramework.xml
+C:\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.xml

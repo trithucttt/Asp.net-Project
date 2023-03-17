@@ -35,7 +35,7 @@ create table Products
 	describe nvarchar(max),
 	price float not null,
 	brand nvarchar(50),
-	product_availability nvarchar(40) not null check (product_availability IN('Hết hàng','Có sẵn','Đặt trước'))
+	product_availability nvarchar(40) not null check (product_availability IN(N'Hết hàng',N'Có sẵn',N'Đặt trước'))
 )
 
 if exists(select name from sysobjects where name = 'Product_Image')
@@ -112,7 +112,7 @@ create table Orders
 	transport_fee float,
 	total_price float not null,
 	voucher_id bigint,
-	order_status nvarchar(40) not null check(order_status IN('Đã chấp nhận', 'Đang chuẩn bị hàng', 'Đơn hàng đã chuẩn bị xong','Đang xử lý','Đang giao','Đã giao'))
+	order_status nvarchar(40) not null check(order_status IN(N'Đã chấp nhận', N'Đang chuẩn bị hàng', N'Đơn hàng đã chuẩn bị xong', N'Đang xử lý', N'Đang giao', N'Đã giao', N'Đã huỷ'))
 )
 
 if exists(select name from sysobjects where name = 'Order_Item')
@@ -179,7 +179,7 @@ create table Voucher
 	user_id bigint not null,
 	code varchar(20) not null,
 	discount_percentage float not null,
-	voucher_status nvarchar(40) not null check(voucher_status IN('Chưa sử dụng','Đã sử dụng')),
+	voucher_status nvarchar(40) not null check(voucher_status IN(N'Chưa sử dụng', N'Đã sử dụng')),
 	start_date datetime not null,
 	end_date datetime not null
 )
@@ -303,92 +303,93 @@ insert into Size values(15, '45')
 insert into Users values ('Thuong', 'Mon', '0123456789', 'pitithuong@gmail.com', 'thuongmoon', 'e297107030699cb9a0338f23ee41f0bf', '1', 'DHCT', 'Ninh Kieu', 'Can Tho', 'Viet Nam')
 insert into Users values ('Thuc','Nguyen Tri','12345678','thuc0416@gmail.com','trithuc','ccfde3a81509d504c9e89745a2d85b1a','1','Cai Khe','Ninh Kieu','Can Tho','Viet Nam')
 insert into Users values ('Le','Hoang Long ','12345678','Long@gmail.com','LongLe','ac5c2d3aa49bab06a141d7216b4e91c9','1','Mau Than','Ninh Kieu','Can Tho','Viet Nam')
+insert into Users values ('Nguyen','Dang Khoa','0914932098','ndangkhoa567@gmail.com','khoavirgo','81dc9bdb52d04dc20036dbd8313ed055','30/4','Ninh Kieu','Can Tho','Viet Nam')
 
 -- Products --
 -- (id, user_id (auto_increment), name, describe, price, brand, product_availability)
 insert into Products values (1, N'Chân váy tennis xếp ly', 
 N'CHÂN VÁY TENNIS KẺ CARO KIỂU CHÂN VÁY XOÈ XẾP LY CÓ LÓT TRONG CẠP LƯNG CAO MẶC ĐI CHƠI HỌC LÀM TẬP THỂ THAO ĐẸP
 Mẫu chân váy xếp ly không bao giờ lỗi mốt đây ạ. Diện em chất váy tennis caro này thoải mái vận động các nàng nhé, em nó có lót trong nên không sợ lộ hàng đâu ạ. Với những đường xếp ly đều đặn, chất thun co giãn mang tới cảm giác thoải mái mà vẫn cực kỳ trẻ trung năng động.',
-'150000', 'MIDI', 'Có sẵn')
+'150000', 'MIDI', N'Có sẵn')
 insert into Products values (1, N'Xiaozhainv Váy denim Ngắn Lưng Cao Thời Trang Mùa Hè Dành Cho Nữ',
 N'Gói hàng bao gồm: 1 * Chân váy. Vì hiệu ứng hiển thị và ánh sáng khác nhau, màu sắc thực tế của sản phẩm có thể hơi khác so với màu sắc trong hình. Nếu sản phẩm của chúng tôi không có kích thước hay màu sắc yêu thích của bạn, hoặc bạn muốn tìm hiểu thêm thông tin, vui lòng liên hệ với chúng tôi.
 Tất cả các sản phẩm đều được gửi về từ nước ngoài, chất lượng siêu tốt với mức giá rẻ, các bạn thấy thích thì đừng quên chia sẻ cho bạn bè mình nha',
-'310000', 'RETRO', 'Có sẵn')
+'310000', 'RETRO', N'Có sẵn')
 insert into Products values(1, N'Chân váy ngắn xếp ly hai lớp phong cách CHERRY chân váy tennis xòe kiểu xếp li âu mỹ V048',
 N'Chân váy xếp ly chữ a phong cách ulzang chất liệu vitex cao cấp mang lại cảm giác thoải mái khi mặc. Chân váy tennis Cherry tuy là chân váy ngắn nhưng thiết kế chiều dài 40cm nên ko quá ngắn xị em có thể tự tin mặc ko lo lộ hàng nhé. Chân váy xếp ly ngắn chữ a thiết kế theo phong cách chân váy xòe nên cực kì dễ mix đồ, mùa hè mix với sơ mi, áo thun, mùa đông mix với ghi lê bao xinh',
-'145000', 'CHERRY', 'Có sẵn')
+'145000', 'CHERRY', N'Có sẵn')
 insert into Products values(1, N'Chân Váy KaKi Chữ A Túi Hộp Phong Cách Hàn Quốc Có Quần Trong Lên From Xinh',
 N'THÔNG TIN SẢN PHẨM:Chân Váy KaKi Chữ A Túi Hộp được thiết kế thân trước cúc cài kéo khóa, có túi hộp 2 bên tạo điểm nhấn độcc và lạ mắt. Chất vải kaki thô mềm mại, co giãn mặc vô cùng thoải mái. Chân Váy KaKi Chữ A Túi Hộp Mix cùng với áo sơ mi, phông, 2 dây, crotop.... đều xinh ạ. Các quý cô dạo phố, shopping, cafe, đi làm công sở đều xinh hết nấc nha. Thật sự chị em nào bỏ qua chiếc Chân Váy KaKi Chữ A Túi Hộp này là tiếc lắm luôn ấy.',
-'170000', 'RYU', 'Có sẵn')
+'170000', 'RYU', N'Có sẵn')
 insert into Products values(1, N'Chân váy xếp ly Goness cạp cao dáng chữ a phong cách tennis xòe kiểu li ngắn bản to thời trang Hàn Quốc',
 N'THÔNG TIN SẢN PHẨM CHÂN VÁY NGẮN XẾP LY GONESS: Chân váy xếp ly hay còn gọi là váy tennis là mặt hàng thời trang phổ biến nhất hiện nay. Lợi ích của dòng Chân váy xếp ly này là dễ phối đồ, dễ mặc, năng động, trẻ trung .Chất vintex dày, mịn, thấm mút mồ hôi tốt, không xù lông, mềm mại cho làn da, cầm mát tay. Chân váy có thể mặc đi chơi, đi làm,..',
-'260000', 'Goness', 'Có sẵn')
+'260000', 'Goness', N'Có sẵn')
 insert into Products values(1, N'Chân váy thô zip dáng ngắn kèm thắt lưng bản to 757Quangiavaykemdai',
 N'Chân váy kaki kèm đai hàng quảng châu. Đủ màu siêu hót đen nâu be trắng. Số đo là số đo NGANG, mọi người đừng nhân đôi mà hãy lấy số đo này ướm với quần áo đang mặc của mình nhé CAM KẾT VỚI KHÁCH HÀNG:. Sản phẩm giống với mô tả và hình ảnh đăng trên cửa hàng. Mang tới dịch vụ khách hàng tận tâm và nhiệt tình nhất, giúp quý khách có được trải nghiệm tốt nhất khi mua hàng. Giải quyết thắc mắc và vấn đề về sản phẩm (nếu có) cho khách hàng nhanh chóng và thỏa đáng',
-'149000', 'QUI', 'Có sẵn')
+'149000', 'QUI', N'Có sẵn')
 insert into Products values(1, N'Chân Váy Tennis Xếp Ly The Good/ Tennis Skirt',
 N'Sản phẩm được dệt từ vải Polyester, Vicose và sợi Spandex. Dày dặn chất vải không xù, không dai. Ít nhăn, phẳng phiu, dễ là. Thoáng mát, dễ chịu cho ngày hè. Đường may vô cung tỉ mỉ.',
-'327000', 'The Good', 'Có sẵn')
+'327000', 'The Good', N'Có sẵn')
 insert into Products values(1, N'Chân váy chữ A SUNNNY dáng ngắn cạp cao trơn đen _A1',
 N'Thành phần: chất liệu kaki/jean dày dặn co giãn nhẹ cực thoải mái. Nên giặt máy ở chế độ máy nhẹ nhàng hoặc giặt tay. GIÁ TẬN GỐC, MIỄN TRUNG GIAN, NÓI KHÔNG VỚI HÀNG KÉM CHẤT LƯỢNG. Chất lượng bền đẹp, luôn đặt uy tín lên hàng đầu.',
-'149000', 'SUNNNY', 'Có sẵn')
+'149000', 'SUNNNY', N'Có sẵn')
 insert into Products values(1, N'Chân Váy Chữ A Dáng Xòe Vải PoLy Cạp Chun',
 N'Điểm Nhấn: Chân Váy Chữ A Dáng Xòe Vải PoLy Siêu Xinh Có Lót Quần Bên Trong Cạp Chun Bản To 6cm mặc rất dễ chịu và thỏa mái. Chân Váy Chữ A Dáng Xòe Vải PoLy Siêu Xinh Có Lót Quần Bên Trong phù hợp mặc đi chơi, đi tiệc, du lịch.......',
-'219000', 'PoLy', 'Có sẵn')
+'219000', 'PoLy', N'Có sẵn')
 insert into Products values(1, N'Chân váy tennis nữ L66 xếp ly to công sở cao cấp mặc tôn dáng V4',
 N'Chân váy là một trong những items kinh điển trong tủ đồ của tất cả chị em phụ nữ. Thiếu đi chân váy là thiếu đi sự điệu đà nữ tính, thiếu đi một nét đặc trưng của con gái. Chân váy có nhiều loại, mỗi chiếc chân váy mang trong mình một nét đẹp riêng biệt không trộn lẫn.',
-'412000', 'LYL', 'Có sẵn')
+'412000', 'LYL', N'Có sẵn')
 
 --Product shoe --
 
 --Shoe id from 11 to 20 --
 insert into Products values(2, N' Giày thể thao thời trang Adidas Continental', N'Tiếp tục trong bộ sưu tập những đôi giày đi học nam đi học nói chung và của thương hiệu Adidas nói riêng là đôi Adidas Continental. Vẻ ngoài vừa cổ điển người hiện đại, phần thân dài chạy được thiết kế cực kỳ tinh xảo, chất liệu da cao cấp cùng với với bộ đệm EVA giúp các bạn đi giày trở nên linh hoạt và thoải mái hơn. Nếu như so sánh Adidas Continental và Stan Smith hoặc SuperStar… thì đây là 3 đối thủ cân sức nhất. Tuy nhiên bạn hoàn toàn có thể để lựa chọn Một đôi Adidas Continental để diện cùng trang phục nhà trường mỗi khi đi học đó!',
-'850000','AdiDas','Có sẵn')
+'850000','AdiDas',N'Có sẵn')
 insert into Products values(2, N' Giày thể thao thời trang Adidas Prophere', N'Giày Adidas Prophere từng là cái tên tên được săn đón nhiều nhất một trong năm 2018 và là một trong những cái tên hot nhất trong BST giày phù hợp với học sinh và sinh viên đi học. Adidas Prophere đã từng đốn tim bất kỳ thì các bạn trẻ nào nào nhờ độ “ngầu” và sự “năng động” của nó. Mang vẻ nam tính mạnh mẽ và những chiếc gai ở bộ đế cùng lưỡi gà ấn tương đã tạo cho đôi giày này nét độc đáo mà ít đôi giày nào có được. Trong bộ sưu tập những đôi sneaker cho người lùn thì Adidas Prophere giúp bạn nam và bạn nữ hack 1 phần chiều cao một cách “bí mật” mà không ai biết đó.',
-'1800000','Adidas','Có sẵn')
+'1800000','Adidas',N'Có sẵn')
 insert into Products values(2, N'Giày đi bộ Adidas Stan Swith', N'Adidas Stan Smith là mẫu giày kinh điển của thương hiệu Adidas đình đám, đã xuất hiện hơn 45 năm trên thị trường nhưng Adidas Stan Smith vẫn luôn là một trong những mẫu giày sneaker được sử dụng phổ biến và mua nhiều hiện nay. Các mẫu Adidas Stan Smith đã liên tục đổi mới cả về chất lượng và thiết kế, mang đến dòng sản phẩm làm hài lòng mọi khách hàng.',
-'1200000','Adidas','Có sẵn')
+'1200000','Adidas',N'Có sẵn')
 insert into Products values(2, N'Giày đi bộ ,phong cách Adidas Ultra Boost', N'Ngoài vẻ ưa nhìn cùng thiết kế hoàn hảo thì Adidas Ultra Boost còn thuyết phục và tạo ấn tượng với bạn ở mức độ hài lòng khi sử dụng. Với kiểu thiết kế mắt lưới thông thoáng, vừa tạo được độ đàn hồi vừa giải phóng năng lượng một cách dễ dàng giúp cho đôi chân bạn luôn khô và thoáng. Đôi giày là sự kết hợp hoàn hảo giữa hai công nghệ tiên tiến bậc nhất đó là công nghệ dệt Mesh và công nghệ đế Boost. Độ êm chân và đàn hồi của đế Boost giúp cho trọng lượng dồn lên đôi chân ở mỗi bước đi được giảm tải khá nhiều. Giúp bạn có thể hoạt động trong thời gian dài với hiệu suất tốt nhất mà không hề cảm thấy đau mỏi chân.Giá giày Adidas Ultra Boost có phần nhỉnh hơn so với 4 đôi giày đi học trên. Dao động từ 2.000.000 - 4.000.000 VNĐ tuỳ vào các phiên bản.',
-'2000000','Adidas','Có sẵn')
+'2000000','Adidas',N'Có sẵn')
 insert into Products values(2, N'Giày thời trang phong cách Domba High Point', N'Một đôi giày rất hot được giới trẻ yêu thích chính là đôi Domba High Point đến từ thương hiệu Domba của đất nước Hàn Quốc. Đây là đôi giày mang phong cách thiết kế của đôi giày đình đám Alexander McQueen và đó cũng chính là lý do tại sao đôi giày Domba High Point này lại có sức hút lớn như vậy nhưng có già cực kỳ rẻ. Giày Domba High Point là mẫu giày sneaker được yêu thích của thương hiệu Domba. Mẫu giày được thiết kế với gam màu trắng làm tông chủ đạo tạo cảm giác thanh lịch. Phần upper được làm bằng da cao cấp mịn tạo cảm giác mềm mại, lớp đệm êm ái  giúp đôi chân dễ chịu suốt cả ngày. Đế ngoài bằng cao su có rãnh chống trượt tạo cảm giác linh hoạt khi di chuyển. Với kiểu dáng chunky hiện đại, giày Domba High Point sẽ là sự lựa chọn hoàn hảo cho phong cách của bạn. Giày Domba cao cấp với thiết kế full trắng, điểm nhấn là phần gót giày khác lạ với các màu sắc khác nhau như đen, màu bạc, màu cầu vồng, màu vàng, màu đỏ, màu xanh….Đặc biệt là đế giày cao đến 5cm giúp tôn dáng “ăn gian” chiều cao hiệu quả. Mức giá cho đôi giày Back To School này là khoảng 800.000 – 1.200.000 đ.',
-'1200000','Domba','Có sẵn')
+'1200000','Domba',N'Có sẵn')
 insert into Products values(2, N'Giày thể thao Fila Disruptor 2 Chunky', N'Nếu bạn là một fan của giày chunky thì sẽ không thể bỏ qua siêu phẩm sneaker Fila Disruptor 2, đây là mẫu giày được đánh giá là mạnh mẽ, cá tính với thiết kế “hầm hố”, bộ đế răng cưa táo bạo. Nếu bạn muốn một đôi giày năng động cho Back To School thì Fila là lựa chọn hàng đầu. Có một điều mà chúng ta không thể phủ nhận được đó là độ hot của những đôi Sneaker của thương hiệu Fila. Được thiết kế theo phong cách hầm hố nhưng vẫn tùy biến để phù hợp với dáng người Châu Á, đôi sneaker Fila “chất lừ” đã lên ngôi khiến cho bất kì ai cũng muốn sở hữu. Với phối màu full trắng, đôi sneaker Fila vừa thời thượng lại cực kỳ dễ phối đồ. Bạn có thể kết hợp nó với nhiều kiểu trang phục và biến hóa để có một outfit của riêng mình. Có thể nói Fila Disruptor 2 là mẫu giày bán chạy nhất của hãng. Đây còn được mệnh danh là đôi Sneaker của 2019 do Footwear News bình chọn. Fila Disruptor 2 đã nổi lên như một hiện tượng đình đám trong giới trẻ, chúng trẻ trung năng động, đặc biệt giá bán cũng rất hợp lý.',
-'1200000','Fila','Có sẵn')
+'1200000','Fila',N'Có sẵn')
 insert into Products values(2, N'Giày thời trang MLB Big Ball Chunky', N'Top những đôi sneaker đáng được sở hữu nhất trong mùa Back To School chính là MLB Big Ball Chunky “hầm hố” đã thành cơn sốt và trở nên thịnh hành. Điểm nhấn khác biệt Logo trên thân giày là tên viết tắt của những đội bóng chày đình đám New York Yankees, Los Angeles Dodgers, Boston Red Sox … Giày với thiết kế quá khổ, phần đế cao giúp tôn dáng mang đến sự trẻ trung, cá tính và sành điệu. Không chỉ giúp bạn khẳng định cá tính riêng mà giày sneaker MLB còn đáp ứng tuyệt đối yêu cầu chất lượng, giá bán hiện tại khoảng 2,000,000 – 3,000,000 đ.',
-'2500000','MLB','Có sẵn')
+'2500000','MLB',N'Có sẵn')
 insert into Products values(2, N'Giày thể thao phong cách Nike Air Force 1', N'Hãng giày Nike cũng là một trong những lựa chọn hàng đầu trong ngày Back To School, đặc biệt là dòng Nike Air Force 1. Được áp dụng công nghệ hiện đại đế Air kết hợp với chất liệu da cao cấp khiến Air Force 1 đáp ứng đủ mọi tiêu chí của người dùng. Tông màu trắng cực dễ phối đồ, phù hợp với mọi outfit cũng chính là điều làm cho Air Force 1 là cái tên luôn nằm trong danh sách giày “Must Have-Item”. Hiện nay các mẫu giày Nike Air Force 1 đã được phối với nhiều màu sắc đa dạng, các bạn có thể dễ dàng chọn được kiểu phù hợp với sở thích và phong cách của mình. Giày Nike Air Force 1 chính hãng có giá dao động khoảng từ 1.800.000 – 2.500.000 đ.',
-'1800000','Nike','Có sẵn')
+'1800000','Nike',N'Có sẵn')
 insert into Products values(2, N'Giày thời trang phong cách Nike Air Jordan 1', N'Giày Nike Air Jordan 1 low phù hợp với các bạn học sinh vào mọi mùa trong năm thậm chí vào những ngày hè nắng nóng mùa thu se lạnh hay mùa đông rét buốt. Phong cách phối đồ với giày Jordan này sẽ phù hợp hơn với chiếc quần jean và áo đồng phục trắng ra trường. Nike Air Jordan 1 High sẽ phù hợp hơn với những bạn cá tính. Để diện đôi giày đi học bạn nên lựa chọn một đôi màu màu trắng hoặc đen bởi tông màu này sẽ phù hợp hơn ở độ tuổi học sinh.',
-'750000','Nike','Có sẵn')
+'750000','Nike',N'Có sẵn')
 insert into Products values(2, N'Giày thời trang Puama Suede', N'Puma Suede là cái tên không thể thiếu nếu bạn là một fan của hãng giày Puma. Nếu người anh em là Adidas sở hữu những đôi Superstar, Stan Smith,… huyền thoại. Thì Puma cũng tự hào vô cùng khi cho ra đời cái tên Puma Suede. Tuy không có độ hype như những đôi Jordan, nhưng nếu bạn là người thích theo phong cách thời trang những năm 70 tại Mỹ, thì Puma Suede là lựa chọn hàng đầu cho các Rapper hay B-boy ở đây. Với thiết kế da lộn đặc trưng, màu sắc đơn giản, form giày thon gọn và phần cao su êm ai nằm trong đế chính đã đem lại cho Puma một người thu khổng lồ, đưa Puma trở thành một thế lực trong ngành công nghiệp Sneaker thế giới. Giá của Puma Suede rơi vào khoảng từ 1 triệu 600 đến 2 triệu. Một mức giá cực kì phù hợp cho đôi giày mà bạn mang hằng ngày.',
-'1800000','Puma','Có sẵn')
+'1800000','Puma',N'Có sẵn')
 --20
 
 --Product_Shirt--
-insert into Products values(3,N'Áo khoác lá cổ đơn giản','Khoác thoải mái phù hợp cho những chuyến du lịch khám phá. Phối với nhiều Items để tạo những set trang phục ấn tượng','500000','Adidas','Có sẵn');
-insert into Products values(3,N'Sơ mi tay dài','Form dáng áo cổ điển được thiết kế vừa vặn, phù hợp với mọi đối tượng. Đặc biệt độ dài phù hợp với mọi sở thích: sơ-vin hoặc thả áo đều được','300000','YaMe','Có sẵn');
-insert into Products values(3,N'Áo thun cổ trụ đơn giản','Áo được thiết kế vừa vặn thoải mái. Phần eo, nách và tay áo được thiết kế vừa phải, tự do vận động','270000','Pico','Có sẵn');
-insert into Products values(3,N'Áo Thun Polo Nữ Kiểu Croptop Ngắn Tay WTS 2237','Áo Thun Polo Nữ Kiểu Croptop Ngắn Tay WTS 2237. Áo thun polo crotop với độ dài vừa phải, không hở nhiều. Form áo ôm người gọn gàng, tôn dáng.','320000','CoupleTX','Có sẵn');
-insert into Products values(3,N'Áo Khoác Nam Dù Raglan','Áo Khoác Nam Dù Raglan Phối Màu MOP 1033 basic form regular tay raglan với bộ màu trẻ trung. Thân trong lót lưới thưa và thân sau rã thoát hơn giúp áo thoáng mát. Hai túi dây kéo thân trước và 1 túi ngang bên trong, rất tiện lợi đựng đồ. Bo tay luồn thun ôm cổ tay, bo lai luồn dây thun có con chặn có thể tăng đơ ôm lai tùy theo người mặc. Có logo X thân trước.','649000','coupleTX','Có sẵn');
-insert into Products values(3,N'Áo Polo Nam Relax Fit In Typo','Áo Polo Nam Relax Fit In Typo Serial Chiller MPO 1015 Mẫu áo polo mang hơi hướng hiện đại, trẻ trung nhờ sở hữu form dáng relax năng động. Điểm nhắn là phần hình in ở mặt sau và logo được nổi bật hơn nhờ phần dạ xanh.','429000','Pico','Có sẵn');
-insert into Products values(3,N'Áo Sweater Nữ In Phản Quang Thân Sau','Áo Sweater Nữ In Phản Quang Thân Sau WSW 2016. Áo Sweater phối tép phản quang, họa tiết in phản quang trong bóng tối ở thân trước và thân sau tạo sự mới lạ và độc đáo. Form áo relax trẻ trung, năng động. Sản phẩm có thể mặc theo set với jogger thun cùng màu bên dưới hoặc quần jeans, chân váy, Ngoài ra có thể phối trong với áo thun, áo khoác jeans hoặc áo phao bên ngoài cho ngày se lạnh.','439000','Nike','Có sẵn');
-insert into Products values(3,N'Áo Khoác Dù Nữ Phát Quang','Áo Khoác Dù Nữ Phát Quang WOP 2031. Là sản phẩm áo khoác có khả năng phát sáng trong đêm. Phát sáng trong bóng tối khi tiếp xúc với ánh sáng tự nhiên hoặc nhân tạo trước đó ít nhất 5 phút.','990000','coupleTX','Có sẵn');
-insert into Products values(3,N'Áo Polo Nữ Pique Regular Fit','Áo Polo Nữ Pique Regular Fit Phối Trụ Bo Kiểu WPO 2023. Áo polo có bo và trụ dệt cách điệu vừa thời trang, vừa độc đáo. Form regular gọn gàng, không quá ôm người.','359000','Yody','Có sẵn');
-insert into Products values(3,N'Áo Kiểu Nữ Sơ Mi Xẻ Tà Thân Sau','Áo Kiểu Nữ Sơ Mi Xẻ Tà Thân Sau WBL 2017. Áo sơ mi kiểu nữ với điểm nhấn ở sườn áo và thân sau xẻ tà, tạo phong cách vừa phóng khoáng, vừa nữ tính và thời trang.','449000','Yody','Có sẵn');
-insert into Products values(3,N'Áo Sweater Nam Vải Gân Chéo','Áo Sweater Nam Vải Gân Chéo Thêu Typo Túi MSW 1017Sweatshirt vải gân chéo với chi tiết túi ở ngực (áo nam) và thêu logo X (áo nữ). Các đường rã áo được đánh bông cùng màu . Thông điệp thêu trên túi ”NEW WAY NEW LIFE”. Form rộng trẻ trung, nặng động.','385000','Nike','Có sẵn');
+insert into Products values(3,N'Áo khoác lá cổ đơn giản',N'Khoác thoải mái phù hợp cho những chuyến du lịch khám phá. Phối với nhiều Items để tạo những set trang phục ấn tượng','500000','Adidas',N'Có sẵn');
+insert into Products values(3,N'Sơ mi tay dài',N'Form dáng áo cổ điển được thiết kế vừa vặn, phù hợp với mọi đối tượng. Đặc biệt độ dài phù hợp với mọi sở thích: sơ-vin hoặc thả áo đều được','300000','YaMe',N'Có sẵn');
+insert into Products values(3,N'Áo thun cổ trụ đơn giản',N'Áo được thiết kế vừa vặn thoải mái. Phần eo, nách và tay áo được thiết kế vừa phải, tự do vận động','270000','Pico',N'Có sẵn');
+insert into Products values(3,N'Áo Thun Polo Nữ Kiểu Croptop Ngắn Tay WTS 2237',N'Áo Thun Polo Nữ Kiểu Croptop Ngắn Tay WTS 2237. Áo thun polo crotop với độ dài vừa phải, không hở nhiều. Form áo ôm người gọn gàng, tôn dáng.','320000','CoupleTX',N'Có sẵn');
+insert into Products values(3,N'Áo Khoác Nam Dù Raglan',N'Áo Khoác Nam Dù Raglan Phối Màu MOP 1033 basic form regular tay raglan với bộ màu trẻ trung. Thân trong lót lưới thưa và thân sau rã thoát hơn giúp áo thoáng mát. Hai túi dây kéo thân trước và 1 túi ngang bên trong, rất tiện lợi đựng đồ. Bo tay luồn thun ôm cổ tay, bo lai luồn dây thun có con chặn có thể tăng đơ ôm lai tùy theo người mặc. Có logo X thân trước.','649000','coupleTX',N'Có sẵn');
+insert into Products values(3,N'Áo Polo Nam Relax Fit In Typo',N'Áo Polo Nam Relax Fit In Typo Serial Chiller MPO 1015 Mẫu áo polo mang hơi hướng hiện đại, trẻ trung nhờ sở hữu form dáng relax năng động. Điểm nhắn là phần hình in ở mặt sau và logo được nổi bật hơn nhờ phần dạ xanh.','429000','Pico',N'Có sẵn');
+insert into Products values(3,N'Áo Sweater Nữ In Phản Quang Thân Sau',N'Áo Sweater Nữ In Phản Quang Thân Sau WSW 2016. Áo Sweater phối tép phản quang, họa tiết in phản quang trong bóng tối ở thân trước và thân sau tạo sự mới lạ và độc đáo. Form áo relax trẻ trung, năng động. Sản phẩm có thể mặc theo set với jogger thun cùng màu bên dưới hoặc quần jeans, chân váy, Ngoài ra có thể phối trong với áo thun, áo khoác jeans hoặc áo phao bên ngoài cho ngày se lạnh.','439000','Nike',N'Có sẵn');
+insert into Products values(3,N'Áo Khoác Dù Nữ Phát Quang',N'Áo Khoác Dù Nữ Phát Quang WOP 2031. Là sản phẩm áo khoác có khả năng phát sáng trong đêm. Phát sáng trong bóng tối khi tiếp xúc với ánh sáng tự nhiên hoặc nhân tạo trước đó ít nhất 5 phút.','990000','coupleTX',N'Có sẵn');
+insert into Products values(3,N'Áo Polo Nữ Pique Regular Fit',N'Áo Polo Nữ Pique Regular Fit Phối Trụ Bo Kiểu WPO 2023. Áo polo có bo và trụ dệt cách điệu vừa thời trang, vừa độc đáo. Form regular gọn gàng, không quá ôm người.','359000','Yody',N'Có sẵn');
+insert into Products values(3,N'Áo Kiểu Nữ Sơ Mi Xẻ Tà Thân Sau',N'Áo Kiểu Nữ Sơ Mi Xẻ Tà Thân Sau WBL 2017. Áo sơ mi kiểu nữ với điểm nhấn ở sườn áo và thân sau xẻ tà, tạo phong cách vừa phóng khoáng, vừa nữ tính và thời trang.','449000','Yody',N'Có sẵn');
+insert into Products values(3,N'Áo Sweater Nam Vải Gân Chéo',N'Áo Sweater Nam Vải Gân Chéo Thêu Typo Túi MSW 1017Sweatshirt vải gân chéo với chi tiết túi ở ngực (áo nam) và thêu logo X (áo nữ). Các đường rã áo được đánh bông cùng màu . Thông điệp thêu trên túi ”NEW WAY NEW LIFE”. Form rộng trẻ trung, nặng động.','385000','Nike',N'Có sẵn');
 -- 31
 
---Product 401-410--
-insert into Products values(401,4,N'Áo chống nắng nữ đa năng',N'Ra đời nhằm bảo vệ da hiệu quả Sản xuất theo cơ chế phản xạ ánh sáng. Từ đó giúp che phủ làn da cũng như phản xạ lại nguồn ánh sáng có bức xạ cao đến từ ánh nắng mặt trời. Bởi vậy mà ngăn chặn các loại tia UV xuyên vào trong da.','449000','Yody','Có sẵn');
-insert into Products values(402,4,N'Áo Len Gân Nữ Tay Dài Cổ Tim',N'Áo len nữ dệt gân dáng ôm với phần cổ tim nữ tính, kiểu dệt gân tạo cảm giác thoải mái, co giãn tốt, chiếc áo với chất liệu len siêu mềm mướt, giữ ấm và thấm hút tốt.','399000','Yody','Có sẵn');
-insert into Products values(403,4,N'Đầm Đông Nữ Kẻ Tay Phối',N'Thiết kế đầm kẻ tay phối thanh lịch và đầy nữ tính, kiểu dáng ấn tượng giúp tôn lên đường cong cơ thể cho người mặc, chất liệu dày dặn vừa phải, thích hợp mặc ngay cả trong mùa thu đông','669000','Yody','Có sẵn');
-insert into Products values(404,4,N'Bộ Đồ Thể Thao Trẻ Em Youth Life',N'Chất liệu  91% Polyester + 9% Spandex, vải được dệt từ sợi Polyester dài & mảnh, kết hợp cùng kiểu dệt Double Face cho nền vải chắc chắn nhưng vẫn có độ xốp, nhẹ nhàng, độ bền cao, ít nhăn','599000','Yody','Có sẵn');
-insert into Products values(405,4,N'TÚI VUÔNG MINI NHIỀU NGĂN',N'Túi city vải cỡ mini, đính đá lấp lánh. Có hai quai xách tay buộc thắt nút ở hai đầu. Bên trong lót vải. Có một dây đeo dạng xích bằng kim loại, dùng để đeo chéo. Đóng mở bằng khuy nam châm.','1999000','Zara','Có sẵn');
-insert into Products values(406,4,N'Túi xách hình hộp chữ nhật Classic Push Lock',N'Chiếc túi xách với phom dáng hình hộp cổ điển cùng màu đen linh hoạt chắc chắn sẽ phù hợp với mọi loại trang trong tủ đồ của bạn. Khóa cài kim loại tông màu vàng sang trọng giúp tạo điểm nhấn cho tổng thể. Tay cầm cố định và dây đeo da có thể tháo rời, bạn có thể xách tay hoặc đeo chéo tùy theo sở thích. Phối túi cùng áo sơ mi và váy bút chì cho diện mạo thanh lịch và sang trọng.','1590000','Charles & Keith','Có sẵn');
-insert into Products values(407,4,N'Ví mini dạng gập Georgette Checkered','Nhờ thiết kế carô bắt mắt của chiếc ví Georgette mà bạn sẽ dễ dàng tìm thấy trong túi xách của mình mặc dù nó có kích thước nhỏ. Khóa cài dạng nút bấm giúp bạn dễ dàng lấy đồ đạc mà vẫn có thể giữ chúng an toàn và bảo mật. Với kích thước nhỏ gọn bạn có thể cầm tay hoặc để ví trong túi quần hoặc túi xách tùy theo sở thích của mình.','890000','Charles & Keith','Có sẵn');
-insert into Products values(408,4,N'Kính mát gọng phi công Gem-Embellished Wireframe Aviator','Khi phân vân không biết nên mang gì, thì đừng chần chừ mà hãy chọn ngay chiếc kính phi công sành điệu này của chúng tôi. Nâng tầm thiết kế cổ điển với gọng kính được tô điểm bằng đá nổi bật, tròng kính màu đen cùng các chi tiết trang trí bằng đá dọc theo các cạnh để tạo nên sự lấp lánh tinh tế. Mang chúng đến những buổi cà phê, bãi biển hoặc bất cứ nơi đâu bạn thích.','1750000','Charles & Keith','Có sẵn');
-insert into Products values(409,4,N'Ví đựng thẻ Micaela Quilted','Nếu bạn luôn thích dòng sản phẩm Micaela của chúng tôi, thì chiếc ví đựng thẻ sẽ phù hợp cho những ai yêu thích vẻ ngoài tinh tế và thanh lịch. Nổi bật với thiết kế chần bông cổ điển và kiểu dáng nhỏ gọn mà tất cả các cô gái đều yêu thích. Ngoài ra, món phụ kiện nhỏ xinh này còn được hoàn thiện bằng tông màu đen để tạo nên vẻ ngoài trường tồn với thời gian.','1150000','Charles & Keith','Có sẵn');
-insert into Products values(410,4,N'Áo Khoác Classic Tối Giản Ver6','Áo Khoác Classic Đơn Giản Y Nguyên Bản Ver6, chất liệu: Vải Dù, thành phần: 100% poly, chống tia UV, cản gió, nhanh khô, bền màu tốt, trượt nước','385000','Yame','Có sẵn');
+--Product by KhoaVirgo--
+insert into Products values(4,N'Áo chống nắng nữ đa năng',N'Ra đời nhằm bảo vệ da hiệu quả Sản xuất theo cơ chế phản xạ ánh sáng. Từ đó giúp che phủ làn da cũng như phản xạ lại nguồn ánh sáng có bức xạ cao đến từ ánh nắng mặt trời. Bởi vậy mà ngăn chặn các loại tia UV xuyên vào trong da.','449000','Yody',N'Có sẵn');
+insert into Products values(4,N'Áo Len Gân Nữ Tay Dài Cổ Tim',N'Áo len nữ dệt gân dáng ôm với phần cổ tim nữ tính, kiểu dệt gân tạo cảm giác thoải mái, co giãn tốt, chiếc áo với chất liệu len siêu mềm mướt, giữ ấm và thấm hút tốt.','399000','Yody',N'Có sẵn');
+insert into Products values(4,N'Đầm Đông Nữ Kẻ Tay Phối',N'Thiết kế đầm kẻ tay phối thanh lịch và đầy nữ tính, kiểu dáng ấn tượng giúp tôn lên đường cong cơ thể cho người mặc, chất liệu dày dặn vừa phải, thích hợp mặc ngay cả trong mùa thu đông','669000','Yody',N'Có sẵn');
+insert into Products values(4,N'Bộ Đồ Thể Thao Trẻ Em Youth Life',N'Chất liệu  91% Polyester + 9% Spandex, vải được dệt từ sợi Polyester dài & mảnh, kết hợp cùng kiểu dệt Double Face cho nền vải chắc chắn nhưng vẫn có độ xốp, nhẹ nhàng, độ bền cao, ít nhăn','599000','Yody',N'Có sẵn');
+insert into Products values(4,N'TÚI VUÔNG MINI NHIỀU NGĂN',N'Túi city vải cỡ mini, đính đá lấp lánh. Có hai quai xách tay buộc thắt nút ở hai đầu. Bên trong lót vải. Có một dây đeo dạng xích bằng kim loại, dùng để đeo chéo. Đóng mở bằng khuy nam châm.','1999000','Zara',N'Có sẵn');
+insert into Products values(4,N'Túi xách hình hộp chữ nhật Classic Push Lock',N'Chiếc túi xách với phom dáng hình hộp cổ điển cùng màu đen linh hoạt chắc chắn sẽ phù hợp với mọi loại trang trong tủ đồ của bạn. Khóa cài kim loại tông màu vàng sang trọng giúp tạo điểm nhấn cho tổng thể. Tay cầm cố định và dây đeo da có thể tháo rời, bạn có thể xách tay hoặc đeo chéo tùy theo sở thích. Phối túi cùng áo sơ mi và váy bút chì cho diện mạo thanh lịch và sang trọng.','1590000','Charles & Keith',N'Có sẵn');
+insert into Products values(4,N'Ví mini dạng gập Georgette Checkered',N'Nhờ thiết kế carô bắt mắt của chiếc ví Georgette mà bạn sẽ dễ dàng tìm thấy trong túi xách của mình mặc dù nó có kích thước nhỏ. Khóa cài dạng nút bấm giúp bạn dễ dàng lấy đồ đạc mà vẫn có thể giữ chúng an toàn và bảo mật. Với kích thước nhỏ gọn bạn có thể cầm tay hoặc để ví trong túi quần hoặc túi xách tùy theo sở thích của mình.','890000','Charles & Keith',N'Có sẵn');
+insert into Products values(4,N'Kính mát gọng phi công Gem-Embellished Wireframe Aviator',N'Khi phân vân không biết nên mang gì, thì đừng chần chừ mà hãy chọn ngay chiếc kính phi công sành điệu này của chúng tôi. Nâng tầm thiết kế cổ điển với gọng kính được tô điểm bằng đá nổi bật, tròng kính màu đen cùng các chi tiết trang trí bằng đá dọc theo các cạnh để tạo nên sự lấp lánh tinh tế. Mang chúng đến những buổi cà phê, bãi biển hoặc bất cứ nơi đâu bạn thích.','1750000','Charles & Keith',N'Có sẵn');
+insert into Products values(4,N'Ví đựng thẻ Micaela Quilted',N'Nếu bạn luôn thích dòng sản phẩm Micaela của chúng tôi, thì chiếc ví đựng thẻ sẽ phù hợp cho những ai yêu thích vẻ ngoài tinh tế và thanh lịch. Nổi bật với thiết kế chần bông cổ điển và kiểu dáng nhỏ gọn mà tất cả các cô gái đều yêu thích. Ngoài ra, món phụ kiện nhỏ xinh này còn được hoàn thiện bằng tông màu đen để tạo nên vẻ ngoài trường tồn với thời gian.','1150000','Charles & Keith',N'Có sẵn');
+insert into Products values(4,N'Áo Khoác Classic Tối Giản Ver6',N'Áo Khoác Classic Đơn Giản Y Nguyên Bản Ver6, chất liệu: Vải Dù, thành phần: 100% poly, chống tia UV, cản gió, nhanh khô, bền màu tốt, trượt nước','385000','Yame',N'Có sẵn');
 
 -- Product_Quantity --
 -- (product_id, size_id, color_id, quantity)
@@ -1315,11 +1316,11 @@ insert into Product_Reviewing values(1, 1, 1, 5, N'Hàng đẹp chất lượng 
 
 -- Voucher --
 -- (voucher_id, user_id, code, discount_percentage, voucher_status, startdate, end_date)
-insert into Voucher values (1, 1, '0GIAMGIA', 0, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
+insert into Voucher values (1, 1, '0GIAMGIA', 0, N'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
 
 -- Orders --
 -- (order_id, customer_id, order_date, original_price, reduced_price, transport_fee, total_price, voucher_id, order_status)
-insert into Orders values (1110223145659, 1, '2023-02-11 14:56:59', 300000, 0, 0, 300000, 1, 'Đã giao')
+insert into Orders values (1110223145659, 1, '2023-02-11 14:56:59', 300000, 0, 0, 300000, 1, N'Đã giao')
 
 -- Order_Item --
 -- (id, order_id, product_id, quantity, size, color, totalcost)
