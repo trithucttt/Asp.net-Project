@@ -20,9 +20,13 @@
                 <input type="password" name="password" placeholder="Password" class="form-control-login" id="password" style="font-size: 15px;">
                 <div class="font-italic" id="error_password" style="color: red"></div>
             </div>
+            <div class="form-holder" hidden>
+                <input type="text" name="preUrl" class="form-control-login" id="preUrl" style="font-size: 15px;">
+                <div class="font-italic" id="error_password" style="color: red"></div>
+            </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" checked name="rememberme"> Remember password
+                    <input type="checkbox" checked name="rememberme" id="rememberme"> Remember password
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -41,16 +45,17 @@
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/login.css">
-    <script src="~/Content/js/register.js"></script>
+    <script src="~/Content/js/login.js"></script>
     <script>
         let message = $('#notLoginInCart').text();
         if (message !== "") {
+            $('#preUrl').val('Cart/Index');
             toastr.error(message);
         }
         let messageR = $('#RegisterSuccess').text();
         if (messageR !== "") {
             toastr.success(messageR);
-        }
+        }       
     </script>
 }
 

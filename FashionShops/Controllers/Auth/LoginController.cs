@@ -32,12 +32,19 @@ namespace FashionShops.Controllers.Auth
         }
 
         [HttpPost]
-        public ActionResult Check(User client)
+        public ActionResult Check(User client, string preUrl)
         {
             if (Membership.ValidateUser(client.username, client.password))
             {
                 FormsAuthentication.SetAuthCookie(client.username, client.rememberme);
                 TempData["LoginStatus"] = "Login successfully! Enjoy shopping!";
+                //if (preUrl != null)
+                //{
+                //    int bf = preUrl.IndexOf("/");
+                //    string action = preUrl.Substring(0, bf);
+                //    string containCtl = preUrl.Substring(bf + 1);
+                //    return RedirectToAction(containCtl, action);
+                //}
                 return RedirectToAction("Index", "Home");
                 //return Content("success");
             }

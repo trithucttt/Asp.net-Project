@@ -1,0 +1,439 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mb-5 container_checkout_form" style="margin-top: 150px">
+    <div class="shadow-sm p-3 mb-3 bg-white rounded border-top">
+        <h5>Delivery address</h5>
+        <div class="">
+            T-Rex (+84)
+            039xxxxxxx
+        </div>
+        <div class="">
+            32, KKK street, Kz district, KKO province
+        </div>
+    </div>
+    <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
+        <div class="col">
+            <a href="#" class="navbar-brand"><i class="fa-solid fa-envelope"></i>ShoeStore</a>
+        </div>
+    </div>
+    <div class="container p-0">
+        <div class="row no-gutters mb-3 border-bottom">
+            <div class="col-3 d-flex justify-content-center align-items-center">
+                <img src="~/Content/images/products/pd1.1.jpg" alt="" style="width: 70px; height: 120px;">
+            </div>
+            <div class="col-9">
+                <div>Name product</div>
+                <div class="product_classity d-flex justify-content-between">
+                    <span>Classify: <span>Black, 43</span> </span>
+                    <span>x1</span>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <span class="new_price">&#8363;155.000</span>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters mb-3 border-bottom">
+            <div class="col-3 d-flex justify-content-center">
+                <img src="~/Content/images/products/pd2.1.jpg" alt="" style="width: 70px; height: 120px;">
+            </div>
+            <div class="col-9">
+                <div>Name product</div>
+                <div class="product_classity d-flex justify-content-between">
+                    <span>Classify: <span>Black, 43</span> </span>
+                    <span>x1</span>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <span class="new_price">&#8363;455.000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters shadow-sm p-3 bg-white rounded border-top">
+        <div class="col d-flex justify-content-between">
+            <div><i class="fa-solid fa-file-circle-check"></i>Shop's voucher</div>
+            <div>
+                <span id="shopsVoucherChosen" class="btn btn-sm btn-outline-warning">Choose voucher</span>
+                <a href="#" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#modalShopsVoucher">
+                    <i class="fa-sharp fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="shadow-sm p-3 bg-white rounded border-top">
+        <div class="h5 border-bottom">Shopping unit</div>
+        <div class="">
+            <div id="name-shopping-unit">ShoesStore express</div>
+            <div id="time-receive-goods">Receive goods on December 29th -> December 31st</div>
+        </div>
+        <div class="d-flex justify-content-end align-items-center">
+            <div id="transport-fee-old" style="text-decoration: line-through;"></div>
+            <div id="transport-fee-new" class="btn btn-sm btn-outline-warning">&#8363;50k</div>
+            <a href="#" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#modalShoppingUnit">
+                <i class="fa-sharp fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row no-gutters shadow-sm p-3 bg-white rounded border-top">
+        <div class="col">
+            <label for="message_from_customer">Message: </label>
+            <input type="text" name="" id="" class="form-control">
+        </div>
+    </div>
+    <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
+        <div class="col d-flex justify-content-between align-items-center">
+            <div>Total cost <span>(2 products)</span>:</div>
+            <div id="total-cost-without-voucher">&#8363;755k</div>
+        </div>
+    </div>
+    <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
+        <div class="col d-flex justify-content-between align-items-center">
+            <div><i class="fa-regular fa-credit-card"></i>Free delivery voucher</div>
+            <div>
+                <button type="button" id="brand-free-promotion" class="btn btn-sm btn-outline-warning"
+                        disabled>
+                    Promotion
+                </button>
+                <a href="#" class="btn btn-sm btn-outline-dark" data-toggle="modal"
+                   data-target="#modalShoesStoreVoucher">
+                    <!-- <span>Choose voucher</span> -->
+                    <i class="fa-sharp fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters shadow-sm p-3 bg-white rounded border-top">
+        <div class="col d-flex justify-content-between align-items-center">
+            <div><i class="fa-solid fa-dollar-sign"></i> Choose payment methods</div>
+            <div>
+                <a href="#" data-toggle="modal" data-target="#modalPaymentMethods">
+                    <span>ShoeStorePay</span> <i class="fa-sharp fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="shadow-sm p-3 mb-3 bg-white rounded border-top">
+        <div class="border-bottom"><i class="fa-solid fa-money-check-dollar"></i> Detail payment</div>
+        <div>
+            <div class="text-left">Tong tien hang: <span>4444k</span></div>
+            <div class="text-left">Tong tien phi van chuyen: <span>4444k</span></div>
+            <div class="text-left">Giam gia phi van chuyen: <span>4444k</span></div>
+            <div class="text-left">Tong cong voucher giam gia : <span>4444k</span></div>
+            <div class="text-left">Tong thanh toan: <span>4444k</span></div>
+        </div>
+    </div>
+    <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
+        <div class="col d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fa-solid fa-cash-register"></i> Clicking "Order" means that you agree to abide by our
+                terms
+            </div>
+            <div><a href="#" class="btn btn-outline-danger">Order</a></div>
+        </div>
+    </div>
+
+    <!-- Modal Shop's voucher -->
+    <div class="modal fade" id="modalShopsVoucher" tabindex="-1" role="dialog"
+         aria-labelledby="modalShopsVoucherTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Shop's voucher</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="shop_s_voucher">
+                        <div class="form-group mb-3">
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box_voucher">
+                                <div class="col-4">
+                                    <img src="public/assets/images/logo/Shoesstore.png" alt="" width="100"
+                                         height="100">
+                                </div>
+                                <div class="col-7">
+                                    <div>Sale 10%</div>
+                                    <div><small>Minimum order &#8363;70k Maximum discount &#8363;50k</small></div>
+                                </div>
+                                <div class="col-1">
+                                    <input type="radio" name="shopsVoucher" id=""
+                                           class="form-check-input shopsVoucher-check" value="0.1">
+                                </div>
+                            </div>
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box_voucher">
+                                <div class="col-4">
+                                    <img src="public/assets/images/logo/Shoesstore.png" alt="" width="100"
+                                         height="100">
+                                </div>
+                                <div class="col-7">
+                                    <div>Sale 8%</div>
+                                    <div><small>Minimum order &#8363;70k Maximum discount &#8363;50k</small></div>
+                                </div>
+                                <div class="col-1">
+                                    <input type="radio" name="shopsVoucher" id=""
+                                           class="form-check-input shopsVoucher-check" value="0.08">
+                                </div>
+                            </div>
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box_voucher">
+                                <div class="col-4">
+                                    <img src="public/assets/images/logo/Shoesstore.png" alt="" width="100"
+                                         height="100">
+                                </div>
+                                <div class="col-7">
+                                    <div>Sale 5%</div>
+                                    <div><small>Minimum order &#8363;70k Maximum discount &#8363;50k</small></div>
+                                </div>
+                                <div class="col-1">
+                                    <input type="radio" name="shopsVoucher" id=""
+                                           class="form-check-input shopsVoucher-check" value="0.05">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-dismiss="modal">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Shopping unit-->
+    <div class="modal fade" id="modalShoppingUnit" tabindex="-1" role="dialog"
+         aria-labelledby="modalShoppingUnitTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalShoppingUnitLongTitle">Shipping Unit</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="shipping_unit">
+                        <div class="form-group mb-3">
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-shipping-unit border-danger">
+                                <div class="col-3">
+                                    <span class="modal-name-shopping-unit">ShoesStore express</span>
+                                </div>
+                                <div class="col-8">
+                                    <span class="modal-transport-fee">&#8363;50k</span>
+                                </div>
+                                <div class="col-1">
+                                    <input type="radio" name="shippingUnit"
+                                           class="form-check-input shipping-unit-check" value="50" checked>
+                                </div>
+                                <div>
+                                    <small class="modal-time-receive-goods">
+                                        Receive goods on December 27th ->
+                                        December 31st
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-shipping-unit">
+                                <div class="col-3">
+                                    <span class="modal-name-shopping-unit">Economical delivery</span>
+                                </div>
+                                <div class="col-8">
+                                    <span class="modal-transport-fee">&#8363;40k</span>
+                                </div>
+                                <div class="col-1">
+                                    <input type="radio" name="shippingUnit"
+                                           class="form-check-input shipping-unit-check" value="40">
+                                </div>
+                                <div>
+                                    <small class="modal-time-receive-goods">
+                                        Receive goods on December 27th ->
+                                        December 30st
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-shipping-unit">
+                                <div class="col-3">
+                                    <span class="modal-name-shopping-unit">Ninja Van</span>
+                                </div>
+                                <div class="col-8">
+                                    <span class="modal-transport-fee">&#8363;35k</span>
+                                </div>
+                                <div class="col-1">
+                                    <input type="radio" name="shippingUnit"
+                                           class="form-check-input shipping-unit-check" value="35">
+                                </div>
+                                <div>
+                                    <small class="modal-time-receive-goods">
+                                        Receive goods on December 27th ->
+                                        December 38st
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-dismiss="modal">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal ShoesStore voucher -->
+    <div class="modal fade" id="modalShoesStoreVoucher" tabindex="-1" role="dialog"
+         aria-labelledby="modalShoesStoreVoucher" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalShoesStoreVoucherLongTitle">ShoesStore voucher</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="shoesStoreVoucher">
+                        <div class="form-group mb-3">
+                            <div class="free_ship d-flex flex-column mb-3">
+                                <span>Code for free shipping</span>
+                                <small>Can choose 1 Voucher</small>
+                            </div>
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-voucher-shoeStore-voucher-ship">
+                                <div class="col-4">
+                                    <img src="public/assets/images/freeShip.png" alt="" width="100" height="100">
+                                </div>
+                                <div class="col-7">
+                                    <div>All forms of payment</div>
+                                    <div><small>Minimum order &#8363;70k, 80% Maximum &#8363;40k</small></div>
+                                </div>
+                                <div class="col-1">
+                                    <input type="radio" name="shoesStoreVoucherShip" id=""
+                                           class="form-check-input shoesStoreVoucherShip-check" value="0.8&40">
+                                </div>
+                            </div>
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-voucher-shoeStore-voucher-ship">
+                                <div class="col-4">
+                                    <img src="public/assets/images/freeShip.png" alt="" width="100" height="100">
+                                </div>
+                                <div class="col-7">
+                                    <div>ShoesStore payment</div>
+                                    <div><small>Minimum order &#8363;70k, 100% Maximum &#8363;30k</small></div>
+                                </div>
+                                <div class="col-1">
+                                    <input type="radio" name="shoesStoreVoucherShip" id=""
+                                           class="form-check-input shoesStoreVoucherShip-check" value="1&30">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <div class="free_ship d-flex flex-column mb-3">
+                                <span>Discount & Cashback</span>
+                                <small>Can choose 1 Voucher</small>
+                            </div>
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-voucher-shoeStore-voucher">
+                                <div class="col-4">
+                                    <img src="public/assets/images/logo/Shoesstore.png" alt="" width="100"
+                                         height="100">
+                                </div>
+                                <div class="col-7">
+                                    <div>Sale 10%</div>
+                                    <div><small>Minimum order &#8363;150k Maximum discount &#8363;80k</small></div>
+                                    <div><small>Expiry date: December-31</small></div>
+                                </div>
+                                <div class="col-1">
+                                    <input type="checkbox" name="shoesStoreVoucher" id=""
+                                           class="form-check-input shoesStoreVoucher-check" value="0.1">
+                                </div>
+                            </div>
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-voucher-shoeStore-voucher">
+                                <div class="col-4">
+                                    <img src="public/assets/images/logo/Shoesstore.png" alt="" width="100"
+                                         height="100">
+                                </div>
+                                <div class="col-7">
+                                    <div>Sale 8%</div>
+                                    <div><small>Minimum order &#8363;100k Maximum discount &#8363;50k</small></div>
+                                    <div><small>Expiry date: December-31</small></div>
+                                </div>
+                                <div class="col-1">
+                                    <input type="checkbox" name="shoesStoreVoucher" id=""
+                                           class="form-check-input shoesStoreVoucher-check" value="0.08">
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" form="shoesStoreVoucher" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Payment methods-->
+    <div class="modal fade" id="modalPaymentMethods" tabindex="-1" role="dialog"
+         aria-labelledby="modalPaymentMethods" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPaymentMethodsLongTitle">Payment methods</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="paymentMethods">
+                        <div class="form-group mb-3">
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top">
+                                <label class="form-label">Choose one:</label>
+                                <div>
+                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox active">
+                                        ShoesStore
+                                        wallet
+                                    </div>
+                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox">
+                                        Domestic credit
+                                        card
+                                    </div>
+                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox">ATM card</div>
+                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox">
+                                        Payment on delivery
+                                    </div>
+                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox">Momo wallet</div>
+                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox">
+                                        ZaloPay wallet
+                                    </div>
+                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
+                                           value="1" checked>
+                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
+                                           value="2">
+                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
+                                           value="3">
+                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
+                                           value="4">
+                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
+                                           value="5">
+                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
+                                           value="6">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" form="paymentMethods" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section checkout{
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
+    <script src="https://kit.fontawesome.com/438b88f6fa.js" crossorigin="anonymous"></script>
+}
+

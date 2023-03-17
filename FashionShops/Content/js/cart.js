@@ -98,14 +98,11 @@ $(document).ready(function () {
         let max = $("#" + idInput).attr("max");
         let step = 1;
         let val = $("#" + idInput).attr("value");
-        console.log(val);
         let calcStep = (id == "increase") ? (step * 1) : (step * -1)
         let newValue = parseInt(val) + calcStep;
         if (newValue >= min && newValue <= max) {
             $("#" + idInput).attr("value", newValue);
         }
-        console.log(newValue);
-        console.log(idInput);
         if (idInput !== 272) {
             $.ajax({
                 url: "/Cart/JustUpdateQuantity",
@@ -207,7 +204,6 @@ $(document).ready(function () {
         // stop chuyen link khi nhấn vào thẻ <a>
         event.preventDefault();
         // hiển thị Sweetaler2 và xoá bằng ajax
-        // hoặc uncomment showModalConfirm() để xoá theo kiểu bình thường
         showConfirm(event.currentTarget);
     })
 });
@@ -281,34 +277,46 @@ function ifAllCheck() {
     }
     return true;
 }
-$('.product-checkout').not('#check-all').click(function () {
-    let theLastCheckOutIndex = $('.product-checkout').length - 1;
-    let allBtn = $('.product-checkout');
-    if (allBtn[theLastCheckOutIndex].checked) {
-        allBtn[theLastCheckOutIndex].checked = false;
-    }
-    setValueCost();
-});
 
-$('#check-all').click(function () {
-    let theLastCheckOutIndex = $('.product-checkout').length - 1;
-    let allBtn = $('.product-checkout');
-    if (allBtn[theLastCheckOutIndex].checked) {
-        for (let i = 0; i < allBtn.length - 1; i++) {
-            if (allBtn[i].checked == false) {
-                allBtn[i].checked = true;
-            }
+$(document).ready(function () {
+    // Khi nhấn vào nút delete bất kỳ trên danh sách
+    $(document).on('click', '.product-checkout', function (event) {
+        let theLastCheckOutBtn = document.querySelector('#check-all');
+        if (!ifAllCheck()) {
+            theLastCheckOutBtn.checked = false;
+        } else {
+            theLastCheckOutBtn.checked = true;
         }
         setValueCost();
-        $('.product-checkout').not("#check-all").click(function () {
-            setValueCost();
-        });
-    } else {
-        if (ifAllCheck()) {
+    })
+
+    $('#check-all').click(function () {
+        let allBtn = document.querySelectorAll('.product-checkout');
+        let theLastCheckOutBtn = document.querySelector('#check-all');
+        if (theLastCheckOutBtn.checked) {
             for (let i = 0; i < allBtn.length - 1; i++) {
-                allBtn[i].checked = false;
+                if (allBtn[i].checked == false) {
+                    allBtn[i].checked = true;
+                }
             }
             setValueCost();
+        } else {
+            if (ifAllCheck()) {
+                for (let i = 0; i < allBtn.length - 1; i++) {
+                    allBtn[i].checked = false;
+                }
+                setValueCost();
+            }
         }
-    }
-})
+    })
+});
+
+//$('.product-checkout').not('#check-all').click(function () {
+//    let theLastCheckOutIndex = $('.product-checkout').length - 1;
+//    let allBtn = $('.product-checkout');
+//    if (allBtn[theLastCheckOutIndex].checked) {
+//        allBtn[theLastCheckOutIndex].checked = false;
+//    }
+//    setValueCost();
+//});
+
