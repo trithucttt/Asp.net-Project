@@ -26,8 +26,8 @@
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" checked name="rememberme" id="rememberme"> Remember password
-                    <span class="checkmark"></span>
+                        <input type="checkbox" name="rememberme" id="rememberme"> Remember password
+                        <span class="checkmark"></span>
                 </label>
             </div>
             @Html.ValidationSummary(true, null, new { @class = "font-italic", @style = "color: red" })
@@ -55,7 +55,7 @@
         let messageR = $('#RegisterSuccess').text();
         if (messageR !== "") {
             toastr.success(messageR);
-        }       
+        }
     </script>
 }
 

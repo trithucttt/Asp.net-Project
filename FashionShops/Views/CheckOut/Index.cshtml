@@ -1,4 +1,4 @@
-﻿
+﻿@model FashionShops.Models.CheckOut.AllNeedForCheckOut
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,12 +8,20 @@
     <div class="shadow-sm p-3 mb-3 bg-white rounded border-top">
         <h5>Delivery address</h5>
         <div class="">
-            T-Rex (+84)
-            039xxxxxxx
+            @{
+                string nameAndPhone = "";
+                nameAndPhone += Model.infoUserCheckOut.firstName + " " + Model.infoUserCheckOut.lastName + " (+84): " + Model.infoUserCheckOut.phoneNumber;
+            }
+            @nameAndPhone
         </div>
         <div class="">
-            32, KKK street, Kz district, KKO province
+            @{
+                string fullAddress = "";
+                fullAddress += Model.infoUserCheckOut.address + ", " + Model.infoUserCheckOut.province + " province, " + Model.infoUserCheckOut.city + " city, " + Model.infoUserCheckOut.country;
+            }
+            @fullAddress
         </div>
+        <a href="#" class="btn btn-outline-warning">Change address</a>
     </div>
     <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
         <div class="col">
@@ -56,7 +64,7 @@
         <div class="col d-flex justify-content-between">
             <div><i class="fa-solid fa-file-circle-check"></i>Shop's voucher</div>
             <div>
-                <span id="shopsVoucherChosen" class="btn btn-sm btn-outline-warning">Choose voucher</span>
+                <button id="shopsVoucherChosen" class="btn btn-sm btn-outline-warning" disabled>Choose voucher</button>
                 <a href="#" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#modalShopsVoucher">
                     <i class="fa-sharp fa-solid fa-chevron-right"></i>
                 </a>
@@ -66,12 +74,12 @@
     <div class="shadow-sm p-3 bg-white rounded border-top">
         <div class="h5 border-bottom">Shopping unit</div>
         <div class="">
-            <div id="name-shopping-unit">ShoesStore express</div>
+            <div id="name-shopping-unit">FashionShops express</div>
             <div id="time-receive-goods">Receive goods on December 29th -> December 31st</div>
         </div>
         <div class="d-flex justify-content-end align-items-center">
-            <div id="transport-fee-old" style="text-decoration: line-through;"></div>
-            <div id="transport-fee-new" class="btn btn-sm btn-outline-warning">&#8363;50k</div>
+            <div id="transport-fee-old" class="btn btn-sm btn-outline-warning" style="text-decoration: line-through;" hidden></div>
+            <button id="transport-fee-new" class="btn btn-sm btn-outline-warning" disabled>30k</button>
             <a href="#" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#modalShoppingUnit">
                 <i class="fa-sharp fa-solid fa-chevron-right"></i>
             </a>
@@ -86,16 +94,16 @@
     <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
         <div class="col d-flex justify-content-between align-items-center">
             <div>Total cost <span>(2 products)</span>:</div>
-            <div id="total-cost-without-voucher">&#8363;755k</div>
+            <div>&#8363;<span id="total-cost" data-totalprice="755000">755000</span></div>
         </div>
     </div>
     <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
         <div class="col d-flex justify-content-between align-items-center">
-            <div><i class="fa-regular fa-credit-card"></i>Free delivery voucher</div>
+            <div><i class="fa-regular fa-credit-card"></i> Free delivery voucher</div>
             <div>
-                <button type="button" id="brand-free-promotion" class="btn btn-sm btn-outline-warning"
+                <button type="button" id="free-ship-voucher" class="btn btn-sm btn-outline-warning"
                         disabled>
-                    Promotion
+                    freeship
                 </button>
                 <a href="#" class="btn btn-sm btn-outline-dark" data-toggle="modal"
                    data-target="#modalShoesStoreVoucher">
@@ -109,8 +117,8 @@
         <div class="col d-flex justify-content-between align-items-center">
             <div><i class="fa-solid fa-dollar-sign"></i> Choose payment methods</div>
             <div>
-                <a href="#" data-toggle="modal" data-target="#modalPaymentMethods">
-                    <span>ShoeStorePay</span> <i class="fa-sharp fa-solid fa-chevron-right"></i>
+                <a href="#" data-toggle="modal" data-target="#modalPaymentMethods" id="name-payment-method" class="btn btn-outline-warning">
+                    ShoeStorePay<i class="fa-sharp fa-solid fa-chevron-right"></i>
                 </a>
             </div>
         </div>
@@ -118,11 +126,11 @@
     <div class="shadow-sm p-3 mb-3 bg-white rounded border-top">
         <div class="border-bottom"><i class="fa-solid fa-money-check-dollar"></i> Detail payment</div>
         <div>
-            <div class="text-left">Tong tien hang: <span>4444k</span></div>
-            <div class="text-left">Tong tien phi van chuyen: <span>4444k</span></div>
-            <div class="text-left">Giam gia phi van chuyen: <span>4444k</span></div>
-            <div class="text-left">Tong cong voucher giam gia : <span>4444k</span></div>
-            <div class="text-left">Tong thanh toan: <span>4444k</span></div>
+            <div class="text-left" id="amount-cost" data-price="0"></div>
+            <div class="text-left" id="total-shipping-fee" data-price="0"></div>
+            <div class="text-left" id="reduce-shipping-cost" data-price="0">Reduced shipping cost: <span>4444k</span></div>
+            <div class="text-left" id="total-discount-voucher" data-price="0">Total discount voucher : <span>4444k</span></div>
+            <div class="text-left" id="total-payment" data-price="0">Total payment: <span>4444k</span></div>
         </div>
     </div>
     <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
@@ -131,7 +139,7 @@
                 <i class="fa-solid fa-cash-register"></i> Clicking "Order" means that you agree to abide by our
                 terms
             </div>
-            <div><a href="#" class="btn btn-outline-danger">Order</a></div>
+            <a href="#" class="btn btn-outline-warning">Order</a>
         </div>
     </div>
 
@@ -149,48 +157,28 @@
                 <div class="modal-body">
                     <form action="" id="shop_s_voucher">
                         <div class="form-group mb-3">
-                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box_voucher">
-                                <div class="col-4">
-                                    <img src="public/assets/images/logo/Shoesstore.png" alt="" width="100"
-                                         height="100">
+                            @foreach (var voucher in Model.voucherAvailable)
+                            {
+                                <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box_voucher">
+                                    <div class="col-4">
+                                        <img src="~/Content/images/Shoesstore.png" alt="" width="100"
+                                             height="100">
+                                    </div>
+                                    <div class="col-7">
+                                        @{
+                                            string sales = "";
+                                            float sale_per = (float)voucher.discount_percentage * 100;
+                                            sales = sale_per + "%";
+                                        }
+                                        <div>Sale @sales</div>
+                                        <div><small>The voucher is limited, use it quickly.</small></div>
+                                    </div>
+                                    <div class="col-1">
+                                        <input type="radio" name="shopsVoucher" id=""
+                                               class="form-check-input shopsVoucher-check" value="@voucher.discount_percentage">
+                                    </div>
                                 </div>
-                                <div class="col-7">
-                                    <div>Sale 10%</div>
-                                    <div><small>Minimum order &#8363;70k Maximum discount &#8363;50k</small></div>
-                                </div>
-                                <div class="col-1">
-                                    <input type="radio" name="shopsVoucher" id=""
-                                           class="form-check-input shopsVoucher-check" value="0.1">
-                                </div>
-                            </div>
-                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box_voucher">
-                                <div class="col-4">
-                                    <img src="public/assets/images/logo/Shoesstore.png" alt="" width="100"
-                                         height="100">
-                                </div>
-                                <div class="col-7">
-                                    <div>Sale 8%</div>
-                                    <div><small>Minimum order &#8363;70k Maximum discount &#8363;50k</small></div>
-                                </div>
-                                <div class="col-1">
-                                    <input type="radio" name="shopsVoucher" id=""
-                                           class="form-check-input shopsVoucher-check" value="0.08">
-                                </div>
-                            </div>
-                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box_voucher">
-                                <div class="col-4">
-                                    <img src="public/assets/images/logo/Shoesstore.png" alt="" width="100"
-                                         height="100">
-                                </div>
-                                <div class="col-7">
-                                    <div>Sale 5%</div>
-                                    <div><small>Minimum order &#8363;70k Maximum discount &#8363;50k</small></div>
-                                </div>
-                                <div class="col-1">
-                                    <input type="radio" name="shopsVoucher" id=""
-                                           class="form-check-input shopsVoucher-check" value="0.05">
-                                </div>
-                            </div>
+                            }
                         </div>
                     </form>
                 </div>
@@ -216,15 +204,15 @@
                     <form action="" id="shipping_unit">
                         <div class="form-group mb-3">
                             <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-shipping-unit border-danger">
-                                <div class="col-3">
-                                    <span class="modal-name-shopping-unit">ShoesStore express</span>
+                                <div class="col-6">
+                                    <span class="modal-name-shopping-unit">FashionShops express</span>
                                 </div>
-                                <div class="col-8">
-                                    <span class="modal-transport-fee">&#8363;50k</span>
+                                <div class="col-5">
+                                    <span class="modal-transport-fee">&#8363;30k</span>
                                 </div>
                                 <div class="col-1">
                                     <input type="radio" name="shippingUnit"
-                                           class="form-check-input shipping-unit-check" value="50" checked>
+                                           class="form-check-input shipping-unit-check" id="shopping-unit-first-choose" value="30" checked>
                                 </div>
                                 <div>
                                     <small class="modal-time-receive-goods">
@@ -234,10 +222,10 @@
                                 </div>
                             </div>
                             <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-shipping-unit">
-                                <div class="col-3">
+                                <div class="col-6">
                                     <span class="modal-name-shopping-unit">Economical delivery</span>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-5">
                                     <span class="modal-transport-fee">&#8363;40k</span>
                                 </div>
                                 <div class="col-1">
@@ -252,10 +240,10 @@
                                 </div>
                             </div>
                             <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-shipping-unit">
-                                <div class="col-3">
+                                <div class="col-6">
                                     <span class="modal-name-shopping-unit">Ninja Van</span>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-5">
                                     <span class="modal-transport-fee">&#8363;35k</span>
                                 </div>
                                 <div class="col-1">
@@ -280,7 +268,7 @@
         </div>
     </div>
 
-    <!-- Modal ShoesStore voucher -->
+    <!-- Modal FreeShip voucher -->
     <div class="modal fade" id="modalShoesStoreVoucher" tabindex="-1" role="dialog"
          aria-labelledby="modalShoesStoreVoucher" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -298,75 +286,37 @@
                                 <span>Code for free shipping</span>
                                 <small>Can choose 1 Voucher</small>
                             </div>
-                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-voucher-shoeStore-voucher-ship">
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-free-ship">
                                 <div class="col-4">
-                                    <img src="public/assets/images/freeShip.png" alt="" width="100" height="100">
+                                    <img src="~/Content/images/freeShip.png" alt="" width="100" height="100">
                                 </div>
                                 <div class="col-7">
                                     <div>All forms of payment</div>
-                                    <div><small>Minimum order &#8363;70k, 80% Maximum &#8363;40k</small></div>
+                                    <div><small>Minimum order &#8363;0k, 80% Maximum &#8363;40k</small></div>
                                 </div>
                                 <div class="col-1">
-                                    <input type="radio" name="shoesStoreVoucherShip" id=""
-                                           class="form-check-input shoesStoreVoucherShip-check" value="0.8&40">
+                                    <input type="radio" name="voucherFreeShip" id=""
+                                           class="form-check-input free-ship-check" value="0.8&40">
                                 </div>
                             </div>
-                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-voucher-shoeStore-voucher-ship">
+                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-free-ship">
                                 <div class="col-4">
-                                    <img src="public/assets/images/freeShip.png" alt="" width="100" height="100">
+                                    <img src="~/Content/images/freeShip.png" alt="" width="100" height="100">
                                 </div>
                                 <div class="col-7">
-                                    <div>ShoesStore payment</div>
-                                    <div><small>Minimum order &#8363;70k, 100% Maximum &#8363;30k</small></div>
+                                    <div>All forms of payment</div>
+                                    <div><small>Minimum order &#8363;0k, 100% Maximum &#8363;30k</small></div>
                                 </div>
                                 <div class="col-1">
-                                    <input type="radio" name="shoesStoreVoucherShip" id=""
-                                           class="form-check-input shoesStoreVoucherShip-check" value="1&30">
+                                    <input type="radio" name="voucherFreeShip" id=""
+                                           class="form-check-input free-ship-check" value="1&30">
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group mb-3">
-                            <div class="free_ship d-flex flex-column mb-3">
-                                <span>Discount & Cashback</span>
-                                <small>Can choose 1 Voucher</small>
-                            </div>
-                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-voucher-shoeStore-voucher">
-                                <div class="col-4">
-                                    <img src="public/assets/images/logo/Shoesstore.png" alt="" width="100"
-                                         height="100">
-                                </div>
-                                <div class="col-7">
-                                    <div>Sale 10%</div>
-                                    <div><small>Minimum order &#8363;150k Maximum discount &#8363;80k</small></div>
-                                    <div><small>Expiry date: December-31</small></div>
-                                </div>
-                                <div class="col-1">
-                                    <input type="checkbox" name="shoesStoreVoucher" id=""
-                                           class="form-check-input shoesStoreVoucher-check" value="0.1">
-                                </div>
-                            </div>
-                            <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top box-voucher-shoeStore-voucher">
-                                <div class="col-4">
-                                    <img src="public/assets/images/logo/Shoesstore.png" alt="" width="100"
-                                         height="100">
-                                </div>
-                                <div class="col-7">
-                                    <div>Sale 8%</div>
-                                    <div><small>Minimum order &#8363;100k Maximum discount &#8363;50k</small></div>
-                                    <div><small>Expiry date: December-31</small></div>
-                                </div>
-                                <div class="col-1">
-                                    <input type="checkbox" name="shoesStoreVoucher" id=""
-                                           class="form-check-input shoesStoreVoucher-check" value="0.08">
-                                </div>
-                            </div>
-
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" form="shoesStoreVoucher" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-outline-success" data-dismiss="modal">Confirm</button>
                 </div>
             </div>
         </div>
@@ -389,42 +339,30 @@
                             <div class="row border shadow-sm p-3 mb-3 bg-white rounded border-top">
                                 <label class="form-label">Choose one:</label>
                                 <div>
-                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox active">
-                                        ShoesStore
-                                        wallet
-                                    </div>
-                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox">
-                                        Domestic credit
-                                        card
-                                    </div>
-                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox">ATM card</div>
-                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox">
-                                        Payment on delivery
-                                    </div>
-                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox">Momo wallet</div>
-                                    <div href="" class="btn btn-outline-dark mb-1 size-checkbox">
-                                        ZaloPay wallet
-                                    </div>
-                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
-                                           value="1" checked>
-                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
-                                           value="2">
-                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
-                                           value="3">
-                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
-                                           value="4">
-                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
-                                           value="5">
-                                    <input type="checkbox" name="size" id="" class="size-checkbox-value" hidden
-                                           value="6">
+                                    @{
+                                        int firtActive = 1;
+                                    }
+                                    @foreach (var payment in Model.paymentMethods)
+                                    {
+                                        if (firtActive == 1)
+                                        {
+                                            <div href="" class="btn btn-outline-dark mb-1 payment-checkbox active-custom">@payment.name_methods</div>
+                                            <input type="radio" name="paymentMethod" id="" class="payment-checkbox-value"
+                                                   value="@payment.id" data-name="@payment.name_methods" hidden checked>
+                                            firtActive++;
+                                            continue;
+                                        }
+                                        <div href="" class="btn btn-outline-dark mb-1 payment-checkbox">@payment.name_methods</div>
+                                        <input type="radio" name="paymentMethod" id="" class="payment-checkbox-value"
+                                               value="@payment.id" data-name="@payment.name_methods" hidden>
+                                    }
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" form="paymentMethods" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-outline-success" data-dismiss="modal" id="payment-method-confirm">Confirm</button>
                 </div>
             </div>
         </div>
@@ -434,6 +372,210 @@
 @section checkout{
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/checkout_style.css">
     <script src="https://kit.fontawesome.com/438b88f6fa.js" crossorigin="anonymous"></script>
+    <script>
+        function PaymentDetails() {
+            let totalAmountGoods = parseFloat($('#total-cost').data('totalprice'));
+            let totalShippingFee = parseFloat($('input[name="shippingUnit"]:checked').val()) * 1000;
+            let reduceShippingCost = 0;
+            let temp1 = $('input[name="voucherFreeShip"]:checked').val();
+            if (typeof temp1 !== 'undefined') {
+                let temp = temp1.split('&');
+                let discountFreeShipPercent = parseFloat(temp[0]);
+                let maxDiscountFreeShip = parseFloat(temp[1]) * 1000;
+                reduceShippingCost = totalShippingFee * discountFreeShipPercent;
+                if (reduceShippingCost > maxDiscountFreeShip) reduceShippingCost = maxDiscountFreeShip;
+            }
+            if (isNaN(reduceShippingCost)) reduceShippingCost = 0;
+            let totalDiscountVoucher = parseFloat($('input[name="shopsVoucher"]:checked').val()) * totalAmountGoods;
+            if (isNaN(totalDiscountVoucher)) totalDiscountVoucher = 0;
+            let totalPayment = totalAmountGoods + totalShippingFee - reduceShippingCost - totalDiscountVoucher;
+            $('#amount-cost').data('price', totalAmountGoods);
+            $('#amount-cost').html('Total amount of goods: ' + totalAmountGoods + '&#8363;');
+            $('#total-shipping-fee').data('price', totalShippingFee);
+            $('#total-shipping-fee').html('Total shipping fee: ' + totalShippingFee + '&#8363;');
+            $('#reduce-shipping-cost').data('price', reduceShippingCost);
+            $('#reduce-shipping-cost').html('Reduced shipping cost: ' + reduceShippingCost + '&#8363;');
+            $('#total-discount-voucher').data('price', totalDiscountVoucher);
+            $('#total-discount-voucher').html('Total discount voucher: ' + totalDiscountVoucher + '&#8363;');
+            $('#total-payment').data('price', totalPayment);
+            $('#total-payment').html('Total payment: ' + totalPayment + '&#8363;');
+        }
+        PaymentDetails();
+
+        let shopsVoucherCheck = document.querySelectorAll('.shopsVoucher-check');
+        let boxVoucher = document.querySelectorAll('.box_voucher');
+        let shopsVoucherChosen = document.querySelector('#shopsVoucherChosen');
+        let shopsVoucher;
+
+        shopsVoucherCheck.forEach((item, index) => {
+            item.addEventListener('click', event => {
+                if (boxVoucher[index].classList.contains('border-danger')) {
+                    item.checked = false;
+                    boxVoucher[index].classList.remove('border-danger');
+                    $('#shopsVoucherChosen').text('Choose voucher');
+                    setTotalCost(0);
+                    PaymentDetails();
+                } else {
+                    boxVoucher[index].classList.add('border-danger');
+                    PaymentDetails();
+                    for (let i = 0; i < boxVoucher.length; i++) {
+                        if (i == index) continue;
+                        boxVoucher[i].classList.remove('border-danger');
+                    }
+                    let totalDiscount = parseFloat($('#total-cost').data('totalprice'));
+                    //console.log(totalDiscount);
+                    let discountPercent = $('input[name="shopsVoucher"]:checked').val();
+                    totalDiscount *= discountPercent;
+                    let presentVoucherChosen = totalDiscount / 1000;
+                    $('#shopsVoucherChosen').text('-' + presentVoucherChosen + 'K');
+                    setTotalCost(totalDiscount);
+                }
+            })
+        });
+
+        function setTotalCost(totalDiscount) {
+            let newTotalCost = parseFloat($('#total-cost').data('totalprice')) - totalDiscount;
+            $('#total-cost').text(newTotalCost);
+        }
+
+        function setDeliveryDate() {
+            const d = new Date();
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            let currentDate = monthNames[d.getMonth()] + ' ' + d.getDate();
+            let EstimatedDeliveryDate = monthNames[d.getMonth()] + ' ' + (d.getDate() + 3);
+            $('#time-receive-goods').text('Receive goods on ' + currentDate + ' -> ' + EstimatedDeliveryDate);
+            $('.modal-time-receive-goods').each(function () {
+                $(this).text('Receive goods on ' + currentDate + ' -> ' + EstimatedDeliveryDate);
+            })
+        }
+
+        setDeliveryDate();
+        let shinppingUnitCheck = document.querySelectorAll('.shipping-unit-check');
+        let boxShipping = document.querySelectorAll('.box-shipping-unit');
+        let shippingUnitChosen = document.querySelector('#shopping-unit-first-choose');
+        let nameShoppingUnit = document.querySelectorAll('.modal-name-shopping-unit');
+        let timeRecive = document.querySelectorAll('.modal-time-receive-goods');
+
+        shinppingUnitCheck.forEach((item, index) => {
+            item.addEventListener('click', event => {
+                if (!boxShipping[index].classList.contains('border-danger')) {
+                    let shipFee = $('input[name="shippingUnit"]:checked').val();
+                    $('#transport-fee-new').text(shipFee + 'K');
+                    $('#name-shopping-unit').text(nameShoppingUnit[index].textContent);
+                    $('#time-receive-goods').text(timeRecive[index].textContent);
+                    if (selectVoucherFreeShip()) {
+                        freeShipDiscount();
+                    } 
+                    //freeShipDiscount();
+                    //paymentDetails(freeShipDiscount());
+                    boxShipping[index].classList.add('border-danger');
+                    for (let i = 0; i < boxShipping.length; i++) {
+                        if (i == index) continue;
+                        boxShipping[i].classList.remove('border-danger');
+                    }
+                    PaymentDetails();
+                }
+            })
+        });
+
+        function selectVoucherFreeShip() {
+            let freeShipCheck = document.querySelectorAll('.free-ship-check');
+            for (let i = 0; i < freeShipCheck.length; i++) {
+                if (freeShipCheck[i].checked == true)
+                    return true;
+            }
+            return false;
+        }
+
+        let freeShipCheck = document.querySelectorAll('.free-ship-check');
+        let boxFreeShip = document.querySelectorAll('.box-free-ship');
+        freeShipCheck.forEach((item, index) => {
+            item.addEventListener('click', event => {
+                if (boxFreeShip[index].classList.contains('border-danger')) {
+                    item.checked = false;
+                    boxFreeShip[index].classList.remove('border-danger');
+                    $('#free-ship-voucher').attr('hidden', true);
+                    $('#transport-fee-old').attr('hidden', true);
+                    $('#transport-fee-new').text($('input[name="shippingUnit"]:checked').val() + 'K');
+                    PaymentDetails();
+                } else {
+                    $('#free-ship-voucher').attr('hidden', false);
+                    freeShipDiscount();
+                    boxFreeShip[index].classList.add('border-danger');
+                    for (let i = 0; i < boxFreeShip.length; i++) {
+                        if (i == index) continue;
+                        boxFreeShip[i].classList.remove('border-danger');
+                    }
+                    PaymentDetails();
+                }
+            })
+        });
+
+        function freeShipDiscount() {
+            let shippingUnitChosen = parseFloat($('input[name="shippingUnit"]:checked').val());
+            let voucherFreeShipChosen = $('input[name="voucherFreeShip"]:checked').val();
+            let arrFreeShip = voucherFreeShipChosen.split("&");
+            let discountPercent = parseFloat(arrFreeShip[0]);
+            let maxDiscount = parseFloat(arrFreeShip[1]);
+            let totalDiscountFee = shippingUnitChosen * discountPercent;
+            if (totalDiscountFee > maxDiscount) {
+                totalDiscountFee = maxDiscount;
+            }
+            let finalDiscountFee = shippingUnitChosen - totalDiscountFee;
+            $('#transport-fee-old').attr('hidden', false);
+            $('#transport-fee-old').text(shippingUnitChosen + 'K');
+            $('#transport-fee-new').text(finalDiscountFee + 'K');
+            return totalDiscountFee;
+        }
+
+
+        let paymentCheckbox = document.querySelectorAll('.payment-checkbox');
+        let paymentValue = document.querySelectorAll('.payment-checkbox-value');
+        selectedPaymentMethod();
+        $('#payment-method-confirm').click(selectedPaymentMethod);
+        paymentCheckbox.forEach(function (item, index) {
+            item.addEventListener('click', function (event) {  
+                item.classList.toggle('active-custom');
+                checkRadio(paymentCheckbox, paymentValue);
+                if (item.classList.contains('active-custom')) {
+                    console.log('if');
+                    paymentValue[index].checked = true;
+                    let i = 0;
+                    for (; i < paymentCheckbox.length; i++) {
+                        if (i == index) continue;
+                        paymentCheckbox[i].classList.remove('active-custom');
+                    }
+                }
+                else {
+                    console.log('else');
+                    paymentValue[index].checked = false;
+                }
+            })
+        })
+
+        function selectedPaymentMethod() {
+            let selectedPM = $('input[name="paymentMethod"]:checked').data('name');
+            $('#name-payment-method').html(selectedPM + ' <i class="fa-sharp fa-solid fa-chevron-right"></i>')
+        }
+
+        function checkRadio(check, checkValue) {
+            let j = 0;
+            let boolChecked = false;
+            for (; j < check.length; j++) {
+                if (check[j].classList.contains('active-custom')) {
+                    boolChecked = true;
+                }
+            }
+            if (!boolChecked) {
+                check[0].classList.add('active-custom');
+                checkValue[0].checked = true;
+            }
+        }
+
+    </script>
 }
 

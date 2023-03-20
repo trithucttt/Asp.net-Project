@@ -279,7 +279,6 @@ function ifAllCheck() {
 }
 
 $(document).ready(function () {
-    // Khi nhấn vào nút delete bất kỳ trên danh sách
     $(document).on('click', '.product-checkout', function (event) {
         let theLastCheckOutBtn = document.querySelector('#check-all');
         if (!ifAllCheck()) {

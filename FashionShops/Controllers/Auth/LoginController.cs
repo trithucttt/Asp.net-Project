@@ -47,6 +47,8 @@ namespace FashionShops.Controllers.Auth
                 //}
                 return RedirectToAction("Index", "Home");
                 //return Content("success");
+                //https://bbbootstrap.com/snippets/bootstrap-tracking-order-purchase-reciept-progress-86201225
+                //https://bbbootstrap.com/snippets/order-tracking-progressbar-icons-22484204
             }
             else
             {

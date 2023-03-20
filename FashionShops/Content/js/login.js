@@ -33,3 +33,12 @@ $().ready(function () {
 	});
 });
 
+$("#rememberme").on('change', function () {
+	if ($(this).is(':checked')) {
+		$(this).attr('value', 'true');
+	} else {
+		$(this).attr('value', 'false');
+	}
+	let re = $('#rememberme').val();
+	console.log(re);
+});
