@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <div class="inner">
+        <div class="image-holder">
+            <img class="img-login" src="~/Content/images/changepassword_bg.jpg" alt="">
+        </div>
+        <form action="/ChangePassword/Change" method="post" id="form_change_password">
+            <h3>Change Password</h3>
+            <div class="form-holder active-login">
+                <input type="password" name="currentpassword" placeholder="Current password" class="form-control-login" id="currentpassword" style="font-size: 15px;">
+                <div class="font-italic" id="error_password" style="color: red"></div>
+            </div>
+            <div class="form-holder">
+                <input type="password" name="newpassword" placeholder="newpassword" class="form-control-login" id="newpassword" style="font-size: 15px;">
+                <div class="font-italic" id="error_password" style="color: red"></div>
+            </div>
+            @Html.ValidationSummary(true, null, new { @class = "font-italic", @style = "color: red" })
+            <div class="form-login">
+                <button type="submit" data-href="/Login/Check" class="button-login" id="btn-login">Change</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="changefail" hidden>@ViewBag.CurrentPassIncorrect</div>
+@section ChangePassword {
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/login.css">
+    <script src="~/Content/js/Change.js"></script>
+    <script>
+        let messageA = $('#changefail').text();
+        if (messageA !== "") {
+            toastr.error(messageA);
+        }
+    </script>
+}
+
+
+
