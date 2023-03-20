@@ -1794,7 +1794,10 @@ insert into Product_Reviewing values(1, 1, 1, 5, N'Hàng đẹp chất lượng 
 
 -- Voucher --
 -- (voucher_id, user_id, code, discount_percentage, voucher_status, startdate, end_date)
-insert into Voucher values (1, 1, '0GIAMGIA', 0,'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
+insert into Voucher values (1, 1, '0GIAMGIA', 0, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
+insert into Voucher values (2, 1, 'FASHIONSHOP2', 0.1, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
+insert into Voucher values (3, 1, 'FASHIONSHOP3', 0.05, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
+insert into Voucher values (4, 1, 'FASHIONSHOP4', 0.08, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
 
 -- Orders --
 -- (order_id, customer_id, order_date, original_price, reduced_price, transport_fee, total_price, voucher_id, order_status)
