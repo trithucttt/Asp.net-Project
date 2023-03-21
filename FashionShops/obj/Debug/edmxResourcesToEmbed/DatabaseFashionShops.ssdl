@@ -286,6 +286,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_OI_P">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Order_Item">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_OI_S">
     <End Role="Size" Type="Self.Size" Multiplicity="1" />
     <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="*" />
@@ -531,6 +543,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_OI_O" Association="Self.FK_OI_O">
       <End Role="Orders" EntitySet="Orders" />
+      <End Role="Order_Item" EntitySet="Order_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OI_P" Association="Self.FK_OI_P">
+      <End Role="Products" EntitySet="Products" />
       <End Role="Order_Item" EntitySet="Order_Item" />
     </AssociationSet>
     <AssociationSet Name="FK_OI_S" Association="Self.FK_OI_S">

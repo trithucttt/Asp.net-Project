@@ -270,7 +270,7 @@ function setValueCost() {
 
 function ifAllCheck() {
     let allBtn = $('.product-checkout');
-    for (let i = 0; i < allBtn.length - 1; i++) {
+    for (let i = 0; i < allBtn.length; i++) {
         if (allBtn[i].checked == false) {
             return false
         }
@@ -293,7 +293,7 @@ $(document).ready(function () {
         let allBtn = document.querySelectorAll('.product-checkout');
         let theLastCheckOutBtn = document.querySelector('#check-all');
         if (theLastCheckOutBtn.checked) {
-            for (let i = 0; i < allBtn.length - 1; i++) {
+            for (let i = 0; i < allBtn.length; i++) {
                 if (allBtn[i].checked == false) {
                     allBtn[i].checked = true;
                 }
@@ -301,7 +301,7 @@ $(document).ready(function () {
             setValueCost();
         } else {
             if (ifAllCheck()) {
-                for (let i = 0; i < allBtn.length - 1; i++) {
+                for (let i = 0; i < allBtn.length; i++) {
                     allBtn[i].checked = false;
                 }
                 setValueCost();

@@ -1,15 +1,16 @@
 ﻿.order-item {
     display: block;
     margin-top: 5px;
-    background: #fe4c50;
     padding: 10px 0;
     border-radius: 20px;
-    color: white;
+    background: white;
+    color: #fe4c50;
+    border: 1px #fe4c50 solid;
 }
     .order-item:hover {
-        background: white;
-        color: #fe4c50;
-        border: 1px #fe4c50 solid;
+        background: #fe4c50;
+        color: white;
+        border: none;
         animation: ease .3s;
     }
 

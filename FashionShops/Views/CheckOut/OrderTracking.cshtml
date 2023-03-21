@@ -1,4 +1,4 @@
-﻿
+﻿@model FashionShops.Models.OrderTracking.OrderTracking 
 @{
     ViewBag.Title = "OrderTracking";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,36 +10,39 @@
         <div class="row">
             <div class="col-7">
                 <span id="heading">Date</span><br>
-                <span id="details">10 October 2018</span>
+                <span id="details">@Model.orderInfo.order_date</span>
             </div>
             <div class="col-5 pull-right">
                 <span id="heading">Order No.</span><br>
-                <span id="details">012j1gvs356c</span>
+                <span id="details">@Model.orderInfo.order_id</span>
             </div>
         </div>
     </div>
     <div class="pricing">
-        <div class="row">
-            <div class="col-9">
-                <span id="name">BEATS Solo 3 Wireless Headphones</span>
+        @foreach (var item in Model.orderitems)
+        {
+            <div class="row">
+                <div class="col-9">
+                    <span id="name">@item.productName @item.colorName-@item.sizeName</span>
+                </div>
+                <div class="col-3">
+                    <span id="price">@item.pricexquantity&#8363;</span>
+                </div>
             </div>
-            <div class="col-3">
-                <span id="price">&pound;299.99</span>
-            </div>
-        </div>
+        }
         <div class="row">
             <div class="col-9">
                 <span id="name">Shipping</span>
             </div>
             <div class="col-3">
-                <span id="price">&pound;33.00</span>
+                <span id="price">@Model.orderInfo.transport_fee&#8363;</span>
             </div>
         </div>
     </div>
     <div class="total">
         <div class="row">
             <div class="col-9"></div>
-            <div class="col-3"><big>&pound;262.99</big></div>
+            <div class="col-3"><big>@Model.orderInfo.total_price&#8363;</big></div>
         </div>
     </div>
     <div class="tracking">

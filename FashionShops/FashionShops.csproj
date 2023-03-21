@@ -180,6 +180,7 @@
     <Compile Include="Models\CheckOut\VoucherAvailable.cs" />
     <Compile Include="Models\CustomMemberShipUser.cs" />
     <Compile Include="Models\ListOrder\InfoOrder.cs" />
+    <Compile Include="Models\OrderTracking\OrderTracking.cs" />
     <Compile Include="Models\ProductDetail\ImagesForProduct.cs" />
     <Compile Include="Models\ProductDetail\ProductDetail.cs" />
     <Compile Include="Models\ProductView.cs" />
