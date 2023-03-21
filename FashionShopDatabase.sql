@@ -264,7 +264,8 @@ ALTER TABLE Order_Item
 ADD
 constraint FK_OI_O FOREIGN KEY (order_id) REFERENCES Orders(order_id),
 constraint FK_OI_S FOREIGN KEY (size) REFERENCES Size(size_id),
-constraint FK_OI_C FOREIGN KEY (color) REFERENCES Color(color_id)
+constraint FK_OI_C FOREIGN KEY (color) REFERENCES Color(color_id),
+constraint FK_OI_P FOREIGN KEY (product_id) REFERENCES Products(product_id)
 
 
 use FashionShop
