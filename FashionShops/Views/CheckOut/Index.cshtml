@@ -29,36 +29,28 @@
         </div>
     </div>
     <div class="container p-0">
-        <div class="row no-gutters mb-3 border-bottom">
-            <div class="col-3 d-flex justify-content-center align-items-center">
-                <img src="~/Content/images/products/pd1.1.jpg" alt="" style="width: 70px; height: 120px;">
-            </div>
-            <div class="col-9">
-                <div>Name product</div>
-                <div class="product_classity d-flex justify-content-between">
-                    <span>Classify: <span>Black, 43</span> </span>
-                    <span>x1</span>
+        @{
+            float ttP = 0;
+        }
+        @foreach (var product in Model.infoProductCheckOut)
+        {
+            ttP += (float)product.pricexquantity;
+            <div class="row no-gutters mb-3 border-bottom">
+                <div class="col-3 d-flex justify-content-center align-items-center">
+                    <img src="@product.imgUrl" alt="" style="width: 70px; height: 120px;">
                 </div>
-                <div class="d-flex justify-content-end">
-                    <span class="new_price">&#8363;155.000</span>
-                </div>
-            </div>
-        </div>
-        <div class="row no-gutters mb-3 border-bottom">
-            <div class="col-3 d-flex justify-content-center">
-                <img src="~/Content/images/products/pd2.1.jpg" alt="" style="width: 70px; height: 120px;">
-            </div>
-            <div class="col-9">
-                <div>Name product</div>
-                <div class="product_classity d-flex justify-content-between">
-                    <span>Classify: <span>Black, 43</span> </span>
-                    <span>x1</span>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <span class="new_price">&#8363;455.000</span>
+                <div class="col-9">
+                    <div>@product.productName</div>
+                    <div class="product_classity d-flex justify-content-between">
+                        <span>Classify: <span>@product.colorName, @product.sizeName</span> </span>
+                        <span>x @product.productQuantiyInCart</span>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <span class="new_price">&#8363;@product.productPrice</span>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
     </div>
     <div class="row no-gutters shadow-sm p-3 bg-white rounded border-top">
         <div class="col d-flex justify-content-between">
@@ -94,7 +86,7 @@
     <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
         <div class="col d-flex justify-content-between align-items-center">
             <div>Total cost <span>(2 products)</span>:</div>
-            <div>&#8363;<span id="total-cost" data-totalprice="755000">755000</span></div>
+            <div>&#8363;<span id="total-cost" data-totalprice="@ttP">@ttP</span></div>
         </div>
     </div>
     <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
@@ -128,9 +120,9 @@
         <div>
             <div class="text-left" id="amount-cost" data-price="0"></div>
             <div class="text-left" id="total-shipping-fee" data-price="0"></div>
-            <div class="text-left" id="reduce-shipping-cost" data-price="0">Reduced shipping cost: <span>4444k</span></div>
-            <div class="text-left" id="total-discount-voucher" data-price="0">Total discount voucher : <span>4444k</span></div>
-            <div class="text-left" id="total-payment" data-price="0">Total payment: <span>4444k</span></div>
+            <div class="text-left" id="reduce-shipping-cost" data-price="0"></div>
+            <div class="text-left" id="total-discount-voucher" data-price="0"></div>
+            <div class="text-left" id="total-payment" data-price="0"></div>
         </div>
     </div>
     <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
@@ -469,7 +461,7 @@
                     $('#time-receive-goods').text(timeRecive[index].textContent);
                     if (selectVoucherFreeShip()) {
                         freeShipDiscount();
-                    } 
+                    }
                     //freeShipDiscount();
                     //paymentDetails(freeShipDiscount());
                     boxShipping[index].classList.add('border-danger');
@@ -538,7 +530,7 @@
         selectedPaymentMethod();
         $('#payment-method-confirm').click(selectedPaymentMethod);
         paymentCheckbox.forEach(function (item, index) {
-            item.addEventListener('click', function (event) {  
+            item.addEventListener('click', function (event) {
                 item.classList.toggle('active-custom');
                 checkRadio(paymentCheckbox, paymentValue);
                 if (item.classList.contains('active-custom')) {

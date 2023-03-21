@@ -25,5 +25,6 @@ namespace FashionShops
         public virtual Order Order { get; set; }
         public virtual Color Color1 { get; set; }
         public virtual Size Size1 { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

@@ -13,7 +13,7 @@
                 <div class="row no-gutters box-produdct">
                     <div class="col-1 d-flex justify-content-between align-items-center">
                         <div class="checkbox">
-                            <input id="chk-pro-@item.cartID" data-price="@item.prouductPriceInCart" class="product-checkout" type="checkbox" name="chk-pro-@item.cartID" value="check">
+                            <input id="chk-pro-@item.cartID" data-cartid="@item.cartID" data-price="@item.prouductPriceInCart" class="product-checkout" type="checkbox" name="select-pro" value="check">
                             <label for="chk-pro-@item.cartID" class="label-for-checkout"></label>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
             <div class="total">
                 Total cost: <span id="totalCost">0</span>&#8363;
             </div>
-            <a href="/CheckOut/Index" class="btn btn-outline-danger">
+            <a href="#" id="check-out-product-from-cart" class="btn btn-outline-danger">
                 Check out
             </a>
         </div>
@@ -91,6 +91,26 @@
         if (message !== "") {
             toastr.success(messageR);
         }
+
+        $(function () {
+            $(document).on('click', '#check-out-product-from-cart', function (event) {
+                //alert("click");
+                //event.preventDefault();
+                let arrayProducts = [];
+                $('.product-checkout').each(function () {
+                    if ($(this).is(':checked')) {
+                        arrayProducts.push($(this).data('cartid'));
+                    }
+                })
+                if (arrayProducts.length === 0) {
+                    event.preventDefault();
+                    toastr.error('Please select at least 1 product to checkout!');
+                } else {
+                    let arrayProductsJSON = JSON.stringify(arrayProducts);
+                    $('#check-out-product-from-cart').attr('href', '/CheckOut/Index?arrProducts=' + arrayProductsJSON);
+                }
+            })
+        });
     </script>
 }
 

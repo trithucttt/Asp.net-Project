@@ -23,6 +23,7 @@ namespace FashionShops
             this.Product_Quantity = new HashSet<Product_Quantity>();
             this.Product_Reviewing = new HashSet<Product_Reviewing>();
             this.Product_Tag = new HashSet<Product_Tag>();
+            this.Order_Item = new HashSet<Order_Item>();
         }
     
         public long product_id { get; set; }
@@ -46,5 +47,7 @@ namespace FashionShops
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Tag> Product_Tag { get; set; }
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_Item> Order_Item { get; set; }
     }
 }

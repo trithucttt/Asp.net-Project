@@ -48,6 +48,7 @@
         <AssociationConnector Association="FashionShopModel.FK_V_U" ManuallyRouted="false" />
         <AssociationConnector Association="FashionShopModel.FK_OI_C" />
         <AssociationConnector Association="FashionShopModel.FK_OI_S" />
+        <AssociationConnector Association="FashionShopModel.FK_OI_P" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

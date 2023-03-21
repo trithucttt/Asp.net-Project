@@ -174,10 +174,12 @@
     <Compile Include="Models\CartForModal\SizesProForModal.cs" />
     <Compile Include="Models\CartView.cs" />
     <Compile Include="Models\CheckOut\AllNeedForCheckOut.cs" />
+    <Compile Include="Models\CheckOut\InfoProductCheckOut.cs" />
     <Compile Include="Models\CheckOut\InfoUserCheckOut.cs" />
     <Compile Include="Models\CheckOut\PaymentMethods.cs" />
     <Compile Include="Models\CheckOut\VoucherAvailable.cs" />
     <Compile Include="Models\CustomMemberShipUser.cs" />
+    <Compile Include="Models\ListOrder\InfoOrder.cs" />
     <Compile Include="Models\ProductDetail\ImagesForProduct.cs" />
     <Compile Include="Models\ProductDetail\ProductDetail.cs" />
     <Compile Include="Models\ProductView.cs" />
@@ -446,6 +448,8 @@
     <Content Include="Content\styles\contact_styles.css" />
     <Content Include="Content\styles\main.css" />
     <Content Include="Content\styles\main_styles.css" />
+    <Content Include="Content\styles\orderlist.css" />
+    <Content Include="Content\styles\ordertracking.css" />
     <Content Include="Content\styles\responsive.css" />
     <Content Include="Content\styles\single_responsive.css" />
     <Content Include="Content\styles\single_styles.css" />
@@ -542,6 +546,8 @@
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\ChangePassword\Index.cshtml" />
     <Content Include="Views\CheckOut\Index.cshtml" />
+    <Content Include="Views\CheckOut\OrderTracking.cshtml" />
+    <Content Include="Views\CheckOut\OrderList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
