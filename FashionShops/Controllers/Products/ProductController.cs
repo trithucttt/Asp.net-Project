@@ -92,8 +92,5 @@ namespace FashionShops.Controllers.Products
 
             return View(detailPro);
         }
-
-
-
     }
 }
