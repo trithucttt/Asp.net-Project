@@ -172,14 +172,12 @@
     <Compile Include="Models\CartForModal\ColorsProForModal.cs" />
     <Compile Include="Models\CartForModal\InfProForModal.cs" />
     <Compile Include="Models\CartForModal\SizesProForModal.cs" />
-    <Compile Include="Models\CartView.cs" />
     <Compile Include="Models\CheckOut\AllNeedForCheckOut.cs" />
     <Compile Include="Models\CheckOut\InfoProductCheckOut.cs" />
     <Compile Include="Models\CheckOut\InfoUserCheckOut.cs" />
     <Compile Include="Models\CheckOut\PaymentMethods.cs" />
     <Compile Include="Models\CheckOut\VoucherAvailable.cs" />
     <Compile Include="Models\CustomMemberShipUser.cs" />
-    <Compile Include="Models\ListOrder\InfoOrder.cs" />
     <Compile Include="Models\OrderTracking\OrderTracking.cs" />
     <Compile Include="Models\ProductDetail\ImagesForProduct.cs" />
     <Compile Include="Models\ProductDetail\ProductDetail.cs" />
