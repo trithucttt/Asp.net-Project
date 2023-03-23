@@ -112,7 +112,7 @@ create table Orders
 	transport_fee float,
 	total_price float not null,
 	voucher_id bigint,
-	order_status nvarchar(40) not null check(order_status IN('Đã chấp nhận','Đang chuẩn bị hàng','Đơn hàng đã chuẩn bị xong','Đang xử lý','Đang giao','Đã giao'))
+	order_status nvarchar(40) not null check(order_status IN('accepted', 'preparing', 'OrderIsReady','Processing','delivering','delivered'))
 )
 
 if exists(select name from sysobjects where name = 'Order_Item')
@@ -1729,12 +1729,14 @@ insert into Voucher values (4, 1, 'FASHIONSHOP4', 0.08, 'Chưa sử dụng', '20
 
 -- Orders --
 -- (order_id, customer_id, order_date, original_price, reduced_price, transport_fee, total_price, voucher_id, order_status)
-insert into Orders values (1110223145659, 1, '2023-02-11 14:56:59', 300000, 0, 0, 300000, 1,'Đã giao')
+insert into Orders values (1110223145659, 1, '2023-02-11 14:56:59', 300000, 0, 0, 300000, 1, 'preparing')
+insert into Orders values (2, 1, '2023-03-12 14:56:59', 150000, 0, 0, 150000, 1, 'preparing')
 
 -- Order_Item --
 -- (id, order_id, product_id, quantity, size, color, totalcost)
 insert into Order_Item values (1110223145659, 1, 1, 1, 1, 150000)
 insert into Order_Item values (1110223145659, 1, 1, 1, 2, 150000)
+insert into Order_Item values (2, 1, 1, 1, 1, 150000)
 
 
 -- Payment_Methods --
@@ -1748,6 +1750,7 @@ insert into Payment_Methods values (3, 'COD')
 -- 1 Chua thanh toan
 -- 2 Da thanh toan
 insert into Payment_Detail values (1, 1110223145659, 300000, 2, 2)
+insert into Payment_Detail values (1, 2, 150000, 2, 2)
 
 --cart
 --(user_id, productid, qantity, size, color, totalprice)
