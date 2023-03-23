@@ -10,10 +10,14 @@
             <div class="col-7">
                 <h5 class="modal-title" id="exampleModalLongTitle">@Model.infProduct[0].productName</h5>
                 <p class="modal-title">
-                    <span class="old_price" style="text-decoration: line-through">&#8363;3333</span>
+                    @{
+                        double productPrice = Model.infProduct[0].productPrice;
+                        double tempPrice = productPrice * 0.2 + productPrice;
+                    }
+                    <span class="old_price" style="text-decoration: line-through">&#8363;@tempPrice</span>
                     <span class="new_price">&#8363;<span id="product-price">@Model.infProduct[0].productPrice</span></span>
                 </p>
-                <p class="modal-tittle">Kho: 444</p>
+                <p class="modal-tittle">@Model.currentQuantity products left</p>
             </div>
             <div class="col-1">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -73,4 +77,3 @@
         </div>
     </div>
 </div>
-

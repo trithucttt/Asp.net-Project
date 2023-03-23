@@ -1,4 +1,4 @@
-﻿@model List<FashionShops.Models.ListOrder.InfoOrder>
+﻿@model IEnumerable<FashionShops.Order>
 @{
     ViewBag.Title = "OrderList";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,7 +7,7 @@
 <div class="container rounded bg-white mb-5" style="margin-top: 110px">
     <div class="row">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">@Model.FirstOrDefault().User.username </span><span class="text-black-50">@Model.FirstOrDefault().User.email</span><span> </span></div>
         </div>
         <div class="col-md-9 border-right">
             <div class="p-3 py-5">
@@ -18,13 +18,14 @@
                 {
                     <a href="/CheckOut/OrderTracking?orderid=@item.order_id" class="row mt-3 order-item">
                         <div class="col-12">
-                            <div class="row">
-                                <div class="col-12 order-No"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>Order No: @item.order_id</div>
+                            <div class="row order-list-header">
+                                <div class="col-8 order-No"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>Order No: #@item.order_id</div>
+                                <div class="col-4 order-status"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> @item.order_status</div>
                             </div>
-                            <div class="row mt-1">
-                                <div class="col-4"><img src="@item.imgUrl" width="100" height="100" /></div>
-                                <div class="col-5">@item.proName</div>
-                                <div class="col-3">x @item.quantity @item.totalPrice</div>
+                            <div class="row mt-1 order-list-footer" >
+                                <div class="col-3"><img src="@item.Order_Item.FirstOrDefault().Product.Product_Image.FirstOrDefault().Image.imgae_url" style="width: 100px; height: 100px;" /></div>
+                                <div class="col-6 product-name" data-orname="@item.Order_Item.FirstOrDefault().Product.name">@item.Order_Item.FirstOrDefault().Product.name</div>
+                                <div class="col-3 order-price">x @item.Order_Item.FirstOrDefault().quantity &#8363;@item.Order_Item.FirstOrDefault().total_price</div>
                             </div>
                         </div>
                     </a>
@@ -37,4 +38,36 @@
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/orderlist.css">
+    <script>
+        function fitName(maxLength) {
+            let productList = document.querySelectorAll('.product-name');
+
+            // Loop through each product name in the list
+            for (let i = 0; i < productList.length; i++) {
+                const productName = productList[i].textContent;
+
+                // Shorten the product name if it is too long
+                if (productName.length > maxLength) {
+                    let shortenedName = productName.substring(0, maxLength) + '...';
+                    productList[i].textContent = shortenedName;
+                }
+            }
+        }
+
+        $(window).resize(function () {
+            let windowWidth = $(window).width();
+            if (windowWidth < 340) {
+                fitName(28);
+            } else if (windowWidth < 755) {
+                fitName(40);
+            } else if (windowWidth < 995) {
+                fitName(60);
+            } else {
+                $('.product-name').each(function () {
+                    let originnalName = $(this).data('orname');
+                    $(this).text(originnalName);
+                });
+            }
+        });
+    </script>
 }

@@ -4,7 +4,8 @@
         let id = $(event.currentTarget).data('id');
         let colorID = $(event.currentTarget).data('color');
         let sizeID = $(event.currentTarget).data('size');
-        let cartID = $(event.currentTarget).data('cartid')
+        let cartID = $(event.currentTarget).data('cartid');
+        let currentQuantity = $(event.currentTarget).data('quantity');
         $.ajax({
             url: "/Cart/DataForModal/",
             type: "GET",
@@ -12,7 +13,8 @@
                 id: id,
                 sizeid: sizeID,
                 colorid: colorID,
-                cartid: cartID
+                cartid: cartID,
+                quantity: currentQuantity
             },
             success: function (data) {
                 $("#modalProduct").html(data);
@@ -319,3 +321,22 @@ $(document).ready(function () {
 //    setValueCost();
 //});
 
+$(function () {
+    $(document).on('click', '#check-out-product-from-cart', function (event) {
+        //alert("click");
+        //event.preventDefault();
+        let arrayProducts = [];
+        $('.product-checkout').each(function () {
+            if ($(this).is(':checked')) {
+                arrayProducts.push($(this).data('cartid'));
+            }
+        })
+        if (arrayProducts.length === 0) {
+            event.preventDefault();
+            toastr.error('Please select at least 1 product to checkout!');
+        } else {
+            let arrayProductsJSON = JSON.stringify(arrayProducts);
+            $('#check-out-product-from-cart').attr('href', '/CheckOut/Index?arrProducts=' + arrayProductsJSON);
+        }
+    })
+});

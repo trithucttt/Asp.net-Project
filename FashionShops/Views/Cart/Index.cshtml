@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    @model List<FashionShops.Models.CartView>
+    @model IEnumerable<FashionShops.Cart>
 }
 
 <div class="container " style="margin-top: 180px" id="cart-list">
@@ -13,41 +13,45 @@
                 <div class="row no-gutters box-produdct">
                     <div class="col-1 d-flex justify-content-between align-items-center">
                         <div class="checkbox">
-                            <input id="chk-pro-@item.cartID" data-cartid="@item.cartID" data-price="@item.prouductPriceInCart" class="product-checkout" type="checkbox" name="select-pro" value="check">
-                            <label for="chk-pro-@item.cartID" class="label-for-checkout"></label>
+                            <input id="chk-pro-@item.cart_id" data-cartid="@item.cart_id" data-price="@item.total_price" class="product-checkout" type="checkbox" name="select-pro" value="check">
+                            <label for="chk-pro-@item.cart_id" class="label-for-checkout"></label>
                         </div>
                     </div>
                     <div class="col-4">
-                        <img src="@item.productImage" id="main-img" class="card-img" alt="..." style="height: 310px; width: 100%;">
+                        <img src="@item.Product.Product_Image.FirstOrDefault().Image.imgae_url" id="main-img" class="card-img" alt="..." style="height: 310px; width: 100%;">
                     </div>
                     <div class="col-6">
                         <div class="card-body">
-                            <h5 class="card-title product-name" data-orname="@item.productName">@item.productName</h5>
+                            <h5 class="card-title product-name" data-orname="@item.Product.name">@item.Product.name</h5>
                             <input type="text" name="id" hidden value="2">
                             <label for="size" class="form-label" style="font-weight: 700;">Classify:</label>
-                            <a href="#" data-cartid="@item.cartID" data-id="@item.productID" data-size="@item.sizeID" data-color="@item.colorID" type="button" class="btn-outline-dark form-control d-flex justify-content-between update_info_product">
-                                <span class="classify" id="classify">Classify: @item.productColor, @item.productSize</span>
+                            <a href="#" data-cartid="@item.cart_id" data-id="@item.product_id" data-size="@item.size" data-color="@item.color" data-quantity="@item.Product.Product_Quantity.Where(x => x.size_id == item.size).Where(x => x.color_id == item.color).Where(x => x.product_id == item.product_id).FirstOrDefault().quantity" type="button" class="btn-outline-dark form-control d-flex justify-content-between update_info_product">
+                                <span class="classify" id="classify">Classify: @item.Color1.color1, @item.Size1.size1</span>
                                 <span><i class="fa fa-chevron-down"></i></span>
                             </a>
                             <p class="card-text">
                                 @{
-                                    double productPrice = item.productPrice;
+                                    double productPrice = item.Product.price;
                                     double tempPrice = productPrice * 0.2 + productPrice;
                                 }
                                 <span class="old_price" style="text-decoration: line-through">&#8363;@tempPrice</span>
-                                <span class="new_price">&#8363;@item.productPrice</span>
+                                <span class="new_price">&#8363;@item.Product.price</span>
                             </p>
                             <div class="quantity-container">
-                                <button class="btn-input decrease" data-cartid="@item.cartID" data-act="decrease">-</button>
-                                <input type="number" name="quantityCurent" id="@item.cartID" value="@item.proudctQuantity" min="1" max="999" readonly />
-                                <button class="btn-input increase" data-cartid="@item.cartID" data-act="increase">+</button>
+                                <button class="btn-input decrease" data-cartid="@item.cart_id" data-act="decrease">-</button>
+                                <input type="number" name="quantityCurent" id="@item.cart_id" value="@item.quantity" min="1" max="999" readonly />
+                                <button class="btn-input increase" data-cartid="@item.cart_id" data-act="increase">+</button>
                             </div>
-                            <p class="card-text"><small class="text-muted">54 products left</small></p>
+                            <p class="card-text">
+                            <small class="text-muted">
+                                @item.Product.Product_Quantity.Where(x => x.size_id == item.size).Where(x => x.color_id == item.color).Where(x => x.product_id == item.product_id).FirstOrDefault().quantity products left
+                            </small>
+                            </p>
                         </div>
                     </div>
                     <div class="col-1 d-flex justify-content-between align-items-center">
-                        <a class=" remove-product" data-urldelete="/Cart/RemoveProduct" data-productid="@item.productID"
-                           data-idincart="@item.cartID" data-img="@item.productImage" data-name="@item.productName">
+                        <a class=" remove-product" data-urldelete="/Cart/RemoveProduct" data-productid="@item.product_id"
+                           data-idincart="@item.cart_id" data-img="@item.Product.Product_Image.FirstOrDefault().Image.imgae_url" data-name="@item.Product.name">
                             <i class="fa fa-trash btn-delete btn-outline-danger"></i>
                         </a>
                     </div>
@@ -92,25 +96,6 @@
             toastr.success(messageR);
         }
 
-        $(function () {
-            $(document).on('click', '#check-out-product-from-cart', function (event) {
-                //alert("click");
-                //event.preventDefault();
-                let arrayProducts = [];
-                $('.product-checkout').each(function () {
-                    if ($(this).is(':checked')) {
-                        arrayProducts.push($(this).data('cartid'));
-                    }
-                })
-                if (arrayProducts.length === 0) {
-                    event.preventDefault();
-                    toastr.error('Please select at least 1 product to checkout!');
-                } else {
-                    let arrayProductsJSON = JSON.stringify(arrayProducts);
-                    $('#check-out-product-from-cart').attr('href', '/CheckOut/Index?arrProducts=' + arrayProductsJSON);
-                }
-            })
-        });
+        
     </script>
 }
-

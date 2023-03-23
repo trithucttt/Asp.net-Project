@@ -3,20 +3,57 @@
     margin-top: 5px;
     padding: 10px 0;
     border-radius: 20px;
-    background: white;
-    color: #fe4c50;
-    border: 1px #fe4c50 solid;
+    background: #fffefb;
+    color: rgba(0,0,0,.8);
+    box-shadow: 0px 4px 8px -2px rgba(9, 30, 66, 0.25), 0px 0px 0px 1px rgba(9, 30, 66, 0.08);
+    animation: ease .3s;
 }
+
     .order-item:hover {
         background: #fe4c50;
         color: white;
         border: none;
-        animation: ease .3s;
     }
 
-.order-No {
-    font-size: 20px;
+        .order-item:hover .order-list-header {
+            border-bottom: 1px white solid;
+        }
+
+        .order-item:hover .order-status{
+            color: white;
+        }
+
+        .order-item:hover .order-price {
+            color: white;
+        }
+
+        .order-item:hover .order-No{
+            color: white;
+        }
+
+        .order-list-header {
+            padding: 5px;
+            border-bottom: 1px #000 solid;
+        }
+
+.order-status {
+    color: #26aa99;
 }
+
+.order-price {
+    color: #fe4c50;
+}
+
+.order-list-footer {
+    padding: 5px;
+}
+
+.order-No {
+    font-weight: 400;
+    font-size: 20px;
+    color: #fe4c50;
+}
+
 .form-control:focus {
     box-shadow: none;
     border-color: #BA68C8
