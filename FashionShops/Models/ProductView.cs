@@ -12,5 +12,6 @@ namespace FashionShops.Models
         public double productPrice { get; set; }
         public string imageUrl { get; set; }
         public string content { get; set; }
+        public int QuantityPro { get; set; }
     }
 }
