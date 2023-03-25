@@ -14,6 +14,8 @@ namespace FashionShops
     
     public partial class User
     {
+        internal bool rememberme;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
@@ -36,7 +38,6 @@ namespace FashionShops
         public string city { get; set; }
         public string country { get; set; }
         public string address { get; set; }
-        public bool rememberme { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }

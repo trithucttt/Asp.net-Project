@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\DatabaseFashionShops.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\fashion_shops_asp.net\FashionShops\DatabaseFashionShops.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
