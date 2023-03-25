@@ -1,4 +1,6 @@
 ﻿<div id="LoginMsg" hidden>@ViewBag.LoginSuccessMsg</div>
+@model IEnumerable<FashionShops.Models.ProductView>
+
 <!-- Slider -->
 
 <div class="main_slider" style="background-image: url(../../Content/images/slider_1.jpg)">
@@ -6,9 +8,9 @@
         <div class="row align-items-center fill_height">
             <div class="col">
                 <div class="main_slider_content">
-                    <h6>Spring / Summer Collection 2017</h6>
+                    <h6>Summer / Fall Collection 2023</h6>
                     <h1>Get up to 30% Off New Arrivals</h1>
-                    <div class="red_button shop_now_button"><a href="#">shop now</a></div>
+                    <div class="red_button shop_now_button"><a href="/Product/Index">shop now</a></div>
                 </div>
             </div>
         </div>
@@ -62,8 +64,8 @@
                     <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
                         <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
                         <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
                         <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
                     </ul>
                 </div>
             </div>
@@ -72,170 +74,152 @@
             <div class="col">
                 <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
-                    <!-- Product 1 -->
-
-                    <div class="product-item men">
+                     @*Product 1*@ 
+                    <div class="product-item women">
                         <div class="product discount product_filter">
                             <div class="product_image">
-                                <img src="../../Content/images/product_1.png" alt="">
+                                <img src="~/Content/images/products/pd1.1.jpg" alt="" style="width:100%; height: 250px " />
                             </div>
                             <div class="favorite favorite_left"></div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-20%</span></div>
                             <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                                <div class="product_price">$520.00<span>$590.00</span></div>
+                                <h6 class="product_name"><a href="single.html">CHÂN VÁY TENNIS XẾP LY</a></h6>
+                                <div class="product_price">150.000 VNĐ<span>180.000 VNĐ</span></div>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=1">Go to Detail</a></div>
                     </div>
-
-                    <!-- Product 2 -->
-
-                    <div class="product-item women">
+                     @*Product 2*@ 
+                    <div class="product-item accessories">
                         <div class="product product_filter">
                             <div class="product_image">
-                                <img src="../../Content/images/product_2.png" alt="">
+                                <img src="~/Content/images/products/pd20.4.jpg" alt="" style="width:100%; height: 250px " />
                             </div>
                             <div class="favorite"></div>
                             <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
                             <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                                <div class="product_price">$610.00</div>
+                                <h6 class="product_name"><a href="single.html">GIÀY PUMA SUEDE</a></h6>
+                                <div class="product_price">1.800.000 VNĐ</div>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=20">Go to Detail</a></div>
                     </div>
-
-                    <!-- Product 3 -->
-
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../Content/images/product_3.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                                <div class="product_price">$120.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
-
-                    <!-- Product 4 -->
-
+                     @*Product 3*@ 
                     <div class="product-item accessories">
                         <div class="product product_filter">
                             <div class="product_image">
-                                <img src="../../Content/images/product_4.png" alt="">
+                                <img src="~/Content/images/products/pd14.3.jpg" alt="" style="width:100%; height: 250px " />
+                            </div>
+                            <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
+                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>hot</span></div> 
+                            <div class="product_info">
+                                <h6 class="product_name"><a href="single.html">GIÀY ADIDAS ULTRABOOST</a></h6>
+                                <div class="product_price">2.000.000 VNĐ</div>
+                            </div>
+                        </div>
+                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=14">Go to Detail</a></div>
+                    </div>
+                     @*Product 4*@ 
+                    <div class="product-item men">
+                        <div class="product product_filter">
+                            <div class="product_image">
+                                <img src="~/Content/images/products/pd201.1.jpg" alt="" style="width:100%; height: 250px " />
                             </div>
                             <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
                             <div class="favorite favorite_left"></div>
                             <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                                <div class="product_price">$410.00</div>
+                                <h6 class="product_name"><a href="single.html">ÁO SƠ MI TAY DÀI</a></h6>
+                                <div class="product_price">300.000 VNĐ</div>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=22">Go to Detail</a></div>
                     </div>
-
-                    <!-- Product 5 -->
-
-                    <div class="product-item women men">
+                     @*Product 5*@ 
+                    <div class="product-item men">
                         <div class="product product_filter">
                             <div class="product_image">
-                                <img src="../../Content/images/product_5.png" alt="">
+                                <img src="~/Content/images/products/pd205.3.jpg" alt="" style="width:100%; height: 250px " />
                             </div>
                             <div class="favorite"></div>
                             <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                                <div class="product_price">$180.00</div>
+                                <h6 class="product_name"><a href="single.html">ÁO POLO RELAX FIX IN TYPO</a></h6>
+                                <div class="product_price">429.000 VNĐ</div>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=26">Go to Detail</a></div>
                     </div>
-
-                    <!-- Product 6 -->
-
-                    <div class="product-item accessories">
+                     @*Product 6*@ 
+                    <div class="product-item men">
                         <div class="product discount product_filter">
                             <div class="product_image">
-                                <img src="../../Content/images/product_6.png" alt="">
+                                <img src="~/Content/images/products/pd202.1.jpg" alt="" style="width:100%; height: 250px " />
                             </div>
                             <div class="favorite favorite_left"></div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-20%</span></div>
                             <div class="product_info">
-                                <h6 class="product_name"><a href="#single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                                <div class="product_price">$520.00<span>$590.00</span></div>
+                                <h6 class="product_name"><a href="#single.html">ÁO THUN CỔ TRỤ ĐƠN GIẢN</a></h6>
+                                <div class="product_price">270.000 VNĐ<span>320.000 VNĐ</span></div>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=23">Go to Detail</a></div>
                     </div>
-
-                    <!-- Product 7 -->
-
+                     @*Product 7*@ 
                     <div class="product-item women">
                         <div class="product product_filter">
                             <div class="product_image">
-                                <img src="../../Content/images/product_7.png" alt="">
+                                <img src="~/Content/images/products/pd9.2.jpg" alt="" style="width:100%; height: 250px " />
                             </div>
                             <div class="favorite"></div>
                             <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                                <div class="product_price">$610.00</div>
+                                <h6 class="product_name"><a href="single.html">CHÂN VÁY CHỮ A DÁNG XOÈ</a></h6>
+                                <div class="product_price">219.000 VNĐ</div>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=9">Go to Detail</a></div>
                     </div>
-
-                    <!-- Product 8 -->
-
+                     @*Product 8*@ 
                     <div class="product-item accessories">
                         <div class="product product_filter">
                             <div class="product_image">
-                                <img src="../../Content/images/product_8.png" alt="">
+                                <img src="~/Content/images/products/pd18.3.jpg" alt="" style="width:100%; height: 250px " />
+                            </div>
+                            <div class="favorite"></div>
+                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>hot</span></div>
+                            <div class="product_info">
+                                <h6 class="product_name"><a href="single.html">GIÀY NIKE AIR FORCE 1</a></h6>
+                                <div class="product_price">1.800.000 VNĐ</div>
+                            </div>
+                        </div>
+                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=18">Go to Detail</a></div>
+                    </div>
+                     @*Product 9*@ 
+                    <div class="product-item women">
+                        <div class="product product_filter">
+                            <div class="product_image">
+                                <img src="~/Content/images/products/pd4.3.jpg" alt="" style="width:100%; height: 250px " />
                             </div>
                             <div class="favorite"></div>
                             <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                                <div class="product_price">$120.00</div>
+                                <h6 class="product_name"><a href="single.html">CHÂN VÁY KAKI CHỮ A</a></h6>
+                                <div class="product_price">170.000 VNĐ</div>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=4">Go to Detail</a></div>
                     </div>
-
-                    <!-- Product 9 -->
-
-                    <div class="product-item men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../Content/images/product_9.png" alt="">
-                            </div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                                <div class="product_price">$410.00</div>
-                            </div>
+                    @*Product 10*@
+                <div class="product-item women">
+                    <div class="product product_filter">
+                        <div class="product_image">
+                            <img src="~/Content/images/products/pd3.1.jpg" alt="" style="width:100%; height: 250px " />
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
-
-                    <!-- Product 10 -->
-
-                    <div class="product-item men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="../../Content/images/product_10.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                                <div class="product_price">$180.00</div>
-                            </div>
+                        <div class="favorite"></div>
+                        <div class="product_info">
+                            <h6 class="product_name"><a href="single.html">CHÂN VÁY STYLE CHERRY</a></h6>
+                            <div class="product_price">145.000 VNĐ</div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
                     </div>
+                    <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=3">Go to Detail</a></div>
+                </div>
                 </div>
             </div>
         </div>
@@ -275,7 +259,7 @@
                             <div class="timer_unit">Sec</div>
                         </li>
                     </ul>
-                    <div class="red_button deal_ofthe_week_button"><a href="#">shop now</a></div>
+                    <div class="red_button deal_ofthe_week_button"><a href="/Product/Index">shop now</a></div>
                 </div>
             </div>
         </div>
@@ -301,16 +285,16 @@
                         <!-- Slide 1 -->
 
                         <div class="owl-item product_slider_item">
-                            <div class="product-item">
-                                <div class="product discount">
+                            <div class="product-item women">
+                                <div class="product discount product_filter">
                                     <div class="product_image">
-                                        <img src="../../Content/images/product_1.png" alt="">
+                                        <img src="~/Content/images/products/pd1.1.jpg" alt="" style="width:100%; height: 250px " />
                                     </div>
                                     <div class="favorite favorite_left"></div>
-                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-20%</span></div>
                                     <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                                        <div class="product_price">$520.00<span>$590.00</span></div>
+                                        <h6 class="product_name"><a href="single.html">CHÂN VÁY TENNIS XẾP LY</a></h6>
+                                        <div class="product_price">150.000 VNĐ<span>180.000 VNĐ</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -319,16 +303,16 @@
                         <!-- Slide 2 -->
 
                         <div class="owl-item product_slider_item">
-                            <div class="product-item women">
-                                <div class="product">
+                            <div class="product-item accessories">
+                                <div class="product product_filter">
                                     <div class="product_image">
-                                        <img src="../../Content/images/product_2.png" alt="">
+                                        <img src="~/Content/images/products/pd20.4.jpg" alt="" style="width:100%; height: 250px " />
                                     </div>
                                     <div class="favorite"></div>
                                     <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
                                     <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                                        <div class="product_price">$610.00</div>
+                                        <h6 class="product_name"><a href="single.html">GIÀY PUMA SUEDE</a></h6>
+                                        <div class="product_price">1.800.000 VNĐ</div>
                                     </div>
                                 </div>
                             </div>
@@ -337,15 +321,16 @@
                         <!-- Slide 3 -->
 
                         <div class="owl-item product_slider_item">
-                            <div class="product-item women">
-                                <div class="product">
+                            <div class="product-item accessories">
+                                <div class="product product_filter">
                                     <div class="product_image">
-                                        <img src="../../Content/images/product_3.png" alt="">
+                                        <img src="~/Content/images/products/pd14.3.jpg" alt="" style="width:100%; height: 250px " />
                                     </div>
-                                    <div class="favorite"></div>
+                                    <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
+                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>hot</span></div>
                                     <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                                        <div class="product_price">$120.00</div>
+                                        <h6 class="product_name"><a href="single.html">GIÀY ADIDAS ULTRABOOST</a></h6>
+                                        <div class="product_price">2.000.000 VNĐ</div>
                                     </div>
                                 </div>
                             </div>
@@ -354,16 +339,16 @@
                         <!-- Slide 4 -->
 
                         <div class="owl-item product_slider_item">
-                            <div class="product-item accessories">
-                                <div class="product">
+                            <div class="product-item men">
+                                <div class="product product_filter">
                                     <div class="product_image">
-                                        <img src="../../Content/images/product_4.png" alt="">
+                                        <img src="~/Content/images/products/pd201.1.jpg" alt="" style="width:100%; height: 250px " />
                                     </div>
                                     <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
                                     <div class="favorite favorite_left"></div>
                                     <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                                        <div class="product_price">$410.00</div>
+                                        <h6 class="product_name"><a href="single.html">ÁO SƠ MI TAY DÀI</a></h6>
+                                        <div class="product_price">300.000 VNĐ</div>
                                     </div>
                                 </div>
                             </div>
@@ -372,15 +357,15 @@
                         <!-- Slide 5 -->
 
                         <div class="owl-item product_slider_item">
-                            <div class="product-item women men">
-                                <div class="product">
+                            <div class="product-item men">
+                                <div class="product product_filter">
                                     <div class="product_image">
-                                        <img src="../../Content/images/product_5.png" alt="">
+                                        <img src="~/Content/images/products/pd205.3.jpg" alt="" style="width:100%; height: 250px " />
                                     </div>
                                     <div class="favorite"></div>
                                     <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                                        <div class="product_price">$180.00</div>
+                                        <h6 class="product_name"><a href="single.html">ÁO POLO RELAX FIX IN TYPO</a></h6>
+                                        <div class="product_price">429.000 VNĐ</div>
                                     </div>
                                 </div>
                             </div>
@@ -389,16 +374,16 @@
                         <!-- Slide 6 -->
 
                         <div class="owl-item product_slider_item">
-                            <div class="product-item accessories">
-                                <div class="product discount">
+                            <div class="product-item men">
+                                <div class="product discount product_filter">
                                     <div class="product_image">
-                                        <img src="../../Content/images/product_6.png" alt="">
+                                        <img src="~/Content/images/products/pd202.1.jpg" alt="" style="width:100%; height: 250px " />
                                     </div>
                                     <div class="favorite favorite_left"></div>
-                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-20%</span></div>
                                     <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                                        <div class="product_price">$520.00<span>$590.00</span></div>
+                                        <h6 class="product_name"><a href="#single.html">ÁO THUN CỔ TRỤ ĐƠN GIẢN</a></h6>
+                                        <div class="product_price">270.000 VNĐ<span>320.000 VNĐ</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -408,14 +393,14 @@
 
                         <div class="owl-item product_slider_item">
                             <div class="product-item women">
-                                <div class="product">
+                                <div class="product product_filter">
                                     <div class="product_image">
-                                        <img src="../../Content/images/product_7.png" alt="">
+                                        <img src="~/Content/images/products/pd9.2.jpg" alt="" style="width:100%; height: 250px " />
                                     </div>
                                     <div class="favorite"></div>
                                     <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                                        <div class="product_price">$610.00</div>
+                                        <h6 class="product_name"><a href="single.html">CHÂN VÁY CHỮ A DÁNG XOÈ</a></h6>
+                                        <div class="product_price">219.000 VNĐ</div>
                                     </div>
                                 </div>
                             </div>
@@ -425,14 +410,15 @@
 
                         <div class="owl-item product_slider_item">
                             <div class="product-item accessories">
-                                <div class="product">
+                                <div class="product product_filter">
                                     <div class="product_image">
-                                        <img src="../../Content/images/product_8.png" alt="">
+                                        <img src="~/Content/images/products/pd18.3.jpg" alt="" style="width:100%; height: 250px " />
                                     </div>
                                     <div class="favorite"></div>
+                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>hot</span></div>
                                     <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                                        <div class="product_price">$120.00</div>
+                                        <h6 class="product_name"><a href="single.html">GIÀY NIKE AIR FORCE 1</a></h6>
+                                        <div class="product_price">1.800.000 VNĐ</div>
                                     </div>
                                 </div>
                             </div>
@@ -441,16 +427,15 @@
                         <!-- Slide 9 -->
 
                         <div class="owl-item product_slider_item">
-                            <div class="product-item men">
-                                <div class="product">
+                            <div class="product-item women">
+                                <div class="product product_filter">
                                     <div class="product_image">
-                                        <img src="../../Content/images/product_9.png" alt="">
+                                        <img src="~/Content/images/products/pd4.3.jpg" alt="" style="width:100%; height: 250px " />
                                     </div>
-                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                                    <div class="favorite favorite_left"></div>
+                                    <div class="favorite"></div>
                                     <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                                        <div class="product_price">$410.00</div>
+                                        <h6 class="product_name"><a href="single.html">CHÂN VÁY KAKI CHỮ A</a></h6>
+                                        <div class="product_price">170.000 VNĐ</div>
                                     </div>
                                 </div>
                             </div>
@@ -459,15 +444,15 @@
                         <!-- Slide 10 -->
 
                         <div class="owl-item product_slider_item">
-                            <div class="product-item men">
-                                <div class="product">
+                            <div class="product-item women">
+                                <div class="product product_filter">
                                     <div class="product_image">
-                                        <img src="../../Content/images/product_10.png" alt="">
+                                        <img src="~/Content/images/products/pd3.1.jpg" alt="" style="width:100%; height: 250px " />
                                     </div>
                                     <div class="favorite"></div>
                                     <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                                        <div class="product_price">$180.00</div>
+                                        <h6 class="product_name"><a href="single.html">CHÂN VÁY STYLE CHERRY</a></h6>
+                                        <div class="product_price">145.000 VNĐ</div>
                                     </div>
                                 </div>
                             </div>
@@ -547,21 +532,21 @@
         <div class="row blogs_container">
             <div class="col-lg-4 blog_item_col">
                 <div class="blog_item">
-                    <div class="blog_background" style="background-image: url(../../Content/images/blog_1.jpg)"></div>
+                    <div class="blog_background" style="background-image: url(/Content/images/products/adidas_ultraboost.jpg)"></div>
                     <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-                        <h4 class="blog_title">Here are the trends I see coming this fall</h4>
-                        <span class="blog_meta">by admin | dec 01, 2017</span>
-                        <a class="blog_more" href="#">Read more</a>
+                        <h4 class="blog_title">More information about Adidas Ultraboost</h4>
+                        <span class="blog_meta">by admin | march 24, 2023</span>
+                        <a class="blog_more" href="https://www.adidas.com.vn/vi/giay-ultraboost-light/HQ6339.html">Read more</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 blog_item_col">
                 <div class="blog_item">
-                    <div class="blog_background" style="background-image: url(../../Content/images/blog_2.jpg)"></div>
+                    <div class="blog_background" style="background-image: url(/Content/images/products/nike.jpg)"></div>
                     <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-                        <h4 class="blog_title">Here are the trends I see coming this fall</h4>
-                        <span class="blog_meta">by admin | dec 01, 2017</span>
-                        <a class="blog_more" href="#">Read more</a>
+                        <h4 class="blog_title">Have you ever heard about Nike?</h4>
+                        <span class="blog_meta">by admin | jan 10, 2023</span>
+                        <a class="blog_more" href="https://www.nike.com/">See more</a>
                     </div>
                 </div>
             </div>
@@ -570,8 +555,8 @@
                     <div class="blog_background" style="background-image: url(../../Content/images/blog_3.jpg)"></div>
                     <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                         <h4 class="blog_title">Here are the trends I see coming this fall</h4>
-                        <span class="blog_meta">by admin | dec 01, 2017</span>
-                        <a class="blog_more" href="#">Read more</a>
+                        <span class="blog_meta">by admin | feb 01, 2023</span>
+                        <a class="blog_more" href="https://www.ovsfashion.com/women/collection/accessories">Read more</a>
                     </div>
                 </div>
             </div>
@@ -591,10 +576,10 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <form action="post">
+                <form action="register">
                     <div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
                         <input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
-                        <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
+                        <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">register</button>
                     </div>
                 </form>
             </div>

@@ -1495,7 +1495,8 @@ insert into Product_Image values (44, 194)
 insert into Product_Image values (44, 195)
 insert into Product_Image values (44, 196)
 insert into Product_Image values (45, 197)
-
+insert into Product_Image values (45, 198)
+insert into Product_Image values (45, 199)
 
 
 
