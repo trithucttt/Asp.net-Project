@@ -547,6 +547,7 @@
     <Content Include="Views\CheckOut\Index.cshtml" />
     <Content Include="Views\CheckOut\OrderTracking.cshtml" />
     <Content Include="Views\CheckOut\OrderList.cshtml" />
+    <Content Include="Views\Product\Pagination.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

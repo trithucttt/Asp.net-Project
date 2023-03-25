@@ -370,6 +370,7 @@
                         if (response == 'error') {
                             toastr.error('You must sign in before adding products to cart');
                         } else {
+                            CheckoutItems();
                             toastr.success('Product added to cart successfully');
                         }
                     },

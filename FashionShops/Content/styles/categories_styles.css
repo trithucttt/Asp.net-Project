@@ -1100,6 +1100,22 @@ section
 	font-size: 18px;
 	color: #51545f;
 }
+
+.page_pre {
+	display: inline-block;
+	line-height: 40px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+	.page_pre:hover i {
+		color: #b5aec4;
+	}
+
+	.page_pre i {
+		font-size: 18px;
+		color: #51545f;
+	}
 .showing_results
 {
 	font-size: 16px;

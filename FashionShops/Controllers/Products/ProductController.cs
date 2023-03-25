@@ -14,45 +14,28 @@ namespace FashionShops.Controllers.Products
     {
         // GET: Product
         FashionShopEntities data = new FashionShopEntities();
-        public ActionResult Index(string sortProduct)
+        public ActionResult Index()
         {
-
-            var query = (from product in data.Products
-                        join proImage in data.Product_Image on product.product_id equals proImage.product_id
-                        join Img in data.Images on proImage.image_id equals Img.image_id
-                        where Img.image_id == (product.product_id - 1) * 3 + product.product_id
-                        select new ProductView
-                        {
-                            productID = (int)product.product_id,
-                            productName = product.name,
-                            productPrice =product.price,
-                            imageUrl = Img.imgae_url
-                        });
-            
-            switch(sortProduct)
-            {
-                case "price":
-                    query = query.OrderBy(product => product.productPrice);
-                    break;
-                case "name":
-                    query = query.OrderBy(product => product.productName);
-                    break;
-                default:
-                    query = query.OrderBy(product => product.productID);
-                    break;
-            }
-
-
-
-
-
-            var infProduct = query.ToList();
-
-         
-
+            var query = from p in data.Products select p;
+            var infProduct = query.Take(12).ToList();
             return View(infProduct);
         }
 
+        public ActionResult Pagination(int pageNumber, int pageSize)
+        {
+            int productsToSkip = (pageNumber - 1) * pageSize;
+            var query = from p in data.Products select p;
+            var listProduct = query.ToList().Skip(productsToSkip).Take(pageSize);
+            return PartialView("Pagination", listProduct);
+        }
+
+        public int totalPage(int pageSize)
+        {
+            var product = from p in data.Products select p;
+            int totalProduct = product.Count();
+            int totalPage = (int)Math.Round((double)totalProduct / pageSize, MidpointRounding.AwayFromZero) + 1;
+            return totalPage;
+        }
         public ActionResult Detail(int id)
         {
             var querry1 = from product in data.Products
@@ -118,7 +101,7 @@ namespace FashionShops.Controllers.Products
         }
 
         [HttpPost]
-        public ActionResult AddToCart(addProduct item)
+        public ActionResult AddToCart(FashionShops.Cart item)
         {
             if (Membership.GetUser() != null)
             {
@@ -186,7 +169,7 @@ namespace FashionShops.Controllers.Products
                     data.Carts.Add(newCartItem);
                 }
                 data.SaveChanges();
-                return Content("Add product successfully!ff");
+                return Content("Add product successfully!");
 
             }
             return Content("error");

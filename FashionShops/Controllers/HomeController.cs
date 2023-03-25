@@ -19,6 +19,15 @@ namespace FashionShops.Controllers
             {
                 ViewBag.LoginSuccessMsg = "";
             }
+
+            if (TempData["NotLogin"] != null)
+            {
+                ViewBag.NotLogin = TempData["NotLogin"];
+            }
+            else
+            {
+                ViewBag.NotLogin = "";
+            }
             return View();
         }
 

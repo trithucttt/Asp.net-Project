@@ -1,5 +1,4 @@
-﻿<div id="LoginMsg" hidden>@ViewBag.LoginSuccessMsg</div>
-<!-- Slider -->
+﻿<!-- Slider -->
 
 <div class="main_slider" style="background-image: url(../../Content/images/slider_1.jpg)">
     <div class="container fill_height">
@@ -601,7 +600,8 @@
         </div>
     </div>
 </div>
-
+<div id="LoginMsg" hidden>@ViewBag.LoginSuccessMsg</div>
+<div id="NotLogin" hidden>@ViewBag.NotLogin</div>
 @section notificationLogin {
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
@@ -609,6 +609,11 @@
         var haveMsg = $("#LoginMsg").text();
         if (haveMsg !== "") {
             toastr.success(haveMsg);
+        }
+
+        haveMsg = $("#NotLogin").text();
+        if (haveMsg !== "") {
+            toastr.error(haveMsg);
         }
     </script>
 }

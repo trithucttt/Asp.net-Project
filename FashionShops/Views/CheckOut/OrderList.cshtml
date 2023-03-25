@@ -22,6 +22,7 @@
                                 <div class="col-8 order-No"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>Order No: #@item.order_id</div>
                                 <div class="col-4 order-status"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> @item.order_status</div>
                             </div>
+                            <div>First Item Of This Order: </div>
                             <div class="row mt-1 order-list-footer" >
                                 <div class="col-3"><img src="@item.Order_Item.FirstOrDefault().Product.Product_Image.FirstOrDefault().Image.imgae_url" style="width: 100px; height: 100px;" /></div>
                                 <div class="col-6 product-name" data-orname="@item.Order_Item.FirstOrDefault().Product.name">@item.Order_Item.FirstOrDefault().Product.name</div>

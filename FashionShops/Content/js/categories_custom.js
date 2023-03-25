@@ -353,8 +353,18 @@ jQuery(document).ready(function($)
 	        	{
 	        		var numSortingText = $(this).text();
 					var numFilter = ':nth-child(-n+' + numSortingText + ')';
-	        		$('.num_sorting_text').text($(this).text());
-    				$('.product-grid').isotope({filter: numFilter });
+					$('.num_sorting_text').text($(this).text());
+					let selectedPage = getCurrenPage();
+					let pageSize = getPageSize();
+					let totalPage = getTotalPage(pageSize);
+					if (selectedPage > totalPage) {
+						selectedPage = totalPage;
+						$('.currentpage').text(selectedPage);
+					}
+					setInitPagination();
+					pagination(selectedPage, pageSize);
+					numberClick();
+    				//$('.product-grid').isotope({filter: numFilter });
 	        	});
 	        });	
 

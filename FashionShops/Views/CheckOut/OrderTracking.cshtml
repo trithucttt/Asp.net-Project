@@ -1,4 +1,4 @@
-﻿@model FashionShops.Models.OrderTracking.OrderTracking 
+﻿@model FashionShops.Models.OrderTracking.OrderTracking
 @{
     ViewBag.Title = "OrderTracking";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,7 +23,7 @@
         {
             <div class="row">
                 <div class="col-9">
-                    <span id="name">@item.productName @item.colorName-@item.sizeName</span>
+                    <span id="name" class="product_name">@item.productName @item.colorName-@item.sizeName</span>
                 </div>
                 <div class="col-3">
                     <span id="price">@item.pricexquantity&#8363;</span>
@@ -50,9 +50,9 @@
     </div>
     <div class="progress-track">
         <ul id="progressbar">
-            <li class="step0 active " id="step1">Ordered</li>
-            <li class="step0 active text-center" id="step2">Shipped</li>
-            <li class="step0 active text-right" id="step3">On the way</li>
+            <li class="step0" id="step1">Ordered</li>
+            <li class="step0 text-center" id="step2">Shipped</li>
+            <li class="step0 text-right" id="step3">On the way</li>
             <li class="step0 text-right" id="step4">Delivered</li>
         </ul>
     </div>
@@ -61,14 +61,39 @@
     <div class="footer">
         <div class="row">
             <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/YBWc55P.png"></div>
-            <div class="col-10">Want any help? Please &nbsp;<a> contact us</a></div>
+            <div class="col-10">Want any help? Please &nbsp;<a href="Contact/Index"> contact us</a></div>
         </div>
     </div>
 </div>
+
+<div id="order-status" hidden>@Model.orderInfo.order_status</div>
 
 @section ordertracking {
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/ordertracking.css">
+    <script>
+        let orderStatus = $('#order-status').text();
+        switch (orderStatus) {
+            case 'delivered':
+                $('#step4').addClass('active');
+            case 'delivering':
+                $('#step3').addClass('active');
+            case 'OrderIsReady':
+                $('#step2').addClass('active');
+            case 'accepted':
+                if (!$('#step1').hasClass('active'))
+                    $('#step1').addClass('active');
+            default:
+                $('#step1').addClass('active');
+        }
+    </script>
+    <style>
+        .product_name {
+            //white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 }
 

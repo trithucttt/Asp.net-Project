@@ -14,10 +14,6 @@ namespace FashionShops.Controllers.Cart
     {
         FashionShopEntities db = new FashionShopEntities();
         // GET: CheckOut
-        public string getUserName()
-        {
-            return Membership.GetUser().UserName;
-        }
         public ActionResult Index(string arrProducts = "[1]")
         {
             string temp = arrProducts;
@@ -89,29 +85,19 @@ namespace FashionShops.Controllers.Cart
 
         public ActionResult OrderList()
         {
-            string userName = getUserName();
-            int userID = (int)db.Users.SingleOrDefault(x => x.username == userName).user_id;
-            //var query = from o in db.Orders
-            //            join oi in db.Order_Item on o.order_id equals oi.order_id
-            //            join p in db.Products on oi.product_id equals p.product_id
-            //            join pi in db.Product_Image on p.product_id equals pi.product_id
-            //            join i in db.Images on pi.image_id equals i.image_id
-            //            where i.image_id == (oi.product_id - 1) * 3 + oi.product_id
-            //            where o.customer_id == userID
-            //            select new InfoOrder
-            //            {
-            //                order_id = o.order_id,
-            //                firtProductID = (int)oi.product_id,
-            //                proName = p.name,
-            //                quantity = oi.quantity,
-            //                totalPrice = (float)oi.total_price,
-            //                imgUrl = i.imgae_url
-            //            };
-            //var orderList = query.Distinct().ToList();
-            var orderList = from o in db.Orders
-                            where o.customer_id == userID
-                            select o;
-            return View(orderList);
+            if (Membership.GetUser() != null)
+            {
+                string userName = Membership.GetUser().UserName;
+                int userID = (int)db.Users.SingleOrDefault(x => x.username == userName).user_id;
+                var orderList = from o in db.Orders
+                                where o.customer_id == userID
+                                select o;
+                return View(orderList);
+            } else
+            {
+                TempData["NotLogin"] = "You need to login to see your list order!";
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -131,7 +117,7 @@ namespace FashionShops.Controllers.Cart
                 transport_fee = transpotfee,
                 total_price = totalprice,
                 voucher_id = voucherid,
-                order_status = "Ðã giao"
+                order_status = "preparing"
             };
             db.Orders.Add(newOrder);
             string temp = arrayProducts;
