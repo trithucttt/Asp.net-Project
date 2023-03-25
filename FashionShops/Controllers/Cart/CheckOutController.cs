@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using FashionShops.Models.CheckOut;
-using FashionShops.Models.ListOrder;
 using FashionShops.Models.OrderTracking;
 using Newtonsoft.Json;
 
