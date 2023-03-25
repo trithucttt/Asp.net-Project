@@ -99,8 +99,6 @@ namespace FashionShops.Controllers.Products
 
             return View(detailPro);
         }
-<<<<<<< HEAD
-=======
 
         [HttpPost]
         public ActionResult AddToCart(FashionShops.Cart item)
@@ -176,13 +174,6 @@ namespace FashionShops.Controllers.Products
             }
             return Content("error");
         }
-               
-
-
-
-
-       
->>>>>>> a9f6118a4d007862025c6a84a3976f6292517dec
     }
 }
 
