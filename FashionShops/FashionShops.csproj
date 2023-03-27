@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Controllers\Auth\ChangePasswordController.cs" />
     <Compile Include="Controllers\Auth\LoginController.cs" />
+    <Compile Include="Controllers\Auth\ProfileController.cs" />
     <Compile Include="Controllers\Auth\RegisterController.cs" />
     <Compile Include="Controllers\Cart\CartController.cs" />
     <Compile Include="Controllers\Cart\CheckOutController.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Models\ProductDetail\ImagesForProduct.cs" />
     <Compile Include="Models\ProductDetail\ProductDetail.cs" />
     <Compile Include="Models\ProductView.cs" />
+    <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\ToastrMessage.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
@@ -624,6 +626,7 @@
     <Content Include="Views\CheckOut\OrderTracking.cshtml" />
     <Content Include="Views\CheckOut\OrderList.cshtml" />
     <Content Include="Views\Product\Pagination.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
