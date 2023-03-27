@@ -7,6 +7,9 @@ using System.Web.Security;
 using FashionShops.Models.CheckOut;
 using FashionShops.Models.OrderTracking;
 using Newtonsoft.Json;
+using MailKit;
+using MimeKit;
+using MailKit.Net.Smtp;
 
 namespace FashionShops.Controllers.Cart
 {
@@ -100,6 +103,31 @@ namespace FashionShops.Controllers.Cart
             return RedirectToAction("Index", "Home");
         }
 
+        public void autoSendEmail()
+        {
+            var email = new MimeMessage();
+
+            email.From.Add(new MailboxAddress("Sender Name", "thuongb2014795@student.ctu.edu.vn"));
+            email.To.Add(new MailboxAddress("Receiver Name", "thuongb2014795@student.ctu.edu.vn"));
+
+            email.Subject = "Testing out email sending";
+            email.Body = new TextPart(MimeKit.Text.TextFormat.Plain)
+            {
+                Text = "Hello all the way from the land of C#"
+            };
+            using (var smtp = new SmtpClient())
+            {
+                smtp.Connect("smtp.gmail.com", 587, false);
+
+                // Note: only needed if the SMTP server requires authentication
+                smtp.Authenticate("nhapemailvoday", "matkhauvoday");
+
+                smtp.Send(email);
+                smtp.Disconnect(true);
+            }
+        }
+        //smtpClient.Credentials = new NetworkCredential("kidhappyninjaa@gmail.com", "truyentranhconan");
+
         [HttpPost]
         public ActionResult OrderDetail(int userid, long orderid, string orderdate, 
             float originprice, float reduceprice, float transpotfee, float totalprice, 
@@ -150,6 +178,7 @@ namespace FashionShops.Controllers.Cart
                                    where arrPro.Contains((int)p.cart_id)
                                    select p;
             db.Carts.RemoveRange(productsToRemove);
+            autoSendEmail();
             if (db.SaveChanges() != 0)
             {
                 return Content("Successfully!");

@@ -88,15 +88,16 @@ namespace FashionShops.Controllers.Products
                            });
             var sizes = querry3.Distinct().OrderBy(s => s.sizeID).ToList();
 
+            var reviews = (from rev in data.Product_Reviewing where rev.product_id == id select rev).ToList();
+
             var detailPro = new ProductDetail
             {
                 colorsForDetailPage = colors,
                 sizesForDetailPage = sizes,
                 infProduct = infProduct[0],
-                imagesForProduct = imagesForPro
+                imagesForProduct = imagesForPro,
+                reviewings = reviews
             };
-
-
             return View(detailPro);
         }
 
@@ -105,48 +106,8 @@ namespace FashionShops.Controllers.Products
         {
             if (Membership.GetUser() != null)
             {
-
-
-
                 string userName = Membership.GetUser().UserName;
                 int userId = (int)data.Users.FirstOrDefault(x => x.username == userName).user_id;
-
-
-
-
-                //var query = from pe in data.Carts
-                //                   where pe.product_id == item.product_id
-                //                   where pe.size == item.size
-                //                   where pe.color == item.color
-                //                   select pe;
-
-
-                //var product = data.Carts.FirstOrDefault(p => p.product_id == item.product_id).product_id;
-                //var size = data.Carts.FirstOrDefault(s => s.size == item.size).size;
-                //var color = data.Carts.FirstOrDefault(cl => cl.size == item.color).color;
-                //    if(product != item.product_id && size != item.size && color != item.color)
-                //    {
-                //        var newPro = new FashionShops.Cart
-                //        {
-                //            user_id = userId,
-                //            product_id = item.product_id,
-                //            size = item.size,
-                //            color = item.color,
-                //            quantity = item.quantity,
-                //            total_price = item.total_price
-                //        };
-                //        data.Carts.Add(newPro);
-                //        if (data.SaveChanges() != 0)
-                //        {
-                //            return Content("Add product successfully!ff");
-                //        }
-                //        else
-                //        {
-                //            return Content("Add product failed !");
-                //        }
-                //    }
-                //    item.quantity++;
-                //}
 
                 var existingItem = data.Carts.FirstOrDefault(c => c.user_id == userId && c.product_id == item.product_id && c.size == item.size && c.color == item.color);
                 if (existingItem != null)
@@ -170,9 +131,34 @@ namespace FashionShops.Controllers.Products
                 }
                 data.SaveChanges();
                 return Content("Add product successfully!");
-
             }
             return Content("error");
+        }
+
+        [HttpPost]
+        public ActionResult AddReview(int productid, int rate, string content)
+        {
+            string userName = Membership.GetUser().UserName;
+            int userId = (int)data.Users.FirstOrDefault(x => x.username == userName).user_id;
+            int id = data.Product_Reviewing.Count() + 1;
+
+            var newReview = new Product_Reviewing
+            {
+                id = id,
+                user_id = userId,
+                product_id = productid,
+                rating = (short)rate,
+                content = content,
+                publishedAt = DateTime.Now
+            };
+            data.Product_Reviewing.Add(newReview);
+            if(data.SaveChanges() != 0)
+            {
+                return Content("Thank you for rating!");
+            } else
+            {
+                return Content("Sorry, something went wrong, please try again later!");
+            }
         }
     }
 }

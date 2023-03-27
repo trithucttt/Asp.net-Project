@@ -44,20 +44,7 @@
 
                 <!-- Price-->
                 <div class="original_price"></div>
-
-                <div class="product_price" id="product-price" data-price="@Model.infProduct.productPrice">@Model.infProduct.productPrice</div>
-
-<<<<<<< HEAD
-                    <div class="product_price">VNĐ</div>
-                    <ul class="star_rating">
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                    </ul>
-=======
-                <div class="product_price">$</div>
+                <div class="product_price" id="product-price" data-price="@Model.infProduct.productPrice">@Model.infProduct.productPrice&#8363;</div>
                 <ul class="star_rating">
                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -65,7 +52,6 @@
                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                 </ul>
->>>>>>> a9f6118a4d007862025c6a84a3976f6292517dec
 
                 <!-- Color-->
                 <div class="product_color">
@@ -139,7 +125,7 @@
                         <ul class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
                             <li class="tab active" data-active-tab="tab_1"><span>Description</span></li>
                             <li class="tab" data-active-tab="tab_2"><span>Additional Information</span></li>
-                            <li class="tab" data-active-tab="tab_3"><span>Reviews (2)</span></li>
+                            <li class="tab" data-active-tab="tab_3"><span>Reviews</span></li>
                         </ul>
                     </div>
                 </div>
@@ -202,54 +188,44 @@
 
                             <!-- User Reviews -->
 
-                            <div class="col-lg-6 reviews_col">
-                                <div class="tab_title reviews_title">
-                                    <h4>Reviews (2)</h4>
+                            <div class="col-lg-6 reviews_col" >
+                                <div class="tab_title reviews_title" id="review-quantity">
+                                    <h4>Reviews (@Model.reviewings.Count())</h4>
                                 </div>
+                                <div id="customer_reviews">
 
-                                <!-- User Review -->
-
-                                <div class="user_review_container d-flex flex-column flex-sm-row">
-                                    <div class="user">
-                                        <div class="user_pic"></div>
-                                        <div class="user_rating">
-                                            <ul class="star_rating">
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                            </ul>
+                                    <!-- User Review -->
+                                    @foreach (var review in Model.reviewings)
+                                    {
+                                        <div class="user_review_container d-flex flex-column flex-sm-row">
+                                            <div class="user">
+                                                <div class="user_pic"></div>
+                                                <div class="user_rating">
+                                                    <ul class="star_rating">
+                                                        @for (int r = 0; r < 5; r++)
+                                                        {
+                                                            if (r <= review.rating - 1)
+                                                            {
+                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                            }
+                                                            else
+                                                            {
+                                                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                                            }
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="review">
+                                                <div class="review_date">@review.publishedAt</div>
+                                                <div class="user_name">@review.User.firstName @review.User.lastName</div>
+                                                <p>@review.content</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="review">
-                                        <div class="review_date">27 Aug 2016</div>
-                                        <div class="user_name">Brandon William</div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
+                                    }
                                 </div>
 
-                                <!-- User Review -->
 
-                                <div class="user_review_container d-flex flex-column flex-sm-row">
-                                    <div class="user">
-                                        <div class="user_pic"></div>
-                                        <div class="user_rating">
-                                            <ul class="star_rating">
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="review">
-                                        <div class="review_date">27 Aug 2016</div>
-                                        <div class="user_name">Brandon William</div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
                             </div>
 
                             <!-- Add Review -->
@@ -259,9 +235,7 @@
                                 <div class="add_review">
                                     <form id="review_form" action="post">
                                         <div>
-                                            <h1>Add Review</h1>
-                                            <input id="review_name" class="form_input input_name" type="text" name="name" placeholder="Name*" required="required" data-error="Name is required.">
-                                            <input id="review_email" class="form_input input_email" type="email" name="email" placeholder="Email*" required="required" data-error="Valid email is required.">
+                                            <h1>Please take a moment to rate our products:</h1>
                                         </div>
                                         <div>
                                             <h1>Your Rating:</h1>
@@ -272,6 +246,7 @@
                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                                             </ul>
+                                            <input type="text" name="rate" id="rate" value="4" hidden/>
                                             <textarea id="review_message" class="input_review" name="message" placeholder="Your Review" rows="4" required data-error="Please, leave us a review."></textarea>
                                         </div>
                                         <div class="text-left text-sm-right">
@@ -341,7 +316,6 @@
 </div>
 
 @section detail{
-
     <script src="~/Content/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script src="~/Content/js/single_custom.js"></script>
     <link rel="stylesheet" href="~/Content/plugins/themify-icons/themify-icons.css">
@@ -355,9 +329,7 @@
             border-color: #343a40;
         }
     </style>
-
     <script>
-       
         $(document).ready(function () {
             $(document).on('click', '.add_to_cart_button', function (event) {
                 event.preventDefault();
@@ -388,20 +360,10 @@
                     error: function () {
                         toastr.error('An error occurred while adding product to cart');
                     }
-                    //success: function (data) {
-                    //    CheckoutItems();
-                    //    toastr.success(data);
-                    //},
-                    //error: function () {
-                    //    alert("Error retrieving product details.");
-                    //}
                 });
             })
         });
-
-
     </script>
-
     <script>
         let colorCheckbox = document.querySelectorAll('.color-checkbox');
         let colorValue = document.querySelectorAll('.color-checkbox-value');
@@ -458,7 +420,49 @@
             })
         })
     </script>
+    <script>
+        function rating() {
+            if ($('.user_star_rating li').length) {
+                var stars = $('.user_star_rating li');
 
+                stars.each(function () {
+                    var star = $(this);
+
+                    star.on('click', function () {
+                        var i = star.index();
+                        $('#rate').val(i + 1);
+                    });
+                });
+            }
+        }
+        rating();
+        $('#review_submit').click(function (ele) {
+            ele.preventDefault();
+            let productid = $('#addToCartButton').data('proid');
+            let rate = $('#rate').val();
+            let content = $('#review_message').val();
+            console.log(productid);
+            console.log(rate);
+            console.log(content);
+            $.ajax({
+                url: "/Product/AddReview",
+                type: "POST",
+                data: {
+                    productid: productid,
+                    rate: rate,
+                    content: content
+                },
+                success: function (data) {
+                    toastr.success(data);
+                    $('#customer_reviews').empty().load('/Product/Detail?id=' + productid + ' #customer_reviews');
+                    $('#review-quantity').empty().load('/Product/Detail?id=' + productid + ' #review-quantity');
+                    $('#review_message').val('');
+                },
+                error: function () {
+                    alert("Error retrieving product details.");
+                }
+            });
+        })
+
+    </script>
 }
-
-

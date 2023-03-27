@@ -12,6 +12,7 @@ namespace FashionShops.Models.ProductDetail
         public List<SizesProForModal> sizesForDetailPage { get; set; }
         public List<ColorsProForModal> colorsForDetailPage { get; set; }
         public List<ImagesForProduct> imagesForProduct { get; set; }
+        public List<Product_Reviewing> reviewings { get; set; }
         public ProductView infProduct { get; set; }
     }
 }
