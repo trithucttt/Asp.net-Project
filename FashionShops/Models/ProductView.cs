@@ -7,11 +7,12 @@ namespace FashionShops.Models
 {
     public class ProductView
     {
-         public int productID { get; set; }
+        public int productID { get; set; }
         public string productName { get; set; }
-        public double productPrice { get; set; }
         public string imageUrl { get; set; }
+        public double productPrice { get; set; }
         public string content { get; set; }
         public int QuantityPro { get; set; }
+        public string brandPro { get; set; }
     }
 }

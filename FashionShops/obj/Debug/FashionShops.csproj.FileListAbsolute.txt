@@ -151,7 +151,6 @@ C:\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Razor.xml
 C:\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.xml
 C:\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.pdb
 C:\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
 C:\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
 C:\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
 C:\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.dll
@@ -741,3 +740,4 @@ D:\asp_new\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
 D:\asp_new\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
 D:\asp_new\FashionShops\obj\Debug\FashionShops.dll
 D:\asp_new\FashionShops\obj\Debug\FashionShops.pdb
+C:\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache

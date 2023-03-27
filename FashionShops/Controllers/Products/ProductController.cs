@@ -88,12 +88,28 @@ namespace FashionShops.Controllers.Products
                            });
             var sizes = querry3.Distinct().OrderBy(s => s.sizeID).ToList();
 
+            var review_querry = (from product in data.Products
+                                 join pReview in data.Product_Reviewing on product.product_id equals pReview.product_id
+                                 join user in data.Users on pReview.user_id equals user.user_id
+                                 where pReview.product_id == id
+                                 select new ProductReview
+                                 {
+                                     pReviewID = (int)pReview.id,
+                                     product_id = (int)pReview.product_id,
+                                     username = user.username,
+                                     rating = pReview.rating,
+                                     content = pReview.content,
+                                     publishedAt = (DateTime)pReview.publishedAt
+                                 }
+                ).ToList();
+
             var detailPro = new ProductDetail
             {
                 colorsForDetailPage = colors,
                 sizesForDetailPage = sizes,
                 infProduct = infProduct[0],
-                imagesForProduct = imagesForPro
+                imagesForProduct = imagesForPro,
+                review = review_querry
             };
 
 
@@ -173,6 +189,33 @@ namespace FashionShops.Controllers.Products
 
             }
             return Content("error");
+        }
+
+        [HttpPost]
+        public ActionResult AddReview(int productid, int rate, string content)
+        {
+            string userName = Membership.GetUser().UserName;
+            int userId = (int)data.Users.FirstOrDefault(x => x.username == userName).user_id;
+            int id = data.Product_Reviewing.Count() + 1;
+
+            var newReview = new Product_Reviewing
+            {
+                id = id,
+                user_id = userId,
+                product_id = productid,
+                rating = (short)rate,
+                content = content,
+                publishedAt = DateTime.Now
+            };
+            data.Product_Reviewing.Add(newReview);
+            if (data.SaveChanges() != 0)
+            {
+                return Content("Thank you for rating!");
+            }
+            else
+            {
+                return Content("Sorry, something went wrong, please try again later!");
+            }
         }
     }
 }
