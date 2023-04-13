@@ -25,21 +25,21 @@
             <div class="col-md-4">
                 <div class="banner_item align-items-center" style="background-image: url(../../Content/images/banner_1.jpg) ">
                     <div class="banner_category">
-                        <a href="categories.html">women's</a>
+                        <a>women's</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="banner_item align-items-center" style="background-image: url(../../Content/images/banner_2.jpg) ">
                     <div class="banner_category">
-                        <a href="categories.html">accessories's</a>
+                        <a>accessories's</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="banner_item align-items-center" style="background-image: url(../../Content/images/banner_3.jpg) ">
                     <div class="banner_category">
-                        <a href="categories.html">men's</a>
+                        <a>men's</a>
                     </div>
                 </div>
             </div>
@@ -73,153 +73,83 @@
         <div class="row">
             <div class="col">
                 <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+                    @{
+                        var accessories = Model.Where(p => p.productName.Contains("Giày")).Take(5);
+                        var women = Model.Where(p => p.productName.Contains("Váy") || p.productName.Contains("Ví")).Take(5);
+                        var men = Model.Where(p => p.productName.Contains("Nam")).Take(5);
+                    }
+                    @foreach (var item in accessories)
+                    {
+                        <div class="product-item accessories">
+                            <div class="product discount product_filter">
+                                <div class="product_image">
+                                    <img src="@item.imageUrl" alt="" style="width:100%; height: 250px " />
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>HOT</span></div>
+                                <div class="product_info">
+                                    <h5 class="product_name" style="width: 200px;">
 
-                     @*Product 1*@ 
-                    <div class="product-item women">
-                        <div class="product discount product_filter">
-                            <div class="product_image">
-                                <img src="~/Content/images/products/pd1.1.jpg" alt="" style="width:100%; height: 250px " />
+                                        <span class="name-text">
+                                            @item.productName
+                                        </span>
+                                    </h5>
+                                    <div class="product_price">@string.Format("{0:N0}", @item.productPrice) VNĐ </div>
+                                </div>
                             </div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-20%</span></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">CHÂN VÁY TENNIS XẾP LY</a></h6>
-                                <div class="product_price">150.000 VNĐ<span>180.000 VNĐ</span></div>
+                            <div class="red_button add_to_cart_button">
+                                <a href="/Product/Detail/?id=@item.productID">Go to Detail</a>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=1">Go to Detail</a></div>
-                    </div>
-                     @*Product 2*@ 
-                    <div class="product-item accessories">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="~/Content/images/products/pd20.4.jpg" alt="" style="width:100%; height: 250px " />
+                    }
+                    @foreach (var item in men)
+                    {
+                        <div class="product-item men">
+                            <div class="product discount product_filter">
+                                <div class="product_image">
+                                    <img src="@item.imageUrl" alt="" style="width:100%; height: 250px " />
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>NEW</span></div>
+                                <div class="product_info">
+                                    <h5 class="product_name" style="width: 200px;">
+
+                                        <span class="name-text">
+                                            @item.productName
+                                        </span>
+                                    </h5>
+                                    <div class="product_price">@string.Format("{0:N0}", @item.productPrice) VNĐ</div>
+                                </div>
                             </div>
-                            <div class="favorite"></div>
-                            <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">GIÀY PUMA SUEDE</a></h6>
-                                <div class="product_price">1.800.000 VNĐ</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=20">Go to Detail</a></div>
-                    </div>
-                     @*Product 3*@ 
-                    <div class="product-item accessories">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="~/Content/images/products/pd14.3.jpg" alt="" style="width:100%; height: 250px " />
-                            </div>
-                            <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>hot</span></div> 
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">GIÀY ADIDAS ULTRABOOST</a></h6>
-                                <div class="product_price">2.000.000 VNĐ</div>
+                            <div class="red_button add_to_cart_button">
+                                <a href="/Product/Detail/?id=@item.productID">Go to Detail</a>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=14">Go to Detail</a></div>
-                    </div>
-                     @*Product 4*@ 
-                    <div class="product-item men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="~/Content/images/products/pd201.1.jpg" alt="" style="width:100%; height: 250px " />
+                    }
+                    @foreach (var item in women)
+                    {
+                        <div class="product-item women">
+                            <div class="product discount product_filter">
+                                <div class="product_image">
+                                    <img src="@item.imageUrl" alt="" style="width:100%; height: 250px " />
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>NEW</span></div>
+                                <div class="product_info">
+                                    <h5 class="product_name" style="width: 200px;">
+
+                                        <span class="name-text">
+                                            @item.productName
+                                        </span>
+                                    </h5>
+                                    <div class="product_price">@string.Format("{0:N0}", @item.productPrice) VNĐ</div>
+                                </div>
                             </div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">ÁO SƠ MI TAY DÀI</a></h6>
-                                <div class="product_price">300.000 VNĐ</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=22">Go to Detail</a></div>
-                    </div>
-                     @*Product 5*@ 
-                    <div class="product-item men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="~/Content/images/products/pd205.3.jpg" alt="" style="width:100%; height: 250px " />
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">ÁO POLO RELAX FIX IN TYPO</a></h6>
-                                <div class="product_price">429.000 VNĐ</div>
+                            <div class="red_button add_to_cart_button">
+                                <a href="/Product/Detail/?id=@item.productID">Go to Detail</a>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=26">Go to Detail</a></div>
-                    </div>
-                     @*Product 6*@ 
-                    <div class="product-item men">
-                        <div class="product discount product_filter">
-                            <div class="product_image">
-                                <img src="~/Content/images/products/pd202.1.jpg" alt="" style="width:100%; height: 250px " />
-                            </div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-20%</span></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="#single.html">ÁO THUN CỔ TRỤ ĐƠN GIẢN</a></h6>
-                                <div class="product_price">270.000 VNĐ<span>320.000 VNĐ</span></div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=23">Go to Detail</a></div>
-                    </div>
-                     @*Product 7*@ 
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="~/Content/images/products/pd9.2.jpg" alt="" style="width:100%; height: 250px " />
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">CHÂN VÁY CHỮ A DÁNG XOÈ</a></h6>
-                                <div class="product_price">219.000 VNĐ</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=9">Go to Detail</a></div>
-                    </div>
-                     @*Product 8*@ 
-                    <div class="product-item accessories">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="~/Content/images/products/pd18.3.jpg" alt="" style="width:100%; height: 250px " />
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>hot</span></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">GIÀY NIKE AIR FORCE 1</a></h6>
-                                <div class="product_price">1.800.000 VNĐ</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=18">Go to Detail</a></div>
-                    </div>
-                     @*Product 9*@ 
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="~/Content/images/products/pd4.3.jpg" alt="" style="width:100%; height: 250px " />
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">CHÂN VÁY KAKI CHỮ A</a></h6>
-                                <div class="product_price">170.000 VNĐ</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=4">Go to Detail</a></div>
-                    </div>
-                    @*Product 10*@
-                <div class="product-item women">
-                    <div class="product product_filter">
-                        <div class="product_image">
-                            <img src="~/Content/images/products/pd3.1.jpg" alt="" style="width:100%; height: 250px " />
-                        </div>
-                        <div class="favorite"></div>
-                        <div class="product_info">
-                            <h6 class="product_name"><a href="single.html">CHÂN VÁY STYLE CHERRY</a></h6>
-                            <div class="product_price">145.000 VNĐ</div>
-                        </div>
-                    </div>
-                    <div class="red_button add_to_cart_button"><a href="/Product/Detail/?id=3">Go to Detail</a></div>
-                </div>
+                    }
                 </div>
             </div>
         </div>
@@ -281,182 +211,32 @@
             <div class="col">
                 <div class="product_slider_container">
                     <div class="owl-carousel owl-theme product_slider">
-
-                        <!-- Slide 1 -->
-
-                        <div class="owl-item product_slider_item">
-                            <div class="product-item women">
-                                <div class="product discount product_filter">
-                                    <div class="product_image">
-                                        <img src="~/Content/images/products/pd1.1.jpg" alt="" style="width:100%; height: 250px " />
-                                    </div>
-                                    <div class="favorite favorite_left"></div>
-                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-20%</span></div>
-                                    <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">CHÂN VÁY TENNIS XẾP LY</a></h6>
-                                        <div class="product_price">150.000 VNĐ<span>180.000 VNĐ</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2 -->
-
-                        <div class="owl-item product_slider_item">
-                            <div class="product-item accessories">
-                                <div class="product product_filter">
-                                    <div class="product_image">
-                                        <img src="~/Content/images/products/pd20.4.jpg" alt="" style="width:100%; height: 250px " />
-                                    </div>
-                                    <div class="favorite"></div>
-                                    <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
-                                    <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">GIÀY PUMA SUEDE</a></h6>
-                                        <div class="product_price">1.800.000 VNĐ</div>
+                        @for (int i = 0; i < Model.Count(); i += 4)
+                        {
+                            var item = Model.ElementAt(i);
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item accessories">
+                                    <div class="product discount product_filter">
+                                        <a href="/Product/Detail/?id=@item.productID">
+                                            <div class="product_image">
+                                                <img src="@item.imageUrl" alt="" style="width:100%; height: 250px " />
+                                            </div>
+                                        </a>
+                                        <div class="favorite favorite_left"></div>
+                                        <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>HOT</span></div>
+                                        <div class="product_info">
+                                            <h6 class="product_name" style="width: 200px;">
+                                                <span class="name-text">
+                                                    @item.productName
+                                                </span>
+                                            </h6>
+                                            <div class="product_price">@string.Format("{0:N0}", @item.productPrice) VNĐ</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        }
 
-                        <!-- Slide 3 -->
-
-                        <div class="owl-item product_slider_item">
-                            <div class="product-item accessories">
-                                <div class="product product_filter">
-                                    <div class="product_image">
-                                        <img src="~/Content/images/products/pd14.3.jpg" alt="" style="width:100%; height: 250px " />
-                                    </div>
-                                    <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
-                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>hot</span></div>
-                                    <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">GIÀY ADIDAS ULTRABOOST</a></h6>
-                                        <div class="product_price">2.000.000 VNĐ</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 -->
-
-                        <div class="owl-item product_slider_item">
-                            <div class="product-item men">
-                                <div class="product product_filter">
-                                    <div class="product_image">
-                                        <img src="~/Content/images/products/pd201.1.jpg" alt="" style="width:100%; height: 250px " />
-                                    </div>
-                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                                    <div class="favorite favorite_left"></div>
-                                    <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">ÁO SƠ MI TAY DÀI</a></h6>
-                                        <div class="product_price">300.000 VNĐ</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 5 -->
-
-                        <div class="owl-item product_slider_item">
-                            <div class="product-item men">
-                                <div class="product product_filter">
-                                    <div class="product_image">
-                                        <img src="~/Content/images/products/pd205.3.jpg" alt="" style="width:100%; height: 250px " />
-                                    </div>
-                                    <div class="favorite"></div>
-                                    <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">ÁO POLO RELAX FIX IN TYPO</a></h6>
-                                        <div class="product_price">429.000 VNĐ</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 6 -->
-
-                        <div class="owl-item product_slider_item">
-                            <div class="product-item men">
-                                <div class="product discount product_filter">
-                                    <div class="product_image">
-                                        <img src="~/Content/images/products/pd202.1.jpg" alt="" style="width:100%; height: 250px " />
-                                    </div>
-                                    <div class="favorite favorite_left"></div>
-                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-20%</span></div>
-                                    <div class="product_info">
-                                        <h6 class="product_name"><a href="#single.html">ÁO THUN CỔ TRỤ ĐƠN GIẢN</a></h6>
-                                        <div class="product_price">270.000 VNĐ<span>320.000 VNĐ</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 7 -->
-
-                        <div class="owl-item product_slider_item">
-                            <div class="product-item women">
-                                <div class="product product_filter">
-                                    <div class="product_image">
-                                        <img src="~/Content/images/products/pd9.2.jpg" alt="" style="width:100%; height: 250px " />
-                                    </div>
-                                    <div class="favorite"></div>
-                                    <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">CHÂN VÁY CHỮ A DÁNG XOÈ</a></h6>
-                                        <div class="product_price">219.000 VNĐ</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 8 -->
-
-                        <div class="owl-item product_slider_item">
-                            <div class="product-item accessories">
-                                <div class="product product_filter">
-                                    <div class="product_image">
-                                        <img src="~/Content/images/products/pd18.3.jpg" alt="" style="width:100%; height: 250px " />
-                                    </div>
-                                    <div class="favorite"></div>
-                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>hot</span></div>
-                                    <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">GIÀY NIKE AIR FORCE 1</a></h6>
-                                        <div class="product_price">1.800.000 VNĐ</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 9 -->
-
-                        <div class="owl-item product_slider_item">
-                            <div class="product-item women">
-                                <div class="product product_filter">
-                                    <div class="product_image">
-                                        <img src="~/Content/images/products/pd4.3.jpg" alt="" style="width:100%; height: 250px " />
-                                    </div>
-                                    <div class="favorite"></div>
-                                    <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">CHÂN VÁY KAKI CHỮ A</a></h6>
-                                        <div class="product_price">170.000 VNĐ</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 10 -->
-
-                        <div class="owl-item product_slider_item">
-                            <div class="product-item women">
-                                <div class="product product_filter">
-                                    <div class="product_image">
-                                        <img src="~/Content/images/products/pd3.1.jpg" alt="" style="width:100%; height: 250px " />
-                                    </div>
-                                    <div class="favorite"></div>
-                                    <div class="product_info">
-                                        <h6 class="product_name"><a href="single.html">CHÂN VÁY STYLE CHERRY</a></h6>
-                                        <div class="product_price">145.000 VNĐ</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Slider Navigation -->
@@ -586,8 +366,26 @@
         </div>
     </div>
 </div>
-<div id="LoginMsg" hidden>@ViewBag.LoginSuccessMsg</div>
-<div id="NotLogin" hidden>@ViewBag.NotLogin</div>
+
+<!-- hiển thị ... khi bình thường-->
+<style>
+    .product_name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+<!--js hiển thị đầy đủ khi di chuột-->
+<script>
+
+    $('.product_name').hover(function () {
+        $(this).find('.name-text').css('white-space', 'normal');
+    }, function () {
+        $(this).find('.name-text').css('white-space', 'nowrap');
+    });
+
+</script>
+
 @section notificationLogin {
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
@@ -595,11 +393,6 @@
         var haveMsg = $("#LoginMsg").text();
         if (haveMsg !== "") {
             toastr.success(haveMsg);
-        }
-
-        haveMsg = $("#NotLogin").text();
-        if (haveMsg !== "") {
-            toastr.error(haveMsg);
         }
     </script>
 }

@@ -213,6 +213,7 @@
     <Compile Include="Models\OrderTracking\OrderTracking.cs" />
     <Compile Include="Models\ProductDetail\ImagesForProduct.cs" />
     <Compile Include="Models\ProductDetail\ProductDetail.cs" />
+    <Compile Include="Models\ProductDetail\ProductReview.cs" />
     <Compile Include="Models\ProductView.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\ToastrMessage.cs" />
@@ -593,6 +594,7 @@
     <Content Include="Content\plugins\toastr\toastr.css" />
     <Content Include="Content\plugins\toastr\toastr.min.css" />
     <Content Include="Content\plugins\toastr\toastr.min.js" />
+    <Content Include="Content\Site.css" />
     <Content Include="Content\styles\bootstrap4\bootstrap.min.css" />
     <Content Include="Content\styles\bootstrap4\bootstrap.min.js" />
     <Content Include="Content\styles\bootstrap4\popper.js" />
@@ -602,6 +604,7 @@
     <Content Include="Content\styles\checkout_style.css" />
     <Content Include="Content\styles\contact_responsive.css" />
     <Content Include="Content\styles\contact_styles.css" />
+    <Content Include="Content\styles\login.css" />
     <Content Include="Content\styles\main.css" />
     <Content Include="Content\styles\main_styles.css" />
     <Content Include="Content\styles\orderlist.css" />
@@ -609,7 +612,6 @@
     <Content Include="Content\styles\responsive.css" />
     <Content Include="Content\styles\single_responsive.css" />
     <Content Include="Content\styles\single_styles.css" />
-    <Content Include="Content\styles\login.css" />
     <Content Include="DatabaseFashionShops.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DatabaseFashionShops.edmx</DependentUpon>
@@ -623,9 +625,19 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="DatabaseFashionShops.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DatabaseFashionShops.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DatabaseFashionShops.edmx.diagram">
+      <DependentUpon>DatabaseFashionShops.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
@@ -663,6 +675,7 @@
     <Content Include="Content\plugins\themify-icons\fonts\themify.ttf" />
     <Content Include="Content\plugins\themify-icons\fonts\themify.woff" />
     <Content Include="Content\plugins\toastr\toastr.js.map" />
+<<<<<<< HEAD
     <EntityDeploy Include="DatabaseFashionShops.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DatabaseFashionShops.Designer.cs</LastGenOutput>
@@ -679,6 +692,8 @@
     <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.woff2" />
+=======
+>>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -724,10 +739,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />

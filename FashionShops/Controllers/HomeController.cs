@@ -1,12 +1,11 @@
-﻿using FashionShops.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using System.Net.Mail;
-using System.Net;
+using FashionShops.Models;
+
 
 namespace FashionShops.Controllers
 {
@@ -23,29 +22,7 @@ namespace FashionShops.Controllers
             {
                 ViewBag.LoginSuccessMsg = "";
             }
-
-            if (TempData["NotLogin"] != null)
-            {
-                ViewBag.NotLogin = TempData["NotLogin"];
-            }
-            else
-            {
-                ViewBag.NotLogin = "";
-            }
-            return View();
-            var query = from product in data.Products
-                        join proImage in data.Product_Image on product.product_id equals proImage.product_id
-                        join Img in data.Images on proImage.image_id equals Img.image_id
-                        where Img.image_id == (product.product_id - 1) * 3 + product.product_id
-                        select new ProductView
-                        {
-                            productID = (int)product.product_id,
-                            productName = product.name,
-                            productPrice = product.price,
-                            imageUrl = Img.imgae_url
-                        };
-            var model = query.ToList();
-            return View(model);
+            return View(GetProducts());
         }
 
         [HttpGet]
@@ -66,9 +43,22 @@ namespace FashionShops.Controllers
             }
             return count;
         }
-        public ActionResult Register()
+
+        public IEnumerable<ProductView> GetProducts()
         {
-            return View();
+            var products = (from product in data.Products
+                            join pImg in data.Product_Image on product.product_id equals pImg.product_id
+                            join Img in data.Images on pImg.image_id equals Img.image_id
+                            where Img.image_id == (product.product_id - 1) * 3 + product.product_id
+                            select new ProductView
+                            {
+                                productID = (int)product.product_id,
+                                productName = product.name,
+                                productPrice = product.price,
+                                imageUrl = Img.imgae_url,
+                                brandPro = product.brand
+                            });
+            return products;
         }
     }
 }

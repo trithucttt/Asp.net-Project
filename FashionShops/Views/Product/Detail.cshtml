@@ -36,12 +36,13 @@
                     <div class="product_details_title">
                         <h2 class="product-name">
                             @Model.infProduct.productName
-                    </h2>
-                </div>
-                <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-                    <span class="ti-truck"></span><span>free delivery</span>
-                </div>
+                        </h2>
+                    </div>
+                    <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
+                        <span class="ti-truck"></span><span>free delivery</span>
+                    </div>
 
+<<<<<<< HEAD
                 <!-- Price-->
                 <div class="original_price"></div>
                 <div class="product_price" id="product-price" data-price="@Model.infProduct.productPrice">@Model.infProduct.productPrice&#8363;</div>
@@ -52,64 +53,90 @@
                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                 </ul>
+=======
+                    <!-- Price-->
+                    <div class="original_price"></div>
 
-                <!-- Color-->
-                <div class="product_color">
-                    <span>Select Color:</span>
-                    @{
-                        int i = 1;
-                    }
-                    @foreach (var color in Model.colorsForDetailPage)
-                    {
-                        if (i == 1)
-                        {
-                            <div class="btn btn-outline-dark color-checkbox active-custom">@color.colorName</div>
-                            <input type="radio" name="proColor" id="" class="color-checkbox-value @color.colorName" value="@color.colorID" hidden checked>
-                            i++;
-                            continue;
+                    <div class="product_price" id="product-price" data-price="@Model.infProduct.productPrice">@Model.infProduct.productPrice</div>
+
+                    <<<<<<< HEAD
+                    <div class="product_price">VNĐ</div>
+                    <ul class="star_rating">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                    =======
+                    <div class="product_price">$</div>
+                    <ul class="star_rating">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                    >>>>>>> a9f6118a4d007862025c6a84a3976f6292517dec
+>>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
+
+                    <!-- Color-->
+                    <div class="product_color">
+                        <span>Select Color:</span>
+                        @{
+                            int i = 1;
                         }
-                        <div class="btn btn-outline-dark color-checkbox">@color.colorName</div>
-                        <input type="radio" name="proColor" id="" class="color-checkbox-value @color.colorName" value="@color.colorID" hidden>
-                    }
-                </div>
-                <div class="product_color">
-                    <span>Select Size:</span>
-                    @{
-                        int j = 1;
-                    }
-                    @foreach (var size in Model.sizesForDetailPage)
-                    {
-                        if (j == 1)
+                        @foreach (var color in Model.colorsForDetailPage)
                         {
-                            <div href="" class="btn btn-outline-dark size-checkbox active-custom">@size.sizeName</div>
-                            <input type="radio" name="proSize" id="" class="size-checkbox-value @size.sizeName" value="@size.sizeID" hidden checked>
-                            j++;
-                            continue;
+                            if (i == 1)
+                            {
+                                <div class="btn btn-outline-dark color-checkbox active-custom">@color.colorName</div>
+                                <input type="radio" name="proColor" id="" class="color-checkbox-value @color.colorName" value="@color.colorID" hidden checked>
+                                i++;
+                                continue;
+                            }
+                            <div class="btn btn-outline-dark color-checkbox">@color.colorName</div>
+                            <input type="radio" name="proColor" id="" class="color-checkbox-value @color.colorName" value="@color.colorID" hidden>
                         }
-                        <div href="" class="btn btn-outline-dark size-checkbox">@size.sizeName</div>
-                        <input type="radio" name="proSize" id="" class="size-checkbox-value @size.sizeName" value="@size.sizeID" hidden>
-                    }
-
-                </div>
-
-                <!-- Quantity-->
-                <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-                    <span>Quantity:</span>
-                    <div class="quantity_selector">
-                        <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                        <span id="quantity_value">1</span>
-                        <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
                     </div>
-                    <!--
-            <button type="submit" class="btn btn-outline-success" id="submitformfrommodal" data-cartid="Model.infProduct.productID">add to cart</button>-->
-                    <div class="red_button add_to_cart_button" data-proid="@Model.infProduct.productID" id="addToCartButton">
-                        <a href="#">add to cart</a>
-                        <!--Html.ActionLink("AddToCart", "AddToCart", new { id = Model.infProduct.productID })-->
+                    <div class="product_color">
+                        <span>Select Size:</span>
+                        @{
+                            int j = 1;
+                        }
+                        @foreach (var size in Model.sizesForDetailPage)
+                        {
+                            if (j == 1)
+                            {
+                                <div href="" class="btn btn-outline-dark size-checkbox active-custom">@size.sizeName</div>
+                                <input type="radio" name="proSize" id="" class="size-checkbox-value @size.sizeName" value="@size.sizeID" hidden checked>
+                                j++;
+                                continue;
+                            }
+                            <div href="" class="btn btn-outline-dark size-checkbox">@size.sizeName</div>
+                            <input type="radio" name="proSize" id="" class="size-checkbox-value @size.sizeName" value="@size.sizeID" hidden>
+                        }
+
                     </div>
-                    <div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
+
+                    <!-- Quantity-->
+                    <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+                        <span>Quantity:</span>
+                        <div class="quantity_selector">
+                            <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                            <span id="quantity_value">1</span>
+                            <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                        </div>
+                        <!--
+                        <button type="submit" class="btn btn-outline-success" id="submitformfrommodal" data-cartid="Model.infProduct.productID">add to cart</button>-->
+                        <div class="red_button add_to_cart_button" data-proid="@Model.infProduct.productID" id="addToCartButton">
+                            <a href="#">add to cart</a>
+                            <!--Html.ActionLink("AddToCart", "AddToCart", new { id = Model.infProduct.productID })-->
+                        </div>
+                        <div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
 
     </div>
@@ -188,14 +215,24 @@
 
                             <!-- User Reviews -->
 
+<<<<<<< HEAD
                             <div class="col-lg-6 reviews_col" >
                                 <div class="tab_title reviews_title" id="review-quantity">
                                     <h4>Reviews (@Model.reviewings.Count())</h4>
+=======
+                            <div class="col-lg-6 reviews_col">
+                                <div class="tab_title reviews_title" id="review-quantity">
+                                    <h4>Reviews (@Model.review.Count())</h4>
+>>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
                                 </div>
                                 <div id="customer_reviews">
 
                                     <!-- User Review -->
+<<<<<<< HEAD
                                     @foreach (var review in Model.reviewings)
+=======
+                                    @foreach (var review in Model.review)
+>>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
                                     {
                                         <div class="user_review_container d-flex flex-column flex-sm-row">
                                             <div class="user">
@@ -218,7 +255,11 @@
                                             </div>
                                             <div class="review">
                                                 <div class="review_date">@review.publishedAt</div>
+<<<<<<< HEAD
                                                 <div class="user_name">@review.User.firstName @review.User.lastName</div>
+=======
+                                                <div class="user_name">@review.username</div>
+>>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
                                                 <p>@review.content</p>
                                             </div>
                                         </div>
@@ -246,7 +287,11 @@
                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                                             </ul>
+<<<<<<< HEAD
                                             <input type="text" name="rate" id="rate" value="4" hidden/>
+=======
+                                            <input type="text" name="rate" id="rate" value="4" hidden />
+>>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
                                             <textarea id="review_message" class="input_review" name="message" placeholder="Your Review" rows="4" required data-error="Please, leave us a review."></textarea>
                                         </div>
                                         <div class="text-left text-sm-right">
@@ -330,6 +375,10 @@
         }
     </style>
     <script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
         $(document).ready(function () {
             $(document).on('click', '.add_to_cart_button', function (event) {
                 event.preventDefault();
@@ -343,7 +392,7 @@
                     url: "/Product/AddToCart",
                     type: "POST",
                     data: {
-                        product_id: productID ,
+                        product_id: productID,
                         size: proSize,
                         color: proColor,
                         quantity: quantity,
@@ -425,8 +474,58 @@
             if ($('.user_star_rating li').length) {
                 var stars = $('.user_star_rating li');
 
+<<<<<<< HEAD
                 stars.each(function () {
                     var star = $(this);
+=======
+    <script>
+        function rating() {
+            if ($('.user_star_rating li').length) {
+                var stars = $('.user_star_rating li');
+
+                stars.each(function () {
+                    var star = $(this);
+
+                    star.on('click', function () {
+                        var i = star.index();
+                        $('#rate').val(i + 1);
+                    });
+                });
+            }
+        }
+        rating();
+        $('#review_submit').click(function (ele) {
+            ele.preventDefault();
+            let productid = $('#addToCartButton').data('proid');
+            let rate = $('#rate').val();
+            let content = $('#review_message').val();
+            console.log(productid);
+            console.log(rate);
+            console.log(content);
+            $.ajax({
+                url: "/Product/AddReview",
+                type: "POST",
+                data: {
+                    productid: productid,
+                    rate: rate,
+                    content: content
+                },
+                success: function (data) {
+                    toastr.success(data);
+                    $('#customer_reviews').empty().load('/Product/Detail?id=' + productid + ' #customer_reviews');
+                    $('#review-quantity').empty().load('/Product/Detail?id=' + productid + ' #review-quantity');
+                    $('#review_message').val('');
+                },
+                error: function () {
+                    alert("Error retrieving product details.");
+                }
+            });
+
+        })
+
+    </script>
+}
+>>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
 
                     star.on('click', function () {
                         var i = star.index();
