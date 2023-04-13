@@ -28,10 +28,12 @@ namespace FashionShops.Controllers.Auth
                         where s.username.Equals(username)
                         select s;
             var temp = users.FirstOrDefault();
+            if (temp == null) return false;
             return Encrypt.VerifyMD5Hash(password, temp.password);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Check(User client, string preUrl)
         {
             if (Membership.ValidateUser(client.username, client.password))

@@ -11,6 +11,7 @@ namespace FashionShops
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class User
     {
@@ -29,7 +30,13 @@ namespace FashionShops
         public string lastName { get; set; }
         public string phoneNumber { get; set; }
         public string email { get; set; }
+
+        [Required(ErrorMessage = "This field is required!")]
+        [MaxLength(20, ErrorMessage = "username cannot exceed 20 characters!")]
         public string username { get; set; }
+
+        [Required(ErrorMessage = "This field is required!")]
+        //[RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[#$^+=!*()@%&]).{8,}$", ErrorMessage = "The password should have lowercase letters, uppercase letters, at least one number, at least one special character, and at least 8 characters.")]
         public string password { get; set; }
         public byte admin { get; set; }
         public string province { get; set; }

@@ -33,7 +33,7 @@ namespace FashionShops.Controllers.Products
         {
             var product = from p in data.Products select p;
             int totalProduct = product.Count();
-            int totalPage = (int)Math.Round((double)totalProduct / pageSize, MidpointRounding.AwayFromZero) + 1;
+            int totalPage = (int)Math.Ceiling((double)totalProduct / pageSize);
             return totalPage;
         }
         public ActionResult Detail(int id)

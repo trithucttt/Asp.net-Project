@@ -172,6 +172,7 @@
     </Compile>
     <Compile Include="Controllers\Auth\ChangePasswordController.cs" />
     <Compile Include="Controllers\Auth\LoginController.cs" />
+    <Compile Include="Controllers\Auth\ProfileController.cs" />
     <Compile Include="Controllers\Auth\RegisterController.cs" />
     <Compile Include="Controllers\Cart\CartController.cs" />
     <Compile Include="Controllers\Cart\CheckOutController.cs" />
@@ -213,6 +214,7 @@
     <Compile Include="Models\ProductDetail\ImagesForProduct.cs" />
     <Compile Include="Models\ProductDetail\ProductDetail.cs" />
     <Compile Include="Models\ProductView.cs" />
+    <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\ToastrMessage.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
@@ -259,6 +261,46 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Admin\css\bootstrap-social.css" />
+    <Content Include="Assets\Admin\css\bootstrap-theme.min.css" />
+    <Content Include="Assets\Admin\css\bootstrap.min.css" />
+    <Content Include="Assets\Admin\css\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Assets\Admin\css\dataTables\dataTables.responsive.css" />
+    <Content Include="Assets\Admin\css\font-awesome.min.css" />
+    <Content Include="Assets\Admin\css\metisMenu.min.css" />
+    <Content Include="Assets\Admin\css\morris.css" />
+    <Content Include="Assets\Admin\css\startmin.css" />
+    <Content Include="Assets\Admin\css\timeline.css" />
+    <Content Include="Assets\Admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\Admin\js\bootstrap.min.js" />
+    <Content Include="Assets\Admin\js\dataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Assets\Admin\js\dataTables\jquery.dataTables.min.js" />
+    <Content Include="Assets\Admin\js\flot-data.js" />
+    <Content Include="Assets\Admin\js\flot\excanvas.min.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.colorhelpers.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.canvas.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.categories.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.crosshair.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.errorbars.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.image.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.navigate.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.pie.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.resize.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.selection.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.stack.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.symbol.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.threshold.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.time.js" />
+    <Content Include="Assets\Admin\js\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Assets\Admin\js\jquery.min.js" />
+    <Content Include="Assets\Admin\js\metisMenu.min.js" />
+    <Content Include="Assets\Admin\js\morris-data.js" />
+    <Content Include="Assets\Admin\js\morris.min.js" />
+    <Content Include="Assets\Admin\js\raphael.min.js" />
+    <Content Include="Assets\Admin\js\startmin.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -473,6 +515,14 @@
     <Content Include="Content\images\products\pd50.2.jpg" />
     <Content Include="Content\images\products\pd50.3.jpg" />
     <Content Include="Content\images\products\pd50.4.jpg" />
+    <Content Include="Content\images\products\pd51.1.jpg" />
+    <Content Include="Content\images\products\pd51.2.jpg" />
+    <Content Include="Content\images\products\pd51.3.jpg" />
+    <Content Include="Content\images\products\pd51.4.jpg" />
+    <Content Include="Content\images\products\pd52.1.jpg" />
+    <Content Include="Content\images\products\pd52.2.jpg" />
+    <Content Include="Content\images\products\pd52.3.jpg" />
+    <Content Include="Content\images\products\pd52.4.jpg" />
     <Content Include="Content\images\products\pd6.1.jpg" />
     <Content Include="Content\images\products\pd6.2.jpg" />
     <Content Include="Content\images\products\pd6.3.jpg" />
@@ -620,6 +670,15 @@
     <Content Include="DatabaseFashionShops.edmx.diagram">
       <DependentUpon>DatabaseFashionShops.edmx</DependentUpon>
     </Content>
+    <Content Include="Assets\Admin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\Admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\Admin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\Admin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\Admin\fonts\FontAwesome.otf" />
+    <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -655,6 +714,7 @@
     <Content Include="Views\CheckOut\OrderTracking.cshtml" />
     <Content Include="Views\CheckOut\OrderList.cshtml" />
     <Content Include="Views\Product\Pagination.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

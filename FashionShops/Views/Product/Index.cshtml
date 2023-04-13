@@ -152,7 +152,7 @@
                                             <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
                                             <div class="product_info">
                                                 <h6 class="product_name"><a href="single.html">@item.name</a></h6>
-                                                <div class="product_price">$@item.price</div>
+                                                <div class="product_price">&#8363;@item.price</div>
                                             </div>
                                         </div>
                                         <div class="red_button add_to_cart_button"><a href="/Product/Detail?id=@item.product_id">add to cart</a></div>
@@ -273,6 +273,8 @@
     <link rel="stylesheet" type="text/css" href="~/Content/styles/categories_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/categories_responsive.css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+    <script src="~/Content/plugins/Isotope/isotope.pkgd.min.js"></script>
+    <script src="~/Content/js/categories_custom.js"></script>
     <style>
         .product_name {
             white-space: nowrap;
@@ -366,6 +368,10 @@
                     pageSize: pageSize
                 },
                 success: function (data) {
+                    //setTimeout(function () {
+                    //    $("#list_all_pro").remove()
+                    //    $("#sort").append(data);
+                    //}, 1000);
                     $("#list_all_pro").remove()
                     $("#sort").append(data);
                 },
@@ -415,7 +421,6 @@
                 let selectedPage = getCurrenPage();
                 let pageSize = getPageSize();
                 pagination(selectedPage, pageSize);
-
             });
         };
         numberClick();

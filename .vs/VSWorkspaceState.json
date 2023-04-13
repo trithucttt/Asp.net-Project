@@ -1,13 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\FashionShops",
-    "\\FashionShops\\Views",
-    "\\FashionShops\\Views\\Home",
-    "\\FashionShops\\Views\\Login",
-    "\\FashionShops\\Views\\Product",
-    "\\FashionShops\\Views\\Shared"
+    ""
   ],
-  "SelectedNode": "\\FashionShops\\Views\\Product\\Detail.cshtml",
+  "SelectedNode": "\\FashionShops.sln",
   "PreviewInSolutionExplorer": false
 }

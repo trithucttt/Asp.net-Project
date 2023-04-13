@@ -1,8 +1,10 @@
-﻿
+﻿@model FashionShops.User
 @{
     ViewBag.Title = "showFormLogin";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 }
 
 <div class="wrapper">
@@ -10,15 +12,21 @@
         <div class="image-holder">
             <img class="img-login" src="~/Content/images/registration-form-4.jpeg" alt="">
         </div>
-        <form action="/Login/Check" method="post" id="form_login">
+        @*<form action="/Login/Check" method="post" id="form_login">*@
+        @using (Html.BeginForm("Check", "Login", new { id = "form_login" }))
+        {
+            @Html.AntiForgeryToken()
+
             <h3>Sign In</h3>
             <div class="form-holder active-login">
-                <input type="text" name="username" placeholder="username" class="form-control-login" id="username">
-                <div class="font-italic" id="error_username" style="color: red"></div>
+                @*<input type="text" name="username" placeholder="username" class="form-control-login" id="username">*@
+                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control-login", placeholder = "username", name = "username", id = "username" } })
+                @Html.ValidationMessageFor(model => model.username, null, new { @style = "color: red; font-style: italic;" })
             </div>
             <div class="form-holder">
-                <input type="password" name="password" placeholder="Password" class="form-control-login" id="password" style="font-size: 15px;">
-                <div class="font-italic" id="error_password" style="color: red"></div>
+                @*<input type="password" name="password" placeholder="Password" class="form-control-login" id="password" style="font-size: 15px;">*@
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control-login", placeholder = "password", name = "password", id = "password", type = "password" } })
+                @Html.ValidationMessageFor(model => model.password, null, new { @style = "color: red; font-style: italic;" })
             </div>
             <div class="form-holder" hidden>
                 <input type="text" name="preUrl" class="form-control-login" id="preUrl" style="font-size: 15px;">
@@ -26,16 +34,18 @@
             </div>
             <div class="checkbox">
                 <label>
-                        <input type="checkbox" name="rememberme" id="rememberme"> Remember password
-                        <span class="checkmark"></span>
+                    <input type="checkbox" name="rememberme" id="rememberme"> Remember password
+                    <span class="checkmark"></span>
                 </label>
             </div>
-            @Html.ValidationSummary(true, null, new { @class = "font-italic", @style = "color: red" })
+            @Html.ValidationSummary(true, null, new { @style = "color: red; font-style: italic;" })
             <div class="form-login">
                 <button type="submit" data-href="/Login/Check" class="button-login" id="btn-login">Sign in</button>
                 <p>Don't Have account? <a href="/Register/Register" class="link-login">Register</a></p>
             </div>
-        </form>
+        }
+
+        @*</form>*@
     </div>
 </div>
 <div id="notLoginInCart" hidden>@ViewBag.NotLogin</div>

@@ -364,6 +364,7 @@ jQuery(document).ready(function($)
 					setInitPagination();
 					pagination(selectedPage, pageSize);
 					numberClick();
+					displayButtonControll();
     				//$('.product-grid').isotope({filter: numFilter });
 	        	});
 	        });	

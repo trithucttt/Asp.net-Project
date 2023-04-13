@@ -113,20 +113,19 @@ namespace FashionShops.Controllers.Cart
             email.Subject = "Testing out email sending";
             email.Body = new TextPart(MimeKit.Text.TextFormat.Plain)
             {
-                Text = "Hello all the way from the land of C#"
+                Text = "Thank you to shopping in FashionShops!!!"
             };
             using (var smtp = new SmtpClient())
             {
                 smtp.Connect("smtp.gmail.com", 587, false);
 
                 // Note: only needed if the SMTP server requires authentication
-                smtp.Authenticate("nhapemailvoday", "matkhauvoday");
+                smtp.Authenticate("thuongb2014795@student.ctu.edu.vn", "Fa3tDSDT");
 
                 smtp.Send(email);
                 smtp.Disconnect(true);
             }
         }
-        //smtpClient.Credentials = new NetworkCredential("kidhappyninjaa@gmail.com", "truyentranhconan");
 
         [HttpPost]
         public ActionResult OrderDetail(int userid, long orderid, string orderdate, 

@@ -1,0 +1,187 @@
+﻿@model FashionShops.Models.Profile
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="main-body" style="margin-top:200px;">
+        <!-- /Breadcrumb -->
+        <div  id="profile">
+            <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                                     width="150">
+                                <div class="mt-3">
+                                    <h4>@Model.firstname @Model.lastname</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">First Name</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form_input" name="firstname" value="@Model.firstname" readonly />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Last Name</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form_input" name="lastname" value="@Model.lastname" readonly />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Email</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form_input" name="email" value="@Model.email" readonly />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Country</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form_input" name="country" value="@Model.country" readonly />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Mobile</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form_input" name="phonenumber" value="@Model.phonenumber" readonly />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Address</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form_input" name="address" value="@Model.address" readonly />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Province</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form_input" name="province" value="@Model.province" readonly />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">City</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form_input" name="city" value="@Model.city" readonly />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div>
+                                        <a class="btn btn-info" id="btn_edit"
+                                           href="/ChangePassword/Index">Edit</a>
+                                        <a class="btn btn-success" id="btn_save" target="__blank" data-userid="@Model.userId"
+                                           href="/ChangePassword/Index" hidden>Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Profile  {
+    <link rel="stylesheet" type="text/css" href="~/Content/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/plugins/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/contact_styles.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/contact_responsive.css">
+    <script src="~/Content/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="~/Content/js/contact_custom.js"></script>
+    <script>
+        $(document).on('click', '#btn_edit', function (ele) {
+            ele.preventDefault();
+            $(this).attr('hidden', true);
+            $('#btn_save').attr('hidden', false);
+            $('.form_input').each(function () {
+                $(this).attr('readonly', false);
+            });
+        });
+        $(document).on('click', '#btn_save', function (ele) {
+            ele.preventDefault();
+            $(this).attr('hidden', true);
+            $('#btn_edit').attr('hidden', false);
+            $('.form_input').each(function () {
+                $(this).attr('readonly', true);
+            });
+            let userid = $(this).data('userid');
+            let firstname = $('input[name=firstname]').val();
+            let latname = $('input[name=lastname]').val();
+            let email = $('input[name=email]').val();
+            let country = $('input[name=country]').val();
+            let phonenumber = $('input[name=phonenumber]').val();
+            let address = $('input[name=address]').val();
+            let province = $('input[name=province]').val();
+            let city = $('input[name=city]').val();
+            console.log(userid);
+            console.log(firstname);
+            console.log(latname);
+            console.log(email);
+            console.log(country);
+            console.log(phonenumber);
+            console.log(address);
+            console.log(province);
+            console.log(city);
+
+            $.ajax({
+                url: "/Profile/UpdateProfile",
+                type: "POST",
+                data: {
+                    userid: userid,
+                    firstname: firstname,
+                    lastname: latname,
+                    email: email,
+                    country: country,
+                    phonenumber: phonenumber,
+                    address: address,
+                    province: province,
+                    city: city
+                },
+                success: function (data) {
+                    $('#profile').empty().load('/Profile/Index #profile');
+                    //window.location.href = '/Profile/Index';
+                    toastr.success(data);
+                    buttonChange();
+                },
+                error: function () {
+                    alert("Error retrieving product details.");
+                }
+            });
+        });
+        
+    </script>
+}
