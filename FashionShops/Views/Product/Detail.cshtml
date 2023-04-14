@@ -15,9 +15,9 @@
                         <div class="col-lg-3 thumbnails_col order-lg-1 order-2">
                             <div class="single_product_thumbnails">
                                 <ul>
-                                    <li><img src="@Model.imagesForProduct[1].productUrlImg" alt="" data-image="@Model.imagesForProduct[1].productUrlImg"></li>
-                                    <li class="active"><img src="@Model.imagesForProduct[2].productUrlImg" alt="" data-image="@Model.imagesForProduct[2].productUrlImg"></li>
-                                    <li><img src="@Model.imagesForProduct[3].productUrlImg" alt="" data-image="@Model.imagesForProduct[3].productUrlImg"></li>
+                                    <li><img src="@Model.imagesForProduct[1].productUrlImg" alt="" data-image="@Model.imagesForProduct[1].productUrlImg" height="120" width="100"></li>
+                                    <li class="active"><img src="@Model.imagesForProduct[2].productUrlImg" alt="" data-image="@Model.imagesForProduct[2].productUrlImg" height="120" width="100"></li>
+                                    <li><img src="@Model.imagesForProduct[3].productUrlImg" alt="" data-image="@Model.imagesForProduct[3].productUrlImg" height="120" width="100"></li>
                                 </ul>
                             </div>
                         </div>
@@ -42,7 +42,6 @@
                         <span class="ti-truck"></span><span>free delivery</span>
                     </div>
 
-<<<<<<< HEAD
                 <!-- Price-->
                 <div class="original_price"></div>
                 <div class="product_price" id="product-price" data-price="@Model.infProduct.productPrice">@Model.infProduct.productPrice&#8363;</div>
@@ -53,32 +52,6 @@
                     <li><i class="fa fa-star" aria-hidden="true"></i></li>
                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                 </ul>
-=======
-                    <!-- Price-->
-                    <div class="original_price"></div>
-
-                    <div class="product_price" id="product-price" data-price="@Model.infProduct.productPrice">@Model.infProduct.productPrice</div>
-
-                    <<<<<<< HEAD
-                    <div class="product_price">VNĐ</div>
-                    <ul class="star_rating">
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                    </ul>
-                    =======
-                    <div class="product_price">$</div>
-                    <ul class="star_rating">
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                    </ul>
-                    >>>>>>> a9f6118a4d007862025c6a84a3976f6292517dec
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
 
                     <!-- Color-->
                     <div class="product_color">
@@ -215,24 +188,14 @@
 
                             <!-- User Reviews -->
 
-<<<<<<< HEAD
                             <div class="col-lg-6 reviews_col" >
                                 <div class="tab_title reviews_title" id="review-quantity">
                                     <h4>Reviews (@Model.reviewings.Count())</h4>
-=======
-                            <div class="col-lg-6 reviews_col">
-                                <div class="tab_title reviews_title" id="review-quantity">
-                                    <h4>Reviews (@Model.review.Count())</h4>
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
                                 </div>
                                 <div id="customer_reviews">
 
                                     <!-- User Review -->
-<<<<<<< HEAD
                                     @foreach (var review in Model.reviewings)
-=======
-                                    @foreach (var review in Model.review)
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
                                     {
                                         <div class="user_review_container d-flex flex-column flex-sm-row">
                                             <div class="user">
@@ -255,11 +218,7 @@
                                             </div>
                                             <div class="review">
                                                 <div class="review_date">@review.publishedAt</div>
-<<<<<<< HEAD
                                                 <div class="user_name">@review.User.firstName @review.User.lastName</div>
-=======
-                                                <div class="user_name">@review.username</div>
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
                                                 <p>@review.content</p>
                                             </div>
                                         </div>
@@ -287,11 +246,7 @@
                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                                             </ul>
-<<<<<<< HEAD
                                             <input type="text" name="rate" id="rate" value="4" hidden/>
-=======
-                                            <input type="text" name="rate" id="rate" value="4" hidden />
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
                                             <textarea id="review_message" class="input_review" name="message" placeholder="Your Review" rows="4" required data-error="Please, leave us a review."></textarea>
                                         </div>
                                         <div class="text-left text-sm-right">
@@ -375,10 +330,6 @@
         }
     </style>
     <script>
-<<<<<<< HEAD
-=======
-
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
         $(document).ready(function () {
             $(document).on('click', '.add_to_cart_button', function (event) {
                 event.preventDefault();
@@ -473,59 +424,8 @@
         function rating() {
             if ($('.user_star_rating li').length) {
                 var stars = $('.user_star_rating li');
-
-<<<<<<< HEAD
                 stars.each(function () {
                     var star = $(this);
-=======
-    <script>
-        function rating() {
-            if ($('.user_star_rating li').length) {
-                var stars = $('.user_star_rating li');
-
-                stars.each(function () {
-                    var star = $(this);
-
-                    star.on('click', function () {
-                        var i = star.index();
-                        $('#rate').val(i + 1);
-                    });
-                });
-            }
-        }
-        rating();
-        $('#review_submit').click(function (ele) {
-            ele.preventDefault();
-            let productid = $('#addToCartButton').data('proid');
-            let rate = $('#rate').val();
-            let content = $('#review_message').val();
-            console.log(productid);
-            console.log(rate);
-            console.log(content);
-            $.ajax({
-                url: "/Product/AddReview",
-                type: "POST",
-                data: {
-                    productid: productid,
-                    rate: rate,
-                    content: content
-                },
-                success: function (data) {
-                    toastr.success(data);
-                    $('#customer_reviews').empty().load('/Product/Detail?id=' + productid + ' #customer_reviews');
-                    $('#review-quantity').empty().load('/Product/Detail?id=' + productid + ' #review-quantity');
-                    $('#review_message').val('');
-                },
-                error: function () {
-                    alert("Error retrieving product details.");
-                }
-            });
-
-        })
-
-    </script>
-}
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
 
                     star.on('click', function () {
                         var i = star.index();

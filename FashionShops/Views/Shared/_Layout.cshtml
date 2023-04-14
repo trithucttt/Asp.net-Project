@@ -45,7 +45,7 @@
                                         @{ var currentUser = Membership.GetUser(); }
                                         @if (@currentUser != null)
                                         {
-                                            <a href="#">Hello @currentUser.UserName</a>
+                                            <a href="/Profile/Index">Hello @currentUser.UserName</a>
                                         }
                                     </li>
                                     <li class="currency">
@@ -73,7 +73,7 @@
                                         </ul>
                                     </li>
                                     <li class="account">
-                                        <a href="#">
+                                        <a href="/Profile/Index">
                                             My Account
                                             <i class="fa fa-angle-down"></i>
                                         </a>
@@ -86,10 +86,10 @@
                                             }
                                             else
                                             {
-                                                <li><a href="/Register/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                                                <li><a href="/ChangePassword/Index"><i class="fa fa-cog" aria-hidden="true"></i>Edit</a></li>
-                                                <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
                                                 <li><a href="/Profile/Index"><i class="fa fa-user" aria-hidden="true"></i>Proifile</a></li>
+                                                <li><a href="/ChangePassword/Index"><i class="fa fa-cog" aria-hidden="true"></i>Edit</a></li>
+                                                <li><a href="/Register/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                                <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
                                             }
                                         </ul>
                                     </li>
@@ -113,7 +113,6 @@
                                 <ul class="navbar_menu">
                                     <li><a href="/Home/Index">home</a></li>
                                     <li><a href="/Product/Index">shop</a></li>
-                                    <li><a href="#">promotion</a></li>
                                     <li><a href="/Contact/Index">contact</a></li>
                                     <li><a href="/CheckOut/OrderList">list order</a></li>
                                 </ul>
@@ -185,6 +184,8 @@
                             }
                             else
                             {
+                                <li><a href="/Profile/Index"><i class="fa fa-user" aria-hidden="true"></i>Proifile</a></li>
+                                <li><a href="/ChangePassword/Index"><i class="fa fa-cog" aria-hidden="true"></i>Edit</a></li>
                                 <li><a href="/Register/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
                                 <li><a href="/Login/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
                             }
@@ -192,7 +193,6 @@
                     </li>
                     <li class="menu_item"><a href="/Home/Index">home</a></li>
                     <li class="menu_item"><a href="/Product/Index">shop</a></li>
-                    <li class="menu_item"><a href="#">promotion</a></li>
                     <li class="menu_item"><a href="/Contact/Index">contact</a></li>
                     <li class="menu_item"><a href="/CheckOut/OrderList">list order</a></li>
                 </ul>
@@ -265,13 +265,13 @@
                 type: "GET",
                 success: function (data) {
                     var urlForReLoad = window.location.href;
-                    console.log(urlForReLoad);
-                    console.log(data);
+                    //console.log(urlForReLoad);
+                    //console.log(data);
                     $("#checkout_items").html(data);
                     //$('#checkout_items').load(urlForReLoad + ' #target');
                 },
                 error: function () {
-                    toastr.error("Cannot update product!");
+                    toastr.error("Can't put the number of products in the cart!");
                 }
             });
         }

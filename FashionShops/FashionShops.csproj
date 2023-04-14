@@ -159,6 +159,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Cart.cs">
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
     </Compile>
@@ -675,25 +677,10 @@
     <Content Include="Content\plugins\themify-icons\fonts\themify.ttf" />
     <Content Include="Content\plugins\themify-icons\fonts\themify.woff" />
     <Content Include="Content\plugins\toastr\toastr.js.map" />
-<<<<<<< HEAD
-    <EntityDeploy Include="DatabaseFashionShops.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DatabaseFashionShops.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DatabaseFashionShops.edmx.diagram">
-      <DependentUpon>DatabaseFashionShops.edmx</DependentUpon>
-    </Content>
-    <Content Include="Assets\Admin\fonts\fontawesome-webfont.eot" />
-    <Content Include="Assets\Admin\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Assets\Admin\fonts\fontawesome-webfont.woff" />
-    <Content Include="Assets\Admin\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Assets\Admin\fonts\FontAwesome.otf" />
-    <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Assets\Admin\fonts\glyphicons-halflings-regular.woff2" />
-=======
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\LoginAdmin.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -733,6 +720,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

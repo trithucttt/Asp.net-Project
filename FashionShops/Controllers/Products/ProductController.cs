@@ -16,6 +16,8 @@ namespace FashionShops.Controllers.Products
         FashionShopEntities data = new FashionShopEntities();
         public ActionResult Index()
         {
+            if (TempData["notLogin"] != null)
+                ViewBag.NotLogin = TempData["notLogin"];
             var query = from p in data.Products select p;
             var infProduct = query.Take(12).ToList();
             return View(infProduct);
@@ -88,24 +90,7 @@ namespace FashionShops.Controllers.Products
                            });
             var sizes = querry3.Distinct().OrderBy(s => s.sizeID).ToList();
 
-<<<<<<< HEAD
             var reviews = (from rev in data.Product_Reviewing where rev.product_id == id select rev).ToList();
-=======
-            var review_querry = (from product in data.Products
-                                 join pReview in data.Product_Reviewing on product.product_id equals pReview.product_id
-                                 join user in data.Users on pReview.user_id equals user.user_id
-                                 where pReview.product_id == id
-                                 select new ProductReview
-                                 {
-                                     pReviewID = (int)pReview.id,
-                                     product_id = (int)pReview.product_id,
-                                     username = user.username,
-                                     rating = pReview.rating,
-                                     content = pReview.content,
-                                     publishedAt = (DateTime)pReview.publishedAt
-                                 }
-                ).ToList();
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
 
             var detailPro = new ProductDetail
             {
@@ -113,11 +98,7 @@ namespace FashionShops.Controllers.Products
                 sizesForDetailPage = sizes,
                 infProduct = infProduct[0],
                 imagesForProduct = imagesForPro,
-<<<<<<< HEAD
                 reviewings = reviews
-=======
-                review = review_querry
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
             };
             return View(detailPro);
         }
@@ -173,18 +154,10 @@ namespace FashionShops.Controllers.Products
                 publishedAt = DateTime.Now
             };
             data.Product_Reviewing.Add(newReview);
-<<<<<<< HEAD
             if(data.SaveChanges() != 0)
             {
                 return Content("Thank you for rating!");
             } else
-=======
-            if (data.SaveChanges() != 0)
-            {
-                return Content("Thank you for rating!");
-            }
-            else
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef
             {
                 return Content("Sorry, something went wrong, please try again later!");
             }

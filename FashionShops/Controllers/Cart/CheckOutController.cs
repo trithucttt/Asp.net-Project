@@ -95,12 +95,17 @@ namespace FashionShops.Controllers.Cart
                 var orderList = from o in db.Orders
                                 where o.customer_id == userID
                                 select o;
+                if (!orderList.Any())
+                {
+                    TempData["notLogin"] = "You have no order, shopping now!";
+                    return RedirectToAction("Index", "Product");
+                }
                 return View(orderList);
             } else
             {
-                TempData["NotLogin"] = "You need to login to see your list order!";
+                TempData["notLogin"] = "You need to login to see your list order!";
+                return RedirectToAction("showFormLogin", "Login");
             }
-            return RedirectToAction("Index", "Home");
         }
 
         public void autoSendEmail()
@@ -120,7 +125,7 @@ namespace FashionShops.Controllers.Cart
                 smtp.Connect("smtp.gmail.com", 587, false);
 
                 // Note: only needed if the SMTP server requires authentication
-                smtp.Authenticate("thuongb2014795@student.ctu.edu.vn", "Fa3tDSDT");
+                smtp.Authenticate("asdfasdf", "adsfasd");
 
                 smtp.Send(email);
                 smtp.Disconnect(true);
@@ -177,7 +182,7 @@ namespace FashionShops.Controllers.Cart
                                    where arrPro.Contains((int)p.cart_id)
                                    select p;
             db.Carts.RemoveRange(productsToRemove);
-            autoSendEmail();
+            //autoSendEmail();
             if (db.SaveChanges() != 0)
             {
                 return Content("Successfully!");

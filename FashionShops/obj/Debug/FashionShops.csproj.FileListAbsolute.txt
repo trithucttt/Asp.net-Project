@@ -1,611 +1,5 @@
-<<<<<<< HEAD
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\FashionShops.dll.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\csc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\csc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\csc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\csi.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\csi.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\csi.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.AppContext.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Collections.Immutable.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Console.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Globalization.Calendars.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.IO.Compression.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.IO.FileSystem.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Net.Http.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Net.Sockets.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Reflection.Metadata.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.ValueTuple.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Xml.XPath.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\vbc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\vbc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\vbc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\VBCSCompiler.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\roslyn\VBCSCompiler.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\Microsoft.Win32.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\netstandard.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.AppContext.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Collections.Concurrent.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Collections.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Collections.NonGeneric.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Collections.Specialized.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.ComponentModel.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.ComponentModel.EventBasedAsync.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.ComponentModel.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.ComponentModel.TypeConverter.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Console.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Data.Common.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Diagnostics.Contracts.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Diagnostics.Debug.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Diagnostics.FileVersionInfo.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Diagnostics.Process.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Diagnostics.StackTrace.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Diagnostics.TextWriterTraceListener.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Diagnostics.Tools.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Diagnostics.TraceSource.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Diagnostics.Tracing.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Drawing.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Dynamic.Runtime.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Globalization.Calendars.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Globalization.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Globalization.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.Compression.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.Compression.ZipFile.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.FileSystem.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.FileSystem.DriveInfo.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.FileSystem.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.FileSystem.Watcher.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.IsolatedStorage.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.MemoryMappedFiles.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.Pipes.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.IO.UnmanagedMemoryStream.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Linq.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Linq.Expressions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Linq.Parallel.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Linq.Queryable.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.Http.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.NameResolution.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.NetworkInformation.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.Ping.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.Requests.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.Security.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.Sockets.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.WebHeaderCollection.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.WebSockets.Client.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Net.WebSockets.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.ObjectModel.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Reflection.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Reflection.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Reflection.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Resources.Reader.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Resources.ResourceManager.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Resources.Writer.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.CompilerServices.VisualC.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.Handles.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.InteropServices.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.Numerics.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.Serialization.Formatters.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.Serialization.Json.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.Serialization.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.Serialization.Xml.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Security.Claims.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Security.Cryptography.Algorithms.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Security.Cryptography.Csp.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Security.Cryptography.Encoding.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Security.Cryptography.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Security.Cryptography.X509Certificates.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Security.Principal.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Security.SecureString.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Text.Encoding.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Text.Encoding.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Text.RegularExpressions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Threading.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Threading.Overlapped.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Threading.Tasks.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Threading.Tasks.Parallel.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Threading.Thread.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Threading.ThreadPool.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Threading.Timer.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.ValueTuple.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Xml.ReaderWriter.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Xml.XDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Xml.XmlDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Xml.XmlSerializer.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Xml.XPath.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Xml.XPath.XDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\Antlr3.Runtime.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\BouncyCastle.Crypto.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\EntityFramework.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\EntityFramework.SqlServer.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\MailKit.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\Microsoft.Web.Infrastructure.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\MimeKit.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\Newtonsoft.Json.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Buffers.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Memory.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Numerics.Vectors.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.CompilerServices.Unsafe.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Security.Cryptography.Pkcs.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Text.Encoding.CodePages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Threading.Tasks.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.Helpers.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.Mvc.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.Optimization.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.WebPages.Deployment.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.WebPages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.WebPages.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\WebGrease.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\BouncyCastle.Crypto.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\EntityFramework.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\EntityFramework.SqlServer.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\MailKit.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\MailKit.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\MimeKit.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\MimeKit.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Buffers.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Memory.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Numerics.Vectors.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Runtime.CompilerServices.Unsafe.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Security.Cryptography.Pkcs.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Text.Encoding.CodePages.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Threading.Tasks.Extensions.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.Helpers.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.Mvc.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.Optimization.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.WebPages.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.WebPages.Deployment.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\System.Web.WebPages.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\Newtonsoft.Json.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\Antlr3.Runtime.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\obj\Debug\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net - Copy\FashionShops\obj\Debug\FashionShops.pdb
-=======
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\FashionShops.dll.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\csc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\csc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\csc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\csi.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\csi.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\csi.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.AppContext.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Collections.Immutable.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Console.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Globalization.Calendars.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.IO.Compression.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.IO.FileSystem.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Net.Http.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Net.Sockets.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Reflection.Metadata.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.ValueTuple.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Xml.XPath.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\vbc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\vbc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\vbc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\VBCSCompiler.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\roslyn\VBCSCompiler.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\Antlr3.Runtime.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\Microsoft.Web.Infrastructure.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\Newtonsoft.Json.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.Helpers.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.Mvc.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.Optimization.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.WebPages.Deployment.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.WebPages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.WebPages.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\WebGrease.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.Helpers.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.Mvc.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.Optimization.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.WebPages.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.WebPages.Deployment.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\System.Web.WebPages.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\Newtonsoft.Json.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\Antlr3.Runtime.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\obj\Debug\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Fashion_shops_project\FashionShops\obj\Debug\FashionShops.pdb
-C:\fashion_shops_asp.net\FashionShops\bin\FashionShops.dll.config
-C:\fashion_shops_asp.net\FashionShops\bin\FashionShops.dll
-C:\fashion_shops_asp.net\FashionShops\bin\FashionShops.pdb
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.exe
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.exe.config
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.rsp
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.exe
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.exe.config
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.rsp
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Managed.Core.targets
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.AppContext.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Collections.Immutable.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Console.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Globalization.Calendars.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.Compression.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.FileSystem.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Net.Http.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Net.Sockets.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Reflection.Metadata.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.ValueTuple.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XmlDocument.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XPath.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.exe
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.exe.config
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.rsp
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\VBCSCompiler.exe
-C:\fashion_shops_asp.net\FashionShops\bin\roslyn\VBCSCompiler.exe.config
-C:\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.dll
-C:\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\fashion_shops_asp.net\FashionShops\bin\Microsoft.Web.Infrastructure.dll
-C:\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.dll
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.Helpers.dll
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.Mvc.dll
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.Optimization.dll
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.Razor.dll
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Deployment.dll
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.dll
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Razor.dll
-C:\fashion_shops_asp.net\FashionShops\bin\WebGrease.dll
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.Helpers.xml
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.Mvc.xml
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.Optimization.xml
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.Razor.xml
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.xml
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Deployment.xml
-C:\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Razor.xml
-C:\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.xml
-C:\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.pdb
-C:\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
-C:\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
-C:\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.dll
-C:\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\FashionShops.dll.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\EntityFramework.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\Microsoft.Web.Infrastructure.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.Helpers.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.Mvc.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.Optimization.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Deployment.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\WebGrease.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\EntityFramework.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.Helpers.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.Mvc.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.Optimization.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Deployment.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\FashionShops.dll.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.AppContext.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Collections.Immutable.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Console.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Globalization.Calendars.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.Compression.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.FileSystem.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Net.Http.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Net.Sockets.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Reflection.Metadata.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.ValueTuple.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XPath.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\VBCSCompiler.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\roslyn\VBCSCompiler.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\EntityFramework.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\Microsoft.Web.Infrastructure.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.Helpers.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.Mvc.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.Optimization.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Deployment.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\WebGrease.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\EntityFramework.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.Helpers.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.Mvc.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.Optimization.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Deployment.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.AppContext.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Collections.Immutable.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Console.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Globalization.Calendars.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.Compression.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.FileSystem.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Net.Http.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Net.Sockets.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Reflection.Metadata.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.ValueTuple.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XPath.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\VBCSCompiler.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\bin\roslyn\VBCSCompiler.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\flashMessage\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\FashionShops.dll.config
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\FashionShops.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\FashionShops.pdb
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.exe
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.exe.config
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\csc.rsp
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.exe
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.exe.config
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\csi.rsp
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.AppContext.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Collections.Immutable.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Console.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Globalization.Calendars.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.Compression.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.FileSystem.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Net.Http.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Net.Sockets.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Reflection.Metadata.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.ValueTuple.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XPath.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.exe
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.exe.config
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.rsp
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\VBCSCompiler.exe
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\roslyn\VBCSCompiler.exe.config
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\EntityFramework.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\Microsoft.Web.Infrastructure.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.Helpers.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.Mvc.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.Optimization.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.Razor.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Deployment.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Razor.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\WebGrease.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\EntityFramework.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.Helpers.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.Mvc.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.Optimization.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.Razor.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Deployment.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Razor.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.pdb
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.dll
-D:\Project ASP\15-3-22\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\FashionShops.dll.config
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\FashionShops.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\FashionShops.pdb
@@ -658,12 +52,118 @@ D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\b
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\roslyn\vbc.rsp
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\roslyn\VBCSCompiler.exe
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\roslyn\VBCSCompiler.exe.config
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\Microsoft.Win32.Primitives.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\netstandard.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.AppContext.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Collections.Concurrent.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Collections.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Collections.NonGeneric.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Collections.Specialized.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.ComponentModel.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.ComponentModel.EventBasedAsync.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.ComponentModel.Primitives.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.ComponentModel.TypeConverter.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Console.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Data.Common.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Diagnostics.Contracts.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Diagnostics.Debug.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Diagnostics.FileVersionInfo.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Diagnostics.Process.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Diagnostics.StackTrace.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Diagnostics.TextWriterTraceListener.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Diagnostics.Tools.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Diagnostics.TraceSource.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Diagnostics.Tracing.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Drawing.Primitives.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Dynamic.Runtime.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Globalization.Calendars.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Globalization.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Globalization.Extensions.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.Compression.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.Compression.ZipFile.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.FileSystem.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.FileSystem.DriveInfo.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.FileSystem.Primitives.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.FileSystem.Watcher.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.IsolatedStorage.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.MemoryMappedFiles.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.Pipes.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.IO.UnmanagedMemoryStream.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Linq.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Linq.Expressions.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Linq.Parallel.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Linq.Queryable.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.Http.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.NameResolution.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.NetworkInformation.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.Ping.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.Primitives.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.Requests.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.Security.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.Sockets.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.WebHeaderCollection.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.WebSockets.Client.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Net.WebSockets.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.ObjectModel.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Reflection.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Reflection.Extensions.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Reflection.Primitives.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Resources.Reader.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Resources.ResourceManager.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Resources.Writer.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.CompilerServices.VisualC.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.Extensions.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.Handles.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.InteropServices.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.Numerics.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.Serialization.Formatters.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.Serialization.Json.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.Serialization.Primitives.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.Serialization.Xml.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Security.Claims.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Security.Cryptography.Algorithms.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Security.Cryptography.Csp.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Security.Cryptography.Encoding.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Security.Cryptography.Primitives.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Security.Cryptography.X509Certificates.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Security.Principal.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Security.SecureString.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Text.Encoding.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Text.Encoding.Extensions.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Text.RegularExpressions.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Threading.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Threading.Overlapped.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Threading.Tasks.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Threading.Tasks.Parallel.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Threading.Thread.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Threading.ThreadPool.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Threading.Timer.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.ValueTuple.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Xml.ReaderWriter.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Xml.XDocument.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Xml.XmlDocument.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Xml.XmlSerializer.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Xml.XPath.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Xml.XPath.XDocument.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\BouncyCastle.Crypto.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\EntityFramework.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\MailKit.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\Microsoft.Web.Infrastructure.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\MimeKit.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Buffers.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Memory.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Numerics.Vectors.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Security.Cryptography.Pkcs.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Text.Encoding.CodePages.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Threading.Tasks.Extensions.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Web.Helpers.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Web.Mvc.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Web.Optimization.dll
@@ -672,8 +172,20 @@ D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\b
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Web.WebPages.Razor.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\WebGrease.dll
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\BouncyCastle.Crypto.xml
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\EntityFramework.xml
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.xml
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\MailKit.pdb
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\MailKit.xml
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\MimeKit.pdb
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\MimeKit.xml
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Buffers.xml
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Memory.xml
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Numerics.Vectors.xml
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Security.Cryptography.Pkcs.xml
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Text.Encoding.CodePages.xml
+D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Threading.Tasks.Extensions.xml
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Web.Helpers.xml
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Web.Mvc.xml
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\System.Web.Optimization.xml
@@ -684,263 +196,6 @@ D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\b
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\Newtonsoft.Json.xml
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\Antlr3.Runtime.pdb
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.dll
 D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\FashionShops.dll.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\csc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\csc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\csc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\csi.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\csi.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\csi.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.AppContext.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Collections.Immutable.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Console.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Globalization.Calendars.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.IO.Compression.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.IO.FileSystem.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Net.Http.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Net.Sockets.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Reflection.Metadata.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.ValueTuple.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Xml.XPath.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\vbc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\vbc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\vbc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\VBCSCompiler.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\roslyn\VBCSCompiler.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\Antlr3.Runtime.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\EntityFramework.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\EntityFramework.SqlServer.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\Microsoft.Web.Infrastructure.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\Newtonsoft.Json.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.Helpers.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.Mvc.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.Optimization.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.WebPages.Deployment.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.WebPages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.WebPages.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\WebGrease.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\EntityFramework.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\EntityFramework.SqlServer.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.Helpers.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.Mvc.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.Optimization.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.WebPages.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.WebPages.Deployment.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\System.Web.WebPages.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\Newtonsoft.Json.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\Antlr3.Runtime.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\obj\Debug\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\obj\Debug\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
-C:\fashion_shops_asp.net\FashionShops\bin\EntityFramework.dll
-C:\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.dll
-C:\fashion_shops_asp.net\FashionShops\bin\EntityFramework.xml
-C:\fashion_shops_asp.net\FashionShops\bin\EntityFramework.SqlServer.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\obj\Debug\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\obj\Debug\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\FashionShops.dll.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\FashionShops.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\FashionShops.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\csc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\csc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\csc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\csi.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\csi.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\csi.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.AppContext.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Collections.Immutable.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Console.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Globalization.Calendars.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.IO.Compression.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.IO.FileSystem.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Net.Http.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Net.Sockets.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Reflection.Metadata.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.ValueTuple.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Xml.XPath.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\vbc.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\vbc.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\vbc.rsp
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\VBCSCompiler.exe
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\roslyn\VBCSCompiler.exe.config
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\Antlr3.Runtime.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\EntityFramework.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\EntityFramework.SqlServer.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\Microsoft.Web.Infrastructure.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\Newtonsoft.Json.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.Helpers.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.Mvc.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.Optimization.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.WebPages.Deployment.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.WebPages.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.WebPages.Razor.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\WebGrease.dll
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\EntityFramework.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\EntityFramework.SqlServer.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.Helpers.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.Mvc.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.Optimization.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.WebPages.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.WebPages.Deployment.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\System.Web.WebPages.Razor.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\Newtonsoft.Json.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\Antlr3.Runtime.pdb
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Hoc_ky_2_nam_3\TN230_web_ASPDOTNET\Bakup\fashion_shops_asp.net1 - Copy - Copy\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
-D:\asp_new\FashionShops\bin\FashionShops.dll.config
-D:\asp_new\FashionShops\bin\FashionShops.dll
-D:\asp_new\FashionShops\bin\FashionShops.pdb
-D:\asp_new\FashionShops\bin\roslyn\csc.exe
-D:\asp_new\FashionShops\bin\roslyn\csc.exe.config
-D:\asp_new\FashionShops\bin\roslyn\csc.rsp
-D:\asp_new\FashionShops\bin\roslyn\csi.exe
-D:\asp_new\FashionShops\bin\roslyn\csi.exe.config
-D:\asp_new\FashionShops\bin\roslyn\csi.rsp
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.Managed.Core.targets
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\asp_new\FashionShops\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\asp_new\FashionShops\bin\roslyn\System.AppContext.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Collections.Immutable.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Console.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Globalization.Calendars.dll
-D:\asp_new\FashionShops\bin\roslyn\System.IO.Compression.dll
-D:\asp_new\FashionShops\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\asp_new\FashionShops\bin\roslyn\System.IO.FileSystem.dll
-D:\asp_new\FashionShops\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Net.Http.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Net.Sockets.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Reflection.Metadata.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\asp_new\FashionShops\bin\roslyn\System.ValueTuple.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Xml.XmlDocument.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Xml.XPath.dll
-D:\asp_new\FashionShops\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\asp_new\FashionShops\bin\roslyn\vbc.exe
-D:\asp_new\FashionShops\bin\roslyn\vbc.exe.config
-D:\asp_new\FashionShops\bin\roslyn\vbc.rsp
-D:\asp_new\FashionShops\bin\roslyn\VBCSCompiler.exe
-D:\asp_new\FashionShops\bin\roslyn\VBCSCompiler.exe.config
-D:\asp_new\FashionShops\bin\Antlr3.Runtime.dll
-D:\asp_new\FashionShops\bin\EntityFramework.dll
-D:\asp_new\FashionShops\bin\EntityFramework.SqlServer.dll
-D:\asp_new\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\asp_new\FashionShops\bin\Microsoft.Web.Infrastructure.dll
-D:\asp_new\FashionShops\bin\Newtonsoft.Json.dll
-D:\asp_new\FashionShops\bin\System.Web.Helpers.dll
-D:\asp_new\FashionShops\bin\System.Web.Mvc.dll
-D:\asp_new\FashionShops\bin\System.Web.Optimization.dll
-D:\asp_new\FashionShops\bin\System.Web.Razor.dll
-D:\asp_new\FashionShops\bin\System.Web.WebPages.Deployment.dll
-D:\asp_new\FashionShops\bin\System.Web.WebPages.dll
-D:\asp_new\FashionShops\bin\System.Web.WebPages.Razor.dll
-D:\asp_new\FashionShops\bin\WebGrease.dll
-D:\asp_new\FashionShops\bin\EntityFramework.xml
-D:\asp_new\FashionShops\bin\EntityFramework.SqlServer.xml
-D:\asp_new\FashionShops\bin\System.Web.Helpers.xml
-D:\asp_new\FashionShops\bin\System.Web.Mvc.xml
-D:\asp_new\FashionShops\bin\System.Web.Optimization.xml
-D:\asp_new\FashionShops\bin\System.Web.Razor.xml
-D:\asp_new\FashionShops\bin\System.Web.WebPages.xml
-D:\asp_new\FashionShops\bin\System.Web.WebPages.Deployment.xml
-D:\asp_new\FashionShops\bin\System.Web.WebPages.Razor.xml
-D:\asp_new\FashionShops\bin\Newtonsoft.Json.xml
-D:\asp_new\FashionShops\bin\Antlr3.Runtime.pdb
-D:\asp_new\FashionShops\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\asp_new\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
-D:\asp_new\FashionShops\obj\Debug\FashionShops.csproj.CoreCompileInputs.cache
-D:\asp_new\FashionShops\obj\Debug\FashionShops.csproj.CopyComplete
-D:\asp_new\FashionShops\obj\Debug\FashionShops.dll
-D:\asp_new\FashionShops\obj\Debug\FashionShops.pdb
-C:\fashion_shops_asp.net\FashionShops\obj\Debug\FashionShops.csproj.AssemblyReference.cache
->>>>>>> c6b8a21941e8b263f784fdcc778873b3961102ef

@@ -1,14 +1,13 @@
-<div id="LoginMsg" hidden>@ViewBag.LoginSuccessMsg</div>
-@model IEnumerable<FashionShops.Models.ProductView>
+@model IEnumerable<FashionShops.Product>
 
 <!-- Slider -->
 
-<div class="main_slider" style="background-image: url(../../Content/images/slider_1.jpg)">
+<div class="main_slider" style="background-image:url(/Content/images/slider_1.jpg)">
     <div class="container fill_height">
         <div class="row align-items-center fill_height">
             <div class="col">
                 <div class="main_slider_content">
-                    <h6>Summer / Fall Collection 2023</h6>
+                    <h6>Spring / Summer Collection 2023</h6>
                     <h1>Get up to 30% Off New Arrivals</h1>
                     <div class="red_button shop_now_button"><a href="/Product/Index">shop now</a></div>
                 </div>
@@ -23,23 +22,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="banner_item align-items-center" style="background-image: url(../../Content/images/banner_1.jpg) ">
+                <div class="banner_item align-items-center" style="background-image: url(/Content/images/banner_1.jpg)">
                     <div class="banner_category">
-                        <a>women's</a>
+                        <a href="categories.html">women's</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="banner_item align-items-center" style="background-image: url(../../Content/images/banner_2.jpg) ">
+                <div class="banner_item align-items-center" style="background-image: url(/Content/images/banner_2.jpg)">
                     <div class="banner_category">
-                        <a>accessories's</a>
+                        <a href="categories.html">accessories's</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="banner_item align-items-center" style="background-image: url(../../Content/images/banner_3.jpg) ">
+                <div class="banner_item align-items-center" style="background-image: url(/Content/images/banner_3.jpg)">
                     <div class="banner_category">
-                        <a>men's</a>
+                        <a href="categories.html">men's</a>
                     </div>
                 </div>
             </div>
@@ -63,9 +62,9 @@
                 <div class="new_arrivals_sorting">
                     <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
                         <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".pants">Pants</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".shirt">Shirt</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".shoes">Shoes</li>
                     </ul>
                 </div>
             </div>
@@ -74,81 +73,101 @@
             <div class="col">
                 <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
                     @{
-                        var accessories = Model.Where(p => p.productName.Contains("Giày")).Take(5);
-                        var women = Model.Where(p => p.productName.Contains("Váy") || p.productName.Contains("Ví")).Take(5);
-                        var men = Model.Where(p => p.productName.Contains("Nam")).Take(5);
+                        int qtt = 0;
                     }
-                    @foreach (var item in accessories)
+                    @foreach (var proItems in Model)
                     {
-                        <div class="product-item accessories">
-                            <div class="product discount product_filter">
-                                <div class="product_image">
-                                    <img src="@item.imageUrl" alt="" style="width:100%; height: 250px " />
+                        qtt++;
+                        if (qtt <= 10)
+                        {
+                            if (qtt < 5 && proItems.Product_Category.FirstOrDefault().Category.name.Equals("skirt"))
+                            {
+                                if (qtt == 1)
+                                {
+                                    <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name pants">
+                                        <div class="product discount product_filter">
+                                            <div class="product_image">
+                                                <img src="@proItems.Product_Image.FirstOrDefault().Image.imgae_url" alt="Cannot find image" style="width:100%; height: 250px;">
+                                            </div>
+                                            <div class="favorite favorite_left"></div>
+                                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-&#8363;20k</span></div>
+                                            <div class="product_info">
+                                                <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                                <div class="product_price">&#8363;@proItems.price</div>
+                                            </div>
+                                        </div>
+                                        <div class="red_button add_to_cart_button"><a href="/Product/Detail?id=@proItems.product_id">add to cart</a></div>
+                                    </div>
+                                }
+                                if (qtt == 2)
+                                {
+                                    <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name pants">
+                                        <div class="product product_filter">
+                                            <div class="product_image">
+                                                <img src="@proItems.Product_Image.FirstOrDefault().Image.imgae_url" alt="" style="width:100%; height: 250px;">
+                                            </div>
+                                            <div class="favorite"></div>
+                                            <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
+                                            <div class="product_info">
+                                                <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                                <div class="product_price">&#8363;@proItems.price</div>
+                                            </div>
+                                        </div>
+                                        <div class="red_button add_to_cart_button"><a href="/Product/Detail?id=@proItems.product_id">add to cart</a></div>
+                                    </div>
+                                }
+                                if (qtt == 3)
+                                {
+                                    <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name pants">
+                                        <div class="product product_filter">
+                                            <div class="product_image">
+                                                <img src="@proItems.Product_Image.FirstOrDefault().Image.imgae_url" alt="" style="width:100%; height: 250px;">
+                                            </div>
+                                            <div class="favorite"></div>
+                                            <div class="product_info">
+                                                <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                                <div class="product_price">&#8363;@proItems.price</div>
+                                            </div>
+                                        </div>
+                                        <div class="red_button add_to_cart_button"><a href="/Product/Detail?id=@proItems.product_id">add to cart</a></div>
+                                    </div>
+                                }
+                                if (qtt == 4)
+                                {
+                                    <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name pants">
+                                        <div class="product product_filter">
+                                            <div class="product_image">
+                                                <img src="@proItems.Product_Image.FirstOrDefault().Image.imgae_url" alt="" style="width:100%; height: 250px;">
+                                            </div>
+                                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+                                            <div class="favorite favorite_left"></div>
+                                            <div class="product_info">
+                                                <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                                <div class="product_price">&#8363;@proItems.price</div>
+                                            </div>
+                                        </div>
+                                        <div class="red_button add_to_cart_button"><a href="/Product/Detail?id=@proItems.product_id">add to cart</a></div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name">
+                                    <div class="product product_filter">
+                                        <div class="product_image">
+                                            <img src="@proItems.Product_Image.FirstOrDefault().Image.imgae_url" alt="" style="width:100%; height: 250px;">
+                                        </div>
+                                        <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                            <div class="product_price">&#8363;@proItems.price</div>
+                                        </div>
+                                    </div>
+                                    <div class="red_button add_to_cart_button"><a href="/Product/Detail?id=@proItems.product_id">add to cart</a></div>
                                 </div>
-                                <div class="favorite favorite_left"></div>
-                                <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>HOT</span></div>
-                                <div class="product_info">
-                                    <h5 class="product_name" style="width: 200px;">
-
-                                        <span class="name-text">
-                                            @item.productName
-                                        </span>
-                                    </h5>
-                                    <div class="product_price">@string.Format("{0:N0}", @item.productPrice) VNĐ </div>
-                                </div>
-                            </div>
-                            <div class="red_button add_to_cart_button">
-                                <a href="/Product/Detail/?id=@item.productID">Go to Detail</a>
-                            </div>
-                        </div>
-                    }
-                    @foreach (var item in men)
-                    {
-                        <div class="product-item men">
-                            <div class="product discount product_filter">
-                                <div class="product_image">
-                                    <img src="@item.imageUrl" alt="" style="width:100%; height: 250px " />
-                                </div>
-                                <div class="favorite favorite_left"></div>
-                                <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>NEW</span></div>
-                                <div class="product_info">
-                                    <h5 class="product_name" style="width: 200px;">
-
-                                        <span class="name-text">
-                                            @item.productName
-                                        </span>
-                                    </h5>
-                                    <div class="product_price">@string.Format("{0:N0}", @item.productPrice) VNĐ</div>
-                                </div>
-                            </div>
-                            <div class="red_button add_to_cart_button">
-                                <a href="/Product/Detail/?id=@item.productID">Go to Detail</a>
-                            </div>
-                        </div>
-                    }
-                    @foreach (var item in women)
-                    {
-                        <div class="product-item women">
-                            <div class="product discount product_filter">
-                                <div class="product_image">
-                                    <img src="@item.imageUrl" alt="" style="width:100%; height: 250px " />
-                                </div>
-                                <div class="favorite favorite_left"></div>
-                                <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>NEW</span></div>
-                                <div class="product_info">
-                                    <h5 class="product_name" style="width: 200px;">
-
-                                        <span class="name-text">
-                                            @item.productName
-                                        </span>
-                                    </h5>
-                                    <div class="product_price">@string.Format("{0:N0}", @item.productPrice) VNĐ</div>
-                                </div>
-                            </div>
-                            <div class="red_button add_to_cart_button">
-                                <a href="/Product/Detail/?id=@item.productID">Go to Detail</a>
-                            </div>
-                        </div>
+                            }
+                        }
                     }
                 </div>
             </div>
@@ -163,7 +182,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="deal_ofthe_week_img">
-                    <img src="../../Content/images/deal_ofthe_week.png" alt="">
+                    <img src="@Model.Skip(1).Take(1).FirstOrDefault().Product_Image.FirstOrDefault().Image.imgae_url " alt="">
                 </div>
             </div>
             <div class="col-lg-6 text-right deal_ofthe_week_col">
@@ -189,7 +208,7 @@
                             <div class="timer_unit">Sec</div>
                         </li>
                     </ul>
-                    <div class="red_button deal_ofthe_week_button"><a href="/Product/Index">shop now</a></div>
+                    <div class="red_button deal_ofthe_week_button"><a href="#">shop now</a></div>
                 </div>
             </div>
         </div>
@@ -211,32 +230,181 @@
             <div class="col">
                 <div class="product_slider_container">
                     <div class="owl-carousel owl-theme product_slider">
-                        @for (int i = 0; i < Model.Count(); i += 4)
-                        {
-                            var item = Model.ElementAt(i);
-                            <div class="owl-item product_slider_item">
-                                <div class="product-item accessories">
-                                    <div class="product discount product_filter">
-                                        <a href="/Product/Detail/?id=@item.productID">
-                                            <div class="product_image">
-                                                <img src="@item.imageUrl" alt="" style="width:100%; height: 250px " />
-                                            </div>
-                                        </a>
-                                        <div class="favorite favorite_left"></div>
-                                        <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>HOT</span></div>
-                                        <div class="product_info">
-                                            <h6 class="product_name" style="width: 200px;">
-                                                <span class="name-text">
-                                                    @item.productName
-                                                </span>
-                                            </h6>
-                                            <div class="product_price">@string.Format("{0:N0}", @item.productPrice) VNĐ</div>
-                                        </div>
+
+                        <!-- Slide 1 -->
+
+                        <div class="owl-item product_slider_item">
+                            <div class="product-item">
+                                <div class="product discount">
+                                    <div class="product_image">
+                                        <img src="images/product_1.png" alt="">
+                                    </div>
+                                    <div class="favorite favorite_left"></div>
+                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+                                        <div class="product_price">$520.00<span>$590.00</span></div>
                                     </div>
                                 </div>
                             </div>
-                        }
+                        </div>
 
+                        <!-- Slide 2 -->
+
+                        <div class="owl-item product_slider_item">
+                            <div class="product-item women">
+                                <div class="product">
+                                    <div class="product_image">
+                                        <img src="images/product_2.png" alt="">
+                                    </div>
+                                    <div class="favorite"></div>
+                                    <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
+                                        <div class="product_price">$610.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+
+                        <div class="owl-item product_slider_item">
+                            <div class="product-item women">
+                                <div class="product">
+                                    <div class="product_image">
+                                        <img src="images/product_3.png" alt="">
+                                    </div>
+                                    <div class="favorite"></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
+                                        <div class="product_price">$120.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+
+                        <div class="owl-item product_slider_item">
+                            <div class="product-item accessories">
+                                <div class="product">
+                                    <div class="product_image">
+                                        <img src="images/product_4.png" alt="">
+                                    </div>
+                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+                                    <div class="favorite favorite_left"></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
+                                        <div class="product_price">$410.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+
+                        <div class="owl-item product_slider_item">
+                            <div class="product-item women men">
+                                <div class="product">
+                                    <div class="product_image">
+                                        <img src="images/product_5.png" alt="">
+                                    </div>
+                                    <div class="favorite"></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
+                                        <div class="product_price">$180.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 6 -->
+
+                        <div class="owl-item product_slider_item">
+                            <div class="product-item accessories">
+                                <div class="product discount">
+                                    <div class="product_image">
+                                        <img src="images/product_6.png" alt="">
+                                    </div>
+                                    <div class="favorite favorite_left"></div>
+                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+                                        <div class="product_price">$520.00<span>$590.00</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 7 -->
+
+                        <div class="owl-item product_slider_item">
+                            <div class="product-item women">
+                                <div class="product">
+                                    <div class="product_image">
+                                        <img src="images/product_7.png" alt="">
+                                    </div>
+                                    <div class="favorite"></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
+                                        <div class="product_price">$610.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 8 -->
+
+                        <div class="owl-item product_slider_item">
+                            <div class="product-item accessories">
+                                <div class="product">
+                                    <div class="product_image">
+                                        <img src="images/product_8.png" alt="">
+                                    </div>
+                                    <div class="favorite"></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
+                                        <div class="product_price">$120.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 9 -->
+
+                        <div class="owl-item product_slider_item">
+                            <div class="product-item men">
+                                <div class="product">
+                                    <div class="product_image">
+                                        <img src="images/product_9.png" alt="">
+                                    </div>
+                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+                                    <div class="favorite favorite_left"></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
+                                        <div class="product_price">$410.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 10 -->
+
+                        <div class="owl-item product_slider_item">
+                            <div class="product-item men">
+                                <div class="product">
+                                    <div class="product_image">
+                                        <img src="images/product_10.png" alt="">
+                                    </div>
+                                    <div class="favorite"></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
+                                        <div class="product_price">$180.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Slider Navigation -->
@@ -312,31 +480,31 @@
         <div class="row blogs_container">
             <div class="col-lg-4 blog_item_col">
                 <div class="blog_item">
-                    <div class="blog_background" style="background-image: url(/Content/images/products/adidas_ultraboost.jpg)"></div>
-                    <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-                        <h4 class="blog_title">More information about Adidas Ultraboost</h4>
-                        <span class="blog_meta">by admin | march 24, 2023</span>
-                        <a class="blog_more" href="https://www.adidas.com.vn/vi/giay-ultraboost-light/HQ6339.html">Read more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 blog_item_col">
-                <div class="blog_item">
-                    <div class="blog_background" style="background-image: url(/Content/images/products/nike.jpg)"></div>
-                    <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-                        <h4 class="blog_title">Have you ever heard about Nike?</h4>
-                        <span class="blog_meta">by admin | jan 10, 2023</span>
-                        <a class="blog_more" href="https://www.nike.com/">See more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 blog_item_col">
-                <div class="blog_item">
-                    <div class="blog_background" style="background-image: url(../../Content/images/blog_3.jpg)"></div>
+                    <div class="blog_background" style="background-image: url(/Content/images/blog_1.jpg)"></div>
                     <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                         <h4 class="blog_title">Here are the trends I see coming this fall</h4>
-                        <span class="blog_meta">by admin | feb 01, 2023</span>
-                        <a class="blog_more" href="https://www.ovsfashion.com/women/collection/accessories">Read more</a>
+                        <span class="blog_meta">by admin | dec 01, 2017</span>
+                        <a class="blog_more" href="#">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 blog_item_col">
+                <div class="blog_item">
+                    <div class="blog_background" style="background-image: url(/Content/images/blog_2.jpg)"></div>
+                    <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <h4 class="blog_title">Here are the trends I see coming this fall</h4>
+                        <span class="blog_meta">by admin | dec 01, 2017</span>
+                        <a class="blog_more" href="#">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 blog_item_col">
+                <div class="blog_item">
+                    <div class="blog_background" style="background-image: url(/Content/images/blog_3.jpg)"></div>
+                    <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <h4 class="blog_title">Here are the trends I see coming this fall</h4>
+                        <span class="blog_meta">by admin | dec 01, 2017</span>
+                        <a class="blog_more" href="#">Read more</a>
                     </div>
                 </div>
             </div>
@@ -356,37 +524,25 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <form action="register">
+                <form action="post">
                     <div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
                         <input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
-                        <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">register</button>
+                        <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-<!-- hiển thị ... khi bình thường-->
-<style>
-    .product_name {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-</style>
-<!--js hiển thị đầy đủ khi di chuột-->
-<script>
-
-    $('.product_name').hover(function () {
-        $(this).find('.name-text').css('white-space', 'normal');
-    }, function () {
-        $(this).find('.name-text').css('white-space', 'nowrap');
-    });
-
-</script>
-
+<div id="LoginMsg" hidden>@ViewBag.LoginSuccessMsg</div>
 @section notificationLogin {
+    <style>
+        .product_name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="~/Content/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
     <script>

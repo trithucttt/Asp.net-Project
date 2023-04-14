@@ -1,0 +1,91 @@
+﻿@model FashionShops.User
+@{
+    Layout = null;
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Startmin - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Assets/Admin/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="~/Assets/Admin/css/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/Assets/Admin/css/startmin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/Assets/Admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("Check", "Login", new { id = "form_login" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, null, new { @style = "color: red; font-style: italic;" })
+                            <fieldset>
+                                <div class="form-group">
+                                    @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", placeholder = "username", name = "username", id = "username", autofocus = "true" } })
+                                    @Html.ValidationMessageFor(model => model.username, null, new { @style = "color: red; font-style: italic;" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", placeholder = "password", name = "password", id = "password", type = "password" } })
+                                    @Html.ValidationMessageFor(model => model.password, null, new { @style = "color: red; font-style: italic;" })
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <button type="submit" data-href="/Login/Check" class="btn btn-lg btn-success btn-block" id="btn-login">Sign in</button>
+                            </fieldset>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/Assets/Admin/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Assets/Admin/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="~/Assets/Admin/js/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Assets/Admin/js/startmin.js"></script>
+
+</body>
+</html>
+

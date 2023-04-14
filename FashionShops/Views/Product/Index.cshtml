@@ -146,7 +146,7 @@
                                     <div class="product-item men">
                                         <div class="product discount product_filter">
                                             <div class="product_image">
-                                                <img src="@item.Product_Image.FirstOrDefault().Image.imgae_url" alt="" style="width:100%; height: 250px ">
+                                                <img src="@item.Product_Image.FirstOrDefault().Image.imgae_url" alt="" style="width:100%; height: 250px;">
                                             </div>
                                             <div class="favorite favorite_left"></div>
                                             <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
@@ -267,7 +267,7 @@
         </div>
     </div>
 </div>
-
+<div id="letsShopping" hidden>@ViewBag.NotLogin</div>
 <div id="totalPagee" hidden></div>
 @section productview{
     <link rel="stylesheet" type="text/css" href="~/Content/styles/categories_styles.css">
@@ -282,6 +282,12 @@
             text-overflow: ellipsis;
         }
     </style>
+    <script>
+        let message = $('#letsShopping').text();
+        if (message !== "") {
+            toastr.error(message);
+        }
+    </script>
     <script>
         // lay trang hien tai nguoi dung dang chon
         function getCurrenPage() {

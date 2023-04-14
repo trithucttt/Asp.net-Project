@@ -27,7 +27,7 @@ namespace FashionShops.Controllers.Cart
                 return View(results);
             }
             TempData["notLogin"] = "You need to log in to see your cart!";
-            return RedirectToAction("showFormLogin", "Login");
+            return RedirectToAction("Index", "Product");
         }
 
         [HttpGet]
