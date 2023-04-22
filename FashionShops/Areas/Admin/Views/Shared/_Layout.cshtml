@@ -15,7 +15,7 @@
     <title>Startmin - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="~/Assets/Admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
     <link href="~/Assets/Admin/css/metisMenu.min.css" rel="stylesheet">
@@ -165,7 +165,12 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Tables<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/Admin/Table/ProductTable">Product Table</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
@@ -242,14 +247,14 @@
         </nav>
 
         <div id="page-wrapper">
-           @RenderBody()
+            @RenderBody()
         </div>
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="~/Assets/Admin/js/jquery.min.js"></script>
+    <script src="~/Content/js/jquery-3.2.1.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="~/Assets/Admin/js/bootstrap.min.js"></script>
@@ -257,13 +262,11 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="~/Assets/Admin/js/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="~/Assets/Admin/js/raphael.min.js"></script>
-    <script src="~/Assets/Admin/js/morris.min.js"></script>
-    <script src="~/Assets/Admin/js/morris-data.js"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="~/Assets/Admin/js/startmin.js"></script>
+    @RenderSection("mainPageAdmin", false)
+    @RenderSection("ProductTable", false)
+    @RenderSection("AddProduct", false)
 
 </body>
 </html>

@@ -321,14 +321,68 @@
             return result;
         }
 
+        function setPageSelectTion() {
+            let currentPage = getCurrenPage();
+            let pageSize = getPageSize();
+            let totalPage = getTotalPage(pageSize);
+            let strItem = '<li><a class="numberpage" href="javascript:void(0)">';
+            let listItem = '';
+            
+        }
+
         // cho nay la setup bang dau cho luc moi load trang lan dau 12sp tren mot trang
         function setInitPagination() {
+            let currentPage = getCurrenPage();
             let pageSize = getPageSize();
             let totalPage = getTotalPage(pageSize);
             let strItem = '<li><a class="numberpage" href="javascript:void(0)">'
             let listItem = '';
-            for (let i = 1; i <= totalPage; i++) {
-                listItem += strItem + i + '</a></li>' + '\n';
+            if (totalPage < 6) {
+                for (let i = 1; i <= totalPage; i++) {
+                    listItem += strItem + i + '</a></li>' + '\n';
+                }
+            }
+            if (totalPage > 5 && totalPage < 7) {
+                if (currentPage >= 3) {
+                    listItem = '<li><a class="numberpage" href="javascript:void(0)">' + 1 + '</a></li>' + '\n';
+                    listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                    for (let i = 3; i <= 6; i++) {
+                        listItem += strItem + i + '</a></li>' + '\n';
+                    }
+                } else {
+                    for (let i = 1; i <= 4; i++) {
+                        listItem += strItem + i + '</a></li>' + '\n';
+                    }
+                    listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                    listItem += '<li><a class="numberpage" href="javascript:void(0)">' + 6 + '</a></li>' + '\n';
+                }
+            }
+            if (totalPage > 7) {
+                if (currentPage >= 3 && currentPage < (totalPage - 2)) {
+                    listItem = '<li><a class="numberpage" href="javascript:void(0)">' + 1 + '</a></li>' + '\n';
+                    listItem += '<li><a class="numberpage" href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                    for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+                        listItem += strItem + i + '</a></li>' + '\n';
+                    }
+                    listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                    listItem += '<li><a class="numberpage" href="javascript:void(0)">' + totalPage + '</a></li>' + '\n';
+                } else {
+                    if (currentPage < 3) {
+                        for (let i = 1; i <= 4; i++) {
+                            listItem += strItem + i + '</a></li>' + '\n';
+                        }
+                        listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                        listItem += '<li><a class="numberpage" href="javascript:void(0)">' + totalPage + '</a></li>' + '\n';
+                    }
+                    if (currentPage >= (totalPage - 2)) {
+                        listItem = '<li><a class="numberpage" href="javascript:void(0)">' + 1 + '</a></li>' + '\n';
+                        listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                        for (let i = totalPage - 3; i <= totalPage; i++) {
+                            listItem += strItem + i + '</a></li>' + '\n';
+                        }
+                    }
+
+                }
             }
             $('.page_selection').each(function (index, ele) {
                 $(this).html(listItem);
@@ -391,11 +445,12 @@
 
         // khi click moi nut trong danh sach dropdown
         function numberClick() {
-            $('.numberpage').click(function () {
+            $(document).on('click', '.numberpage', function () {
                 let selectedPage = parseInt($(this).text());
                 $('.currentpage').text(selectedPage);
                 let pageSize = getPageSize();
                 pagination(selectedPage, pageSize);
+                setInitPagination();
                 displayButtonControll();
             });
         };
@@ -412,6 +467,7 @@
                 let selectedPage = getCurrenPage();
                 let pageSize = getPageSize();
                 pagination(selectedPage, pageSize);
+                setInitPagination();
             })
         };
 
@@ -427,6 +483,7 @@
                 let selectedPage = getCurrenPage();
                 let pageSize = getPageSize();
                 pagination(selectedPage, pageSize);
+                setInitPagination();
             });
         };
         numberClick();

@@ -1,0 +1,329 @@
+﻿@model FashionShops.Areas.Admin.Models.AddProduct
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid" style="margin-bottom: 50px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Add Product</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <form id="form-add-product">
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="product_name">Product name:</label>
+                <input type="text" class="form-control" name="product_name" id="product_name"
+                       placeholder="Product name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="product_describe">Product describe:</label>
+                <textarea class="form-control" id="product_describe" name="product_describe" rows="3"
+                          placeholder="Product describe"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label class="" for="product_price">Product price</label>
+                <input type="number" class="form-control" id="product_price" name="product_price" placeholder="Product price" min="1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="product_brand">Product brand</label>
+                <input type="text" class="form-control" name="product_brand" id="product_brand" placeholder="Product brand">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="product_available">Preference</label>
+                <select class="form-control mr-sm-2" id="product_available" name="product_available">
+                    <option selected>Choose...</option>
+                    <option value="available">Available</option>
+                    <option value="outofstock">Out of stock</option>
+                    <option value="reserve">Reserve</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group">
+                <label for="">Size: </label>
+                @{ var firsts = 1;}
+                @foreach (var itemSize in Model.size)
+                {
+                    if (firsts == 1)
+                    {
+                        <a href="javascript:void(0)" class="btn btn-outline-dark size-checkbox active-custom">@itemSize.size1</a>
+                        <input type="checkbox" name="proSize" id="" class="size-checkbox-value" value="@itemSize.size_id" data-namesize="@itemSize.size1" checked hidden>
+                        firsts++;
+                        continue;
+                    }
+                    <a href="javascript:void(0)" class="btn btn-outline-dark size-checkbox">@itemSize.size1</a>
+                    <input type="checkbox" name="proSize" id="" class="size-checkbox-value" value="@itemSize.size_id" data-namesize="@itemSize.size1" hidden>
+                }
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group">
+                <label for="">Color: </label>
+                @foreach (var itemColor in Model.color)
+                {
+                    if (firsts == 2)
+                    {
+                        <a href="javascript:void(0)" class="btn btn-outline-dark color-checkbox active-custom">@itemColor.color1</a>
+                        <input type="checkbox" name="proColor" id="" class="color-checkbox-value" value="@itemColor.color_id" data-namecolor="@itemColor.color1" checked hidden>
+                        firsts++;
+                        continue;
+                    }
+                    <a href="javascript:void(0)" class="btn btn-outline-dark color-checkbox">@itemColor.color1</a>
+                    <input type="checkbox" name="proColor" id="" class="color-checkbox-value" value="@itemColor.color_id" data-namecolor="@itemColor.color1" hidden>
+                }
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group">
+                <a href="javascript:void(0)" id="quantityInput" class="btn btn-warning" style="color: white">Enter quantity</a>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group">
+                <label for="">Category: </label>
+                @foreach (var itemCategory in Model.category)
+                {
+                    if (firsts == 3)
+                    {
+                        <a href="javascript:void(0)" class="btn btn-outline-dark category-checkbox active-custom">@itemCategory.name</a>
+                        <input type="checkbox" name="proCategory" id="" class="category-checkbox-value" value="@itemCategory.category_id" data-namecategory="@itemCategory.name" checked hidden>
+                        firsts++;
+                        continue;
+                    }
+                    <a href="javascript:void(0)" class="btn btn-outline-dark category-checkbox">@itemCategory.name</a>
+                    <input type="checkbox" name="proCategory" id="" class="category-checkbox-value" value="@itemCategory.category_id" data-namecategory="@itemCategory.name" hidden>
+
+                }
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="form-group">
+                <label for="">Tag: </label>
+                @foreach (var itemTag in Model.tag)
+                {
+                    if (firsts == 4)
+                    {
+                        <a href="javascript:void(0)" class="btn btn-outline-dark tag-checkbox active-custom">@itemTag.tag_name</a>
+                        <input type="checkbox" name="proTag" id="" class="tag-checkbox-value" value="@itemTag.tag_id" data-nametag="@itemTag.tag_name" checked hidden>
+                        firsts++;
+                        continue;
+                    }
+                    <a href="javascript:void(0)" class="btn btn-outline-dark tag-checkbox">@itemTag.tag_name</a>
+                    <input type="checkbox" name="proTag" id="" class="tag-checkbox-value" value="@itemTag.tag_id" data-nametag="@itemTag.tag_name" hidden>
+                }
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group">
+                <label for="image1">Image for product 1: </label>
+                <input type="file" class="form-control-file" name="image1" id="image1" enctype="multipart/form-data">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group">
+                <label for="image2">Image for product 2: </label>
+                <input type="file" class="form-control-file" name="image2" id="image2" formenctype="multipart/form-data">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group">
+                <label for="image3">Image for product 3: </label>
+                <input type="file" class="form-control-file" name="image3" id="image3" formenctype="multipart/form-data">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-group">
+                <label for="image4">Image for product 4: </label>
+                <input type="file" class="form-control-file" name="image4" id="image4" formenctype="multipart/form-data">
+            </div>
+        </div>
+        <button type="submit" id="submit-add-pro-form" class="btn btn-success">Add product</button>
+    </form>
+</div>
+
+@section AddProduct{
+
+    <script src="~/Content/plugins/toastr/toastr.min.js"></script>
+    <style>
+        .btn-outline-dark {
+            color: #212529;
+            border-color: #212529;
+        }
+
+            .btn-outline-dark:hover {
+                color: #fff;
+                background-color: #212529;
+                border-color: #212529;
+            }
+
+        .active-custom {
+            color: #fff !important;
+            background-color: #343a40;
+            border-color: #343a40;
+        }
+    </style>
+    <script>
+        let color_checkbox = $('.size-checkbox');
+        let color_checkbox_value = $('.size-checkbox-value');
+        $(document).ready(function () {
+            function checkAtLeastOne(check, checkValue) {
+                let boolChecked = false;
+                $(check).each(function () {
+                    if ($(this).hasClass('active-custom')) {
+                        boolChecked = true;
+                    }
+                })
+                if (!boolChecked) {
+                    $(check + ':eq(0)').addClass('active-custom');
+                    $(checkValue + ':eq(0)').prop('checked', true);
+                }
+            }
+
+            $('.size-checkbox').click(function () {
+                let index = $('.size-checkbox').index(this);
+                console.log(index);
+                $(this).toggleClass('active-custom');
+                checkAtLeastOne('.size-checkbox', '.size-checkbox-value');
+                if ($(this).hasClass('active-custom'))
+                    $('.size-checkbox-value:eq(' + (index) + ')').prop('checked', true);
+                else
+                    $('.size-checkbox-value:eq(' + (index) + ')').prop('checked', false);
+
+            });
+
+            $('.color-checkbox').click(function () {
+                let index = $('.color-checkbox').index(this);
+                $(this).toggleClass('active-custom');
+                checkAtLeastOne('.color-checkbox', '.color-checkbox-value');
+                if ($(this).hasClass('active-custom'))
+                    $('.color-checkbox-value:eq(' + (index) + ')').prop('checked', true);
+                else
+                    $('.color-checkbox-value:eq(' + (index) + ')').prop('checked', false);
+
+            });
+
+            $(document).on('click', '#quantityInput', function () {
+                let arrColor = [];
+                let arrSize = [];
+                $('.color-checkbox-value:checked').each(function () {
+                    //console.log($(this).data('namesize'));
+                    arrColor.push($(this).data('namecolor'));
+                    arrColor.push($(this).val());
+                })
+                $('.size-checkbox-value:checked').each(function () {
+                    arrSize.push($(this).data('namesize'));
+                    arrSize.push($(this).val());
+                })
+                console.log(arrColor);
+                console.log(arrSize);
+                let strTable = ``;
+                let no = 1;
+                for (let i = 0; i < arrColor.length; i += 2) {
+                    for (let j = 0; j < arrSize.length; j += 2) {
+                        strTable += `<tr>
+                                            <th scope="row">` + no++ + `</th>
+                                            <td>` + arrSize[j] + `</td>
+                                            <td>` + arrColor[i] + `</td>
+                                            <td><input type="number" min="1" max="999" value="1" class="form-control" data-sizeid=` + arrSize[j + 1] + ` data-colorid=` + arrColor[i + 1] + ` name="quantity"></td>
+                                        </tr>`;
+
+                    }
+                }
+                $('#tableBody').html(strTable);
+            });
+
+            $('.category-checkbox').click(function () {
+                let index = $('.category-checkbox').index(this);
+                $(this).toggleClass('active-custom');
+                checkAtLeastOne('.category-checkbox', '.category-checkbox-value');
+                if ($(this).hasClass('active-custom'))
+                    $('.category-checkbox-value:eq(' + (index) + ')').prop('checked', true);
+                else
+                    $('.category-checkbox-value:eq(' + (index) + ')').prop('checked', false);
+
+            });
+
+            $('.tag-checkbox').click(function () {
+                let index = $('.tag-checkbox').index(this);
+                $(this).toggleClass('active-custom');
+                checkAtLeastOne('.tag-checkbox', '.tag-checkbox-value');
+                if ($(this).hasClass('active-custom'))
+                    $('.tag-checkbox-value:eq(' + (index) + ')').prop('checked', true);
+                else
+                    $('.tag-checkbox-value:eq(' + (index) + ')').prop('checked', false);
+
+            });
+
+            $(document).on('submit', '#form-add-product', function (item) {
+                item.preventDefault();
+                let arrQuantity = [];
+                let arrTag = [];
+                let arrCategory = [];
+                $('input[name=quantity]').each(function () {
+                    arrQuantity.push($(this).data('sizeid'));
+                    arrQuantity.push($(this).data('colorid'));
+                    arrQuantity.push(Number($(this).val()));
+                })
+
+                $('.category-checkbox-value:checked').each(function () {
+                    arrCategory.push($(this).val());
+                })
+
+                $('.tag-checkbox-value:checked').each(function () {
+                    arrTag.push($(this).val());
+                })
+                //console.log(arrCategory);
+                //console.log(arrTag);
+                //console.log(arrQuantity);
+                var formData = new FormData(this);
+                formData.append('arrCategory', JSON.stringify(arrCategory));
+                formData.append('arrTag', JSON.stringify(arrTag));
+                formData.append('arrQuantity', JSON.stringify(arrQuantity));
+                $.ajax({
+                    url: '/Admin/Table/AddProductSubmit',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        let r = confirm(response);
+                        if (r) {
+                            window.location.href = "/Admin/Table/ProductTable";
+                        }
+                        
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error");
+                    }
+                });
+            })
+        });
+    </script>
+}

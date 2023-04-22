@@ -44,7 +44,7 @@ namespace FashionShops.Controllers.Products
                           join proImage in data.Product_Image on product.product_id equals proImage.product_id
                           join Img in data.Images on proImage.image_id equals Img.image_id
                           join Q in data.Product_Quantity on product.product_id equals Q.product_id
-                          where Img.image_id == (product.product_id - 1) * 3 + product.product_id
+                          //where Img.image_id == (product.product_id - 1) * 3 + product.product_id
                           where product.product_id == id
                           select new ProductView
                           {
@@ -52,10 +52,10 @@ namespace FashionShops.Controllers.Products
                               productName = product.name,
                               productPrice = product.price,
                               content = product.describe,
-                              imageUrl = Img.imgae_url,
+                              imageUrl = product.Product_Image.FirstOrDefault().Image.imgae_url,
                               QuantityPro =(int) Q.quantity
                           };
-            var infProduct = querry1.ToList();
+            var infProduct = querry1.FirstOrDefault();
             var querry2 = from product in data.Products
                           join pI in data.Product_Image on product.product_id equals pI.product_id
                           join I in data.Images on pI.image_id equals I.image_id
@@ -96,7 +96,7 @@ namespace FashionShops.Controllers.Products
             {
                 colorsForDetailPage = colors,
                 sizesForDetailPage = sizes,
-                infProduct = infProduct[0],
+                infProduct = infProduct,
                 imagesForProduct = imagesForPro,
                 reviewings = reviews
             };

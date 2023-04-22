@@ -11,7 +11,7 @@ namespace FashionShops.Models.CheckOut
         public InfoUserCheckOut infoUserCheckOut { get; set; }
         public List<VoucherAvailable> voucherAvailable { get; set; }
         public List<PaymentMethods> paymentMethods { get; set; }
-        public List<InfoProductCheckOut> infoProductCheckOut {get; set;}
+        public List<Cart> infoProductCheckOut {get; set;}
 
     }
 }

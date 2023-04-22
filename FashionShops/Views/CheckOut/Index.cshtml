@@ -35,19 +35,19 @@
         }
         @foreach (var product in Model.infoProductCheckOut)
         {
-            ttP += (float)product.pricexquantity;
-            <div class="row no-gutters mb-3 border-bottom list-product" data-cartid="@product.cartID">
+            ttP += (float)product.total_price;
+            <div class="row no-gutters mb-3 border-bottom list-product" data-cartid="@product.cart_id">
                 <div class="col-3 d-flex justify-content-center align-items-center">
-                    <img src="@product.imgUrl" alt="" style="width: 70px; height: 120px;">
+                    <img src="@product.Product.Product_Image.FirstOrDefault().Image.imgae_url" alt="" style="width: 70px; height: 120px;">
                 </div>
                 <div class="col-9">
-                    <div>@product.productName</div>
+                    <div>@product.Product.name</div>
                     <div class="product_classity d-flex justify-content-between">
-                        <span>Classify: <span>@product.colorName, @product.sizeName</span> </span>
-                        <span>x @product.productQuantiyInCart</span>
+                        <span>Classify: <span>@product.Color1.color1, @product.Size1.size1</span> </span>
+                        <span>x @product.quantity</span>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <span class="new_price">&#8363;@product.productPrice</span>
+                        <span class="new_price">&#8363;@product.Product.price</span>
                     </div>
                 </div>
             </div>

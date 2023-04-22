@@ -28,6 +28,8 @@
 
     <!-- Custom Fonts -->
     <link href="~/Assets/Admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/Content/plugins/toastr/toastr.min.css">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,7 +48,7 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        @using (Html.BeginForm("Check", "Login", new { id = "form_login" }))
+                        @using (Html.BeginForm("LoginAdmin", "Admin", new { id = "form_login" }))
                         {
                             @Html.AntiForgeryToken()
                             @Html.ValidationSummary(true, null, new { @style = "color: red; font-style: italic;" })
@@ -85,7 +87,15 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="~/Assets/Admin/js/startmin.js"></script>
-
+    <script src="~/Content/plugins/toastr/toastr.min.js"></script>
 </body>
 </html>
+@{
+    if (!ViewBag.LoginAdminE.Equals(""))
+    {
+        <script>
+            toastr.error("@ViewBag.LoginAdminE");
+        </script>
+    }
+}
 
