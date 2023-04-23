@@ -26,13 +26,27 @@
                         <h5>Product Category</h5>
                     </div>
                     <ul class="sidebar_categories">
-                        <li><a href="#">Men</a></li>
-                        <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Women</a></li>
-                        <li><a href="#">Accessories</a></li>
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Collection</a></li>
-                        <li><a href="#">Shop</a></li>
+                        <li class="active"><a href="#" class="category-item" data-category="All"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>All</a></li>
+                        <li><a href="#" class="category-item" data-category="Shirt">Shirt</a></li>
+                        <li><a href="#" class="category-item" data-category="Pants">Pants</a></li>
+                        <li><a href="#" class="category-item" data-category="Skirt">Skirt</a></li>
+                        <li><a href="#" class="category-item" data-category="Shoes">Shoes</a></li>
+                        <li><a href="#" class="category-item" data-category="Accessory">Accessory</a></li>
                     </ul>
+                </div>
+
+                <div class="sidebar_section">
+                    <div class="sidebar_title">
+                        <h5>Search</h5>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Price Range Filtering -->
@@ -289,6 +303,19 @@
         }
     </script>
     <script>
+        // tra ve category neu la all -> category = empty("")
+        function getCategory() {
+            let category = "";
+            $('.category-item').each(function () {
+                if ($(this).parent().hasClass('active')) {
+                    category = $(this).data('category').toLowerCase();
+                    if (category === 'all') {
+                        category = "";
+                    }
+                }
+            });
+            return category;
+        }
         // lay trang hien tai nguoi dung dang chon
         function getCurrenPage() {
             let a = parseInt($('#currentpage').text());
@@ -302,14 +329,15 @@
         }
 
         // tinh lai tong so trang vd 50sp moi trang 12sp thi co 5 trang
-        function getTotalPage(pageSize) {
+        function getTotalPage(pageSize, category = "") {
             var result = null;
             $.ajax({
                 url: "/Product/totalPage",
                 async: false,
                 type: "GET",
                 data: {
-                    pageSize: pageSize
+                    pageSize: pageSize,
+                    category: category
                 },
                 success: function (data) {
                     result = data;
@@ -321,67 +349,63 @@
             return result;
         }
 
-        function setPageSelectTion() {
-            let currentPage = getCurrenPage();
-            let pageSize = getPageSize();
-            let totalPage = getTotalPage(pageSize);
-            let strItem = '<li><a class="numberpage" href="javascript:void(0)">';
-            let listItem = '';
-            
-        }
-
         // cho nay la setup bang dau cho luc moi load trang lan dau 12sp tren mot trang
         function setInitPagination() {
             let currentPage = getCurrenPage();
             let pageSize = getPageSize();
-            let totalPage = getTotalPage(pageSize);
+            let category = getCategory();
+            let totalPage = getTotalPage(pageSize, category);
             let strItem = '<li><a class="numberpage" href="javascript:void(0)">'
             let listItem = '';
-            if (totalPage < 6) {
-                for (let i = 1; i <= totalPage; i++) {
-                    listItem += strItem + i + '</a></li>' + '\n';
+            if (totalPage === "0") {
+                $('.currentpage').text(0);
+            } else {
+                if (totalPage < 6) {
+                    for (let i = 1; i <= totalPage; i++) {
+                        listItem += strItem + i + '</a></li>' + '\n';
+                    }
                 }
-            }
-            if (totalPage > 5 && totalPage < 7) {
-                if (currentPage >= 3) {
-                    listItem = '<li><a class="numberpage" href="javascript:void(0)">' + 1 + '</a></li>' + '\n';
-                    listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
-                    for (let i = 3; i <= 6; i++) {
-                        listItem += strItem + i + '</a></li>' + '\n';
-                    }
-                } else {
-                    for (let i = 1; i <= 4; i++) {
-                        listItem += strItem + i + '</a></li>' + '\n';
-                    }
-                    listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
-                    listItem += '<li><a class="numberpage" href="javascript:void(0)">' + 6 + '</a></li>' + '\n';
-                }
-            }
-            if (totalPage > 7) {
-                if (currentPage >= 3 && currentPage < (totalPage - 2)) {
-                    listItem = '<li><a class="numberpage" href="javascript:void(0)">' + 1 + '</a></li>' + '\n';
-                    listItem += '<li><a class="numberpage" href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
-                    for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-                        listItem += strItem + i + '</a></li>' + '\n';
-                    }
-                    listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
-                    listItem += '<li><a class="numberpage" href="javascript:void(0)">' + totalPage + '</a></li>' + '\n';
-                } else {
-                    if (currentPage < 3) {
+                if (totalPage > 5 && totalPage < 7) {
+                    if (currentPage >= 3) {
+                        listItem = '<li><a class="numberpage" href="javascript:void(0)">' + 1 + '</a></li>' + '\n';
+                        listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                        for (let i = 3; i <= 6; i++) {
+                            listItem += strItem + i + '</a></li>' + '\n';
+                        }
+                    } else {
                         for (let i = 1; i <= 4; i++) {
                             listItem += strItem + i + '</a></li>' + '\n';
                         }
                         listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
-                        listItem += '<li><a class="numberpage" href="javascript:void(0)">' + totalPage + '</a></li>' + '\n';
+                        listItem += '<li><a class="numberpage" href="javascript:void(0)">' + 6 + '</a></li>' + '\n';
                     }
-                    if (currentPage >= (totalPage - 2)) {
+                }
+                if (totalPage > 7) {
+                    if (currentPage >= 3 && currentPage < (totalPage - 2)) {
                         listItem = '<li><a class="numberpage" href="javascript:void(0)">' + 1 + '</a></li>' + '\n';
-                        listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
-                        for (let i = totalPage - 3; i <= totalPage; i++) {
+                        listItem += '<li><a class="numberpage" href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
                             listItem += strItem + i + '</a></li>' + '\n';
                         }
-                    }
+                        listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                        listItem += '<li><a class="numberpage" href="javascript:void(0)">' + totalPage + '</a></li>' + '\n';
+                    } else {
+                        if (currentPage < 3) {
+                            for (let i = 1; i <= 4; i++) {
+                                listItem += strItem + i + '</a></li>' + '\n';
+                            }
+                            listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                            listItem += '<li><a class="numberpage" href="javascript:void(0)">' + totalPage + '</a></li>' + '\n';
+                        }
+                        if (currentPage >= (totalPage - 2)) {
+                            listItem = '<li><a class="numberpage" href="javascript:void(0)">' + 1 + '</a></li>' + '\n';
+                            listItem += '<li><a href="javascript:void(0)" disabled>' + '...' + '</a></li>' + '\n';
+                            for (let i = totalPage - 3; i <= totalPage; i++) {
+                                listItem += strItem + i + '</a></li>' + '\n';
+                            }
+                        }
 
+                    }
                 }
             }
             $('.page_selection').each(function (index, ele) {
@@ -404,28 +428,39 @@
             let currentpage = $('#currentpage').text();
             let firspage = '1';
             let pageSize = getPageSize();
-            let lastpage = getTotalPage(pageSize).toString();
-            if (currentpage === firspage) {
+            let category = getCategory();
+            let lastpage = getTotalPage(pageSize, category).toString();
+            if (lastpage === '0') {
                 $('.page_pre').each(function () {
                     $(this).attr('hidden', true);
                 });
-            }
-
-            if (currentpage === lastpage) {
                 $('.page_next').each(function () {
                     $(this).attr('hidden', true);
                 });
+            } else {
+                if (currentpage === firspage) {
+                    $('.page_pre').each(function () {
+                        $(this).attr('hidden', true);
+                    });
+                }
+
+                if (currentpage === lastpage) {
+                    $('.page_next').each(function () {
+                        $(this).attr('hidden', true);
+                    });
+                }
             }
         }
 
         // goi ham phan trang de no load tu phia server len
-        function pagination(pageNumber, pageSize) {
+        function pagination(pageNumber, pageSize, category = "") {
             $.ajax({
                 url: "/Product/Pagination",
                 type: "GET",
                 data: {
                     pageNumber: pageNumber,
-                    pageSize: pageSize
+                    pageSize: pageSize,
+                    category: category
                 },
                 success: function (data) {
                     //setTimeout(function () {
@@ -449,7 +484,8 @@
                 let selectedPage = parseInt($(this).text());
                 $('.currentpage').text(selectedPage);
                 let pageSize = getPageSize();
-                pagination(selectedPage, pageSize);
+                let category = getCategory();
+                pagination(selectedPage, pageSize, category);
                 setInitPagination();
                 displayButtonControll();
             });
@@ -466,7 +502,8 @@
                 displayButtonControll();
                 let selectedPage = getCurrenPage();
                 let pageSize = getPageSize();
-                pagination(selectedPage, pageSize);
+                let category = getCategory();
+                pagination(selectedPage, pageSize, category);
                 setInitPagination();
             })
         };
@@ -482,13 +519,36 @@
                 displayButtonControll();
                 let selectedPage = getCurrenPage();
                 let pageSize = getPageSize();
-                pagination(selectedPage, pageSize);
+                let category = getCategory();
+                pagination(selectedPage, pageSize, category);
                 setInitPagination();
             });
         };
         numberClick();
         nextButtonClick();
         preButtonClick();
+
+        $(document).ready(function () {
+            $(document).on('click', '.category-item', function (item) {
+                item.preventDefault();
+                $(this).parent().addClass('active');
+                let index = $('.category-item').index(this);
+                for (let i = 0; i < $('.category-item').length; i++) {
+                    if (i == index) {
+                        continue;
+                    } else {
+                        $('.category-item:eq(' + i + ')').parent().removeClass('active');
+                    }
+                }
+                $('.currentpage').text(1);
+                let selectedPage = 1;
+                displayButtonControll();
+                let pageSize = getPageSize();
+                let category = getCategory();
+                pagination(selectedPage, pageSize, category);
+                setInitPagination();
+            });
+        });
     </script>
     <script src="~/Content/js/categories_custom.js"></script>
     <script src="~/Content/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>

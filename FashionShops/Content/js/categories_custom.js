@@ -356,15 +356,18 @@ jQuery(document).ready(function($)
 					$('.num_sorting_text').text($(this).text());
 					let selectedPage = getCurrenPage();
 					let pageSize = getPageSize();
-					let totalPage = getTotalPage(pageSize);
-					if (selectedPage > totalPage) {
-						selectedPage = totalPage;
-						$('.currentpage').text(selectedPage);
-					}
-					setInitPagination();
-					pagination(selectedPage, pageSize);
-					numberClick();
-					displayButtonControll();
+					let category = getCategory();
+					let totalPage = getTotalPage(pageSize, category);
+					if (totalPage !== '0') {
+						if (selectedPage > totalPage) {
+							selectedPage = totalPage;
+							$('.currentpage').text(selectedPage);
+						}
+						setInitPagination();
+						pagination(selectedPage, pageSize, category);
+						numberClick();
+						displayButtonControll();
+                    }
     				//$('.product-grid').isotope({filter: numFilter });
 	        	});
 	        });	

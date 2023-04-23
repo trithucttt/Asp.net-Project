@@ -23,17 +23,48 @@ namespace FashionShops.Controllers.Products
             return View(infProduct);
         }
 
-        public ActionResult Pagination(int pageNumber, int pageSize)
+        public ActionResult Pagination(int pageNumber, int pageSize, string category = "", string name = "")
         {
             int productsToSkip = (pageNumber - 1) * pageSize;
-            var query = from p in data.Products select p;
-            var listProduct = query.ToList().Skip(productsToSkip).Take(pageSize);
+            List <Product> query;
+            if (category.Length == 0 && name.Length == 0)
+            {
+                query = (from p in data.Products select p).ToList();
+            } else if (category.Length != 0 && name.Length == 0)
+            {
+                query = data.Products.Where(x => x.Product_Category.FirstOrDefault().Category.name.Equals(category)).ToList();
+            } else if (category.Length == 0 && name.Length != 0)
+            {
+                query = data.Products.Where(x => x.Product_Tag.FirstOrDefault().Tag.tag_name.Equals(name)).ToList();
+            } else
+            {
+                query = data.Products.Where(x => x.Product_Category.FirstOrDefault().Category.name.Equals(category))
+                    .Where(x => x.Product_Tag.FirstOrDefault().Tag.tag_name.Equals(name)).ToList();
+            }
+            var listProduct = query.Skip(productsToSkip).Take(pageSize);
             return PartialView("Pagination", listProduct);
         }
 
-        public int totalPage(int pageSize)
+        public int totalPage(int pageSize, string category = "", string name = "")
         {
-            var product = from p in data.Products select p;
+            List<Product> product;
+            if (category.Length == 0 && name.Length == 0)
+            {
+                product = (from p in data.Products select p).ToList();
+            }
+            else if (category.Length != 0 && name.Length == 0)
+            {
+                product = data.Products.Where(x => x.Product_Category.FirstOrDefault().Category.name.Equals(category)).ToList();
+            }
+            else if (category.Length == 0 && name.Length != 0)
+            {
+                product = data.Products.Where(x => x.Product_Tag.FirstOrDefault().Tag.tag_name.Equals(name)).ToList();
+            }
+            else
+            {
+                product = data.Products.Where(x => x.Product_Category.FirstOrDefault().Category.name.Equals(category))
+                    .Where(x => x.Product_Tag.FirstOrDefault().Tag.tag_name.Equals(name)).ToList();
+            }
             int totalProduct = product.Count();
             int totalPage = (int)Math.Ceiling((double)totalProduct / pageSize);
             return totalPage;
