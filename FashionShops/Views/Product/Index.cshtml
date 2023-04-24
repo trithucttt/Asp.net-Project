@@ -40,9 +40,9 @@
                         <h5>Search</h5>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search...">
+                        <input type="text" name="nameProduct" id="search-name-input" class="form-control" placeholder="Search...">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button">
+                            <button class="btn btn-secondary" id="search-name-btn" type="button">
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
@@ -303,6 +303,10 @@
         }
     </script>
     <script>
+        // lay thong tin tim kiem ten
+        function getSearchNameProduct() {
+            return $('#search-name-input').val();
+        }
         // tra ve category neu la all -> category = empty("")
         function getCategory() {
             let category = "";
@@ -329,7 +333,7 @@
         }
 
         // tinh lai tong so trang vd 50sp moi trang 12sp thi co 5 trang
-        function getTotalPage(pageSize, category = "") {
+        function getTotalPage(pageSize, category = "", name = "") {
             var result = null;
             $.ajax({
                 url: "/Product/totalPage",
@@ -337,7 +341,8 @@
                 type: "GET",
                 data: {
                     pageSize: pageSize,
-                    category: category
+                    category: category,
+                    name: name
                 },
                 success: function (data) {
                     result = data;
@@ -354,7 +359,8 @@
             let currentPage = getCurrenPage();
             let pageSize = getPageSize();
             let category = getCategory();
-            let totalPage = getTotalPage(pageSize, category);
+            let name = getSearchNameProduct();
+            let totalPage = getTotalPage(pageSize, category, name);
             let strItem = '<li><a class="numberpage" href="javascript:void(0)">'
             let listItem = '';
             if (totalPage === "0") {
@@ -429,7 +435,8 @@
             let firspage = '1';
             let pageSize = getPageSize();
             let category = getCategory();
-            let lastpage = getTotalPage(pageSize, category).toString();
+            let name = getSearchNameProduct();
+            let lastpage = getTotalPage(pageSize, category, name).toString();
             if (lastpage === '0') {
                 $('.page_pre').each(function () {
                     $(this).attr('hidden', true);
@@ -453,14 +460,15 @@
         }
 
         // goi ham phan trang de no load tu phia server len
-        function pagination(pageNumber, pageSize, category = "") {
+        function pagination(pageNumber, pageSize, category = "", name = "") {
             $.ajax({
                 url: "/Product/Pagination",
                 type: "GET",
                 data: {
                     pageNumber: pageNumber,
                     pageSize: pageSize,
-                    category: category
+                    category: category,
+                    name: name
                 },
                 success: function (data) {
                     //setTimeout(function () {
@@ -485,7 +493,8 @@
                 $('.currentpage').text(selectedPage);
                 let pageSize = getPageSize();
                 let category = getCategory();
-                pagination(selectedPage, pageSize, category);
+                let name = getSearchNameProduct();
+                pagination(selectedPage, pageSize, category, name);
                 setInitPagination();
                 displayButtonControll();
             });
@@ -503,7 +512,8 @@
                 let selectedPage = getCurrenPage();
                 let pageSize = getPageSize();
                 let category = getCategory();
-                pagination(selectedPage, pageSize, category);
+                let name = getSearchNameProduct();
+                pagination(selectedPage, pageSize, category, name);
                 setInitPagination();
             })
         };
@@ -520,7 +530,8 @@
                 let selectedPage = getCurrenPage();
                 let pageSize = getPageSize();
                 let category = getCategory();
-                pagination(selectedPage, pageSize, category);
+                let name = getSearchNameProduct();
+                pagination(selectedPage, pageSize, category, name);
                 setInitPagination();
             });
         };
@@ -545,8 +556,34 @@
                 displayButtonControll();
                 let pageSize = getPageSize();
                 let category = getCategory();
-                pagination(selectedPage, pageSize, category);
+                let name = getSearchNameProduct();
+                pagination(selectedPage, pageSize, category, name);
                 setInitPagination();
+            });
+
+            $(document).on('click', '#search-name-btn', function (item) {
+                item.preventDefault();
+                let name = $('#search-name-input').val();
+                $('.currentpage').text(1);
+                let selectedPage = 1;
+                displayButtonControll();
+                let pageSize = getPageSize();
+                let category = getCategory();
+                pagination(selectedPage, pageSize, category, name);
+                setInitPagination();
+            });
+
+            $(document).on('input', '#search-name-input', function () {
+                setTimeout(function () {
+                    let name = $('#search-name-input').val();
+                    $('.currentpage').text(1);
+                    let selectedPage = 1;
+                    displayButtonControll();
+                    let pageSize = getPageSize();
+                    let category = getCategory();
+                    pagination(selectedPage, pageSize, category, name);
+                    setInitPagination();
+                }, 1000); // 1000 milliseconds = 1 second
             });
         });
     </script>

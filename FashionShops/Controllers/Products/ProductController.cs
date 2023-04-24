@@ -35,13 +35,20 @@ namespace FashionShops.Controllers.Products
                 query = data.Products.Where(x => x.Product_Category.FirstOrDefault().Category.name.Equals(category)).ToList();
             } else if (category.Length == 0 && name.Length != 0)
             {
-                query = data.Products.Where(x => x.Product_Tag.FirstOrDefault().Tag.tag_name.Equals(name)).ToList();
+                query = data.Products.Where(x => x.name.Contains(name)).ToList();
             } else
             {
                 query = data.Products.Where(x => x.Product_Category.FirstOrDefault().Category.name.Equals(category))
-                    .Where(x => x.Product_Tag.FirstOrDefault().Tag.tag_name.Equals(name)).ToList();
+                    .Where(x => x.name.Contains(name)).ToList();
             }
-            var listProduct = query.Skip(productsToSkip).Take(pageSize);
+            List<Product> listProduct;
+            int sl = query.Count();
+            if (sl < pageSize)
+            {
+                listProduct = query.Skip(productsToSkip).Take(sl).ToList();
+            } else {
+                listProduct = query.Skip(productsToSkip).Take(pageSize).ToList();
+            }
             return PartialView("Pagination", listProduct);
         }
 
@@ -58,12 +65,12 @@ namespace FashionShops.Controllers.Products
             }
             else if (category.Length == 0 && name.Length != 0)
             {
-                product = data.Products.Where(x => x.Product_Tag.FirstOrDefault().Tag.tag_name.Equals(name)).ToList();
+                product = data.Products.Where(x => x.name.Contains(name)).ToList();
             }
             else
             {
                 product = data.Products.Where(x => x.Product_Category.FirstOrDefault().Category.name.Equals(category))
-                    .Where(x => x.Product_Tag.FirstOrDefault().Tag.tag_name.Equals(name)).ToList();
+                    .Where(x => x.name.Contains(name)).ToList();
             }
             int totalProduct = product.Count();
             int totalPage = (int)Math.Ceiling((double)totalProduct / pageSize);

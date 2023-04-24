@@ -357,14 +357,15 @@ jQuery(document).ready(function($)
 					let selectedPage = getCurrenPage();
 					let pageSize = getPageSize();
 					let category = getCategory();
-					let totalPage = getTotalPage(pageSize, category);
+					let name = getSearchNameProduct();
+					let totalPage = getTotalPage(pageSize, category, name);
 					if (totalPage !== '0') {
 						if (selectedPage > totalPage) {
 							selectedPage = totalPage;
 							$('.currentpage').text(selectedPage);
 						}
 						setInitPagination();
-						pagination(selectedPage, pageSize, category);
+						pagination(selectedPage, pageSize, category, name);
 						numberClick();
 						displayButtonControll();
                     }
