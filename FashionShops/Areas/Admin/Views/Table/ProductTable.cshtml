@@ -46,9 +46,8 @@
                                         <td>@item.price&#8363;</td>
                                         <td class="center">@item.brand</td>
                                         <td class="center">
-                                            <a href="#">Detail</a> 
-                                            <a href="#">Edit</a> 
-                                            <a href="#">Delete</a>
+                                            <a href="/Admin/Table/EditProduct?id_product=@item.product_id">Edit</a> 
+                                            <a href="#" data-idpro="@item.product_id" data-name="@item.name" id="delete-product-btn">Delete</a>
                                         </td>
                                     </tr>
                                 }
@@ -379,6 +378,27 @@
             $('#dataTables-example').DataTable({
                 responsive: true
             });
+
+            $(document).on('click', '#delete-product-btn', function (e) {
+                e.preventDefault();
+                let name = $(this).data('name');
+                let id = Number($(this).data('idpro'));
+                let isConfirm = confirm("Are you really want to delete \"" + name + "\" ?");
+                if (isConfirm) {
+                    $.ajax({
+                        url: "/Admin/Table/DeleteProduct",
+                        method: "POST",
+                        data: { proid: id },
+                        success: function (data) {
+                            alert("Delete successfully!");
+                            window.location.href = "/Admin/Table/ProductTable";
+                        },
+                        error: function() {
+                            alert("error!");
+                        },
+                    });
+                }
+            })
         });
     </script>
 }

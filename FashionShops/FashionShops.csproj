@@ -685,6 +685,7 @@
     <Content Include="Areas\Admin\Views\Admin\LoginAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Table\ProductTable.cshtml" />
     <Content Include="Areas\Admin\Views\Table\AddProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Table\EditProduct.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
