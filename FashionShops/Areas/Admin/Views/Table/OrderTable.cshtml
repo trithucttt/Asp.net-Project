@@ -38,19 +38,19 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                <tr class="">
-                                    <td>@item.order_id</td>
-                                    <td class="product_name">@item.customer_id</td>
-                                    <td>@item.order_date</td>
-                                    <td class="center">@item.original_price&#8363;</td>
-                                    <td class="center">@item.reduced_price&#8363;</td>
-                                    <td class="center">@item.transport_fee&#8363;</td>
-                                    <td class="center">@item.total_price&#8363;</td>
-                                    <td class="center">@item.order_status</td>
-                                    <td class="center">
-                                        <a href="/Admin/Table/EditOrder?orderId=@item.order_id">Edit</a>
-                                    </td>
-                                </tr>
+                                    <tr class="">
+                                        <td>@item.order_id</td>
+                                        <td class="product_name">@item.customer_id</td>
+                                        <td>@item.order_date</td>
+                                        <td class="center">@item.original_price&#8363;</td>
+                                        <td class="center">@item.reduced_price&#8363;</td>
+                                        <td class="center">@item.transport_fee&#8363;</td>
+                                        <td class="center">@item.total_price&#8363;</td>
+                                        <td class="center">@item.order_status</td>
+                                        <td class="center">
+                                            <a href="/Admin/Table/EditOrder?orderId=@item.order_id">Edit</a>
+                                        </td>
+                                    </tr>
                                 }
                             </tbody>
                         </table>
@@ -64,3 +64,24 @@
     </div>
 
 </div>
+
+@section ProductTable{
+    <style>
+        .product_name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+    <link href="~/Assets/Admin/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="~/Assets/Admin/css/dataTables/dataTables.responsive.css" rel="stylesheet">
+    <script src="~/Assets/Admin/js/dataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/js/dataTables/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+}

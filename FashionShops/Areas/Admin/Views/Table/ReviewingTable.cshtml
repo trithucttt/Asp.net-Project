@@ -59,3 +59,24 @@
 
 </div>
 
+@section ProductTable{
+    <style>
+        .product_name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+    <link href="~/Assets/Admin/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="~/Assets/Admin/css/dataTables/dataTables.responsive.css" rel="stylesheet">
+    <script src="~/Assets/Admin/js/dataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/js/dataTables/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+}
+

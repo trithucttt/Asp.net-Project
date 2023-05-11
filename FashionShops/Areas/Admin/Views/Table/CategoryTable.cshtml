@@ -60,7 +60,7 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover" id="datatable">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
                                 <th>STT</th>
@@ -96,6 +96,13 @@
     <link href="~/Assets/Admin/css/dataTables/dataTables.responsive.css" rel="stylesheet">
     <script src="~/Assets/Admin/js/dataTables/jquery.dataTables.min.js"></script>
     <script src="~/Assets/Admin/js/dataTables/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
 
     <script>
         $(document).ready(function () {
