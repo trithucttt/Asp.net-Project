@@ -43,16 +43,16 @@
                         <span class="ti-truck"></span><span>free delivery</span>
                     </div>
 
-                <!-- Price-->
-                <div class="original_price"></div>
-                <div class="product_price" id="product-price" data-price="@Model.infProduct.productPrice">@Model.infProduct.productPrice&#8363;</div>
-                <ul class="star_rating">
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                </ul>
+                    <!-- Price-->
+                    <div class="original_price"></div>
+                    <div class="product_price" id="product-price" data-price="@Model.infProduct.productPrice">@Model.infProduct.productPrice&#8363;</div>
+                    <ul class="star_rating">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
 
                     <!-- Color-->
                     <div class="product_color">
@@ -117,7 +117,7 @@
 
     <!-- Tabs -->
 
-    <div class="tabs_section_container">
+    <div class="tabs_section_container" id="tabs_section_container">
 
         <div class="container">
             <div class="row">
@@ -189,7 +189,7 @@
 
                             <!-- User Reviews -->
 
-                            <div class="col-lg-6 reviews_col" >
+                            <div class="col-lg-6 reviews_col">
                                 <div class="tab_title reviews_title" id="review-quantity">
                                     <h4>Reviews (@Model.reviewings.Count())</h4>
                                 </div>
@@ -247,7 +247,7 @@
                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                                             </ul>
-                                            <input type="text" name="rate" id="rate" value="4" hidden/>
+                                            <input type="text" name="rate" id="rate" value="4" hidden />
                                             <textarea id="review_message" class="input_review" name="message" placeholder="Your Review" rows="4" required data-error="Please, leave us a review."></textarea>
                                         </div>
                                         <div class="text-left text-sm-right">
@@ -311,9 +311,6 @@
             </div>
         </div>
     </div>
-
-
-
 </div>
 
 @section detail{
@@ -453,10 +450,14 @@
                     content: content
                 },
                 success: function (data) {
-                    toastr.success(data);
-                    $('#customer_reviews').empty().load('/Product/Detail?id=' + productid + ' #customer_reviews');
-                    $('#review-quantity').empty().load('/Product/Detail?id=' + productid + ' #review-quantity');
-                    $('#review_message').val('');
+                    if (data === "error")
+                        toastr.error("You need to login to comment this product!");
+                    else {
+                        toastr.success(data);
+                        $('#customer_reviews').empty().load('/Product/Detail?id=' + productid + ' #customer_reviews');
+                        $('#review-quantity').empty().load('/Product/Detail?id=' + productid + ' #review-quantity');
+                        $('#review_message').val('');
+                    }
                 },
                 error: function () {
                     alert("Error retrieving product details.");
@@ -464,5 +465,25 @@
             });
         })
 
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Check if there is an anchor in the URL
+            if (window.location.hash && window.location.hash == "#tab_3") {
+                $('.tab_container').each(function () {
+                    $(this).removeClass('active');
+                });
+                $('.tab').each(function () {
+                    $(this).removeClass('active');
+                });
+                $('#tab_3').addClass('active');
+                $('.tab:eq(2)').addClass('active');
+                // Get the offset of the comment section
+                var commentOffset = $("#tabs_section_container").offset().top;
+
+                // Scroll the page to the comment section
+                $("html, body").animate({ scrollTop: commentOffset }, 1000);
+            }
+        });
     </script>
 }

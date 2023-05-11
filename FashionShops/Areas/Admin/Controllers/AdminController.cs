@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using FashionShops.Areas.Admin.Models;
 
 namespace FashionShops.Areas.Admin.Controllers
 {
@@ -25,12 +26,17 @@ namespace FashionShops.Areas.Admin.Controllers
                         ViewBag.LoginAdminS = "Login successfully! Welcome to Admin page!";
                         firstLogin = false;
                     }
-                    return View();
+                    var dashBoard = new Dashboard
+                    {
+                        orders = db.Orders.ToList(),
+                        comments = db.Product_Reviewing.ToList()
+                    };
+                    return View(dashBoard);
                 }
                 else
                 {
                     FormsAuthentication.SignOut();
-                    LoginStatusE = "Sorry! Looks like you're not an admin!";
+                    LoginStatusE = "Sorry! Looks like you're not an administrator!";
                     return RedirectToAction("LoginAdmin", "Admin");
                 }
             }
@@ -48,7 +54,7 @@ namespace FashionShops.Areas.Admin.Controllers
         {
             if (Membership.ValidateUser(adminUser.username, adminUser.password))
             {
-                FormsAuthentication.SetAuthCookie(adminUser.username, false);
+                FormsAuthentication.SetAuthCookie(adminUser.username, adminUser.rememberme);
             } else
             {
                 LoginStatusE = "The account or password is incorrect! Please try again";
@@ -65,6 +71,12 @@ namespace FashionShops.Areas.Admin.Controllers
                 return true;
             else 
                 return false;
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("LoginAdmin", "Admin");
         }
     }
 }

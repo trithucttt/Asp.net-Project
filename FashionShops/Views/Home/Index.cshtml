@@ -62,9 +62,9 @@
                 <div class="new_arrivals_sorting">
                     <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
                         <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".pants">Pants</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".shirt">Shirt</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".shoes">Shoes</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".Pants">Pants</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".Shirt">Shirt</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".Shoes">Shoes</li>
                     </ul>
                 </div>
             </div>
@@ -79,11 +79,11 @@
                     {
                         if (qtt <= 10)
                         {
-                            if (qtt < 3 && proItems.Product_Category.FirstOrDefault().Category.name.Equals("skirt"))
+                            if (qtt < 3 && proItems.Product_Category.FirstOrDefault().Category.name.Equals("Dress"))
                             {
                                 if (qtt == 1)
                                 {
-                                    <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name pants">
+                                    <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name Pants">
                                         <div class="product discount product_filter">
                                             <div class="product_image">
                                                 <img src="@proItems.Product_Image.FirstOrDefault().Image.imgae_url" alt="Cannot find image" style="width:100%; height: 250px;">
@@ -91,7 +91,7 @@
                                             <div class="favorite favorite_left"></div>
                                             <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-&#8363;20k</span></div>
                                             <div class="product_info">
-                                                <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                                <h6 class="product_name"><a href="/Product/Detail?id=@proItems.product_id">@proItems.name</a></h6>
                                                 <div class="product_price">&#8363;@proItems.price</div>
                                             </div>
                                         </div>
@@ -102,7 +102,7 @@
                                 }
                                 if (qtt == 2)
                                 {
-                                    <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name pants">
+                                    <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name Pants">
                                         <div class="product product_filter">
                                             <div class="product_image">
                                                 <img src="@proItems.Product_Image.FirstOrDefault().Image.imgae_url" alt="" style="width:100%; height: 250px;">
@@ -110,7 +110,7 @@
                                             <div class="favorite"></div>
                                             <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
                                             <div class="product_info">
-                                                <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                                <h6 class="product_name"><a href="/Product/Detail?id=@proItems.product_id">@proItems.name</a></h6>
                                                 <div class="product_price">&#8363;@proItems.price</div>
                                             </div>
                                         </div>
@@ -121,7 +121,7 @@
                                 }
 
                             }
-                            if (2 < qtt && qtt < 5 && proItems.Product_Category.FirstOrDefault().Category.name.Equals("shoes"))
+                            if (2 < qtt && qtt < 5 && proItems.Product_Category.FirstOrDefault().Category.name.Equals("Shoes"))
                             {
                                 if (qtt == 3)
                                 {
@@ -132,7 +132,7 @@
                                             </div>
                                             <div class="favorite"></div>
                                             <div class="product_info">
-                                                <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                                <h6 class="product_name"><a href="/Product/Detail?id=@proItems.product_id">@proItems.name</a></h6>
                                                 <div class="product_price">&#8363;@proItems.price</div>
                                             </div>
                                         </div>
@@ -151,7 +151,7 @@
                                             <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
                                             <div class="favorite favorite_left"></div>
                                             <div class="product_info">
-                                                <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                                <h6 class="product_name"><a href="/Product/Detail?id=@proItems.product_id">@proItems.name</a></h6>
                                                 <div class="product_price">&#8363;@proItems.price</div>
                                             </div>
                                         </div>
@@ -161,7 +161,7 @@
                                     continue;
                                 }
                             }
-                            if (4 < qtt && qtt < 7 && proItems.Product_Category.FirstOrDefault().Category.name.Equals("shirt"))
+                            if (4 < qtt && qtt < 7 && proItems.Product_Category.FirstOrDefault().Category.name.Equals("Shirt"))
                             {
                                 if (qtt == 5)
                                 {
@@ -173,7 +173,7 @@
                                             <div class="favorite favorite_left"></div>
                                             <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-&#8363;20k</span></div>
                                             <div class="product_info">
-                                                <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                                <h6 class="product_name"><a href="/Product/Detail?id=@proItems.product_id">@proItems.name</a></h6>
                                                 <div class="product_price">&#8363;@proItems.price</div>
                                             </div>
                                         </div>
@@ -191,7 +191,7 @@
                                             </div>
                                             <div class="favorite"></div>
                                             <div class="product_info">
-                                                <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                                <h6 class="product_name"><a href="/Product/Detail?id=@proItems.product_id">@proItems.name</a></h6>
                                                 <div class="product_price">&#8363;@proItems.price</div>
                                             </div>
                                         </div>
@@ -201,9 +201,9 @@
                                     continue;
                                 }
                             }
-                            if (6 < qtt && qtt <= 10 && proItems.Product_Category.FirstOrDefault().Category.name.Equals("pants"))
+                            if (6 < qtt && qtt <= 10 && proItems.Product_Category.FirstOrDefault().Category.name.Equals("Pants"))
                             {
-                                <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name pants">
+                                <div class="product-item @proItems.Product_Category.FirstOrDefault().Category.name">
                                     <div class="product product_filter">
                                         <div class="product_image">
                                             <img src="@proItems.Product_Image.FirstOrDefault().Image.imgae_url" alt="" style="width:100%; height: 250px;">
@@ -211,7 +211,7 @@
                                         <div class="favorite"></div>
                                         <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
                                         <div class="product_info">
-                                            <h6 class="product_name"><a href="single.html">@proItems.name</a></h6>
+                                            <h6 class="product_name"><a href="/Product/Detail?id=@proItems.product_id">@proItems.name</a></h6>
                                             <div class="product_price">&#8363;@proItems.price</div>
                                         </div>
                                     </div>

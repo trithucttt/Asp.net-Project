@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                        <input type="checkbox" name="rememberme" id="rememberme" value="false">Remember Me
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
@@ -88,6 +88,16 @@
     <!-- Custom Theme JavaScript -->
     <script src="~/Assets/Admin/js/startmin.js"></script>
     <script src="~/Content/plugins/toastr/toastr.min.js"></script>
+    <script>
+        $("#rememberme").on('change', function () {
+            if ($(this).is(':checked')) {
+                $(this).attr('value', 'true');
+            } else {
+                $(this).attr('value', 'false');
+            }
+            let re = $('#rememberme').val();
+        });
+    </script>
 </body>
 </html>
 @{

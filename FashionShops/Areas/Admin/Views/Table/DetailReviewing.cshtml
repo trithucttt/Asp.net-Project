@@ -1,0 +1,56 @@
+﻿@model FashionShops.Product_Reviewing
+
+@{
+    ViewBag.Title = "DetailReviewing";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Product Reviewing Detail</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Rating:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+            <i class="fa fa-star" aria-hidden="true"></i>
+        </dd>
+
+        <dt>
+            Conten:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.content)
+        </dd>
+
+        <dt>
+            Published at:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publishedAt)
+        </dd>
+
+        <dt>
+            Product name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.name)
+        </dd>
+
+        <dt>
+            Username:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.username)
+        </dd>
+
+    </dl>
+    <a href="/Admin/Table/ReviewingTable" class="btn btn-success">Back to list</a>
+</div>

@@ -201,6 +201,7 @@ namespace FashionShops.Controllers.Cart
                          where oi.order_id == orderid
                          select new InfoProductCheckOut
                          {
+                             productID = (int)p.product_id,
                              productName = p.name,
                              colorName = c.color1,
                              sizeName = sz.size1,

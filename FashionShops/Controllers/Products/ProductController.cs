@@ -178,26 +178,33 @@ namespace FashionShops.Controllers.Products
         [HttpPost]
         public ActionResult AddReview(int productid, int rate, string content)
         {
-            string userName = Membership.GetUser().UserName;
-            int userId = (int)data.Users.FirstOrDefault(x => x.username == userName).user_id;
-            int id = data.Product_Reviewing.Count() + 1;
-
-            var newReview = new Product_Reviewing
+            if (Membership.GetUser() == null)
             {
-                id = id,
-                user_id = userId,
-                product_id = productid,
-                rating = (short)rate,
-                content = content,
-                publishedAt = DateTime.Now
-            };
-            data.Product_Reviewing.Add(newReview);
-            if(data.SaveChanges() != 0)
-            {
-                return Content("Thank you for rating!");
+                return Content("error");
             } else
             {
-                return Content("Sorry, something went wrong, please try again later!");
+                string userName = Membership.GetUser().UserName;
+                int userId = (int)data.Users.FirstOrDefault(x => x.username == userName).user_id;
+                int id = data.Product_Reviewing.Count() + 1;
+
+                var newReview = new Product_Reviewing
+                {
+                    id = id,
+                    user_id = userId,
+                    product_id = productid,
+                    rating = (short)rate,
+                    content = content,
+                    publishedAt = DateTime.Now
+                };
+                data.Product_Reviewing.Add(newReview);
+                if (data.SaveChanges() != 0)
+                {
+                    return Content("Thank you for rating!");
+                }
+                else
+                {
+                    return Content("Sorry, something went wrong, please try again later!");
+                }
             }
         }
     }

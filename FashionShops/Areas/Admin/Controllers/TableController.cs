@@ -350,5 +350,43 @@ namespace FashionShops.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("ProductTable");
         }
+
+        // Order table
+        public ActionResult OrderTable()
+        {
+            var orders = from o in db.Orders select o;
+            return View(orders);
+        }
+
+        public ActionResult EditOrder(long orderId)
+        {
+            var order = db.Orders.FirstOrDefault(x => x.order_id == orderId);
+            return View(order);
+        }
+
+        [HttpPost]
+        public ActionResult EditOrderAC(string order_id, string order_status)
+        {
+            long id = Int64.Parse(order_id);
+            var order = db.Orders.FirstOrDefault(x => x.order_id == id);
+            order.order_status = order_status;
+            if (db.SaveChanges() != 0)
+            {
+                return RedirectToAction("OrderTable");
+            }
+            return RedirectToAction("OrderTable");
+        }
+
+        public ActionResult ReviewingTable()
+        {
+            var reviewing = db.Product_Reviewing.ToList();
+            return View(reviewing);
+        }
+
+        public ActionResult DetailReviewing(long id)
+        {
+            var review = db.Product_Reviewing.FirstOrDefault(x => x.id == id);
+            return View(review);
+        }
     }
 }

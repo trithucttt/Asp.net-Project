@@ -163,6 +163,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\TableController.cs" />
     <Compile Include="Areas\Admin\Models\AddProduct.cs" />
+    <Compile Include="Areas\Admin\Models\Dashboard.cs" />
     <Compile Include="Cart.cs">
       <DependentUpon>DatabaseFashionShops.tt</DependentUpon>
     </Compile>
@@ -686,6 +687,10 @@
     <Content Include="Areas\Admin\Views\Table\ProductTable.cshtml" />
     <Content Include="Areas\Admin\Views\Table\AddProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Table\EditProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Table\OrderTable.cshtml" />
+    <Content Include="Areas\Admin\Views\Table\EditOrder.cshtml" />
+    <Content Include="Areas\Admin\Views\Table\ReviewingTable.cshtml" />
+    <Content Include="Areas\Admin\Views\Table\DetailReviewing.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

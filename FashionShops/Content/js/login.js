@@ -40,5 +40,4 @@ $("#rememberme").on('change', function () {
 		$(this).attr('value', 'false');
 	}
 	let re = $('#rememberme').val();
-	console.log(re);
 });

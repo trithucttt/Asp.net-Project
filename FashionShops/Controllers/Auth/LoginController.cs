@@ -65,6 +65,5 @@ namespace FashionShops.Controllers.Auth
             FormsAuthentication.SignOut();
             return RedirectToAction("showFormLogin", "Login");
         }
-
     }
 }

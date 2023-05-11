@@ -1,4 +1,4 @@
-﻿
+﻿@model FashionShops.Areas.Admin.Models.Dashboard
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -21,12 +21,12 @@
                             <i class="fa fa-comments fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
+                            <div class="huge">@Model.comments.Count()</div>
                             <div>New Comments!</div>
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/Admin/Table/ReviewingTable">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -67,12 +67,12 @@
                             <i class="fa fa-shopping-cart fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">124</div>
+                            <div class="huge">@Model.orders.Count()</div>
                             <div>New Orders!</div>
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/Admin/Table/OrderTable">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -554,7 +554,7 @@
                     <ul class="chat">
                         <li class="left clearfix">
                             <span class="chat-img pull-left">
-                                <img src="http://via.placeholder.com/50/55C1E7/fff" alt="User Avatar"
+                                <img src="~/Content/images/freeShip.png" height="50" width="50" alt="User Avatar"
                                      class="img-circle" />
                             </span>
 
@@ -573,7 +573,7 @@
                         </li>
                         <li class="right clearfix">
                             <span class="chat-img pull-right">
-                                <img src="http://via.placeholder.com/50/FA6F57/fff" alt="User Avatar"
+                                <img src="~/Content/images/freeShip.png" height="50" width="50" alt="User Avatar"
                                      class="img-circle" />
                             </span>
 
@@ -592,7 +592,7 @@
                         </li>
                         <li class="left clearfix">
                             <span class="chat-img pull-left">
-                                <img src="http://via.placeholder.com/50/55C1E7/fff" alt="User Avatar"
+                                <img src="~/Content/images/freeShip.png" height="50" width="50" alt="User Avatar"
                                      class="img-circle" />
                             </span>
 
@@ -611,7 +611,7 @@
                         </li>
                         <li class="right clearfix">
                             <span class="chat-img pull-right">
-                                <img src="http://via.placeholder.com/50/FA6F57/fff" alt="User Avatar"
+                                <img src="~/Content/images/freeShip.png" height="50" width="50" alt="User Avatar"
                                      class="img-circle" />
                             </span>
 
