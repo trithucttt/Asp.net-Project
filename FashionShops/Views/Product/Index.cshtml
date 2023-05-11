@@ -26,13 +26,13 @@
                         <h5>Product Category</h5>
                     </div>
                     <ul class="sidebar_categories">
-                        <li class="active"><a href="#" class="category-item" data-category="All"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>All</a></li>
-                        <li><a href="#" class="category-item" data-category="Shirt">Shirt</a></li>
-                        <li><a href="#" class="category-item" data-category="Pant">Pant</a></li>
-                        <li><a href="#" class="category-item" data-category="Dress">Dress</a></li>
-                        <li><a href="#" class="category-item" data-category="Shoe">Shoe</a></li>
-                        <li><a href="#" class="category-item" data-category="Accessory">Accessory</a></li>
+
+                        @foreach (var item in ViewBag.Categories)
+                        {
+                            <li><a href="" class="category-item" data-category="@item.name">@item.name</a></li>
+                        }
                     </ul>
+                    <button id="show-more-btn" class="btn-showmore">+ Show more</button>
                 </div>
 
                 <div class="sidebar_section">
@@ -289,6 +289,8 @@
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
     <script src="~/Content/plugins/Isotope/isotope.pkgd.min.js"></script>
     <script src="~/Content/js/categories_custom.js"></script>
+    <script src="~/Content/js/ShowMoreButton.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/styles/ShowMoreButton.css">
     <style>
         .product_name {
             white-space: nowrap;

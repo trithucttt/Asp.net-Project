@@ -1,0 +1,34 @@
+﻿
+
+.sidebar_categories.show-more li {
+    display: block;
+}
+
+#category-list ul li:nth-child(n+6) {
+    display: none;
+}
+
+#color-list ul li:nth-child(n+6) {
+    display: none;
+}
+
+sidebar_color.show-more li {
+    display: block;
+}
+
+sidebar_color li {
+    display: none;
+}
+
+.btn-showmore{
+    border: none;
+    color:#fff;
+    background-color:#F23D97;
+    border-radius:4px;
+    box-shadow:0 5px 0 #b200ff ;
+    transition: 5s;
+}
+.btn-showmore:active{
+    box-shadow:none;
+    transform:translateY(5px);
+}

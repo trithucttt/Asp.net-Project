@@ -577,6 +577,7 @@
     <Content Include="Content\js\login.js" />
     <Content Include="Content\js\notification.js" />
     <Content Include="Content\js\register.js" />
+    <Content Include="Content\js\ShowMoreButton.js" />
     <Content Include="Content\js\single_custom.js" />
     <Content Include="Content\plugins\easing\easing.js" />
     <Content Include="Content\plugins\font-awesome-4.7.0\css\font-awesome.css" />
@@ -615,6 +616,7 @@
     <Content Include="Content\styles\orderlist.css" />
     <Content Include="Content\styles\ordertracking.css" />
     <Content Include="Content\styles\responsive.css" />
+    <Content Include="Content\styles\ShowMoreButton.css" />
     <Content Include="Content\styles\single_responsive.css" />
     <Content Include="Content\styles\single_styles.css" />
     <Content Include="DatabaseFashionShops.Context.tt">
@@ -691,6 +693,9 @@
     <Content Include="Areas\Admin\Views\Table\EditOrder.cshtml" />
     <Content Include="Areas\Admin\Views\Table\ReviewingTable.cshtml" />
     <Content Include="Areas\Admin\Views\Table\DetailReviewing.cshtml" />
+    <Content Include="Areas\Admin\Views\Table\CategoryTable.cshtml" />
+    <Content Include="Areas\Admin\Views\Table\AddCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Table\EditCategory.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FashionShops.Areas.Admin.Models;
@@ -388,5 +391,108 @@ namespace FashionShops.Areas.Admin.Controllers
             var review = db.Product_Reviewing.FirstOrDefault(x => x.id == id);
             return View(review);
         }
+
+
+        public ActionResult CategoryTable()
+        {
+            var category = from c in db.Categories select c;
+
+            return View(category);
+        }
+
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult SaveCategory(Category category)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Categories.Add(category);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Dữ liệu không được trống");
+                }
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                ModelState.AddModelError("", "Lỗi thêm category");
+            }
+            return View("AddCategory", category);
+        }
+
+        public ActionResult EditCategory(int id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = db.Categories.Find(id);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View("EditCategory", category);
+        }
+
+        public ActionResult SaveEdit(Category category)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                /*    if (category.parent_id < 0)
+                    {
+                        ModelState.AddModelError("parent_id", "The Parent ID field must be a non-negative integer.");
+                    }*/
+                    db.Entry(category).State = EntityState.Modified;
+                    db.SaveChanges();
+                    TempData["SuccessMessage"] = "Edit Category Success!";
+                    return RedirectToAction("CategoryTable");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Category is valid");
+                }
+
+                return View("EditCategory", category);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                ModelState.AddModelError("", "Errol Edit Category");
+            }
+            return View("EditCategory", category);
+        }
+
+        public ActionResult DeleteCategory(int id)
+        {
+            try
+            {
+                var oldProductCategory = db.Product_Category.Where(x => x.product_id == id);
+                db.Product_Category.RemoveRange(oldProductCategory);
+                db.SaveChanges();
+                var Delete = db.Categories.Find(id);
+                db.Categories.Remove(Delete);
+                db.SaveChanges();
+                return RedirectToAction("CategoryTable");
+            }
+
+            catch (DbUpdateConcurrencyException)
+            {
+                return View("Errol");
+            }
+
+        }
+
+
+
     }
 }

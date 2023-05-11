@@ -14,12 +14,23 @@ namespace FashionShops.Controllers.Products
     {
         // GET: Product
         FashionShopEntities data = new FashionShopEntities();
-        public ActionResult Index()
+        public ActionResult Index(string category)
         {
             if (TempData["notLogin"] != null)
                 ViewBag.NotLogin = TempData["notLogin"];
-            var query = from p in data.Products select p;
-            var infProduct = query.Take(12).ToList();
+            var products = data.Products.AsQueryable();
+            var catego = data.Categories.ToList();
+            if (!string.IsNullOrEmpty(category))
+            {
+                products = from p in products
+                           join pc in data.Product_Category on p.product_id equals pc.product_id
+                           join ca in data.Categories on pc.category_id equals ca.category_id
+                           where ca.name.Equals(category)
+                           select p;
+            }
+
+            var infProduct = products.Take(12).ToList();
+            ViewBag.Categories = catego;
             return View(infProduct);
         }
 
@@ -156,8 +167,7 @@ namespace FashionShops.Controllers.Products
                     existingItem.quantity += item.quantity;
                 }
                 else
-                {
-                    
+                {                   
                     var newCartItem = new FashionShops.Cart
                     {
                         user_id = userId,

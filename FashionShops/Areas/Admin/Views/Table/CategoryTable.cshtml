@@ -1,0 +1,121 @@
+﻿@model IEnumerable<FashionShops.Category>
+@{
+    ViewBag.Title = "CategoryTable";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h2>CategoryTable</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+               STT
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+
+            <th></th>
+        </tr>
+        @{ var i = 1;}
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+               @i
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.category_id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.category_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.category_id })
+            </td>
+        </tr>
+        {
+            i++;
+        }
+    }
+
+    </table>*@
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                DataTables Advanced Tables
+                <p>
+                    <a href="/Admin/Table/AddCategory">AddCategory</a>
+                </p>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="datatable">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>ID Parent</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ var i = 1;}
+                            @foreach (var item in Model)
+                            {
+                                <tr class="">
+                                    <td>@i</td>
+                                    <td>@item.parent_id</td>
+                                    <td class="category_name">@item.name</td>
+                                    <td class="center">
+                                        @Html.ActionLink("Edit", "EditCategory", new { id = item.category_id }) |
+                                        @Html.ActionLink("Delete", "DeleteCategory", new { id = item.category_id }, new { @class = "delete-link" })
+                                    </td>
+                                </tr>
+                                { i++; }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section CategoryTable{
+    <link href="~/Assets/Admin/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="~/Assets/Admin/css/dataTables/dataTables.responsive.css" rel="stylesheet">
+    <script src="~/Assets/Admin/js/dataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/js/dataTables/dataTables.bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.delete-link').click(function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                var name = $(this).closest('tr').find('.category_name').text();
+                var confirmDialog = confirm("Are you sure you want to delete '" + name + "'?");
+                if (confirmDialog) {
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        success: function (result) {
+                            location.reload();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+}
+
