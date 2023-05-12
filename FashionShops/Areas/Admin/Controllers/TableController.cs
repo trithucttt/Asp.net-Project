@@ -411,24 +411,29 @@ namespace FashionShops.Areas.Admin.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
+                if (!db.Categories.Any(c => c.category_id == category.category_id))
                 {
+                    // Nếu category_id chưa tồn tại trong cơ sở dữ liệu
                     db.Categories.Add(category);
                     db.SaveChanges();
+                    return RedirectToAction("CategoryTable");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Dữ liệu không được trống");
+                    // Nếu category_id đã tồn tại trong cơ sở dữ liệu
+                    ModelState.AddModelError("", "Category ID already exists.");
+                    return View("AddCategory", category);
                 }
+
             }
             catch (DbUpdateConcurrencyException)
             {
                 ModelState.AddModelError("", "Lỗi thêm category");
             }
-            return View("AddCategory", category);
+            return Content("Add product successfully!");
         }
 
-        public ActionResult EditCategory(int id)
+        public ActionResult EditCategory(int? id)
         {
             if (id == null)
             {
@@ -449,10 +454,15 @@ namespace FashionShops.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                /*    if (category.parent_id < 0)
+                    /*    if (category.parent_id < 0)
+                        {
+                            ModelState.AddModelError("parent_id", "The Parent ID field must be a non-negative integer.");
+                        }*/
+                    if (!db.Categories.Any(c => c.category_id == category.category_id))
                     {
-                        ModelState.AddModelError("parent_id", "The Parent ID field must be a non-negative integer.");
-                    }*/
+                        ModelState.AddModelError("", "Id does not exist.");
+                        return View("EditCategory", category);
+                    }
                     db.Entry(category).State = EntityState.Modified;
                     db.SaveChanges();
                     TempData["SuccessMessage"] = "Edit Category Success!";
@@ -462,8 +472,7 @@ namespace FashionShops.Areas.Admin.Controllers
                 {
                     ModelState.AddModelError("", "Category is valid");
                 }
-
-                return View("EditCategory", category);
+  
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -476,20 +485,30 @@ namespace FashionShops.Areas.Admin.Controllers
         {
             try
             {
-                var oldProductCategory = db.Product_Category.Where(x => x.product_id == id);
-                db.Product_Category.RemoveRange(oldProductCategory);
-                db.SaveChanges();
-                var Delete = db.Categories.Find(id);
-                db.Categories.Remove(Delete);
-                db.SaveChanges();
-                return RedirectToAction("CategoryTable");
+                var category = db.Categories.Find(id);
+                if (category != null)
+                {
+                    var productCategory = db.Product_Category.FirstOrDefault(x => x.category_id == id);
+                    if (productCategory != null)
+                    {
+                        return Json(new { success = false, message = "Can't delete because there are products in this category" });
+                    }
+                    else
+                    {
+                        db.Categories.Remove(category);
+                        db.SaveChanges();
+                        return Json(new { success = true });
+                    }
+                }
+                else
+                {
+                    return HttpNotFound();
+                }
             }
-
             catch (DbUpdateConcurrencyException)
             {
-                return View("Errol");
+                return View("Error");
             }
-
         }
 
 

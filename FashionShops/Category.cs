@@ -11,7 +11,9 @@ namespace FashionShops
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +21,8 @@ namespace FashionShops
         {
             this.Product_Category = new HashSet<Product_Category>();
         }
-    
+       /* [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]*/
         public long category_id { get; set; }
         public long parent_id { get; set; }
         public string name { get; set; }
