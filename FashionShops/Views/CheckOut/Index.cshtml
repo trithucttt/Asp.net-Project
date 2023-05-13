@@ -13,6 +13,10 @@
                 string nameAndPhone = "";
                 nameAndPhone += Model.infoUserCheckOut.firstName + " " + Model.infoUserCheckOut.lastName + " (+84): " + Model.infoUserCheckOut.phoneNumber;
             }
+            @if (nameAndPhone.Equals(" (+84): "))
+            {
+            <p>Your main information is empty, click Change address to add information!</p>
+            }
             @nameAndPhone
         </div>
         <div class="">
@@ -20,9 +24,13 @@
                 string fullAddress = "";
                 fullAddress += Model.infoUserCheckOut.address + ", " + Model.infoUserCheckOut.province + " province, " + Model.infoUserCheckOut.city + " city, " + Model.infoUserCheckOut.country;
             }
+            @if (fullAddress.Equals(", province, city, "))
+            {
+                <p>Your address is empty, click Change address to add information!</p>
+            }
             @fullAddress
         </div>
-        <a href="#" class="btn btn-outline-warning">Change address</a>
+        <a href="/Profile/Index" class="btn btn-outline-warning">Change address</a>
     </div>
     <div class="row no-gutters shadow-sm p-3 mb-3 bg-white rounded border-top">
         <div class="col">

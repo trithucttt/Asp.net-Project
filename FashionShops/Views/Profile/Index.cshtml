@@ -1,13 +1,22 @@
-﻿@model FashionShops.Models.Profile
+﻿@model FashionShops.User
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 }
 <div class="container">
     <div class="main-body" style="margin-top:200px;">
         <!-- /Breadcrumb -->
-        <div  id="profile">
-            <div class="row gutters-sm">
+        <div id="profile">
+            @using (Html.BeginForm("UpdateProfile", "Profile", FormMethod.Post, new { @class = "row gutters-sm" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.user_id)
+                @Html.HiddenFor(model => model.username)
+                @Html.HiddenFor(model => model.password)
+                @Html.HiddenFor(model => model.admin)
                 <div class="col-md-4 mb-3">
                     <div class="card">
                         <div class="card-body">
@@ -15,7 +24,7 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
                                      width="150">
                                 <div class="mt-3">
-                                    <h4>@Model.firstname @Model.lastname</h4>
+                                    <h4>@Model.firstName @Model.lastName</h4>
                                 </div>
                             </div>
                         </div>
@@ -29,7 +38,9 @@
                                     <h6 class="mb-0">First Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form_input" name="firstname" value="@Model.firstname" readonly />
+
+                                    @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "form_input", name = "firstname", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.firstName, null, new { @style = "color: red; font-style: italic;" })
                                 </div>
                             </div>
                             <hr>
@@ -38,7 +49,9 @@
                                     <h6 class="mb-0">Last Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form_input" name="lastname" value="@Model.lastname" readonly />
+
+                                    @Html.EditorFor(model => model.lastName, new { htmlAttributes = new { @class = "form_input", name = "lastname", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.lastName, null, new { @style = "color: red; font-style: italic;" })
                                 </div>
                             </div>
                             <hr>
@@ -47,7 +60,9 @@
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form_input" name="email" value="@Model.email" readonly />
+
+                                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form_input", name = "email", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.email, null, new { @style = "color: red; font-style: italic;" })
                                 </div>
                             </div>
                             <hr>
@@ -56,7 +71,9 @@
                                     <h6 class="mb-0">Country</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form_input" name="country" value="@Model.country" readonly />
+
+                                    @Html.EditorFor(model => model.country, new { htmlAttributes = new { @class = "form_input", name = "country", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.country, null, new { @style = "color: red; font-style: italic;" })
                                 </div>
                             </div>
                             <hr>
@@ -65,7 +82,9 @@
                                     <h6 class="mb-0">Mobile</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form_input" name="phonenumber" value="@Model.phonenumber" readonly />
+
+                                    @Html.EditorFor(model => model.phoneNumber, new { htmlAttributes = new { @class = "form_input", name = "phonenumber", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.phoneNumber, null, new { @style = "color: red; font-style: italic;" })
                                 </div>
                             </div>
                             <hr>
@@ -74,7 +93,9 @@
                                     <h6 class="mb-0">Address</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form_input" name="address" value="@Model.address" readonly />
+
+                                    @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form_input", name = "address", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.address, null, new { @style = "color: red; font-style: italic;" })
                                 </div>
                             </div>
                             <hr>
@@ -83,7 +104,9 @@
                                     <h6 class="mb-0">Province</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form_input" name="province" value="@Model.province" readonly />
+
+                                    @Html.EditorFor(model => model.province, new { htmlAttributes = new { @class = "form_input", name = "province", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.province, null, new { @style = "color: red; font-style: italic;" })
                                 </div>
                             </div>
                             <hr>
@@ -92,24 +115,28 @@
                                     <h6 class="mb-0">City</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form_input" name="city" value="@Model.city" readonly />
+
+                                    @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form_input", name = "city", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.city, null, new { @style = "color: red; font-style: italic;" })
                                 </div>
                             </div>
                             <hr>
+                            @Html.ValidationSummary(true, null, new { @style = "color: red; font-style: italic;" })
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div>
                                         <a class="btn btn-info" id="btn_edit"
-                                           href="/ChangePassword/Index">Edit</a>
-                                        <a class="btn btn-success" id="btn_save" target="__blank" data-userid="@Model.userId"
-                                           href="/ChangePassword/Index" hidden>Save</a>
+                                           href="#">Edit</a>
+                                        <button type="submit" class="btn btn-success" id="btn_save" target="__blank" data-userid="@Model.user_id" hidden>
+                                            Save
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
 
     </div>
@@ -131,57 +158,7 @@
                 $(this).attr('readonly', false);
             });
         });
-        $(document).on('click', '#btn_save', function (ele) {
-            ele.preventDefault();
-            $(this).attr('hidden', true);
-            $('#btn_edit').attr('hidden', false);
-            $('.form_input').each(function () {
-                $(this).attr('readonly', true);
-            });
-            let userid = $(this).data('userid');
-            let firstname = $('input[name=firstname]').val();
-            let latname = $('input[name=lastname]').val();
-            let email = $('input[name=email]').val();
-            let country = $('input[name=country]').val();
-            let phonenumber = $('input[name=phonenumber]').val();
-            let address = $('input[name=address]').val();
-            let province = $('input[name=province]').val();
-            let city = $('input[name=city]').val();
-            console.log(userid);
-            console.log(firstname);
-            console.log(latname);
-            console.log(email);
-            console.log(country);
-            console.log(phonenumber);
-            console.log(address);
-            console.log(province);
-            console.log(city);
 
-            $.ajax({
-                url: "/Profile/UpdateProfile",
-                type: "POST",
-                data: {
-                    userid: userid,
-                    firstname: firstname,
-                    lastname: latname,
-                    email: email,
-                    country: country,
-                    phonenumber: phonenumber,
-                    address: address,
-                    province: province,
-                    city: city
-                },
-                success: function (data) {
-                    $('#profile').empty().load('/Profile/Index #profile');
-                    //window.location.href = '/Profile/Index';
-                    toastr.success(data);
-                    buttonChange();
-                },
-                error: function () {
-                    alert("Error retrieving product details.");
-                }
-            });
-        });
-        
+
     </script>
 }

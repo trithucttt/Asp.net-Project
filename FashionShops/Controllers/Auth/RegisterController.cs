@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -19,36 +20,34 @@ namespace FashionShops.Controllers.Auth
         }
 
         [HttpPost]
-        public ActionResult Register(string userName, string passWord, string email)
+        public ActionResult Register(User newUser)
         {
             string HashPassword = "";
-            var querry = from user in db.Users where user.username == userName select user;
+            var querry = from user in db.Users where user.username == newUser.username select user;
             var userExists = querry.FirstOrDefault();
             if (userExists == null)
             {
-                var newUser = new User();
-                newUser.firstName = null;
-                newUser.lastName = null;
-                newUser.phoneNumber = null;
-                newUser.email = email;
-                newUser.username = userName;
-                HashPassword = Encrypt.HashPassword(passWord);
-                newUser.password = HashPassword;
-                newUser.admin = 0;
-                newUser.address = null;
-                newUser.province = null;
-                newUser.city = null;
-                newUser.country = null;
-                db.Users.Add(newUser);
-                if (db.SaveChanges() != 0)
+                if (Regex.IsMatch(newUser.password, "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[#$^+=!*()@%&]).{8,}$"))
                 {
-                    TempData["Register"] = "Register successfully";
+                    HashPassword = Encrypt.HashPassword(newUser.password);
+                    newUser.password = HashPassword;
+                    newUser.confirmpassword = HashPassword;
+                    newUser.admin = 0;
+                    db.Users.Add(newUser);
+                    if (db.SaveChanges() != 0)
+                    {
+                        TempData["Register"] = "Register successfully";
+                    }
+                } else
+                {
+                    ModelState.AddModelError("Password", "The password should have lowercase letters, uppercase letters, at least one number, at least one special character, and at least 8 characters.");
+                    return View("Register", newUser);
                 }
             }
             else
             {
                 TempData["Accountexists"] = "Account already exists";
-                return RedirectToAction("Register", "Register");
+                return RedirectToAction("Register", "Register", newUser);
             }
             return RedirectToAction("showFormLogin", "Login");
         }

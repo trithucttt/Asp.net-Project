@@ -333,10 +333,10 @@ insert into Size values (28, '34')
 
 -- User --
 -- id_user tu tang nen ko can them
-insert into Users values ('Thuong', 'Mon', '0123456789', 'pitithuong@gmail.com', 'thuongmoon', 'e297107030699cb9a0338f23ee41f0bf', '1', 'DHCT', 'Ninh Kieu', 'Can Tho', 'Viet Nam')
-insert into Users values ('Thuc','Nguyen Tri','12345678','thuc0416@gmail.com','trithuc','ccfde3a81509d504c9e89745a2d85b1a','1','Cai Khe','Ninh Kieu','Can Tho','Viet Nam')
-insert into Users values ('Le','Hoang Long ','12345678','Long@gmail.com','LongLe','ac5c2d3aa49bab06a141d7216b4e91c9','1','Mau Than','Ninh Kieu','Can Tho','Viet Nam')
-insert into Users values ('Nguyen','Dang Khoa','0914932098','ndangkhoa567@gmail.com','khoavirgo','81dc9bdb52d04dc20036dbd8313ed055','1','30/4','Ninh Kieu','Can Tho','Viet Nam')
+insert into Users values ('Thuong', 'Mon', '0123456789', 'pitithuong@gmail.com', 'thuongmoon', 'a7d9c5088b83e8f8fa111f715579ec0d', '1', 'DHCT', 'Ninh Kieu', 'Can Tho', 'Viet Nam')
+insert into Users values ('Thuc','Nguyen Tri','12345678','thuc0416@gmail.com','trithuc','aeb12f9943cb293f00bbb3275efd4520','1','Cai Khe','Ninh Kieu','Can Tho','Viet Nam')
+insert into Users values ('Le','Hoang Long ','12345678','Long@gmail.com','LongLe','c6428509f6b988fdc675b072adcac64d','1','Mau Than','Ninh Kieu','Can Tho','Viet Nam')
+insert into Users values ('Nguyen','Dang Khoa','0914932098','ndangkhoa567@gmail.com','khoavirgo','d4b16020a52712951984e1271ebec7ac','1','30/4','Ninh Kieu','Can Tho','Viet Nam')
 
 -- Products --
 -- (id, user_id (auto_increment), name, describe, price, brand, product_availability)

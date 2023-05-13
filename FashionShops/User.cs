@@ -13,7 +13,7 @@ namespace FashionShops
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    
+
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,11 +25,15 @@ namespace FashionShops
             this.Products = new HashSet<Product>();
             this.Vouchers = new HashSet<Voucher>();
         }
-    
+
         public long user_id { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
+        [MaxLength(10, ErrorMessage = "Your phone number is exceeding 10 numbers!")]
+        [RegularExpression("^\\d{10}$", ErrorMessage = "Your phone number is not valid!")]
         public string phoneNumber { get; set; }
+        [Required(ErrorMessage = "This field is required!")]
+        [RegularExpression("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", ErrorMessage = "This email is not valid!")]
         public string email { get; set; }
 
         [Required(ErrorMessage = "This field is required!")]
@@ -37,15 +41,16 @@ namespace FashionShops
         public string username { get; set; }
 
         [Required(ErrorMessage = "This field is required!")]
-        //[RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[#$^+=!*()@%&]).{8,}$", ErrorMessage = "The password should have lowercase letters, uppercase letters, at least one number, at least one special character, and at least 8 characters.")]
         public string password { get; set; }
+        [Compare("password", ErrorMessage = "Confirm password does not match.")]
+        public string confirmpassword { get; set; }
         public byte admin { get; set; }
         public string province { get; set; }
         public string city { get; set; }
         public string country { get; set; }
         public string address { get; set; }
         public bool rememberme { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

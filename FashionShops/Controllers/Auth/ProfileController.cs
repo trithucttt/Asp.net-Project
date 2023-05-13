@@ -16,52 +16,34 @@ namespace FashionShops.Controllers.Auth
             if (Membership.GetUser() != null)
             {
                 string userName = Membership.GetUser().UserName;
-                int userId = (int)data.Users.FirstOrDefault(x => x.username == userName).user_id;
-                return View(GetProfile(userId));
+                var user = data.Users.FirstOrDefault(x => x.username.Equals(userName));
+                return View(user);
             }
             return View("~/Views/Login/showFormLogin.cshtml");
         }
 
-        public Profile GetProfile(int userID)
-        {
-            var profile = (from p in data.Users
-                           where p.user_id == userID
-                           select new Profile
-                           {
-                               userId = (int)p.user_id,
-                               firstname = p.firstName,
-                               lastname = p.lastName,
-                               phonenumber = p.phoneNumber,
-                               email = p.email,
-                               username = p.username,
-                               address = p.address,
-                               province = p.province,
-                               city = p.city,
-                               country = p.country
-                           }).FirstOrDefault();
-            return profile;
-        }
-
         [HttpPost]
-        public ActionResult UpdateProfile(int userid, string firstname, string lastname, string email, string country,
-            string phonenumber, string address, string province, string city)
+        public ActionResult UpdateProfile(User profile)
         {
-            var user = data.Users.FirstOrDefault(x => x.user_id == userid);
-            user.firstName = firstname;
-            user.lastName = lastname;
-            user.email = email;
-            user.country = country;
-            user.phoneNumber = phonenumber;
-            user.address = address;
-            user.province = province;
-            user.city = city;
+            var user = data.Users.FirstOrDefault(x => x.user_id == profile.user_id);
+            user.confirmpassword = profile.password;
+            user.firstName = profile.firstName;
+            user.lastName = profile.lastName;
+            user.address = profile.address;
+            user.province = profile.province;
+            user.city = profile.city;
+            user.country = profile.country;
+            user.phoneNumber = profile.phoneNumber;
             if (data.SaveChanges() != 0)
             {
-                return Content("Update profile successfully!");
+                return RedirectToAction("Index");
             }
             else
             {
-                return Content("Sorry, something went wrong, please try again later!");
+                ModelState.AddModelError("", "There was an error saving, or nothing changed!");
+                string userName = Membership.GetUser().UserName;
+                var users = data.Users.FirstOrDefault(x => x.username.Equals(userName));
+                return View("Index", users);
             }
         }
     }
