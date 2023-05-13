@@ -696,6 +696,8 @@
     <Content Include="Areas\Admin\Views\Table\CategoryTable.cshtml" />
     <Content Include="Areas\Admin\Views\Table\AddCategory.cshtml" />
     <Content Include="Areas\Admin\Views\Table\EditCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Table\VoucherTable.cshtml" />
+    <Content Include="Areas\Admin\Views\Table\AddVoucher.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

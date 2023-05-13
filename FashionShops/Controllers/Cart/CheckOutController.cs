@@ -150,7 +150,7 @@ namespace FashionShops.Controllers.Cart
                 transport_fee = transpotfee,
                 total_price = totalprice,
                 voucher_id = voucherid,
-                order_status = "preparing"
+                order_status = "accepted"
             };
             db.Orders.Add(newOrder);
             string temp = arrayProducts;

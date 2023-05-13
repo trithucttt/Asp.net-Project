@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using FashionShops.Areas.Admin.Models;
 using Newtonsoft.Json;
 
@@ -529,6 +530,106 @@ namespace FashionShops.Areas.Admin.Controllers
             {
                 return View("Error");
             }
+        }
+
+
+        public ActionResult VoucherTable()
+        {
+            var query = from v in db.Vouchers select v;
+            return View(query);
+        }
+
+
+        public ActionResult AddVoucher()
+        {
+
+
+            ViewBag.VoucerStatus = db.Vouchers.Where(c => c.voucher_status != null).ToList();
+            // Truyền danh sách trạng thái voucher vào ViewBag để sử dụng trong view
+
+
+
+            return View();
+        }
+
+        public ActionResult SaveVoucher(Voucher voucher)
+        {
+            try
+            {
+                if (!db.Vouchers.Any(c => c.code.Equals(voucher.code)))
+                {
+                    // Nếu voucher chưa tồn tại trong cơ sở dữ liệu                 
+                    var maxID = db.Vouchers.Max(c => c.voucher_id);
+                    var newID = maxID + 1;
+                    voucher.voucher_id = newID;
+                    string username = Membership.GetUser().UserName;
+                    int userid = (int)db.Users.FirstOrDefault(x => x.username.Equals(username)).user_id;
+                    voucher.user_id = userid;
+                    // Kiểm tra ngày bắt đầu và ngày kết thúc của voucher
+                    if (voucher.start_date < DateTime.Today)
+                    {
+                        ModelState.AddModelError("", "Start date must be today or later.");
+                        return View("AddVoucher", voucher);
+                    }
+                    if (voucher.start_date >= voucher.end_date)
+                    {
+                        ModelState.AddModelError("", "Start date must be before end date.");
+                        return View("AddVoucher", voucher);
+                    }
+                    db.Vouchers.Add(voucher);
+                    db.SaveChanges();
+                    return RedirectToAction("VoucherTable");
+                }
+                else
+                {
+                    // Nếu voucher đã tồn tại trong cơ sở dữ liệu
+                    ModelState.AddModelError("", "Voucher ID already exists.");
+                    return View("AddVoucher", voucher);
+                }
+
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                ModelState.AddModelError("", "Errol Add Voucher");
+            }
+            return Content("Add Voucher successfully!");
+        }
+
+
+
+
+
+        public ActionResult DeleteVoucher(int id)
+        {
+
+            try
+            {
+                var voucher = db.Vouchers.Find(id);
+                if (voucher != null)
+                {
+                    var voucherUse = db.Orders.FirstOrDefault(x => x.voucher_id == id);
+                    if (voucherUse != null)
+                    {
+                        return Json(new { success = false, message = "Can't delete because there are voucher is used " });
+                    }
+                    else
+                    {
+                        db.Vouchers.Remove(voucher);
+                        db.SaveChanges();
+                        return Json(new { success = true });
+                    }
+
+                }
+                else
+                {
+                    return HttpNotFound();
+                }
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return View("Error");
+            }
+
         }
 
 

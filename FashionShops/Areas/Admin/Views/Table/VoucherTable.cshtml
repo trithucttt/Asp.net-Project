@@ -1,9 +1,10 @@
-﻿@model IEnumerable<FashionShops.Category>
+﻿@model IEnumerable<FashionShops.Voucher>
 
 @{
-    ViewBag.Title = "CategoryTable";
+    ViewBag.Title = "VoucherTable";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+
 
 <div class="container-fluid">
     <div class="row">
@@ -15,7 +16,7 @@
     <!-- /.row -->
     <div class="row" style="margin-bottom: 20px;">
         <div class="col-lg-12">
-            <a href="/Admin/Table/AddCategory" class="btn btn-warning">Add Category</a>
+            <a href="/Admin/Table/AddVoucher" class="btn btn-warning">Add Category</a>
         </div>
     </div>
     <div class="row">
@@ -31,11 +32,14 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>category_id</th>
-                                    <th>parent_id</th>
-                                    <th>name</th>
-                                    <th>Total Product</th>
+                                    <th>Voucher ID</th>
+                                    <th>Code</th>
+                                    <th>Discount Percentage</th>
+                                    <th>Voucher Status</th>
+                                    <th> Start Date</th>
+                                    <th>End Date</th>
                                     <th>Action</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,14 +48,16 @@
                                 {
                                     <tr class="">
                                         <td>@i</td>
-                                        <td>@item.category_id</td>
-                                        <td>@item.parent_id</td>
-                                        <td class="category_name">@item.name</td>
-                                        <td>@item.Product_Category.Count</td>
+                                        <td>@item.voucher_id</td>
+                                        <td>@item.code</td>
+                                        <td>@item.discount_percentage</td>
+                                        <td class="category_name">@item.voucher_status</td>
+                                        <td>@item.start_date</td>
+                                        <td>@item.end_date</td>
 
                                         <td class="center">
-                                            <a href="~/Admin/Table/EditCategory?id=@item.category_id">Edit</a>
-                                            <a href="~/Admin/Table/DeleteCategory?id=@item.category_id" data-idpro="@item.category_id" data-name="@item.name" id="delete-product-btn" class="delete-link">Delete</a>
+                                            @* <a href="~/Admin/Table/EditVoucher?id=@item.voucher_id">Edit</a>*@
+                                            <a href="~/Admin/Table/DeleteVoucher?id=@item.voucher_id" data-idpro="@item.voucher_id" data-name="@item.code" id="delete-product-btn" class="delete-link">Delete</a>
                                         </td>
                                     </tr>
                                     { i++; }
@@ -371,6 +377,7 @@
     <link href="~/Assets/Admin/css/dataTables/dataTables.responsive.css" rel="stylesheet">
     <script src="~/Assets/Admin/js/dataTables/jquery.dataTables.min.js"></script>
     <script src="~/Assets/Admin/js/dataTables/dataTables.bootstrap.min.js"></script>
+
     <script>
         $(document).ready(function () {
             $('#dataTables-example').DataTable({
@@ -392,7 +399,7 @@
                         success: function (result) {
                             if (result.success) {
                                 alert("Delete successfully!");
-                                window.location.href = "/Admin/Table/CategoryTable";
+                                window.location.href = "/Admin/Table/VoucherTable";
                             } else {
                                 alert("Delete failed. " + result.message);
                             }
@@ -405,4 +412,5 @@
 
 
 }
+
 
