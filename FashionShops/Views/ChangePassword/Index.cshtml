@@ -1,40 +1,35 @@
-﻿
+﻿@model FashionShops.User
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 }
 
-
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
 <div class="wrapper">
     <div class="inner">
         <div class="image-holder">
             <img class="img-login" src="~/Content/images/changepassword_bg.jpg" alt="">
         </div>
-        <form action="/ChangePassword/Change" method="post" id="form_change_password">
+        @using (Html.BeginForm("Change", "ChangePassword", new { id = "form_change_password" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.user_id)
             <h3>Change Password</h3>
             <div class="form-holder active-login">
-                <input type="password" name="currentpassword" placeholder="Current password" class="form-control-login" id="currentpassword" style="font-size: 15px;">
-                <div class="font-italic" id="error_password" style="color: red"></div>
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control-login", placeholder = "Current password", name = "currentpassword", id = "currentpassword", type = "password" } })
+                @Html.ValidationMessageFor(model => model.password, null, new { @style = "color: red; font-style: italic;" })
             </div>
             <div class="form-holder">
-                <input type="password" name="newpassword" placeholder="newpassword" class="form-control-login" id="newpassword" style="font-size: 15px;">
-                <div class="font-italic" id="error_password" style="color: red"></div>
+                @Html.EditorFor(model => model.newpassword, new { htmlAttributes = new { @class = "form-control-login", placeholder = "New password", name = "newpassword", id = "newpassword", type = "password" } })
+                @Html.ValidationMessageFor(model => model.newpassword, null, new { @style = "color: red; font-style: italic;" })
             </div>
             @Html.ValidationSummary(true, null, new { @class = "font-italic", @style = "color: red" })
             <div class="form-login">
                 <button type="submit" data-href="/Login/Check" class="button-login" id="btn-login">Change</button>
             </div>
-        </form>
+        }
     </div>
 </div>
 <div id="changefail" hidden>@ViewBag.CurrentPassIncorrect</div>

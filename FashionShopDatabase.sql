@@ -179,7 +179,7 @@ create table Voucher
 	user_id bigint not null,
 	code varchar(20) not null,
 	discount_percentage float not null,
-	voucher_status nvarchar(40) not null check(voucher_status IN('Chưa sử dụng','Đã sử dụng')),
+	voucher_status nvarchar(40) not null check(voucher_status IN('available','used')),
 	start_date datetime not null,
 	end_date datetime not null
 )
@@ -1644,8 +1644,8 @@ insert into Product_Tag values (50, 25)
 -- id_parent = 0 neu loai tong the nhat
 insert into Category values (1, 0, N'Shirt')
 
-insert into Category values (2, 0, N'Dress')
-insert into Category values (3, 4, N'Skirt')
+insert into Category values (2, 0, N'Skirt')
+insert into Category values (3, 0, N'Glasses')
 insert into Category values (4, 0, N'Shoes')
 
 insert into Category values (5, 0, N'Sunscreen')
@@ -1713,10 +1713,10 @@ insert into Product_Category values (34, 2)
 insert into Product_Category values (35, 6)
 insert into Product_Category values (36, 7)
 insert into Product_Category values (37, 8)
-insert into Product_Category values (38, 5)
-insert into Product_Category values (39, 9)
-insert into Product_Category values (40, 9)
-insert into Product_Category values (41, 9)
+insert into Product_Category values (38, 8)
+insert into Product_Category values (39, 3)
+insert into Product_Category values (40, 8)
+insert into Product_Category values (41, 1)
 insert into Product_Category values (42, 9)
 insert into Product_Category values (43, 9)
 insert into Product_Category values (44, 9)
@@ -1733,15 +1733,15 @@ insert into Product_Reviewing values(1, 1, 1, 5, N'Hàng đẹp chất lượng 
 
 -- Voucher --
 -- (voucher_id, user_id, code, discount_percentage, voucher_status, startdate, end_date)
-insert into Voucher values (1, 1, '0GIAMGIA', 0, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
-insert into Voucher values (2, 1, 'FASHIONSHOP2', 0.1, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
-insert into Voucher values (3, 1, 'FASHIONSHOP3', 0.05, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
-insert into Voucher values (4, 1, 'FASHIONSHOP4', 0.08, 'Chưa sử dụng', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
+insert into Voucher values (1, 1, '0GIAMGIA', 0, 'available', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
+insert into Voucher values (2, 1, 'FASHIONSHOP2', 0.1, 'available', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
+insert into Voucher values (3, 1, 'FASHIONSHOP3', 0.05, 'available', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
+insert into Voucher values (4, 1, 'FASHIONSHOP4', 0.08, 'available', '2022-02-14 14:56:59', '2099-02-14 14:56:59');
 
 -- Orders --
 -- (order_id, customer_id, order_date, original_price, reduced_price, transport_fee, total_price, voucher_id, order_status)
-insert into Orders values (1110223145659, 1, '2023-02-11 14:56:59', 300000, 0, 0, 300000, 1, 'preparing')
-insert into Orders values (2, 1, '2023-03-12 14:56:59', 150000, 0, 0, 150000, 1, 'preparing')
+insert into Orders values (1110223145659, 1, '2023-02-11 14:56:59', 300000, 0, 0, 300000, 1, 'accepted')
+insert into Orders values (2, 1, '2023-03-12 14:56:59', 150000, 0, 0, 150000, 1, 'accepted')
 
 -- Order_Item --
 -- (id, order_id, product_id, quantity, size, color, totalcost)
@@ -1773,4 +1773,3 @@ insert into Cart values (1, 4, 2, 2, 5, 210000)
 insert into Cart values (1, 5, 2, 2, 4, 210000)
 insert into Cart values (1, 5, 2, 2, 3, 210000)
 insert into Cart values (1, 6, 2, 2, 3, 210000)
-

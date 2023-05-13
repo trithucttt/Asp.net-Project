@@ -44,6 +44,7 @@ namespace FashionShops
         public string password { get; set; }
         [Compare("password", ErrorMessage = "Confirm password does not match.")]
         public string confirmpassword { get; set; }
+        public string newpassword { get; set; }
         public byte admin { get; set; }
         public string province { get; set; }
         public string city { get; set; }
