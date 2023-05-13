@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "AddCategory";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    
+
 }
 
 
@@ -17,19 +19,21 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-         <div class="form-group">
+        @* <div class="form-group">
                 @Html.LabelFor(model => model.category_id, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.category_id, new { htmlAttributes = new { @class = "form-control", @min = "0", @step = "1" } })
                     @Html.ValidationMessageFor(model => model.category_id, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.parent_id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.parent_id, new { htmlAttributes = new { @class = "form-control", @min = "0", @step = "1" } })
-                @Html.ValidationMessageFor(model => model.parent_id, "", new { @class = "text-danger" })
+             @*   @Html.EditorFor(model => model.parent_id, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled", @id = "parent-id" } })*@
+                @Html.DropDownListFor(model => model.parent_id, new SelectList(ViewBag.ParentCategories, "category_id", "name"), new { @class = "form-control", @id = "category-list" })
+
+                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -53,3 +57,19 @@
     @Html.ActionLink("Back to List", "CategoryTable")
 </div>
 
+@section AddCategory{
+    <script>
+        $(document).ready(function () {
+            // Lấy danh sách thả xuống
+            var categoryList = $('#category-list');
+
+            // Bắt sự kiện thay đổi giá trị của danh sách thả xuống
+            categoryList.change(function () {
+                // Lấy giá trị của danh sách thả xuống
+                var selectedValue = $(this).val();
+                // Gán giá trị của danh sách thả xuống cho trường parent_id
+                $('#parent-id').val(selectedValue);
+            });
+        });
+    </script>
+    }

@@ -402,6 +402,12 @@ namespace FashionShops.Areas.Admin.Controllers
 
         public ActionResult AddCategory()
         {
+            /* ViewBag.ParentCategories = db.Categories.Where(c => c.parent_id < 0).ToList();*/
+            /* int firstParentId = ViewBag.ParentCategories.FirstOrDefault()?.category_id ?? 0;*/
+            ViewBag.ParentCategories = db.Categories.Where(c => c.parent_id >= 0).ToList();
+
+
+
             return View();
         }
 
@@ -414,6 +420,10 @@ namespace FashionShops.Areas.Admin.Controllers
                 if (!db.Categories.Any(c => c.category_id == category.category_id))
                 {
                     // Nếu category_id chưa tồn tại trong cơ sở dữ liệu
+                    // 
+                    var maxID = db.Categories.Max(c => c.category_id);
+                    var newID = maxID + 1;
+                    category.category_id = newID;
                     db.Categories.Add(category);
                     db.SaveChanges();
                     return RedirectToAction("CategoryTable");
@@ -433,19 +443,29 @@ namespace FashionShops.Areas.Admin.Controllers
             return Content("Add product successfully!");
         }
 
+
+
         public ActionResult EditCategory(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Category category = db.Categories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
             }
 
-            return View("EditCategory", category);
+          
+            List<Category> parentCategories = db.Categories.Where(c => c.parent_id >= 0).ToList();
+            Category parentCategory = db.Categories.Find(category.parent_id);
+            if (!parentCategories.Any(c => c.category_id == category.parent_id))
+            {
+                parentCategories.Add(parentCategory);
+            }
+
+            ViewBag.ParentCategories = new SelectList(parentCategories, "category_id", "name", category.parent_id);
+
+
+            return View(category);
+          
         }
 
         public ActionResult SaveEdit(Category category)

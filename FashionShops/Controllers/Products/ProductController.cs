@@ -14,24 +14,31 @@ namespace FashionShops.Controllers.Products
     {
         // GET: Product
         FashionShopEntities data = new FashionShopEntities();
-        public ActionResult Index(string category)
+        public ActionResult Index(string category, string color,string sizes)
         {
             if (TempData["notLogin"] != null)
                 ViewBag.NotLogin = TempData["notLogin"];
             var products = data.Products.AsQueryable();
             var catego = data.Categories.ToList();
-            if (!string.IsNullOrEmpty(category))
+            var colors = data.Colors.ToList();
+            var size = data.Sizes.ToList();
+            if ((!string.IsNullOrEmpty(category)) || (!string.IsNullOrEmpty(color)))
             {
                 products = from p in products
                            join pc in data.Product_Category on p.product_id equals pc.product_id
                            join ca in data.Categories on pc.category_id equals ca.category_id
-                           where ca.name.Equals(category)
+                           join pq in data.Product_Quantity on p.product_id equals pq.product_id
+                           join co in data.Colors on pq.color_id equals co.color_id
+                           join sz in data.Sizes on pq.size_id equals sz.size_id
+                           where ca.name.Equals(category) || co.color1.Equals(color) || sz.size1.Equals(sizes)
                            select p;
             }
-
             var infProduct = products.Take(12).ToList();
             ViewBag.Categories = catego;
+            ViewBag.Colors = colors;
+            ViewBag.Sizes = size;
             return View(infProduct);
+
         }
 
         public ActionResult Pagination(int pageNumber, int pageSize, string category = "", string name = "")

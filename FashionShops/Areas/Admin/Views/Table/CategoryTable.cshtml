@@ -34,6 +34,7 @@
                                     <th>category_id</th>
                                     <th>parent_id</th>
                                     <th>name</th>
+                                    <th>Total Product</th>
 
                                 </tr>
                             </thead>
@@ -41,17 +42,18 @@
                                 @{ var i = 1;}
                                 @foreach (var item in Model)
                                 {
-                                    <tr class="">
-                                        <td>@i</td>
-                                        <td>@item.category_id</td>
-                                        <td>@item.parent_id</td>
-                                        <td class="category_name">@item.name</td>
+                                <tr class="">
+                                    <td>@i</td>
+                                    <td>@item.category_id</td>
+                                    <td>@item.parent_id</td>
+                                    <td class="category_name">@item.name</td>
+                                    <td>@item.Product_Category.Count</td>
 
-                                        <td class="center">
-                                            <a href="~/Admin/Table/EditCategory?id=@item.category_id">Edit</a>
-                                            <a href="~/Admin/Table/DeleteCategory?id=@item.category_id" data-idpro="@item.category_id" data-name="@item.name" id="delete-product-btn" class="delete-link">Delete</a>
-                                        </td>
-                                    </tr>
+                                    <td class="center">
+                                        <a href="~/Admin/Table/EditCategory?id=@item.category_id">Edit</a>
+                                        <a href="~/Admin/Table/DeleteCategory?id=@item.category_id" data-idpro="@item.category_id" data-name="@item.name" id="delete-product-btn" class="delete-link">Delete</a>
+                                    </td>
+                                </tr>
                                     { i++; }
                                 }
                             </tbody>

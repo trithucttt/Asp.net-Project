@@ -26,13 +26,13 @@
                         <h5>Product Category</h5>
                     </div>
                     <ul class="sidebar_categories">
-
+                        <li class="active"><a href="Product/Index" class="category-item" data-category="">All</a></li>
                         @foreach (var item in ViewBag.Categories)
                         {
                             <li><a href="" class="category-item" data-category="@item.name">@item.name</a></li>
                         }
                     </ul>
-                    <button id="show-more-btn" class="btn-showmore">+ Show more</button>
+                    <button id="show-more-btn" class="btn-showmore">+ Show More</button>
                 </div>
 
                 <div class="sidebar_section">
@@ -80,19 +80,30 @@
                     <div class="sidebar_title">
                         <h5>Color</h5>
                     </div>
-                    <ul class="checkboxes">
-                        <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Black</span></li>
-                        <li class="active"><i class="fa fa-square" aria-hidden="true"></i><span>Pink</span></li>
-                        <li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-                        <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-                        <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-                        <li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-                        <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-                        <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-                        <li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-                        <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-                        <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-                    </ul>
+                     <ul class="checkboxes">
+            <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Black</span></li>
+            <li class="active"><i class="fa fa-square" aria-hidden="true"></i><span>Pink</span></li>
+            <li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
+            <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
+            <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
+            <li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
+            <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
+            <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
+            <li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
+            <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
+            <li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
+        </ul>
+
+                 @*   <div id="color-list">
+                        <ul id="checkboxes" class="sidebar_color">
+                            @foreach (var color in ViewBag.Colors)
+                            {
+                                <li><a href="/Product/Index?color=@color.color1">@color.color1</a></li>
+                            }
+
+                        </ul>
+                        <button id="show-more-color">Show more</button>
+                    </div>*@
                     <div class="show_more">
                         <span><span>+</span>Show More</span>
                     </div>
